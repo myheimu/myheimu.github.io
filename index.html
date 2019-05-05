@@ -2,6 +2,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
@@ -9,7 +18,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -37,38 +44,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
 
 
 
@@ -76,33 +66,20 @@
 
 
 
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZhongChen的技术博客">
-<meta property="og:url" content="http://cpp.plus/index.html">
-<meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:locale" content="zh">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZhongChen的技术博客">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -114,12 +91,34 @@
 </script>
 
 
+  
 
+
+
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="ZhongChen的技术博客">
+<meta property="og:url" content="http://cpp.plus/index.html">
+<meta property="og:site_name" content="ZhongChen的技术博客">
+<meta property="og:locale" content="zh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ZhongChen的技术博客">
+
+
+
+
+
+  
+  
   <link rel="canonical" href="http://cpp.plus/">
 
 
 
-
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>ZhongChen的技术博客</title>
   
@@ -130,6 +129,35 @@
 
 
 
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
@@ -146,7 +174,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -156,13 +184,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -170,35 +197,55 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            Home
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            Archives
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-home menu-item-active">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -206,12 +253,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -224,841 +279,6 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cpp.plus/2019/05/05/《程序员的数学2：概率统计》笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZhongChen">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhongChen的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/05/《程序员的数学2：概率统计》笔记/" itemprop="url">《程序员的数学2：概率统计》笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-05T16:52:18+08:00">
-                2019-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><a href="#第1章-概率的定义">第1章 概率的定义</a></li>
-<li><a href="#第2章-多个随机变量之间的关系">第2章 多个随机变量之间的关系</a></li>
-<li><a href="#第3章-离散值的概率分布">第3章 离散值的概率分布</a><ul>
-<li><a href="#离散值随机变量">离散值随机变量</a></li>
-<li><a href="#大数定律">大数定律</a></li>
-<li><a href="#最小二乘法">最小二乘法</a></li>
-</ul>
-</li>
-<li><a href="#第4章-连续值的概率分布">第4章 连续值的概率分布</a><ul>
-<li><a href="#实数值随机变量">实数值随机变量</a></li>
-<li><a href="#联合分布的变量变换">联合分布的变量变换</a></li>
-<li><a href="#正态分布">正态分布</a></li>
-</ul>
-</li>
-<li><a href="#第5章-协方差矩阵多元正态分布与椭圆">第5章 协方差矩阵、多元正态分布与椭圆</a><ul>
-<li><a href="#协方差与相关系数">协方差与相关系数</a></li>
-<li><a href="#协方差矩阵">协方差矩阵</a></li>
-<li><a href="#多元正态分布">多元正态分布</a></li>
-<li><a href="#多元正态分布性质">多元正态分布性质</a></li>
-<li><a href="#截面条件分布">截面（条件分布）</a></li>
-<li><a href="#投影边缘分布">投影（边缘分布）</a></li>
-<li><a href="#卡方分布">卡方分布</a></li>
-<li><a href="#协方差矩阵与椭圆的关系">协方差矩阵与椭圆的关系</a></li>
-</ul>
-</li>
-<li><a href="#第6章-估计与检验">第6章 估计与检验</a><ul>
-<li><a href="#估计的概念">估计的概念</a></li>
-<li><a href="#估计方法">估计方法</a></li>
-<li><a href="#检验理论">检验理论</a></li>
-</ul>
-</li>
-<li><a href="#第7章-伪随机数">第7章 伪随机数</a><ul>
-<li><a href="#随机数序列">随机数序列</a></li>
-<li><a href="#梅森旋转算法">梅森旋转算法</a></li>
-<li><a href="#蒙特卡罗方法mente-carlo-method">蒙特卡罗方法（Mente Carlo method）</a></li>
-<li><a href="#密码理论中的伪随机数序列">密码理论中的伪随机数序列</a></li>
-<li><a href="#遵从离散值分布的随机数生成">遵从离散值分布的随机数生成</a></li>
-<li><a href="#遵从连续值分布的随机数生成">遵从连续值分布的随机数生成</a></li>
-<li><a href="#遵从正态分布的随机数的生成">遵从正态分布的随机数的生成</a></li>
-<li><a href="#三角形内的均匀分布">三角形内的均匀分布</a></li>
-<li><a href="#球面上的均匀分布">球面上的均匀分布</a></li>
-</ul>
-</li>
-<li><a href="#第8章-概率论的各类应用">第8章 概率论的各类应用</a><ul>
-<li><a href="#81-回归分析与多变量分析">8.1 回归分析与多变量分析</a><ul>
-<li><a href="#最小二乘法拟合直线">最小二乘法拟合直线</a></li>
-<li><a href="#吉洪诺夫正则化">吉洪诺夫正则化</a></li>
-<li><a href="#主成分分析">主成分分析</a></li>
-</ul>
-</li>
-<li><a href="#82-随机过程stochastic-process">8.2 随机过程（stochastic process）</a><ul>
-<li><a href="#随机游走random-walk">随机游走（random walk）</a></li>
-<li><a href="#卡尔曼滤波器">卡尔曼滤波器</a></li>
-<li><a href="#马尔可夫链">马尔可夫链</a></li>
-</ul>
-</li>
-<li><a href="#83-信息论">8.3 信息论</a><ul>
-<li><a href="#熵">熵</a></li>
-<li><a href="#二元熵">二元熵</a></li>
-<li><a href="#信源编码">信源编码</a></li>
-<li><a href="#信道编码">信道编码</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#附录">附录</a></li>
-</ul>
-<p>这本书整体来说很不错，把重点放在用形象化、几何化的方法来描述概率相关问题，而相关的公式推导和习题也是限于引出结论而并非教科书般罗列。比如用“平行世界”、“协方差矩阵就是椭圆”来描述概率问题。</p>
-<p>前五章主要描述了基础知识，整体比较简单；后三章是具体应用，有一定难度，但好在讲解集中于整体思路，易于理解。</p>
-<p>中文版小错误不少，需要提前查看中文版勘误：<a href="http://www.ituring.com.cn/book/1254" target="_blank" rel="noopener">http://www.ituring.com.cn/book/1254</a></p>
-<p>如果觉得中文版推导和表述有些问题，也可以查看日文版《プログラミングのための確率統計》草稿：<a href="http://wiki.fdiary.net/lacs/?PSCS.PDF" target="_blank" rel="noopener">http://wiki.fdiary.net/lacs/?PSCS.PDF</a> ，起码公式部分是能看懂的，我就发现了几个翻译过程中的公式错误，已经将勘误提交给中文版网站。</p>
-<h1 id="第1章-概率的定义"><a href="#第1章-概率的定义" class="headerlink" title="第1章 概率的定义"></a>第1章 概率的定义</h1><blockquote>
-<ul>
-<li>A：根据我的调查，明年经济景气的概率是71.42857…%</li>
-<li>B：你怎么能得到那么精确的数字？</li>
-<li>A：模拟了7种设定后，其中5种情况下经济将会好转，所以5/7=0.7142857…</li>
-<li>B：呃……槽点太多都不知道该怎么回答你了。总之我们先了解一下概率究竟是什么意思吧。</li>
-</ul>
-</blockquote>
-<p>$$\Huge{概率即是面积}$$</p>
-<p><strong>三扇门问题（蒙提霍尔问题）</strong></p>
-<ul>
-<li>“有三扇门，其中只有一扇是正确的门。挑战者选择一扇门打开，而主持人从剩下两扇门中的任选一扇错误的门打开（如果只有一扇错误，则打开它，如果有两扇错误，则随机选择一扇打开）。问挑战者是否要重选？重选和不重选概率如何？”</li>
-<li>基础视角，容易得出错误答案</li>
-<li>上升到“飞艇视角”：分设一堆游戏会场，都按照规则执行，各会场中发生情况的比例等于概率，根据最终各会场最终结果比例计算最终概率</li>
-</ul>
-<p>将概率定义为：<strong>满足下列条件的三元组 $(\Omega, \mathcal{F}, \rm{P})$ 称为概率空间，条件包括…</strong></p>
-<p>从“人类视角”上升为“上帝视角”（类比前面的“飞艇视角”），类似平行世界思路：</p>
-<ul>
-<li>$\Omega$（样本空间）表示所有平行世界组成的集合，其面积为1，其中每个 $\omega$（样本）表示具体某个世界</li>
-<li>$\Omega$ 的子集 $A$（事件）的面积用 $\mathrm{P}(A)$ 表示，即代表概率</li>
-<li>从上帝角度来看，随机变量只是函数 $f(ω)$，但从人类视角来看则是随机变量 $X(ω)$ ，可以同时存在多个随机变量 $X(ω),Y(ω),Z(ω)$</li>
-<li>人类视角的概率分布 $\mathrm{P}(X=k)$，就是上帝视角的 $X(ω)=k$ 时 $ω$ 所占的区域面积</li>
-</ul>
-<h1 id="第2章-多个随机变量之间的关系"><a href="#第2章-多个随机变量之间的关系" class="headerlink" title="第2章 多个随机变量之间的关系"></a>第2章 多个随机变量之间的关系</h1><blockquote>
-<ul>
-<li>A：根据我的调查，拥有游戏机的人中犯罪率高达50%以上。我们应该立法解决这一问题。</li>
-<li>B：这个数字怎么会那么高？</li>
-<li>A：最近的青少年犯罪中半数以上的嫌犯都拥有游戏机呀。</li>
-<li>B：呃……这让我咋吐槽好呢？你能不能先不要考虑犯罪问题，调查一下现在青少年中游戏机的持有率再说？</li>
-</ul>
-</blockquote>
-<p>对于两个离散值随机变量 $X$ 和 $Y$</p>
-<p><strong>联合概率</strong><br>$$\mathrm{P}(X=a, Y=b)$$</p>
-<p><strong>边缘概率</strong><br>$$\mathrm{P}(X=a) = \sum_b\mathrm{P}(X=a, Y=b)\<br>\mathrm{P}(Y=b) = \sum_a\mathrm{P}(X=a, Y=b)$$</p>
-<p><strong>条件概率</strong><br>$$\mathrm{P}(Y=b|X=a) = \frac{\mathrm{P}(X=a, Y=b)}{\mathrm{P}(X=a)}$$</p>
-<p><strong>贝叶斯公式</strong><br>$$\mathrm{P}(X=a|Y=b) = \frac{\mathrm{P}(Y=b|X=a)\mathrm{P}(X=a)}{\mathrm{P}(Y=b)}$$</p>
-<p><strong>独立性</strong></p>
-<p>条件：对于随机变量所有取值，均有 $\mathrm{P}(X=a|Y=b)=\mathrm{P}(X=a|Y≠b)$，称之为随机变量独立</p>
-<p>当具备独立性时，可以推导出一些公式，其中最重要的是“联合概率是边缘概率的乘积”：<br>$$\forall a,b\qquad  \mathrm{P}(X=a,Y=b) = \mathrm{P}(X=a) \mathrm{P}(Y=b)$$</p>
-<p>三个及以上随机变量的独立性</p>
-<ul>
-<li>各对事件相互独立不表示所有事件相互独立</li>
-</ul>
-<h1 id="第3章-离散值的概率分布"><a href="#第3章-离散值的概率分布" class="headerlink" title="第3章 离散值的概率分布"></a>第3章 离散值的概率分布</h1><blockquote>
-<ul>
-<li>A：有一份统计大家“每个月喝几次啤酒”的调查问卷，结果显示为月平均8次。另一份“每次喝几瓶啤酒”的调查问卷显示平均每次会喝1.5瓶。看来大家都不太诚实啊。</li>
-<li>B：为什么这么说？</li>
-<li>A：因为实际调查后，发现啤酒的人均月消耗量是15瓶，而根据调查问卷结果，8*1.5=12瓶，数字对不上。</li>
-<li>B：呃……都不知道该怎么说你了。总之，你先去了解一下期望值的概念吧。</li>
-</ul>
-</blockquote>
-<h2 id="离散值随机变量"><a href="#离散值随机变量" class="headerlink" title="离散值随机变量"></a>离散值随机变量</h2><ul>
-<li>每一个事件的概率都大于等于0</li>
-<li>所有概率之和为1</li>
-</ul>
-<p><strong>二项分布</strong>（binomial distribution）</p>
-<ul>
-<li>$n$ 次抛正面向上概率为 $p$ 的硬币，有 $k$ 次正面向上的概率</li>
-<li>$\mathrm{Bn}(n, p)$ 分布情况：$C_n^k p^k (1-p)^{n-k}\quad(k=0,1,2,\cdots,n)$</li>
-</ul>
-<p><strong>期望值</strong>，可以视为“上帝视角”下的所有平行世界平均值，形象化模拟为积雪体积<br>$$\mathrm{E}[X]=\sum_k k\mathrm{P}(X=k)$$<br>$$\mathrm{E}[g(X)]=\sum_k g(k)\mathrm{P}(X=k)$$</p>
-<p>满足独立性的情况下，多随机变量乘积的期望值 = 各随机变量期望值的乘积<br>$$如果X与Y独立，\mathrm{E}[XY]=\mathrm{E}[X]\mathrm{E}[Y]$$</p>
-<p>期望值可能存在不存在的情况，包括无穷大、无穷小和其他不收敛情况</p>
-<p><strong>方差与标准差</strong></p>
-<p>方差（此处并非传统课本上讲的方差的无偏估计版本，求平均时分母不为 $n-1$）</p>
-<p>$$\mathrm{V}[X]\equiv\mathrm{E}[(X-\mu)^2]\qquad其中\mu\equiv\mathrm{E}[X]$$</p>
-<p>标准差<br>$$\sigma\equiv\sqrt{\mathrm{V}[X]}$$</p>
-<p>各随机变量独立时，和的方差等于方差的和<br>$$\mathrm{V}[X+Y] = \mathrm{V}[X] + \mathrm{V}[Y]$$</p>
-<p>平方的期望值与方差<br>$$\mathrm{V}[X] = \mathrm{E}[X²] - \mathrm{E}[X]²$$<br>$$\mathrm{E}[X]^2 = \mu^2+\sigma^2\qquad其中\mu\equiv\mathrm{E}[X],\sigma^2\equiv\mathrm{V}[X]$$</p>
-<p><strong>独立同分布</strong></p>
-<p>当一批随机变量符合 1)每一个随机变量的边缘分布相同 2)任意相互独立，则为独立同分布（i.i.d.）</p>
-<h2 id="大数定律"><a href="#大数定律" class="headerlink" title="大数定律"></a>大数定律</h2><p>独立同分布的一批随机变量的平均值 $Z\equiv(\sum_i X_i) / n$</p>
-<p>计算得 $\mathrm{E}[Z]=\mu$，$\mathrm{V}[Z] = \sigma^2/n$</p>
-<p>从“上帝视角”来看，每个随机变量在各个世界的平均值都是 $\mu$，所以每个世界的一批随机变量平均值的期望也是 $\mu$</p>
-<p>当随机变量个数 $n$ 无限增加时，方差 $\mathrm{E}[Z]$ 趋近于0，这时 $Z$ 值也就收敛于 $\mu$</p>
-<p><strong>条件期望</strong><br>$$\mathrm{E}[Y|X=a]\equiv\sum_b b\mathrm{P}(Y=b|X=a)$$</p>
-<p><strong>条件方差</strong><br>$$\mathrm{V}[Y|X=a]\equiv\mathrm{E}[(Y-\mu(a))^2|X=a]\quad其中\mathrm{E}[Y|X=a]\equiv\mu(a)$$</p>
-<h2 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h2><ul>
-<li>已知条件分布 $\mathrm{P}(Y=b|X=a)$，尝试编写函数 $g(X)$，让输入 $X$ 后的估计值 $\hat{Y}$ ，使得平方误差期望值 $\mathrm{E}[(Y-\hat{Y})^2]$ 尽量小。</li>
-<li>答案就是应该使 $g(a) = \mathrm{E}[Y|X=a]$</li>
-<li>上帝视角：铺平 $X$ 相同的区域的 $Y$ 值</li>
-</ul>
-<h1 id="第4章-连续值的概率分布"><a href="#第4章-连续值的概率分布" class="headerlink" title="第4章 连续值的概率分布"></a>第4章 连续值的概率分布</h1><blockquote>
-<ul>
-<li>A：我试着用正态分布去拟合数据，不过，用的这款统计软件好像有点问题啊。</li>
-<li>B：怎么了？</li>
-<li>A：它生成的正态分布图的高竟然超过了1,。概率怎么可能是1.7呢？概率为1就表示事件必然发生，不可能比这还要大呀。</li>
-<li>B：嗯……依然是槽点太多不知道该说什么才好了。你还是重新学习一下概率密度函数的概念吧。</li>
-</ul>
-</blockquote>
-<h2 id="实数值随机变量"><a href="#实数值随机变量" class="headerlink" title="实数值随机变量"></a>实数值随机变量</h2><p>上帝视角：在一条色带上用油墨自左向右打印渐变色，最终消耗油墨总量为单位值，打印油墨的浓淡就是概率密度函数，而某一时刻累积消耗量就是累积分布函数</p>
-<p><strong>累积分布函数</strong><br>$$F_X(a)\equiv\mathrm{P}(X\le a)$$</p>
-<p><strong>概率密度函数</strong><br>$$f_X(x)\equiv F_X^\prime(x)=\frac{\mathrm{d}F_X(x)}{\mathrm{d}x}$$</p>
-<p>一些性质<br>$$\mathrm{P}(a\le X\le b)=\int_a^b f_X(x)\mathrm{d}x$$<br>$$\int_{-\infty}^{\infty}f_X(x)\mathrm{d}x=1$$</p>
-<p>任意一点的概率为0<br>$$\mathrm{P}(X=a) = 0$$</p>
-<p><strong>均匀分布</strong>：在一个区间$[\alpha,\beta]$范围内均匀分布<br>$$f_X(x)=\begin{cases}<br>\frac{1}{\beta-\alpha}&amp;(\alpha\le x \le \beta)\<br>0&amp;(x&lt;\alpha\ or\ x&gt;\beta)<br>\end{cases}$$</p>
-<p><strong>概率密度函数的变量变换</strong></p>
-<ul>
-<li>随机变量增大n倍，会让对应部分概率密度函数缩小n倍</li>
-<li>上帝视角：类似对打印好的渐变色带进行局部或整体的拉伸</li>
-</ul>
-<p><strong>联合分布</strong></p>
-<p>两个实数值随机变量 $X$ 与 $Y$ ，组成二元向量 $W\equiv(X,Y)$ 的概率分布，称为联合分布</p>
-<p>$$\mathrm{P}(a\le X\le b,c\le Y\le d)=\int_c^d\int_a^bf_{XY}(x,y)\mathrm{d}x\mathrm{d}y$$<br>$$\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f_{XY}(x,y)\mathrm{d}x\mathrm{d}y = 1$$</p>
-<p>上帝视角为：一个平面上用油墨进行打印，最终消耗油墨总量为1</p>
-<p><strong>边缘概率</strong><br>$$f_X(x) =  \int_{-∞}^{∞} f_{X,Y}(x,y) \mathrm{d}y$$<br>$$f_Y(x) =  \int_{-∞}^{∞} f_{X,Y}(x,y)\mathrm{d}x$$<br>上帝视角：边缘概率密度，即按照x轴或y轴平行竖直截面面积</p>
-<p><strong>条件分布</strong><br>$$f_{Y|X}(b|a) = \frac{f_{X,Y}(a,b)}{f_X(a)}$$<br>上帝视角：在 X=a 处进行截面，将截面内的分布扩大到累积量为1，即为条件分布</p>
-<p><strong>贝叶斯公式</strong><br>$$f_{X|Y}(a|b)=\frac{f_{Y|X}(b|a)f_X(a)}{\int_{-\infty}^{\infty}f_{Y|X}(b|x)f_X(x)\mathrm{d}x}$$</p>
-<p><strong>独立性</strong><br>$$\forall a,b:\qquad f_{Y|X}(b|a) = f_Y(b)$$<br>上式始终成立，才能称 $X$ 与 $Y$ 独立</p>
-<p><strong>任意区域概率</strong></p>
-<p>除了前面随机变量 $(X,Y)$ 形成的矩形区域，也可以是平面上任意区域形成的柱型体积，作为这一区域的概率</p>
-<p><strong>均匀分布</strong></p>
-<p>对于随机变量 $(X,Y)$ 构成平面上的某个特定区域 $C$（面积有限），可以形成均匀分布：<br>$$f_{X,Y}(x,y)=\begin{cases}<br>1/C的面积&amp;((x,y)位于C内)\<br>0&amp;((x,y)位于C外)<br>\end{cases}$$</p>
-<h2 id="联合分布的变量变换"><a href="#联合分布的变量变换" class="headerlink" title="联合分布的变量变换"></a>联合分布的变量变换</h2><p><strong>横向拉伸</strong>：$Z\equiv 2X, W\equiv Y$<br>$$f_{Z,W}(z,w) = \frac{1}{2}f_{X,Y}(z/2, w)$$<br><strong>纵向拉伸</strong>：$Z≡X, W=1.5Y$<br>$$f_{Z,W}(z,w) = \frac{1}{1.5}f_{X,Y}(z, w/1.5)$$<br><strong>横向纵向同时拉伸</strong>：$Z≡2X, W=1.5Y$<br>$$f_{Z,W}(z,w) = \frac{1}{3}f_{X,Y}(z/2, w/1.5)$$<br><strong>翻转</strong>：$Z≡-2X, W=1.5Y$<br>$$f_{Z,W}(z,w) = \frac{1}{3}*f_{X,Y}(-z/2, w/1.5)$$<br><strong>斜向缩放</strong>：$Z≡3X+Y, W≡X+2Y$</p>
-<p>变换方程组为$X=(2Z-W)/5, Y=(3W-Z)/5$，计算出面积扩大到原来5倍<br>$$f_{Z,W}(z,w) = 1/5*f_{X,Y}((2z-w)/5, (3w-z)/5)$$</p>
-<p><strong>线性变换</strong>：$Z≡aX+bY, W≡cX+dY$</p>
-<p>改写为$\begin{pmatrix}Z\W\end{pmatrix}=A\begin{pmatrix}X\Y\end{pmatrix},A\equiv\begin{pmatrix}a&amp;b\c&amp;d\end{pmatrix}$</p>
-<p>$$f_{Z,W}(z,w)=\frac{1}{|\det A|}f_{X,Y}(x,y)，其中\begin{pmatrix}x\y\end{pmatrix}\equiv A^{-1}\begin{pmatrix}z\w\end{pmatrix}$$</p>
-<p><strong>具有曲率的变换</strong>：$Z≡Xe^Y, W≡Y$<br>$$f_{Z,W}(z,w) = \frac{1}{e^w}f_{X,Y}(ze^{-w}, w)$$</p>
-<p><strong>一一对应的非线性变换</strong>：$Z≡g(X,Y), W≡h(X,Y)$</p>
-<p>雅克比式（Jacobian）：<br>$$\frac{\partial(z,w)}{\partial(x,y)}\equiv\det\begin{pmatrix}<br>\frac{\partial z}{\partial x} &amp; \frac{\partial z}{\partial y}\<br>\frac{\partial w}{\partial x} &amp; \frac{\partial w}{\partial y}\<br>\end{pmatrix}$$<br>$$f_{Z,W}(z,w) = \frac{1}{|∂(z,w)/∂(x,y)|}f_{X,Y}(x,y)$$</p>
-<p>也可以扩展到多变量情况</p>
-<p><strong>期望值、方差与标准差</strong></p>
-<p>与离散值定义一致，不过需要变换为积分形式（略）</p>
-<h2 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h2><p><strong>标准正态分布（标准高斯分布）</strong><br>$$f(z) = \frac{1}{\sqrt{2\pi}}\exp(\frac{-z^2}{2})$$</p>
-<p>期望 $\mathrm{E}[Z]=0$，方差 $\mathrm{V}[Z]=1$</p>
-<p>通过高斯积分算得$\sqrt{2\pi}$，使用该系数使得积分为1；exp内部系数 $1/2$ 使得方差为1</p>
-<p><strong>一般正态分布</strong></p>
-<p>对标准正态分布进行缩放+平移：$X≡σZ+μ$</p>
-<p>期望 $\mathrm{E}[X]=μ$，方差 $\mathrm{V}[X]=σ^2$</p>
-<p>则称为 $X$ 符合期望为 $μ$，方差为 $σ^2$ 的正态分布，记作 $X\sim \mathrm{N}(μ, σ^2)$</p>
-<p>如果随机变量 $X$ 的概率密度函数符合以下形式，则必然遵从正态分布：<br>$$f_X(x) = \Box\cdot\exp(x的二次式)\qquad（\Box为不含x的常量，二次式为ax²+bx+c形式）$$</p>
-<p>独立的多个符合正态分布随机变量的线性加和，仍然是正态分布</p>
-<p><strong>中心极限定理</strong></p>
-<p>n个独立同分布i.i.d.的随机变量 $X_1,\cdots,X_n$，假设他们的期望值均为0，方差均为$σ^2$</p>
-<p>简单累加 $X_1+\cdots+X_n$ 的方差 $nσ^2$ 随着 $n\to\infty$ 会趋向$\infty$</p>
-<p>设 $W_n$ 如下，随着 $n\to\infty$，它将依分布收敛于 $\mathrm{N}(0,1)$：<br>$$W_n\equiv\frac{X_1+\cdots+X_n}{\sqrt{n}\sigma}$$</p>
-<p>如果期望值不为0，则改写如下，仍然是收敛为 $\mathrm{N}(0,1)$ 标准正态分布：<br>$$W_n\equiv\frac{((X_1-\mu)+\cdots+(X_n-\mu)}{\sqrt{n}\sigma}$$</p>
-<h1 id="第5章-协方差矩阵、多元正态分布与椭圆"><a href="#第5章-协方差矩阵、多元正态分布与椭圆" class="headerlink" title="第5章 协方差矩阵、多元正态分布与椭圆"></a>第5章 协方差矩阵、多元正态分布与椭圆</h1><blockquote>
-<ul>
-<li>A：已收到去年入学考试成绩数据，我便马上分析了一下，发现使用的统计软件有问题啊。</li>
-<li>B：怎么了？</li>
-<li>A：这个软件预测在模拟考中考出700分的人实际考试时得分为650分。以防万一又反过来拿650分作为实际考试成绩试了一下，结果得出的模拟考分数只有600。按理说应该得到700分才对吧？</li>
-<li>B：嗯……依然是槽点太多不知道该说什么才好了。你还是重新学习一下多元正态分布的性质吧。</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>PS：下文中“椭圆”一般代表对椭圆、椭球、高维椭球等的统称</p>
-</blockquote>
-<h2 id="协方差与相关系数"><a href="#协方差与相关系数" class="headerlink" title="协方差与相关系数"></a>协方差与相关系数</h2><p>随机变量 $X,Y$ 的期望值分别是 $\mu,v$，则 $X$ 与 $Y$ 的协方差定义为：<br>$$\mathrm{Cov}[X,Y] \equiv \mathrm{E}[(X-μ)(Y-v)]$$</p>
-<p>协方差&gt;0 称X与Y正相关，协方差&lt;0 称X与Y负相关，协方差=0 称X与Y不相关</p>
-<p>随机变量X和Y相互独立，则不相关；反之不行。</p>
-<p><strong>相关系数</strong></p>
-<p>为了避免X和Y的比例变换影响协方差，则对其进行标准化，对X和Y分别除以各自的标准差，得到相关系数：</p>
-<p>$$ρ_{XY} = \frac{\mathrm{Cov}[X,Y]}{\sqrt{\mathrm{V}[X]}\sqrt{\mathrm{V}[Y]}}$$</p>
-<p>相关系数取值为-1 ~ +1；相关系数越接近+1，则(X,Y)越趋向于左下右上方向的直线；相关系数越接近-1，则(X,Y)越趋向于左上右下方向的直线</p>
-<p>协方差与相关系数都有局限性，不能完全代表数据情况</p>
-<h2 id="协方差矩阵"><a href="#协方差矩阵" class="headerlink" title="协方差矩阵"></a>协方差矩阵</h2><p>对于随机变量 $X_1,\cdots,X_n$，其中两两的方差或协方差可以构成一个矩阵，被称为协方差矩阵，或方差-协方差矩阵，该矩阵为对称矩阵：</p>
-<p>$$\begin{pmatrix}<br>\mathrm{V}[X_1]&amp;\mathrm{Cov}[X_1,X_2]&amp;\cdots&amp;\mathrm{Cov}[X_1,X_n]\<br>\mathrm{Cov}[X_2,X_1]&amp;\mathrm{V}[X_2]&amp;\cdots&amp;\mathrm{Cov}[X_2,X_n]\<br>\vdots&amp;\vdots&amp;\ddots&amp;\vdots\<br>\mathrm{Cov}[X_n,X_1]&amp;\mathrm{Cov}[X_n,X_2]&amp;\cdots&amp;\mathrm{V}[X_n]\<br>\end{pmatrix}$$</p>
-<p><strong>向量值随机变量与协方差矩阵</strong></p>
-<p>将一系列的随机变量，列为一个列向量，称为向量值随机变量：<br>$$\boldsymbol{X}\equiv\begin{pmatrix} X_1\X_2\\vdots\X_n \end{pmatrix}$$</p>
-<p>则协方差矩阵可以表示为：（这里仍然用 $\mathrm{V}$ 符号，也有书用 $\Sigma$ 或 $\mathrm{Cov}$ 符号）<br>$$\mathrm{V}[\boldsymbol{X}]=\mathrm{E}[(\boldsymbol{X}-\boldsymbol{\mu})(\boldsymbol{X}-\boldsymbol{\mu})^T]\qquad其中\boldsymbol{\mu}\equiv\mathrm{E}[\boldsymbol{X}]$$</p>
-<p><strong>向量值随机变量的运算</strong></p>
-<p>设 $\boldsymbol{X}$ 为n元随机列向量，或者叫n元向量值随机变量<br>$$\mathrm{E}[\boldsymbol{X}]\equiv<br>\begin{pmatrix}<br>\mathrm{E}[X_1]\ \mathrm{E}[X_2]\ \vdots\ \mathrm{E}[X_n]\<br>\end{pmatrix}$$<br>$$\mathrm{E}[c\boldsymbol{X}] = c\mathrm{E}[\boldsymbol{X}] \quad（c为数值常量）$$<br>$$\mathrm{E}[\boldsymbol{X}+\boldsymbol{a}] = \mathrm{E}[\boldsymbol{X}]+\boldsymbol{a} \quad（\boldsymbol{a}为相同维度的固定向量）$$<br>$$\mathrm{E}[\boldsymbol{X}+\boldsymbol{Y}] = \mathrm{E}[\boldsymbol{X}]+\mathrm{E}[\boldsymbol{Y}]\quad (\boldsymbol{Y}为另外一个向量值随机变量)$$<br>$$\mathrm{E}[\boldsymbol{a}\cdot\boldsymbol{X}] = \mathrm{E}[\boldsymbol{a}^T\boldsymbol{X}] = \boldsymbol{a}^T\mathrm{E}[\boldsymbol{X}] = \boldsymbol{a}\cdot\mathrm{E}[\boldsymbol{X}]\quad（\boldsymbol{a}为相同维度的固定向量）$$<br>$$\mathrm{E}[A\boldsymbol{X}] = A\mathrm{E}[\boldsymbol{X}]\quad（A为维度匹配的固定值矩阵）$$</p>
-<p>设矩阵 $R$ 由多个向量值随机变量组成：<br>$$R=\Bigg(\begin{array}{c|c|c}<br>\boldsymbol{R}_1&amp;\cdots&amp;\boldsymbol{R}_k<br>\end{array}\Bigg)$$<br>$$\mathrm{E}[AR]=A\mathrm{E}[R],\ \mathrm{E}[RB]=\mathrm{E}[R]B,\ \mathrm{E}[ARB]=A\mathrm{E}[R]B\quad（A、B为固定值矩阵）$$<br>$$\mathrm{E}[cR]=c\mathrm{E}[R],\<br>\mathrm{E}[R+A]=\mathrm{E}[R]+A,\<br>\mathrm{E}[R+S]=\mathrm{E}[R]+\mathrm{E}[S],\<br>\mathrm{E}[R^T]=\mathrm{E}[R]^T$$</p>
-<p>引入向量值随机变量的概率与密度函数定义：<br>$$f_\boldsymbol{X}(\boldsymbol{x})\equiv f_{X_1,\cdots,X_n}(x_1,\cdots,x_n), 其中\boldsymbol{x}\equiv\begin{pmatrix} x_1\\vdots\x_n \end{pmatrix}$$</p>
-<p>则有向量值随机变量的概率定义（书写方式为理工领域的省略方式，严格的需要重积分）：<br>$$\mathrm{P}(\boldsymbol{X}处于某一范围D内)=\int_Df_\boldsymbol{X}(\boldsymbol{x})\mathrm{d}\boldsymbol{x}$$</p>
-<p>向量值随机变量的期望值也可简写为：（其中 $\boldsymbol{R}^n$ 表示n元实向量空间）<br>$$\mathrm{E}[\boldsymbol{X}]=\int_{\boldsymbol{R}^n}\boldsymbol{x}f_\boldsymbol{X}(\boldsymbol{x})\mathrm{d}\boldsymbol{x}$$<br>$$\mathrm{E}[g(\boldsymbol{X})]=\int_{\boldsymbol{R}^n}g(\boldsymbol{x})f_\boldsymbol{X}(\boldsymbol{x})\mathrm{d}\boldsymbol{x}$$</p>
-<p>向量值随机变量的独立性：<br>$$\boldsymbol{X},\boldsymbol{Y},\boldsymbol{Z}独立 \xLeftrightarrow{等价}\forall\boldsymbol{x,y,z}:\ f_{\boldsymbol{X,Y,Z}}(\boldsymbol{x,y,z})=f_{\boldsymbol{X}}(\boldsymbol{x})f_{\boldsymbol{Y}}(\boldsymbol{y})f_{\boldsymbol{Z}}(\boldsymbol{z})$$</p>
-<p>还有很多实数值和离散值的公式，也可推广到向量值</p>
-<p><strong>协方差矩阵的变量变换</strong><br>$$\mathrm{V}[a\boldsymbol{X}]=a^2\mathrm{V}[\boldsymbol{X}]\quad(a为数值常量)$$<br>$$\mathrm{V}[\boldsymbol{a}^T\boldsymbol{X}]=\boldsymbol{a}^T\mathrm{V}[\boldsymbol{X}]\boldsymbol{a}\quad(\boldsymbol{a}为固定值列向量)$$<br>$$\mathrm{V}[A^T\boldsymbol{X}]=A^T\mathrm{V}[\boldsymbol{X}]A\quad(A为固定值矩阵)$$<br>$$\mathrm{V}[\boldsymbol{X}+\boldsymbol{a}]=\mathrm{V}[\boldsymbol{X}]$$<br>$$\mathrm{V}[\boldsymbol{X+Y}]=\mathrm{V}[\boldsymbol{X}]+\mathrm{V}[\boldsymbol{Y}]$$</p>
-<p><strong>任意方向的发散程度</strong></p>
-<p>协方差矩阵 $\mathrm{V}[\boldsymbol{X}]$ 的对角线部分为方差 $\mathrm{V}[X_1],\mathrm{V}[X_2],\cdots,\mathrm{V}[X_n]$，他们分别表示自己方向上的发散程度</p>
-<p>对于任意方向（用单位长度的向量 $\boldsymbol{u}$ 表示）， 则 $\boldsymbol{X}$ 向 $\boldsymbol{u}$ 投影得到 $Z$ （$Z$为实数值随机向量），即：<br>$$Z= \boldsymbol{u}^T\boldsymbol{X} = |\boldsymbol{X}|\cos\theta$$</p>
-<p>则在 $\boldsymbol{u}$ 方向上的发散程度为：<br>$$\mathrm{V}[Z] = \mathrm{V}[\boldsymbol{u}^T\boldsymbol{X}] = \boldsymbol{u}^T\mathrm{V}[\boldsymbol{X}]\boldsymbol{u}$$</p>
-<h2 id="多元正态分布"><a href="#多元正态分布" class="headerlink" title="多元正态分布"></a>多元正态分布</h2><p><strong>多元标准正态分布</strong></p>
-<p>由n个遵从标准正态分布的i.i.d.随机变量组成的列向量 $\boldsymbol{Z}\equiv(Z_1,\cdots,Z_n)^T$</p>
-<p>$\boldsymbol{Z}$ 的概率密度函数为：<br>$$f_\boldsymbol{Z}(\boldsymbol{z})=d\exp(-\frac{1}{2}|\boldsymbol{z}|^2)\qquad(d为使总概率为1的常量)$$</p>
-<p>期望与协方差矩阵：<br>$$\mathrm{E}[\boldsymbol{Z}]=\boldsymbol{o}\qquad(\boldsymbol{o}表示零向量)$$<br>$$\mathrm{V}[\boldsymbol{Z}]=\begin{pmatrix}<br>1&amp;0&amp;\cdots&amp;0\0&amp;1&amp;\cdots&amp;0\\vdots&amp;\vdots&amp;\ddots&amp;\vdots\0&amp;0&amp;\cdots&amp;1<br>\end{pmatrix}<br>=I\qquad(I表示单位矩阵)$$</p>
-<p>综上，记作 $\boldsymbol{Z}\sim\mathrm{N}(\boldsymbol{o},I)$ ，即遵从n元标准正态分布</p>
-<p><strong>多元一般正态分布</strong></p>
-<p>对n元标准正态分布 $\mathrm{N}(\boldsymbol{o},I)$ 进行变换：</p>
-<p><strong>缩放与位移</strong>：设 $\boldsymbol{X}=\sigma\boldsymbol{Z}+\boldsymbol{\mu}$，则变换为<br>$$\mathrm{E}[\boldsymbol{X}]=\boldsymbol{\mu}，\mathrm{V}[\boldsymbol{X}]=\sigma^2 I$$</p>
-<p><strong>纵向缩放与横向缩放</strong>：设 $\boldsymbol{X}=(\sigma_1Z_1,\cdots,\sigma_n Z_n)^T+\boldsymbol{\mu}$，则变换为：<br>$$\mathrm{E}[\boldsymbol{X}]=\boldsymbol{\mu}，\mathrm{V}[\boldsymbol{X}] = D^2=\mathrm{diag}(\sigma_1^2,\cdots,\sigma_n^2)$$</p>
-<p>可以记为 $\mathrm{N}(\boldsymbol{\mu}, D^2)$ 的多元正态分布</p>
-<p><strong>旋转变换</strong>：</p>
-<p>设 $\boldsymbol{X}\equiv D\boldsymbol{Z}$，则 $\boldsymbol{X}\sim\mathrm{N}(\boldsymbol{o},D^2)$，再乘上一个正交矩阵 $Q$（正交矩阵为满足 $Q^TQ=I$），得到 $\boldsymbol{Y}\equiv Q\boldsymbol{X}$，则：<br>$$\mathrm{E}[\boldsymbol{Y}]=Q\mathrm{E}[\boldsymbol{X}]=\boldsymbol{o}$$<br>$$\mathrm{V}[\boldsymbol{Y}]=Q\mathrm{V}[\boldsymbol{X}]Q^T=QD^2Q^T$$</p>
-<p>记 $V=QD^2Q^T$，给定 $V$ 的情况下，可以使用一种通过对称矩阵和正交矩阵实现矩阵对角化的方法来计算 $Q$ 和 $D$。</p>
-<p>以上称之为遵从多元正态分布 $\mathrm{N}(\boldsymbol{o},V)$</p>
-<p>另外也可以最后加上位移 $\boldsymbol{\mu}$ 而成为一般的多元正态分布 $\mathrm{N}(\boldsymbol{\mu}, V)$</p>
-<p><strong>独立性</strong></p>
-<p>符合正态分布的多个随机变量构成的向量值随机变量，并不一定遵从多元正态分布。</p>
-<p>符合正态分布且独立的多个随机变量构成的向量值随机变量，必定遵从多元正态分布。</p>
-<p><strong>多元正态分布的概率密度函数</strong></p>
-<p>遵从n元标准正态分布 $\mathrm{N}(\boldsymbol{o},I)$ 的 $\boldsymbol{Z}$，其概率密度函数为：<br>$$f_\boldsymbol{Z}(\boldsymbol{z}) = \frac{1}{\sqrt{2\pi}^n}\exp(-\frac{1}{2}|\boldsymbol{z}|^2)$$</p>
-<p>可以推导出多元一般正态分布 $\boldsymbol{X}\sim\mathrm{N}(\boldsymbol{\mu}, V)$ 的概率密度函数为：<br>$$f_\boldsymbol{X}(\boldsymbol{x}) = \frac{1}{\sqrt{(2\pi)^n\mathrm{det}V}}\exp(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^TV^{-1}(\boldsymbol{x}-\boldsymbol{\mu}))$$</p>
-<p>可以抽象为：$f(\boldsymbol{x})=\Box\exp(\boldsymbol{x}的元素的二次式)$（$\Box$为不含 $\boldsymbol{x}$ 的常量）</p>
-<p>反之，如果 $\boldsymbol{X}$ 的概率密度函数符合上式，则其分布就是一种正态分布</p>
-<h2 id="多元正态分布性质"><a href="#多元正态分布性质" class="headerlink" title="多元正态分布性质"></a>多元正态分布性质</h2><ul>
-<li>可以由期望值向量与协方差矩阵确定具体分布</li>
-<li>如果各随机变量不相关，则一定独立（非正态分布则不一定）</li>
-<li>多元正态分布在做线性边缘后仍然是多元正态分布</li>
-</ul>
-<h2 id="截面（条件分布）"><a href="#截面（条件分布）" class="headerlink" title="截面（条件分布）"></a>截面（条件分布）</h2><p><strong>“多元正态分布的条件分布也是多元正态分布”</strong></p>
-<p>假设 $\boldsymbol{X}\equiv(X_1,X_2,\cdots,X_n)^T$遵从n元正态分布在给定条件 $X_1=c$ 条件下，条件分布的概率密度函数为：</p>
-<p>$$f_{\tilde\boldsymbol{X}|X_1}(x_2,\cdots,x_n|c)$$</p>
-<p>可以推导出符合 $\Box\exp(\tilde\boldsymbol{x}的二次式)$，因此遵从n-1元正态分布</p>
-<p>从图像角度来看，n=3时，概率密度函数的等值面是椭球体，而椭球体的截面也是椭圆</p>
-<p>PS：截面可能偏离椭球主轴，所以截面的中心点不一定在原分布的主轴上</p>
-<p>一般化为：<br>$$\begin{pmatrix} \boldsymbol{X}\\boldsymbol{Y}\end{pmatrix}\sim<br>\mathrm{N}\Big(<br>  \begin{pmatrix} \boldsymbol{\mu}\\boldsymbol{v} \end{pmatrix},<br>  \begin{pmatrix} 甲&amp;乙\乙^T&amp;丁 \end{pmatrix}<br>\Big)$$<br>则给定 $\boldsymbol{X}=\boldsymbol{c}$，$\boldsymbol{Y}$ 的条件分布为 $\mathrm{N}(\tilde\boldsymbol{v},\tilde\boldsymbol{W})$：<br>$$\tilde\boldsymbol{v}\equiv\boldsymbol{v}+乙^T甲^{-1}(\boldsymbol{c}-\boldsymbol\mu)$$<br>$$\tilde\boldsymbol{W}\equiv丁-乙^T甲^{-1}乙$$</p>
-<h2 id="投影（边缘分布）"><a href="#投影（边缘分布）" class="headerlink" title="投影（边缘分布）"></a>投影（边缘分布）</h2><p><strong>“多元正态分布的边缘分布也是多元正态分布”</strong></p>
-<p>从图像角度来看，n=3时，椭球体的投影也是一个椭圆</p>
-<p>边缘分布的期望值向量和协方差矩阵，就是从原期望值向量和协方差矩阵中去除掉投影的项目位置所对应的行与列。例如一个3元正态分布向第1维度投影：（$\boldsymbol{X}\equiv(X_1,X_2,X_3)^T$，$\tilde\boldsymbol{X}\equiv(X_2,X_3)^T$）</p>
-<p>$$\mathrm{E}[\boldsymbol{X}]=<br>\begin{pmatrix} \mathrm{E}[X_1]\ \hline \mathrm{E}[X_2]\ \mathrm{E}[X_3] \end{pmatrix}<br>=\begin{pmatrix} *\ \hline \ \mathrm{E}[\tilde\boldsymbol{X}]\ \end{pmatrix}$$</p>
-<p>$$<br>\mathrm{V}[\boldsymbol{X}]=<br>\Bigg(\begin{array}{c|cc}<br>\mathrm{V}[X_1]&amp;\mathrm{Cov}[X_1,X_2]&amp;\mathrm{Cov}[X_1,X_3]\<br>\hline<br>\mathrm{Cov}[X_2,X_1]&amp;\mathrm{V}[X_2]&amp;\mathrm{Cov}[X_2,X_3]\<br>\mathrm{Cov}[X_3,X_1]&amp;\mathrm{Cov}[X_3,X_2]&amp;\mathrm{V}[X_3]\<br>\end{array}\Bigg)=<br>\Bigg(\begin{array}{c|cc}<br><em>&amp;</em>&amp;<em>\<br>\hline
-</em>&amp;&amp;\<br>*&amp;&amp;\mathrm{V}[\tilde\boldsymbol{X}]\<br>\end{array}\Bigg)<br>$$</p>
-<h2 id="卡方分布"><a href="#卡方分布" class="headerlink" title="卡方分布"></a>卡方分布</h2><p>$\boldsymbol{Z}\sim \mathrm{N}(\boldsymbol{o},I)$ 的长度 $|\boldsymbol{Z}|$ 的概率密度函数并非随长度增加而下降，而是根据元数 $n$ 的不同而决定 </p>
-<p>设 $n$ 元标准正态分布的长度的平方的分布为自由度为 $n$ 的 $\chi^2$ 分布（卡方分布）</p>
-<p>$\chi^2$ 分布的概率密度函数为：（其中 $\Gamma$ 代表 $\Gamma$函数）<br>$$f(x)=\begin{cases}<br>\frac{1}{2\Gamma(n/2)}(\frac{n}{2})^{n/2-1}\exp(-\frac{x}{2})&amp;(x\ge 0)\<br>0&amp;(x&lt;0)\<br>\end{cases}$$</p>
-<p>当 $n=2$ 时，$\chi^2$ 分布概率密度函数为 $f(x)=(1/2)\exp(-x/2)$，这与普通指数函数形式相似，在后文中可以用来生成遵从正态分布的伪随机数</p>
-<h2 id="协方差矩阵与椭圆的关系"><a href="#协方差矩阵与椭圆的关系" class="headerlink" title="协方差矩阵与椭圆的关系"></a>协方差矩阵与椭圆的关系</h2><p>一般分布的图像不一定是椭圆（或者椭球、超椭球体，下同），但仍然可以获得其基准椭圆</p>
-<p>对向量值随机变量 $\boldsymbol{X}$，求 $\boldsymbol{\mu}≡\mathrm{E}[\boldsymbol{X}]$ 和 $V≡\mathrm{V}[\boldsymbol{X}]$，然后根据多元正态分布 $\mathrm{N}(\boldsymbol{\mu}, V)$ 绘制对应的基准椭圆</p>
-<p><strong>（实例一）单位矩阵与圆</strong></p>
-<p>如果协方差矩阵 $V$ 是单位矩阵 $I$，根据先前计算，在任意方向 $\boldsymbol{u}$ 上的方差均为1（也就是标准差为1）</p>
-<p>因此可以构建一个以 $\mathrm{E}[\boldsymbol{X}]$ 为中心，半径为1的圆（n=2时是圆，n=3时是球体，n&gt;3时是超球体）</p>
-<p>PS：这个圆无法覆盖大部分可取的值，因为只是圆半径只是标准差</p>
-<p>PPS： $\boldsymbol{X}$ 的概率密度函数的等高线并不一定就是圆</p>
-<p><strong>（实例二）对角矩阵与椭圆</strong></p>
-<p>如果协方差矩阵 $V$ 是对角阵：$\mathrm{V}[\boldsymbol{X}]=\mathrm{diag}(v_1, v_2,\cdots,v_n)$</p>
-<p>可以通过各方向变换，让 $V$ 变为单位矩阵，绘制基准圆，然后再反变换的方式，变成基准椭圆</p>
-<p>其各个方向的半径为 $\sqrt{v_1},\sqrt{v_2},\cdots,\sqrt{v_n}$</p>
-<p>任意方向发散程度与标准差的匹配仍然符合，即任意方向上的标准差，等于这个椭圆在这个方向上的投影尺寸半径</p>
-<p><strong>（实例三）一般矩阵与倾斜的椭圆</strong></p>
-<p>将一般矩阵进行空间变换为对角阵，绘制基准椭圆，再变换回去</p>
-<p>可以推导出存在正交矩阵 $Q$，使得 $Q^TV[\boldsymbol{X}]Q$ 为对角阵 $\mathrm{diag}(\lambda_1,\lambda_2,\cdots,\lambda_n)$，则可以取 $A=Q^T$ 作为变换矩阵</p>
-<p>矩阵 $Q$ 中的每个特征向量 $\boldsymbol{q}_i$ 都与椭圆的主轴同向，且椭圆各主轴半径为$\sqrt{\lambda_i}$</p>
-<p>$$\Huge{协方差矩阵就是椭圆}$$</p>
-<p>协方差矩阵局限性：当观察3个以上随机变量时，协方差矩阵只是看到两两之间的关系，但无法发掘高阶相关</p>
-<h1 id="第6章-估计与检验"><a href="#第6章-估计与检验" class="headerlink" title="第6章 估计与检验"></a>第6章 估计与检验</h1><h2 id="估计的概念"><a href="#估计的概念" class="headerlink" title="估计的概念"></a>估计的概念</h2><p>例如抛硬币，正面向上概率为 $p$，而且i.i.d.，抛 $n$ 次，会得到 $n$ 个随机变量 $X_1,X_2,\cdots,X_n$ 的观测值，此时正面向上的比例，称之为“经验分布”</p>
-<p>上帝视角：平行世界整体 $\Omega$ 中的每个世界 $\omega$ 都会形成自己对 $X_1,X_2,\cdots,X_n$ 的观测结果，整体 $\Omega$ 内统计每个随机变量都是符合正面 $p$ 与反面 $1-p$ 比例的，但每个世界 $\omega$ 内只能观察到自己的部分</p>
-<ul>
-<li>假定真实观测值与真实分布相关，切试图根据观测值来推测真实分布</li>
-<li>由于观测值取值随机，因此由他们计算得到的估计值也是随机值</li>
-<li>估计方式多种多样，且不同估计方式得到的估计值也有所不同</li>
-</ul>
-<p>非参数估计</p>
-<ul>
-<li>没有给出分布的具体函数形式的问题</li>
-</ul>
-<p>参数估计（以下的讨论内容）</p>
-<ul>
-<li>期望值与方差不确定性但遵从正态分布的问题</li>
-</ul>
-<h2 id="估计方法"><a href="#估计方法" class="headerlink" title="估计方法"></a>估计方法</h2><p>假设 $X_1,X_2,\cdots,X_n$ 都遵从某一正态分布 $\mathrm{N}(\mu,\sigma^2)$，基于观测值来推算 $\mu$ 就属于一种参数估计，而推算 $\sigma^2$ 也是一种参数估计</p>
-<p>通常情况下，条件给出的数据分布可以由有限维度的向量值参数 $\theta≡(\theta_1,\cdots,\theta_k)$ 确定，需要做的就是通过观测值估计 $θ$ 的值（此处只讨论点估计）</p>
-<p>此后记 $X=(X_1,X_2,\cdots,X_n)$，$\theta$ 的估计值（或叫估计方法）记为 $\hat\theta$，或明确写为 $\hat\theta(X)$ 来表示与 $X$ 相关</p>
-<p><strong>如何评价一种估计方法 $\hat\theta$ ？</strong></p>
-<p>选择最佳估计量的评价基准多种多样，常用的比如平方误差的期望：<br>$$R_{\hat\theta}(\theta) = \mathrm{E}[|\hat\theta(X)-\theta|^2]\qquad（其中X是随机值，\theta 为固定值）$$</p>
-<p>对于不同的正确答案 $θ$，平方误差期望值 $R_{\hat\theta}(\theta)$ 也不同</p>
-<p>一般来说无法找到一个在所有 $\theta$ 上均优于其他方法的评估方法，所以需要进行“多目标优化”</p>
-<p>设 $\check{x}_i$ 为 $X_i$ 的观测值，记 $\check{x}$ 为 $X$ 的观测值</p>
-<p><strong>（策略一) 减少候选项——最小方差无偏估计（UMVUE）</strong></p>
-<p>无偏性是一种常见的筛选条件<br>$$\forall\theta:\qquad \mathrm{E}[\hat\theta(X)] = \theta$$</p>
-<p>对于遵从正态分布的i.i.d.数据，使用观测值的平均值 $\bar{X}\equiv(X_1+\cdots+X_n)/n$ 来估计期望值 $\mu$ 就是 UMVUE</p>
-<p>而 $S^2≡\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X})^2$ 则是对方差 $\sigma^2$ 的UMVUE（一般来说，分母为 $(n-1)$ 可以称为无偏方差，而分母为 $n$ 的称为样本方差；但也有人将分母为 $(n-1)$ 的称之为样本方差）</p>
-<p><strong>（策略二）弱化最优定义——最大似然估计</strong></p>
-<p>不要求全能的最优解，只要求：</p>
-<ul>
-<li>一致性：样本容量 $n\to\infty$ 时，估计结果收敛于正确结果</li>
-<li>渐进有效性：样本容量 $n\to\infty$ 时，$n\mathrm{E}[(估计结果-正确答案)^2]$ 收敛于理论边界</li>
-</ul>
-<p>符合如上条件的最常见的估计方法就是最大似然估计</p>
-<p>最大似然估计（离散值），求使以下概率最大化的 $\theta$：（随后对数化便于计算）<br>$$\mathrm{P}(X_1=\check{x}_1,\cdots,X_n=\check{x}_n)$$<br>$$\log\mathrm{P}(X_1=\check{x}_1,\cdots,X_n=\check{x}_n)=\log\mathrm{P}(X_1=\check{x}_1)+\cdots+\log\mathrm{P}(X_n=\check{x}_n)$$</p>
-<p>最大似然估计（随机值），求使以下概率最大化的 $\theta$：（随后对数化便于计算）<br>$$f_{X_1,\cdots,X_n}(\check{x}_1,\cdots,\check{x}<em>n)$$<br>$$\log f</em>{X_1,\cdots,X_n}(\check{x}_1,\cdots,\check{x}<em>n)=\log f</em>{X_1}(\check{x}<em>1)+\cdots+\log f</em>{X_n}(\check{x}_n)$$</p>
-<p>最大似然估计相比UMVUE来说：</p>
-<ul>
-<li>可以通过简单计算求得</li>
-<li>对参数进行变换后估计结果依然符合要求，例如 $\sigma^2$ 的最大似然估计为 $\widehat{\sigma^2}$，那么 $\sigma$ 的最大似然估计则为 $\sqrt{\widehat{\sigma^2}}$</li>
-<li>一致性与渐进有效性可以通过适当假设条件得到，当样本容量极大时，两者几乎等价</li>
-</ul>
-<p>采用最大似然估计对上述问题进行求解，根据真实分布参数 $\theta$ 下观测到观测值 $\check{x}$ 的概率最大化</p>
-<p>可以求得 $\mu$ 的最大似然估计为 $\bar{\check{x}}$（观测值 $\check{x}_i$ 的平均值）</p>
-<p>求得 $\sigma^2$ 的最大似然估计为 $\frac{1}{n}\sum_{i=1}^{n}(\check{x}_i - \bar{\check{x}})^2$ （对比前面的无偏方差估计分母 $n-1$）</p>
-<p><strong>（策略三）以单一数值作为评价基准——贝叶斯估计</strong></p>
-<p>假定参数 $θ$ 也是一个随机变量，称之为先验分布，将 $X$ 视为给定 $θ$ 下的条件分布</p>
-<p>由推导可得，当 $\hat\theta=\mathrm{E}[\theta|X=\check{x}]$] 时，平均误差的条件期望 $\mathrm{E}[(\hat\theta-\theta)^2|X=\check{x}]$ 最小。但也可以不给出条件 $X=\check{x}$ 时的确定值 $\hat\theta$，而是给出 $X=\check{x}$ 时 $\theta$ 的条件分布，称之为后验分布</p>
-<p>如果后验分布范围较广，则准确率较低；反之，准确率较高，可信度更高。</p>
-<p>例子：扔硬币，正面向上概率为 $R$，已知 $R$ 的先验分布概率函数 $f_R(r)$，求连续扔 $n$ 次均为正面向上的后验分布和条件期望。</p>
-<ul>
-<li>后验分布 $f_{R|S}(r|n) = \frac{\mathrm{P}(S=n|R=r)f_R(r)}{\int_0^1 \mathrm{P}(S=n|R=u)f_R(u)\mathrm{d}u}$</li>
-<li>条件期望 $\mathrm{E}[R|S=n] = \int_0^1 rf_{R|S}(r|n) \mathrm{d}r$</li>
-</ul>
-<p><strong>贝叶斯派与概率派的争议</strong></p>
-<ul>
-<li>贝叶斯估计更加考虑了先验分布，能够避免没见过的情况导致绝对化的错误</li>
-<li>但反对者认为先验分布直接影响答案准确性，先验分布过于随意</li>
-<li>当样本容量n增加时，先验分布的作用逐渐变小，逐渐趋近于最大似然（毕竟越来越多的事实，也让人不得不相信）</li>
-</ul>
-<h2 id="检验理论"><a href="#检验理论" class="headerlink" title="检验理论"></a>检验理论</h2><blockquote>
-<ul>
-<li>甲：我俩比赛了100次，我赢了61次，所以我比你更强</li>
-<li>乙：不，这纯属偶然</li>
-<li>甲：如果只是偶然，那出现现在这种情况的概率小于5%，这几乎不可能</li>
-</ul>
-</blockquote>
-<ul>
-<li>虚无假设 $H_0$：甲获胜概率=0.5 ……甲试图驳斥的主张</li>
-<li>对立假设 $H_1$：甲获胜概率&gt;0.5 ……甲试图肯定的主张</li>
-</ul>
-<p>甲方试图证明的论点：如果 $H_0$ 成立，得到 $H_1$ 这样的数据概率仅有 $\triangle\triangle$，因此 $H_0$ 很可能是错误的</p>
-<p>其中 $\triangle\triangle$ 称为 $p$ 值（$p$-value），设置显著性水平阈值 $\alpha$（一般取0.05或0.01）</p>
-<ul>
-<li>如果 p值&lt;α 则拒绝对照假设 $H_0$，接受支持 $H_1$ 的主张</li>
-<li>如果 p值&gt;=α 则无法拒绝/接受对照假设 $H_0$，无法判断谁更正确</li>
-</ul>
-<blockquote>
-<p>例子：<br><br>假设100次比赛为随机变量 $X_1,\cdots,X_{100}$（i.i.d.），每个 $X_i$ 当甲赢则为1，否则为0。<br><br>如果按照虚无假设（双方势均力敌），则根据 $S\sim\mathrm{Bn}(100,1/2)$，而 $\mathrm{P}(S\ge 61)\approx 0.02$，这小于显著性水平0.05，则对立假设被接受，甲确实实力更强</p>
-</blockquote>
-<p>检验理论，与估计理论一样，都是有一堆可以根据输入数据而输出检验结果的程序/方法，需要从中寻找最优方法。为了比较优劣，引入：</p>
-<ul>
-<li>第一类错误（false reject）：本应为 $H_0$ 却错误地拒绝了它。又称Ⅰ型错误或弃真错误，发生概率记为 $α$</li>
-<li>第二类错误（false accept）：$H_0$ 不是正确答案却错误地接受了它。又称Ⅱ型错误或存伪错误，发生概率记为 $β$</li>
-</ul>
-<p><strong>检验原理的第一原理</strong>：</p>
-<p>寻找最优检验程序 $δ$，因为需要优先优化第一种错误，所以排除掉第一种错误发生概率高于 $\alpha$ 的程序，然后选择第二种错误发生概率 $\beta$ 较低的程序即可。</p>
-<p><strong>简单假设</strong></p>
-<p>将 $n$ 个实数值随机值合记为 $X=(X_1,X_2,\cdots,X_n)$，如果有一种假设能直接给出 $X$ 的分布，则称之为简单假设。例如：</p>
-<ul>
-<li>虚无假设 $H_0$：$X$ 的概率密度函数为 $g_0(x)$ ……希望驳斥的主张</li>
-<li>对立假设 $H_1$：$X$ 的概率密度函数为 $g_1(x)$ ……希望肯定的主张</li>
-</ul>
-<p>寻找检验程序 $δ$，记 $δ$ 收到输入数据 $X$ 时的输出结果为 $δ(X)$，从而描述排除标准：<br>$$对于 H_0，\mathrm{P}(δ(X)=“拒绝”) \le \alpha$$</p>
-<p>换而言之，对于 $x=(x_1,x_2,\cdots,x_n)$ ，以下不等式成立：<br>$$\int_A g_0(x)\mathrm{d}u \le \alpha \qquad（积分范围A是由所有满足δ(X)=“拒绝”的x组成的集合）$$</p>
-<p>我们希望在所有符合条件的 $δ$ 中找到第二类错误发生概率 $β$ 最小的程序，其中 $β$ 定义为：<br>$$对于 H_1，\mathrm{P}(δ(X)=“接受”)$$</p>
-<p>换而言之，积分计算为：<br>$$\int_B g_1(x)\mathrm{d}u \qquad（积分范围B是所有 δ(X)=“接受” 的 x 组成的集合）$$</p>
-<p>形象化比喻：青虫吃菜叶问题，菜叶里有营养和微量毒素，毒素的分布为 $g_0(x)$ ㎎/㎠，营养的分布为 $g_1(x)$ ㎎/㎠，青虫最多可以承受 $α$ ㎎ 的毒素，希望获得最多营养，那么吃哪一块？</p>
-<p>一般而言，设毒素浓度 $g_0(x)$ 和营养浓度 $g_1(x)$ 随位置 $x$ 连续变化，先求 $g_1(x)/g_0(x)$ 并按结果从大到小排序，当毒素累积达到 $α$ 时停滞，此时 $g_1(x)/g_0(x)=c$，因此应当选择吃 $g_1(x)/g_0(x)&gt;c$ 的所有部分</p>
-<p>即最佳检验程序的判断标准为：<br>$$\delta(x)=\begin{cases}<br>“拒绝”&amp;(g_1(x)/g_0(x)&gt;c)\<br>“接受”&amp;(g_1(x)/g_0(x)\le c)\<br>\end{cases}$$</p>
-<p>通过调节 $c$ ，使得第一类错误发生概率恰为 $α$ —— 这就是<strong>奈曼·皮尔逊引理</strong></p>
-<p><strong>复合假设</strong></p>
-<p>复合假设包括了多个分布，需要面临多目标优化相似的问题。具体方法包括一致最大功效无偏检验（UMPUT）、最大似然比检验等 （不再展开）</p>
-<h1 id="第7章-伪随机数"><a href="#第7章-伪随机数" class="headerlink" title="第7章 伪随机数"></a>第7章 伪随机数</h1><p>$$\Huge{不要自己手动生成随机数！}$$</p>
-<h2 id="随机数序列"><a href="#随机数序列" class="headerlink" title="随机数序列"></a>随机数序列</h2><p>本书将 i.i.d. 随机变量序列 $X_1,X_2,\cdots$（或其对应的观测值）称为随机数序列或真随机数序列<br>而在不通过物理模拟的前提下，获得一种以假乱真的随机数序列替代品方法，称之为<strong>伪随机数序列</strong></p>
-<p>伪随机数序列 $x_1,x_2,x_3,\cdots$ 通常由以下方式生成：<br>$$s_{t+1}\equiv g(s_t),  x_t\equiv h(s_t),  (t=1,2,3,\cdots)$$<br>通过函数 $g$ 更新内部状态 $s_t$，根据内部状态确定函数 $h$ 并输出为 $x_t$<br>开始的状态 $s_1$ 被称为种子，为真随机数，相同的种子产生相同的伪随机数序列</p>
-<h2 id="梅森旋转算法"><a href="#梅森旋转算法" class="headerlink" title="梅森旋转算法"></a>梅森旋转算法</h2><ul>
-<li>计算速度快</li>
-<li>周期较长 $p = 2^{19937}-1$</li>
-<li>当 $k$ 较大时，由连续 $k$ 个值形成的向量遵从均匀分布（例如 $k=623$ 时，连续623个值在623维的超立方体内以32位的精度均匀分布）</li>
-</ul>
-<h2 id="蒙特卡罗方法（Mente-Carlo-method）"><a href="#蒙特卡罗方法（Mente-Carlo-method）" class="headerlink" title="蒙特卡罗方法（Mente Carlo method）"></a>蒙特卡罗方法（Mente Carlo method）</h2><ul>
-<li>蒙特卡洛方法是一种随机数序列的典型应用</li>
-<li>经典问题：1/4 圆上进行模拟随机投掷飞镖，命中概率趋近 π/4</li>
-<li>通过随机数序列，模拟计算期望值</li>
-<li>不过收敛较慢，提升一位精度不得不增加100倍运算规模</li>
-<li>当分布非常复杂，曲线不光滑或包含高维度积分时，才考虑使用蒙特卡罗方法方法——“百无所依时最后的救命稻草”</li>
-</ul>
-<h2 id="密码理论中的伪随机数序列"><a href="#密码理论中的伪随机数序列" class="headerlink" title="密码理论中的伪随机数序列"></a>密码理论中的伪随机数序列</h2><p>低差异序列（low-discrepancy sequence，一种取值分布非常均匀的序列），相比梅森旋转算法之类的，分布更加均匀</p>
-<p>低差异序列也可以用于对蒙特卡罗方法进行改良，提高特定情况下的收敛速度，被称为拟蒙特卡罗算法</p>
-<h2 id="遵从离散值分布的随机数生成"><a href="#遵从离散值分布的随机数生成" class="headerlink" title="遵从离散值分布的随机数生成"></a>遵从离散值分布的随机数生成</h2><p><strong>均匀分布：</strong></p>
-<p>通过 $[0,1)$ 上均匀分布的随机变量 $X$，乘 n 取整再+1，就能获得1到n的各整数离散值的均匀分布。</p>
-<p><strong>一般分布：</strong></p>
-<p>采用各离散值的概率，堆叠在0到1的范围内，当随机变量 X 落在哪个范围，则命中哪个离散值</p>
-<h2 id="遵从连续值分布的随机数生成"><a href="#遵从连续值分布的随机数生成" class="headerlink" title="遵从连续值分布的随机数生成"></a>遵从连续值分布的随机数生成</h2><p><strong>均匀分布：</strong></p>
-<p>为了获得 a 与 b 之间均匀分布的随机数，只需要定义 $Y≡(b-a)X+a$</p>
-<p><strong>非均匀分布，通过累积分布函数生成：</strong></p>
-<p>定义 $Y≡F^{-1}(X)$ ，其中 $F^{-1}$ 表示累积分布函数的反函数，</p>
-<p><strong>非均匀分布，通过概率密度函数生成：</strong></p>
-<p>绘制概率密度函数 f 的图像，在能够框住整个图像的矩形范围内随机打点，如果点位于图像下方则接受该点，并返回横轴值，如果点位于图像上方则重新生成点</p>
-<h2 id="遵从正态分布的随机数的生成"><a href="#遵从正态分布的随机数的生成" class="headerlink" title="遵从正态分布的随机数的生成"></a>遵从正态分布的随机数的生成</h2><p><strong>Box-Muller变换</strong></p>
-<p>将均匀分布转换为正态分布，设 $X_1,X_2$ 是在[0,1)上遵从均匀分布的i.i.d.随机变量，定义：<br>$$Y_1 ≡ g(X_1, X_2) ≡ \sqrt{-2\log X_1}\cos(2πX_2)$$<br>$$Y_2 ≡ h(X_1, X_2) ≡ \sqrt{-2\log X_1}\sin(2πX_2)$$</p>
-<p>则 $(Y_1,Y_2)^T$ 遵从二元正态分布，是两个独立的遵从正态分布的随机数</p>
-<p><strong>均匀分布的加法（近似遵从正态分布）</strong></p>
-<p>使用中心极限定理，设若干个在[0,1)上遵从均匀分布的i.i.d.随机变量 $X_1,X_2,⋯,X_{2n}$，设 $Y≡X_1+X_2+⋯+X_{2n}-n$，则 $Y$ 近似遵从正态分布</p>
-<p><strong>遵从多元正态分布的随机数生成</strong></p>
-<p>设 $Z_1,⋯,Z_n$ 是遵从标准正态分布 $\mathrm{N}(0,1)$ 的随机变量，由这些随机变量构成的向量 $\boldsymbol{Z}≡(Z_1,⋯,Z_n)^T$ 遵从n元标准正态分布</p>
-<p>将其乘上一个n元正规矩阵后再加上一个n元向量，得到 $\boldsymbol{X}\equiv A\boldsymbol{Z}+\boldsymbol{\mu}$ 将遵从 $\mathrm{N}(\boldsymbol{\mu}, AA^T)$</p>
-<p>也就是说如果想遵从特定的 $\mathrm{N}(\boldsymbol{\mu},V)$ ，只需要找到满足 $V=AA^T$ 的 $A$ 即可（可以利用Cholesky分解，它是LU分解的非负常量对称矩阵形式）</p>
-<h2 id="三角形内的均匀分布"><a href="#三角形内的均匀分布" class="headerlink" title="三角形内的均匀分布"></a>三角形内的均匀分布</h2><p>例子：</p>
-<ul>
-<li>设 $X_1, X_2$ 是在 [0,1) 上遵从均匀分布的i.i.d.随机变量</li>
-<li>设 $(Y_1, Y_2) ≡ (min(X_1, X_2), |X_1 - X_2|)$ ，变成一个等腰直角三角形</li>
-<li>设 $(Z_1, Z_2) ≡ (3Y_1+Y_2, Y_1+2Y_2)$ ，变成某一个任意形状三角形</li>
-<li>设 $(W_1, W_2) ≡ (Z_1+7, Z_2+3)$，位移</li>
-</ul>
-<p>也可以类似推广到高维情况</p>
-<h2 id="球面上的均匀分布"><a href="#球面上的均匀分布" class="headerlink" title="球面上的均匀分布"></a>球面上的均匀分布</h2><p>设 $Z_1, Z_2, Z_3$ 是遵从标准正态分布的i.i.d.随机变量，定义 $\boldsymbol{Z}\equiv(Z_1,\cdots,Z_3)^T$ 遵从3元标准正态分布<br>$$\boldsymbol{W}\equiv \frac{1}{|\boldsymbol{Z}|}\boldsymbol{Z}$$</p>
-<p>即为标准球面上的均匀分布，因为正态分布各个方向分布相同</p>
-<h1 id="第8章-概率论的各类应用"><a href="#第8章-概率论的各类应用" class="headerlink" title="第8章 概率论的各类应用"></a>第8章 概率论的各类应用</h1><h2 id="8-1-回归分析与多变量分析"><a href="#8-1-回归分析与多变量分析" class="headerlink" title="8.1 回归分析与多变量分析"></a>8.1 回归分析与多变量分析</h2><h3 id="最小二乘法拟合直线"><a href="#最小二乘法拟合直线" class="headerlink" title="最小二乘法拟合直线"></a>最小二乘法拟合直线</h3><p><strong>线性回归问题</strong></p>
-<p>一个误差遵从正态分布的试验项目，进行 $n$ 次试验，获得样本数据 $x_1,\cdots,x_n$ 和 $\check{y}_1,\dots,\check{y}_n$</p>
-<p>假设 $g(x)\equiv ax+b$ ，其中 $a,b$ 为未知常量，设 $Y_i\equiv g(x)+W_i$ ，其中误差 $W_i\sim\mathrm{N}(0,\sigma^2)$，且 $W_1,\cdots,W_n$ 满足i.i.d.条件。</p>
-<p>可以归纳为矩阵方式表示：<br>$$<br>\boldsymbol{Y}=C\boldsymbol{a}+\boldsymbol{W},<br>\boldsymbol{Y}\equiv\left(\begin{array}{c}Y_1\\vdots\Y_n\end{array}\right),<br>C\equiv\left(\begin{array}{cc}x_1&amp;1\\vdots&amp;\vdots\x_n&amp;1\end{array}\right),<br>\boldsymbol{a}\equiv\left(\begin{array}{c}a\b\end{array}\right),<br>\boldsymbol{W}\equiv\left(\begin{array}{c}W_1\\vdots\W_n\end{array}\right)<br>\sim\mathrm{N}(\boldsymbol{o}, \sigma^2I)<br>$$</p>
-<p>推导得到 $\boldsymbol{Y}\sim\mathrm{N}(C\boldsymbol{a},\sigma^2I)$</p>
-<p>概率密度函数形式如下：（其中 $\Box$ 为常量）<br>$$f_{\boldsymbol{Y}}(\boldsymbol{y})=\Box\exp(-\frac{1}{2\sigma^2}|\boldsymbol{y}-C\boldsymbol{a}|^2)$$</p>
-<p>使用观测值 $\check{\boldsymbol{y}}\equiv(\check{y}_1,\cdots,\check{y}<em>n)^T$ 作为 $\boldsymbol{Y}$ 的观察值来估计 $\boldsymbol{a}$ 的值。采用<strong>最大似然估计</strong>，则使得 $f</em>{\boldsymbol{Y}}(\boldsymbol{y})$ 最大即可，也就是让 $|\check{\boldsymbol{y}}-C\boldsymbol{a}|^2$ 最小（即均方误差最小化）</p>
-<p>记 $h(a,b)=\sum_{i=1}^n(\check{y}_i-(ax_i+b))^2$，为求其最小值，需满足：<br>$$\frac{\partial h}{\partial a}=0\quad and \quad \frac{\partial h}{\partial b}=0$$</p>
-<p>最终可形成对于 $a,b$ 的一元方程组，称之为“正则方程组”，即可算出结果。其矩阵表述可推导为：<br>$$C^TC\boldsymbol{a}=C^T \check\boldsymbol{y}$$</p>
-<p>以上推导过程基于认为误差遵从正态分布，实际应用中通常会不在意是否遵从正态分布，直接采用均方误差来最小化。</p>
-<p>进一步从几何角度理解，由所有可能的 $C\boldsymbol{a}$ 构成的集合形成平面：<br>$$<br>\mathrm{lm}C=span(\boldsymbol{x},\boldsymbol{u}),\qquad<br>\boldsymbol{x}\equiv\left(\begin{array}{c}x_1\\vdots\x_n\end{array}\right),\quad<br>\boldsymbol{u}\equiv\left(\begin{array}{c}1\\vdots\1\end{array}\right)<br>$$</p>
-<p>那么求 $|\check\boldsymbol{y}-C\boldsymbol{a}|^2$ 最小值就相当于寻找 $\mathrm{lm}C$ 上与 $\check\boldsymbol{y}$ 最近的点，也就是垂足</p>
-<h3 id="吉洪诺夫正则化"><a href="#吉洪诺夫正则化" class="headerlink" title="吉洪诺夫正则化"></a>吉洪诺夫正则化</h3><p>为避免线性方程组病态问题，通常可以加入正则化，例如上文问题中，最小化值如下，即吉洪诺夫正则化：<br>$$|\check\boldsymbol{y}-C\boldsymbol{a}|^2+\alpha|\boldsymbol{a}|^2\qquad(\alpha &gt;0)$$</p>
-<p>上文问题的基于贝叶斯估计的解法：</p>
-<ul>
-<li>设 $\boldsymbol{A}$ 为遵从 $m$ 元正态分布 $\mathrm{N}(o,\tau^2I)$ 的向量值随机变量</li>
-<li>对于已知 $n\times m$ 矩阵 $C$，得到 $\boldsymbol{Y}\equiv C\boldsymbol{A}+\boldsymbol{W}$，其中噪声 $\boldsymbol{W}\sim\mathrm{N}(o,\sigma^2I)$，且与 $\boldsymbol{A}$ 独立</li>
-<li>观测 $\boldsymbol{Y}$ 的值得到 $\check\boldsymbol{y}$，可以采用两种方法估计 $\boldsymbol{A}$ ：<ul>
-<li>计算让条件概率密度 $f_{\boldsymbol{A}|\boldsymbol{Y}}(\boldsymbol{a}|\check\boldsymbol{y})$ 取值最大的 $\boldsymbol{a}$</li>
-<li>计算条件期望值 $\mathrm{E}[\boldsymbol{A}|\boldsymbol{Y}=\check\boldsymbol{y}]$，将其作为 $\boldsymbol{A}$ 的估计值</li>
-</ul>
-</li>
-</ul>
-<p>该方法计算结果，与 $\alpha=\sigma^2/\tau^2$ 时的吉洪诺夫正则化结果一致（日文版草稿上有详细推导）</p>
-<h3 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h3><p>现实中的高维数据通常不会在所有维度都均匀分布，而是沿着一些特定方向散布，主成分分析（PCA）就是找出特定方向，降低维度</p>
-<p><strong>主成分分析算法</strong></p>
-<p>假设有 $n$ 条高维向量数据 $\boldsymbol{x}_1,\cdots,\boldsymbol{x}_n$ ，借助一个取值范围 $1,2,\cdots,n$ 且各值出现概率相等的转盘来生成编号$J$，并定义随机变量 $\boldsymbol{X}\equiv\boldsymbol{x}_J$</p>
-<p>此处假设期望值 $E[\boldsymbol{X}]=\boldsymbol{o}$ （即平均值为零）。可通过高维椭圆来表现协方差矩阵 $V[\boldsymbol{X}]$，如果数据沿着某一特定方向散布，则该高维椭圆中长度较长的主轴很少，大部分主轴非常短，主成分分析将沿着较短主轴方向压缩椭圆</p>
-<p>参照前文对一般协方差矩阵计算椭圆的方法，各主轴半径为 $V[\boldsymbol{X}]$ 的特征值 $\lambda_1,\lambda_2,\cdots$ 的平方根，且主轴方向与对应特征向量 $\boldsymbol{q}_1,\boldsymbol{q}_2,\cdots$ 方向一致。将特征值从大到小排序，并保证特征向量为单位向量且相互正交，则称得到的 $\boldsymbol{q}_i$ 为第 $i$ 主成分向量</p>
-<p>主成分分析则会仅保留前 $k$ 个特征值与特征向量而舍弃后面的。其中主成分个数 $k$ 的确定方式，可以根据 $\lambda_i$ 阈值或大幅度缩小，或者贡献率来决定</p>
-<p>选中的主成分会形成一个由 $\boldsymbol{q}_1,\cdots,\boldsymbol{q}_k$ 张成的 $k$ 维超平面 $\Pi$，将原始向量 $\boldsymbol{x}$ 正交投影至 $\Pi$，则完成维度压缩：（$z_i$称为$\boldsymbol{x}$的第$i$主成分）<br>$$\boldsymbol{y}=z_1\boldsymbol{q}_1+z_2\boldsymbol{q}_2+\cdots+z_k\boldsymbol{q}_k$$<br>$$z_i=\boldsymbol{q}_i\cdot\boldsymbol{x}=\boldsymbol{q}_i^T\boldsymbol{x}$$</p>
-<p>矩阵表示为：<br>$$\boldsymbol{z}=R^T\boldsymbol{x},\qquad R\equiv(\boldsymbol{q}_1,\cdots,\boldsymbol{q}_k)$$<br>$$\boldsymbol{y}=R\boldsymbol{z}=RR^T\boldsymbol{x}$$</p>
-<p><strong>保留成分个数</strong></p>
-<p>原始数据 $\boldsymbol{x}$ 与由压缩数据 $\boldsymbol{z}$ 还原的 $\boldsymbol{y}$ 之间差值 $\boldsymbol{x}-\boldsymbol{y}$ 相当于被舍弃部分，定义随机变量 $\boldsymbol{Y}\equiv RR^T\boldsymbol{X}$，有：<br>$$\mathrm{E}[|\boldsymbol{X}-\boldsymbol{Y}|^2]=\lambda_{k+1}+\cdots+\lambda_m$$<br>$$\mathrm{E}[|\boldsymbol{X}|^2]=\mathrm{Tr}\ \mathrm{V}[\boldsymbol{X}]=\lambda_1+\cdots+\lambda_m$$<br>记 $\frac{\mathrm{E}[|\boldsymbol{X}-\boldsymbol{Y}|^2]}{\mathrm{E}[|\boldsymbol{X}|^2]}$ 为前 $k$ 个主成分的累积贡献率。通过对其限定一个百分比，从而确定 $k$</p>
-<p><strong>平均值不为零的数据PCA处理</strong></p>
-<p>给定高维向量数据 $\boldsymbol{x}_1,\cdots,\boldsymbol{x}_n$ 平均值不为零的话，则统一减去平均值向量，然后做PCA即可</p>
-<p><strong>注意事项</strong></p>
-<p>PCA处理的数据各维度单位要统一，因为各维度进行缩放时，原本的各主轴将不再两两正交，将产生新的主轴和PCA结果</p>
-<h2 id="8-2-随机过程（stochastic-process）"><a href="#8-2-随机过程（stochastic-process）" class="headerlink" title="8.2 随机过程（stochastic process）"></a>8.2 随机过程（stochastic process）</h2><p>一些随着时间随机变化的序列，可以视作随机变量序列，即随机过程</p>
-<h3 id="随机游走（random-walk）"><a href="#随机游走（random-walk）" class="headerlink" title="随机游走（random walk）"></a>随机游走（random walk）</h3><p>例如随机抛硬币，每次如果正面向上则向左走一步，否则向右走一步</p>
-<p>随机游走可以有衍生版本，比如概率不同、多个方向等，但以下仅考虑一元等概率左右移动的随机游走</p>
-<p>设 $Z_1,Z_2,\cdots,$ 是i.i.d.随机变量，且取值为+1或-1概率各为0.5，则有：<br>$$X_0=0, \qquad X_t=X_{t-1}+Z_t\quad(t=1,2,\cdots)$$</p>
-<p><strong>习题1</strong></p>
-<p>抛20次硬币，正面加一，反面减一，最终恰好为10。</p>
-<p>即求 $X_20=10$ 的概率，明显应当是20次中15次向上，5次向下，则采用二项分布 $\mathrm{Bn}(20,1/2)$ 在 $15$ 位置的概率。</p>
-<p><strong>习题2</strong></p>
-<p>抛20次硬币，中途至少获得过5，但最终归为0的概率。即 $\mathrm{P}(X_{20}=0且之前出现过5)$</p>
-<p>以最后一次到达5位置的时刻 $T$，对后续路线进行翻转操作（反射原理，reflection principle），则相当于最终到达10位置。结果和上题结果一致。</p>
-<p><strong>习题3</strong></p>
-<p>到达10时停止，求恰好是20次的概率。<br>$$\mathrm{P}(t=20时X_t=10首次成立)=\mathrm{P}(X_{19}=9且之前没有出现过10)*\mathrm{P}(Z_{20}=+1)$$<br>$$\mathrm{P}(X_{19}=9且之前没有出现过10)=P(X_{19}=9)-P(X_{19}=9且之前出现过10)$$</p>
-<p><strong>其他</strong></p>
-<p>当 $n\to\infty$ 时，游戏过程中手头金额为正数的时间比例小于 $\alpha$ 的概率趋向于 $(2/\pi)\arcsin\sqrt{\alpha}$ （反正弦定律），也就可以算出来盈利时间比超过99.5%的极端情况发生概率高达4.5%左右</p>
-<p>盈亏逆转的概率也极低，随着n变大，逆转次数提升非常少。但这并不影响再已经盈利或亏损情况下再次下注的情况，因为条件概率下：<br>$$\mathrm{E}[X_j|X_i=a]=a\qquad (j&gt;i)$$</p>
-<p>博弈论中“鞅”（martingale）模型即用于描述该性质</p>
-<h3 id="卡尔曼滤波器"><a href="#卡尔曼滤波器" class="headerlink" title="卡尔曼滤波器"></a>卡尔曼滤波器</h3><p>针对随机过程中 $t$ 时刻的实数值随机变量 $X_t$，考虑误差 $Z_t$，则有测定值 $Y_t=X_t+Z_t$。定义两次位置变化量为 $W_t$，则有 $X_t=X_{t-1}+W_t$ 。假定 $X_0\sim\mathrm{N}(0,\sigma^2_0),W_t\sim\mathrm{N}(0,\alpha^2),Z_t\sim\mathrm{N}(0,\beta^2)$，所有 $X_0,W_i,Z_i$ 均相互独立。试图通过 $Y_1,\cdots,Y_t$ 来估计 $X_t$ ：</p>
-<p><strong>计算过程</strong></p>
-<p>考虑 $t=1$ 情况，表示为矩阵形式为：<br>$$\left(\begin{matrix} Y_1\X_1 \end{matrix}\right)=<br>J\left(\begin{matrix}Z_1\W_1\X_0\end{matrix}\right),\qquad<br>J=\left(\begin{matrix}1&amp;1&amp;1\0&amp;1&amp;1\end{matrix}\right)$$</p>
-<p>由于 $(Z_1,W_1,X_0)^T\sim\mathrm{N}(\boldsymbol{o},\mathrm{diag}(\beta^2,\alpha^2,\sigma^2_0))$ ，则通过 $J$ 投影后的 $(Y_1,X_1)^T$ 将遵从二元正态分布：</p>
-<p>$$\left(\begin{matrix} Y_1\X_1 \end{matrix}\right)\sim\mathrm{N}(\boldsymbol{o},V_1)$$<br>$$V_1\equiv J \left(\begin{matrix} \beta^2&amp;0&amp;0\0&amp;\alpha^2&amp;0\0&amp;0&amp;\sigma^2_0 \end{matrix}\right) J^T =<br>\left(\begin{matrix}\tau^2_1+\beta^2&amp;\tau^2_1\\tau^2_1&amp;\tau^2_1 \end{matrix}\right),\qquad<br>\tau^2_1\equiv \mathrm{V}[X_1]=\sigma^2_0+\alpha^2$$</p>
-<p>则可推导出当 $Y_1=y_1$ 时 $X_1$ 的条件分布 $\mathrm{N}(\mu_1,\sigma^2_1)$ （根据多元正态分布的条件分布计算方法）：<br>$$\mu_1\equiv \mathrm{E}[X_1|Y_1=y_1]=\frac{\tau^2_1y_1}{\tau^2_1+\beta^2}$$<br>$$\sigma^2_1\equiv \mathrm{V}[X_1|Y_1=y_1]=\frac{\tau^2_1\beta^2}{\tau^2_1+\beta^2}$$</p>
-<p>推广到一般的 $t$ 情况，矩阵形式为：<br>$$\left(\begin{matrix} Y_t\X_t \end{matrix}\right)=<br>J\left(\begin{matrix}Z_t\W_t\X_{t-1}\end{matrix}\right),\qquad<br>J=\left(\begin{matrix}1&amp;1&amp;1\0&amp;1&amp;1\end{matrix}\right)$$</p>
-<p>基于条件 $Y_{t_1}=y_t,\cdots,Y_1=y_1$，有 $(Z_t,W_2,X_{t-1})^T\sim\mathrm{N}((0,0,\mu_{t-1})^T,\mathrm{diag}(\beta^2,\alpha^2,\sigma^2_{t-1}))$，有：<br>$$\tau^2_t\equiv \mathrm{V}[X_t|Y_{t-1}=y_{t-1},\cdots,Y_1=y_1]=\sigma^2_{t-1}+\alpha^2$$<br>增加一个条件 $Y_t=y_t$ ，可知 $X$ 的条件分布  $\mathrm{N}(\mu_t,\sigma^2_t)$：<br>$$\mu_t\equiv \mathrm{E}[X_t|Y_t=y_t,\cdots,Y_1=y_1]=\frac{\tau^2_ty_t+\beta^2\mu_{t-1}}{\tau^2_t+\beta^2}$$<br>$$\sigma^2_t\equiv \mathrm{V}[X_t|Y_t=y_t,\cdots,Y_1=y_1]=\frac{\tau^2_t\beta^2}{\tau^2_t+\beta^2}$$</p>
-<p>对此的形象化表述为：目标的上一个位置 $\mu_{t-1}$ 由之前数据估计得到（误差为 $\sigma^2_{t-1}$），那么本次位置应该仍然在 $\mu_{t-1}$ 附近，但误差增大到 $\tau^2_t=\sigma^2_{t-1}+\alpha^2$，然而根据本次数据，当前位置也应该在 $y_t$ 附近（误差为 $\beta^2$），因此以他们的误差作为权重，对两个位置进行加权平均</p>
-<p><strong>形式化表述</strong><br>$$<br>\begin{aligned}<br>f&amp;(y_t,x_t|y_{t_1},\cdots,y_1)\<br>&amp;=\int_{-\infty}^{\infty}f(y_t,x_t,x_{t-1}|y_{t-1},\cdots,y_1)\mathrm{d}x_{t-1}\<br>&amp;=\int_{-\infty}^{\infty}f(y_t|x_t,x_{t-1},y_{t-1},\cdots,y_1)f(x_t|x_{t-1},y_{t-1},\cdots,y_1)f(x_{t-1}|y_{t-1},\cdots,y_1)\mathrm{d}x_{t-1}\<br>&amp;=\int_{-\infty}^{\infty}f(y_t|x_t)f(x_t|x_{t-1})f(x_{t-1}|y_{t-1},\cdots,y_1)\mathrm{d}x_{t-1}\<br>&amp;=\int_{-\infty}^{\infty}g(y_t;x_t,\beta^2)g(x_t;x_{t-1},\alpha^2)g(x_{t-1};\mu_{t-1},\sigma_{t-1}^2)\mathrm{d}x_{t-1}\<br>\end{aligned}<br>$$</p>
-<p>其中 $g(x;\mu,\sigma^2)$ 表示 $\mathrm{N}(\mu,\sigma^2)$ 的概率密度函数</p>
-<p><strong>进阶</strong></p>
-<p>不仅可以用于估计当前位置的值，也可以预测下一位置的值：在 $Y_1=y_1,\cdots,Y_{t-1}=y_{t-1}$ 条件下，$X_t$ 的条件分布为 $\mathrm{N}(\mu_{t-1},\tau^2_t)$</p>
-<p>卡尔曼滤波器更多适用于高维情况，有对应的高维向量推导。另外不仅可以用于位置不会突然改变情况，也可以用于速度不会突然改变情况。</p>
-<h3 id="马尔可夫链"><a href="#马尔可夫链" class="headerlink" title="马尔可夫链"></a>马尔可夫链</h3><p>前面的随机游走、卡尔曼滤波等问题，都不关心之前路径，而只用当前位置来预测将来位置，这类随机过程统称为<strong>马尔可夫过程</strong>（Markov process）。如果马尔可夫过程中 $X_t$ 的取值范围优先，则可称之为<strong>马尔可夫链</strong>（Markov chain）</p>
-<p><strong>（离散时间有限状态的平稳）马尔可夫链：</strong></p>
-<p>随机变量序列 $X_0,X_1,X_2,\cdots$，且 $X_t$ 的取值范围为 $1,2,\cdots,n$ 。定义 $n$ 个状态，随着时间 $t$ 的变化，状态将不断转移。定义转移概率 $\mathrm{P}(X_{t+1}=i|X_t=j)$ （仅讨论时间平稳情况，即与时间无关），记为 $p_{i\gets j}$</p>
-<p><strong>转移概率矩阵</strong></p>
-<p>记 $P$ 为转移概率矩阵，其每列数字之和全都为1，但各行不一定<br>$$P\equiv\begin{pmatrix}<br>p_{1\gets 1}&amp;\cdots&amp;p_{1\gets n}\<br>\vdots &amp;&amp;\vdots\<br>p_{n\gets 1}&amp;\cdots&amp;p_{n\gets n}\<br>\end{pmatrix} $$</p>
-<p>将 $X_t$ 的分布表示为向量 $\boldsymbol{u}_t$：<br>$$\boldsymbol{u}_t\equiv\begin{pmatrix}<br>\mathrm{P}(X_t=1)\<br>\vdots\<br>\mathrm{P}(X_t=n)\<br>\end{pmatrix}$$</p>
-<p>初始分布和转移概率矩阵决定了马尔可夫链的所有分布，即：<br>$$\boldsymbol{u}_{t+1}=P\boldsymbol{u}_t,\qquad\boldsymbol{u}_t=P^t\boldsymbol{u}_0$$</p>
-<p>对于条件分布，例如状态个数 $n=3$，而 $X_t=2$ 时的条件分布：<br>$$\begin{pmatrix}<br>P(X_{t+k}=1|X_t=2)\<br>P(X_{t+k}=2|X_t=2)\<br>P(X_{t+k}=3|X_t=2)\<br>\end{pmatrix}=P^k<br>\begin{pmatrix}<br>0\1\0<br>\end{pmatrix}$$</p>
-<p><strong>平稳分布</strong></p>
-<p>满足 $P\boldsymbol{u}_0=\boldsymbol{u}_0$，则分布不会随着时间变化，保持不变，称之为平稳分布。任何转移概率矩阵 $P$ 都存在对应的平稳分布，可以通过列方程组，满足  $P\boldsymbol{u}_0=\boldsymbol{u}_0$ 以及每列数字之和为1条件，求出平稳分布</p>
-<p><strong>极限分布</strong></p>
-<p>对于很多状态概率矩阵 $P$，无论初始分布 $\boldsymbol{u}_0$ 如何，经过一定时间总能收敛到一个平稳分布 $\boldsymbol{u}_t$，则该分布 $\boldsymbol{u}$ 称之为极限分布</p>
-<p>$$\lim_{t\to\infty}P^t=\Bigg(\boldsymbol{u}\Bigg|\cdots\Bigg|\boldsymbol{u}\Bigg)=\boldsymbol{u}\boldsymbol{1}^T, \quad\boldsymbol{1}^T\equiv(1,\cdots,1)$$<br>$$\lim_{t\to\infty}P^t\boldsymbol{u}_0=(\boldsymbol{u}\boldsymbol{1}^T)\boldsymbol{u}_0=\boldsymbol{u}$$</p>
-<p>设 $\boldsymbol{u}\equiv(u_1,\cdots,u_n)^T$，各状态 $i$ 所占时间比例将收敛至 $u_i$，即：<br>$$\lim_{t\to\infty}\frac{X_1,\cdots,X_t中值为i的变量个数}{t} = u_i$$</p>
-<ul>
-<li>左式为人类视角：随着时间变化，持续观察序列，其中状态 $i$ 的出现比例</li>
-<li>右式为上帝视角：在时间 $t$，横跨各平行世界观察</li>
-</ul>
-<p>有一些情况下极限分布不存在，包括不同初始分布会收敛到不同的平稳分布中，或者转移存在周期性，或其他不收敛情况</p>
-<p><strong>吸收概率</strong></p>
-<p>马尔可夫链之中有一些状态进入后即永远循环在该状态，那么从其他某个状态为起点，落入该状态的概率称之为吸收概率。由于无需考虑历史情况，可以通过联立方程组，列举各起点直接落入某循环状态和转移到其他节点后再落入某循环状态的概率，从而解出方程</p>
-<p><strong>首次到达时刻</strong></p>
-<p>在马尔可夫链中约定某状态为起点，某状态为终点，计算从起点到重点所需转移次数的期望值。仍然可以通过联立方程组，列举各状态到达终点的期望值之间的关系，从而解出方程</p>
-<p><strong>隐马尔科夫模型（HMM）</strong></p>
-<p>举例语音识别技术，简化版本为：定义字符串 $X_0,X_1,\cdots$ 来表示人所说的话（正确答案），而只能观察到辅音部分，记为 $Y_0,Y_1,\cdots$。</p>
-<p>为 $X_t$ 构造马尔可夫链：统计各音节位于句首的概率，各音节紧跟在其他音节之后的概率等。最终通过观察到的 $Y_t$ 来估计 $X_t$</p>
-<p>为加快速度，有Viterbi算法，使用动态规划来计算条件概率最大的音节序列。也会借助Forward-Backword算法（Baum-Welch算法）来估计转移概率矩阵</p>
-<h2 id="8-3-信息论"><a href="#8-3-信息论" class="headerlink" title="8.3 信息论"></a>8.3 信息论</h2><h3 id="熵"><a href="#熵" class="headerlink" title="熵"></a>熵</h3><p>熵表示信息量的大小，可以理解为得到该消息的意外程度（如果采用 $\log_2$，则熵的单位是bit）。当得知 $X=x$ 时的意外程度为：<br>$$h(x)\equiv\log\frac{1}{\mathrm{P}(X=x)}$$</p>
-<p>对于离散值随机变量 $X$ 的分布的熵记为 $\mathrm{H}[X]$，则：<br>$$\mathrm{H}[X]\equiv\mathrm{E}[h(X)]=\sum_{x}\mathrm{P}(X=x)\log\frac{1}{\mathrm{P}(X=x)}$$</p>
-<p>如果 $X$ 的可能取值有 $m$ 种，则当遵从均匀分布时熵最大，为 $\mathrm{H}[X]=\log m$</p>
-<p>对于实数值随机变量 $X$ 的分布的熵，可计算为：<br>$$\mathrm{H}[X]\equiv\mathrm{E}[h(X)]=\int f_X(x)\log\frac{1}{f_X(x)}\mathrm{d}x\quad（积分范围为f_X(x)不为零的全部部分）$$</p>
-<h3 id="二元熵"><a href="#二元熵" class="headerlink" title="二元熵"></a>二元熵</h3><p>对于联合分布，当得知 $X=x,Y=y$ 时的意外程度为：<br>$$h(x,y)\equiv\log\frac{1}{\mathrm{P}(X=x,Y=y)}$$</p>
-<p>其期望值称为<strong>联合熵</strong>：<br>$$\mathrm{H}[X,Y]\equiv\mathrm{E}[h(X,Y)]=\sum_x\sum_y\mathrm{P}(X=x,Y=y)\log\frac{1}{\mathrm{P}(X=x,Y=y)}$$</p>
-<p>当已知 $X=x$ 情况下，得知 $Y=y$ 的意外程度为：<br>$$h(y|x)\equiv\log\frac{1}{\mathrm{P}(Y=y|X=y)}$$</p>
-<p>其期望值称为<strong>条件熵</strong>：<br>$$\mathrm{H}[Y|X]\equiv\mathrm{E}[h(Y|X)]=\sum_x\sum_y\mathrm{P}(X=x,Y=y)\log\frac{1}{\mathrm{P}(Y=y|X=x)}$$</p>
-<p>联合熵与条件熵具有性质：<br>$$\mathrm{H}[X,Y]=\mathrm{H}[Y|X]+\mathrm{H}[X]=\mathrm{H}[X|Y]+\mathrm{H}[Y]$$</p>
-<p><strong>互信息</strong>，没有条件情况下得知 $X$ 与没有条件情况下得知 $Y$ 的信息量差异，如果差异越大，说明相互包含信息越多：<br>$$\mathrm{I}[X;Y]\equiv\mathrm{H}(Y)-\mathrm{H}[Y|X]=\mathrm{H}(X)-\mathrm{H}[X|Y]$$</p>
-<p>$$\mathrm{I}[X;Y]=0 \xLeftrightarrow{等价} X与Y独立 \xRightarrow{单向推导}\rho_{X,Y}=0$$</p>
-<p>联合熵、条件熵、互信息的关系：<br>$$<br>\begin{aligned}<br>&amp;|\Leftarrow &amp;&amp; \mathrm{H}[X,Y] &amp;&amp; \qquad\Rightarrow&amp;|\<br>&amp;|\Leftarrow \qquad\mathrm{H}[X] &amp;&amp; \Rightarrow&amp;|&amp;\Leftarrow\quad\mathrm{H}[Y|X]\Rightarrow&amp;|\<br>&amp;|\Leftarrow\mathrm{H}[X|Y]\Rightarrow&amp;|&amp;\Leftarrow &amp;&amp; \mathrm{H}[Y]\qquad\Rightarrow &amp;|\<br>&amp;| &amp;|&amp; \Leftarrow\mathrm{I}[X;Y]\Rightarrow &amp;|&amp; &amp;|\<br>\end{aligned}<br>$$</p>
-<h3 id="信源编码"><a href="#信源编码" class="headerlink" title="信源编码"></a>信源编码</h3><p>例如对字符串进行压缩，原始字符串 $X$ 长度为 $n$，由 $k$ 种不同的字符 $a_1,\cdots,a_k$ 组成。目标是压缩为长度为 $m$ 的比特序列 $Y$。要进行压缩，必然 $k^n&gt;2^m$。研究问题是对于给定的一段字符串，最大可以压缩到多小：</p>
-<ul>
-<li>当压缩率 $m/n&lt;\mathrm{H}[X_i]$，只要n足够大，压缩成功率将非常接近于1</li>
-<li>当压缩率 $m/n&gt;\mathrm{H}[X_i]$，只要n足够大，压缩成功率将非常接近于0</li>
-</ul>
-<h3 id="信道编码"><a href="#信道编码" class="headerlink" title="信道编码"></a>信道编码</h3><p>如果通信线路或者内存设备质量较差，可能出现错误，则需要加入一定冗余来增强信息的正确性，例如校验和</p>
-<p>举例：用随机变量 $X$ 表示发送的字符，用随机变量 $Y$ 表示接收的字符，则信道特性可以通过条件分布 $\mathrm{P}(Y=y|X=y)$ 表示</p>
-<p>需要做的是调节 $X$ 的分布，使发送信息和接收信息的互信息 $\mathrm{I}(X,Y)$ 尽可能大，其最大上限 $c$ 称为信道容量。定义信道传输速率 $r$ 指实际传输1个字符所需发送比特数，可以理解为编码前后的字符串长度比</p>
-<ul>
-<li>如果信息传输速率 $r&lt;c$，必然存在一种信道编码方式使得通信错误率达到任意小的值</li>
-<li>如果 $r&gt;c$，则无法将通信错误率降低到任意小的值</li>
-</ul>
-<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p><strong>无限集的大小</strong></p>
-<ul>
-<li>能够与自然数集 $\mathbb{N}$ 元素一一对应的集合称为<strong>可数集</strong>，其集合的势为 $\aleph_1$</li>
-<li>整数集 $\mathbb{Z}$、有理数集 $\mathbb{Q}$ 均为可数集</li>
-<li>实数集 $\mathbb{R}$ 不是可数集，其集合的势为 $\aleph_2$</li>
-</ul>
-<p><strong>高斯积分</strong><br>$$\int_{-\infty}^{\infty}\exp(-ax^2)\mathrm{d}x=\sqrt\frac{\pi}{a}$$</p>
-<p><strong>内积</strong></p>
-<p>假设某个内积空间的两个标准正交基<br>$$<br>\boldsymbol{x}=\begin{pmatrix} x_1\\vdots\x_n \end{pmatrix},\qquad<br>\boldsymbol{y}=\begin{pmatrix} y_1\\vdots\y_n \end{pmatrix}<br>$$<br>内积计算：<br>$$\boldsymbol{x}\cdot\boldsymbol{y}=\boldsymbol{y}\cdot\boldsymbol{x}=\boldsymbol{x}^T\boldsymbol{y}=\boldsymbol{y}^T\boldsymbol{x}$$<br>$$\boldsymbol{x}\cdot\boldsymbol{y}=|\boldsymbol{x}||\boldsymbol{y}|\cos\theta$$<br>$$|\boldsymbol{x}|^2=\boldsymbol{x}\cdot\boldsymbol{x}=\boldsymbol{x}^T\boldsymbol{x}$$</p>
-<p><strong>琴生不等式、吉布斯不等式、马尔可夫不等式、切比雪夫不等式、切尔诺夫界、民科夫斯基不等式、赫尔德不等式</strong>(略)</p>
-<p><strong>特征函数</strong></p>
-<p>实数值随机变量 $X$，定义特征函数为：<br>$$\phi_X(t)\equiv\mathrm{E}[e^{\mathrm{i}tX}]=\int_{-\infty}^{\infty}f_X(x)e^{\mathrm{i}tx}\mathrm{d}x$$</p>
-<p><strong>KL散度与大偏差原理</strong>（略）</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cpp.plus/2019/05/05/《程序员的数学3：线性代数》笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZhongChen">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhongChen的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/05/《程序员的数学3：线性代数》笔记/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-05T16:51:33+08:00">
-                2019-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>中文版勘误：<a href="http://www.ituring.com.cn/book/1239" target="_blank" rel="noopener">http://www.ituring.com.cn/book/1239</a></p>
-<p>日文版勘误：<a href="http://wiki.fdiary.net/lacs/?Errata" target="_blank" rel="noopener">http://wiki.fdiary.net/lacs/?Errata</a></p>
-<h1 id="第1章：用空间的语言表达向量、矩阵、行列式"><a href="#第1章：用空间的语言表达向量、矩阵、行列式" class="headerlink" title="第1章：用空间的语言表达向量、矩阵、行列式"></a>第1章：用空间的语言表达向量、矩阵、行列式</h1><h2 id="向量与空间"><a href="#向量与空间" class="headerlink" title="向量与空间"></a>向量与空间</h2><p>把数列成一列就是向量，例如：<br>$$\begin{pmatrix}<br>2\5\7<br>\end{pmatrix}$$</p>
-<p>也可以写作 $(2,5,7)^T$</p>
-<p>对于元素在实数范围内的向量和矩阵，称之为<strong>实向量</strong>和<strong>实矩阵</strong>；如果元素是复数，则称之为<strong>复向量</strong>和<strong>复矩阵</strong></p>
-<p>向量加法：<br>$$\begin{pmatrix} x_1\\vdots\x_n \end{pmatrix}+<br>\begin{pmatrix} y_1\\vdots\y_n \end{pmatrix}=<br>\begin{pmatrix} x_1+y_1\\vdots\x_n+y_n \end{pmatrix}$$</p>
-<p>标量乘法：<br>$$c \begin{pmatrix} x_1\\vdots\x_n \end{pmatrix}=<br>\begin{pmatrix} cx_1\\vdots\cx_n \end{pmatrix}<br>$$</p>
-<p>还有一系列朴素的计算公式。但是对于乘法和除法，尽管很多支持矩阵运算的计算机语言中有针对向量/矩阵对应位置的乘法或除法计算，但从线性代数角度来看，对应位置的乘法或除法依赖于自身坐标系，无法反应本身性质</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -1085,11 +305,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/05/hello-world/" itemprop="url">Hello World</a></h1>
+                
+                <a href="/2019/05/05/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1097,11 +326,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-05T15:30:25+08:00">
-                2019-05-05
-              </time>
-            
 
+              
+                
+              
+
+              <time title="Created: 2019-05-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-05T00:00:00+08:00">2019-05-05</time>
             
 
             
@@ -1110,6 +340,7 @@
           
 
           
+            
             
           
 
@@ -1137,26 +368,393 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+            <p>
+              今天搭建好了Hexo博客，终于可以把先前的内容搬迁过来了
+搭建教程
+Hexo搭建 https://thief.one/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/
+Submodule管理Hexo主题 ht
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/05/hello-world/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://cpp.plus/2019/05/04/linear-algebra-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhongChen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhongChen的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/04/linear-algebra-note/" class="post-title-link" itemprop="url">《程序员的数学3：线性代数》笔记</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-04 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-04T00:00:00+08:00">2019-05-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-06 00:00:00" itemprop="dateModified" datetime="2019-05-06T00:00:00+08:00">2019-05-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              开始看线性代数这本书
+中文版勘误：http://www.ituring.com.cn/book/1239
+日文版勘误：http://wiki.fdiary.net/lacs/?Errata
+第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如：
+\begin{pmatrix
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/04/linear-algebra-note/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://cpp.plus/2019/05/03/probability-and-statistics-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhongChen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhongChen的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/03/probability-and-statistics-note/" class="post-title-link" itemprop="url">《程序员的数学2：概率统计》笔记</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-03 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-03T00:00:00+08:00">2019-05-03</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              这本书整体来说很不错，把重点放在用形象化、几何化的方法来描述概率相关问题，而相关的公式推导和习题也是限于引出结论而并非教科书般罗列。比如用“平行世界”、“协方差矩阵就是椭圆”来描述概率问题。
+前五章主要描述了基础知识，整体比较简单；后三章是具体应用，有一定难度，但好在讲解集中于整体思路，易于理解。
+
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/03/probability-and-statistics-note/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
     
 
     
@@ -1189,9 +787,6 @@
           </div>
           
 
-
-          
-
         </div>
         
           
@@ -1205,54 +800,87 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">ZhongChen</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">categories</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
             
-
-            
-
-            
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -1260,6 +888,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -1269,16 +898,18 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">ZhongChen</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -1286,12 +917,13 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
 
 
 
 
         
+
 
 
 
@@ -1312,11 +944,14 @@
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1330,92 +965,11 @@
 
 
 
-  
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -1429,9 +983,38 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
 
 
 
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
 
 
   
@@ -1441,6 +1024,91 @@
   
 
   
+
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    
+      
+        
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   

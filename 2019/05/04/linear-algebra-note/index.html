@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="今天搭建好了Hexo博客，终于可以把先前的内容搬迁过来了 搭建教程 Hexo搭建 https://thief.one/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/ Submodule管理Hexo主题 https://www.jianshu.com/p/5abacac4133c Hexo下mathjax的">
+  <meta name="description" content="开始看线性代数这本书 中文版勘误：http://www.ituring.com.cn/book/1239 日文版勘误：http://wiki.fdiary.net/lacs/?Errata 第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如： \begin{pmatrix} 2\\5\\7 \end{pmatrix}也可以写作 $(2,5,7)^T$ 对于元素在实数范围">
+<meta name="keywords" content="读书笔记,线性代数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://cpp.plus/2019/05/05/hello-world/index.html">
+<meta property="og:title" content="《程序员的数学3：线性代数》笔记">
+<meta property="og:url" content="http://cpp.plus/2019/05/04/linear-algebra-note/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="今天搭建好了Hexo博客，终于可以把先前的内容搬迁过来了 搭建教程 Hexo搭建 https://thief.one/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/ Submodule管理Hexo主题 https://www.jianshu.com/p/5abacac4133c Hexo下mathjax的">
+<meta property="og:description" content="开始看线性代数这本书 中文版勘误：http://www.ituring.com.cn/book/1239 日文版勘误：http://wiki.fdiary.net/lacs/?Errata 第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如： \begin{pmatrix} 2\\5\\7 \end{pmatrix}也可以写作 $(2,5,7)^T$ 对于元素在实数范围">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-05-04T16:00:00.000Z">
+<meta property="og:updated_time" content="2019-05-05T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="今天搭建好了Hexo博客，终于可以把先前的内容搬迁过来了 搭建教程 Hexo搭建 https://thief.one/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/ Submodule管理Hexo主题 https://www.jianshu.com/p/5abacac4133c Hexo下mathjax的">
+<meta name="twitter:title" content="《程序员的数学3：线性代数》笔记">
+<meta name="twitter:description" content="开始看线性代数这本书 中文版勘误：http://www.ituring.com.cn/book/1239 日文版勘误：http://wiki.fdiary.net/lacs/?Errata 第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如： \begin{pmatrix} 2\\5\\7 \end{pmatrix}也可以写作 $(2,5,7)^T$ 对于元素在实数范围">
 
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://cpp.plus/2019/05/05/hello-world/">
+  <link rel="canonical" href="http://cpp.plus/2019/05/04/linear-algebra-note/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title>Hello World | ZhongChen的技术博客</title>
+  <title>《程序员的数学3：线性代数》笔记 | ZhongChen的技术博客</title>
   
 
 
@@ -289,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cpp.plus/2019/05/05/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://cpp.plus/2019/05/04/linear-algebra-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhongChen">
@@ -306,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">《程序员的数学3：线性代数》笔记
 
               
             
@@ -332,12 +333,46 @@
                 
               
 
-              <time title="Created: 2019-05-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-05T00:00:00+08:00">2019-05-05</time>
+              <time title="Created: 2019-05-04 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-04T00:00:00+08:00">2019-05-04</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-06 00:00:00" itemprop="dateModified" datetime="2019-05-06T00:00:00+08:00">2019-05-06</time>
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -367,17 +402,20 @@
       
 
       
-        <p>今天搭建好了Hexo博客，终于可以把先前的内容搬迁过来了</p>
-<h1 id="搭建教程"><a href="#搭建教程" class="headerlink" title="搭建教程"></a>搭建教程</h1><ul>
-<li>Hexo搭建 <a href="https://thief.one/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">https://thief.one/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</a></li>
-<li>Submodule管理Hexo主题 <a href="https://www.jianshu.com/p/5abacac4133c" target="_blank" rel="noopener">https://www.jianshu.com/p/5abacac4133c</a></li>
-<li>Hexo下mathjax的转义问题 <a href="https://segmentfault.com/a/1190000007261752" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007261752</a></li>
-<li>Hexo 集成 Travis CI 自动部署博文 <a href="https://wafer.li/Hexo/Hexo%20%E9%9B%86%E6%88%90%20Travis%20CI%20%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%8D%9A%E6%96%87/" target="_blank" rel="noopener">https://wafer.li/Hexo/Hexo%20%E9%9B%86%E6%88%90%20Travis%20CI%20%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%8D%9A%E6%96%87/</a></li>
-</ul>
-<h1 id="测试公式显示能力"><a href="#测试公式显示能力" class="headerlink" title="测试公式显示能力"></a>测试公式显示能力</h1><p>行间公式：</p>
-<script type="math/tex; mode=display">\alpha_\beta=\gamma_\delta</script><script type="math/tex; mode=display">a*b</script><script type="math/tex; mode=display">a**b</script><script type="math/tex; mode=display">X \boldsymbol{X}</script><p>行内公式 $\alpha_\beta=\gamma_\delta$</p>
-<p>行内公式 $a*b$</p>
-<p>行内公式 $a**b$</p>
+        <p>开始看线性代数这本书</p>
+<p>中文版勘误：<a href="http://www.ituring.com.cn/book/1239" target="_blank" rel="noopener">http://www.ituring.com.cn/book/1239</a></p>
+<p>日文版勘误：<a href="http://wiki.fdiary.net/lacs/?Errata" target="_blank" rel="noopener">http://wiki.fdiary.net/lacs/?Errata</a></p>
+<h1 id="第1章：用空间的语言表达向量、矩阵、行列式"><a href="#第1章：用空间的语言表达向量、矩阵、行列式" class="headerlink" title="第1章：用空间的语言表达向量、矩阵、行列式"></a>第1章：用空间的语言表达向量、矩阵、行列式</h1><h2 id="向量与空间"><a href="#向量与空间" class="headerlink" title="向量与空间"></a>向量与空间</h2><p>把数列成一列就是向量，例如：</p>
+<script type="math/tex; mode=display">\begin{pmatrix}
+2\\5\\7
+\end{pmatrix}</script><p>也可以写作 $(2,5,7)^T$</p>
+<p>对于元素在实数范围内的向量和矩阵，称之为<strong>实向量</strong>和<strong>实矩阵</strong>；如果元素是复数，则称之为<strong>复向量</strong>和<strong>复矩阵</strong></p>
+<p>向量加法：</p>
+<script type="math/tex; mode=display">\begin{pmatrix} x_1\\\vdots\\x_n \end{pmatrix}+
+\begin{pmatrix} y_1\\\vdots\\y_n \end{pmatrix}=
+\begin{pmatrix} x_1+y_1\\\vdots\\x_n+y_n \end{pmatrix}</script><p>标量乘法：</p>
+<script type="math/tex; mode=display">c \begin{pmatrix} x_1\\\vdots\\x_n \end{pmatrix}=
+\begin{pmatrix} cx_1\\\vdots\\cx_n \end{pmatrix}</script><p>还有一系列朴素的计算公式。但是对于乘法和除法，尽管很多支持矩阵运算的计算机语言中有针对向量/矩阵对应位置的乘法或除法计算，但从线性代数角度来看，对应位置的乘法或除法依赖于自身坐标系，无法反应本身性质</p>
 
       
     </div>
@@ -399,6 +437,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
+          
+            <a href="/tags/线性代数/" rel="tag"># 线性代数</a>
+          
+        </div>
+      
 
       
       
@@ -408,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/04/linear-algebra-note/" rel="next" title="《程序员的数学3：线性代数》笔记">
-                <i class="fa fa-chevron-left"></i> 《程序员的数学3：线性代数》笔记
+              <a href="/2019/05/03/probability-and-statistics-note/" rel="next" title="《程序员的数学2：概率统计》笔记">
+                <i class="fa fa-chevron-left"></i> 《程序员的数学2：概率统计》笔记
               </a>
             
           </div>
@@ -417,6 +463,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/05/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -557,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建教程"><span class="nav-number">1.</span> <span class="nav-text">搭建教程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试公式显示能力"><span class="nav-number">2.</span> <span class="nav-text">测试公式显示能力</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第1章：用空间的语言表达向量、矩阵、行列式"><span class="nav-number">1.</span> <span class="nav-text">第1章：用空间的语言表达向量、矩阵、行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量与空间"><span class="nav-number">1.1.</span> <span class="nav-text">向量与空间</span></a></li></ol></li></ol></div>
             
 
           </div>
