@@ -1,38 +1,22 @@
 ---
 title: Hello World
+slug: hello-world
+date: 2019-5-5
+updated: 2019-5-6
+mathjax: true
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+今天搭建好了Hexo博客，终于可以把先前的内容搬迁过来了
 
-### Create a new post
+# 测试公式显示能力
 
-``` bash
-$ hexo new "My New Post"
-```
+行间公式：
+$$\alpha_\beta=\gamma_\delta$$
+$$a*b$$
+$$a**b$$
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+行内公式 $\alpha_\beta=\gamma_\delta$
 
-### Run server
+行内公式 $a*b$
 
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)
+行内公式 $a**b$
