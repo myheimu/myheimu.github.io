@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="这本书说是自然语言处理，实际上主要是一些数学基础、机器学习基础，以及搜索、推荐、广告、对话等各方面的介绍。 全书结构方面不太好，各处顺序有些奇怪，经常在一大块内容之后又带上好多零碎内容不好归类。 内容方面，涉及较广，内容蛮新，内容也有深度。不过整体上是博客风格，有的分析比较深，有的一笔带过，各不相同。 作者很多地方更强调模型之间的发展逻辑和对比关系，视角更高，了解更深，这一点非常棒。 作为入门阅读">
+<meta name="keywords" content="读书笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《文本上的算法——深入浅出自然语言处理》读书笔记">
+<meta property="og:url" content="https://zhong.blog/2019/04/27/algorithm-for-text-note/index.html">
+<meta property="og:site_name" content="ZhongChen的技术博客">
+<meta property="og:description" content="这本书说是自然语言处理，实际上主要是一些数学基础、机器学习基础，以及搜索、推荐、广告、对话等各方面的介绍。 全书结构方面不太好，各处顺序有些奇怪，经常在一大块内容之后又带上好多零碎内容不好归类。 内容方面，涉及较广，内容蛮新，内容也有深度。不过整体上是博客风格，有的分析比较深，有的一笔带过，各不相同。 作者很多地方更强调模型之间的发展逻辑和对比关系，视角更高，了解更深，这一点非常棒。 作为入门阅读">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-05-05T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《文本上的算法——深入浅出自然语言处理》读书笔记">
+<meta name="twitter:description" content="这本书说是自然语言处理，实际上主要是一些数学基础、机器学习基础，以及搜索、推荐、广告、对话等各方面的介绍。 全书结构方面不太好，各处顺序有些奇怪，经常在一大块内容之后又带上好多零碎内容不好归类。 内容方面，涉及较广，内容蛮新，内容也有深度。不过整体上是博客风格，有的分析比较深，有的一笔带过，各不相同。 作者很多地方更强调模型之间的发展逻辑和对比关系，视角更高，了解更深，这一点非常棒。 作为入门阅读">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://zhong.blog/2019/04/27/algorithm-for-text-note/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>《文本上的算法——深入浅出自然语言处理》读书笔记 | ZhongChen的技术博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZhongChen的技术博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">技术是条无尽的道路</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhong.blog/2019/04/27/algorithm-for-text-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhongChen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhongChen的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《文本上的算法——深入浅出自然语言处理》读书笔记
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-27 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-27T00:00:00+08:00">2019-04-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-06 00:00:00" itemprop="dateModified" datetime="2019-05-06T00:00:00+08:00">2019-05-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/NLP/" itemprop="url" rel="index"><span itemprop="name">NLP</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这本书说是自然语言处理，实际上主要是一些数学基础、机器学习基础，以及搜索、推荐、广告、对话等各方面的介绍。</p>
+<p>全书结构方面不太好，各处顺序有些奇怪，经常在一大块内容之后又带上好多零碎内容不好归类。</p>
+<p>内容方面，涉及较广，内容蛮新，内容也有深度。不过整体上是博客风格，有的分析比较深，有的一笔带过，各不相同。</p>
+<p>作者很多地方更强调模型之间的发展逻辑和对比关系，视角更高，了解更深，这一点非常棒。</p>
+<p>作为入门阅读的话，要忽略掉一些困难的推理以及论文综述的每篇论文内部思路，重点了解整体内容，不要陷入推导和前沿论文的沼泽。</p>
+<p>作为进阶阅读的话，需要多查询其他资料，尽可能把各个部分都做到彻底吃透（事实上作者也有些逃避，很多内容只挑简单部分说而对复杂部分一笔带过），建议数学部分需要全部吃透，综述部分可以挑自己感兴趣的领域，虽然这很困难。</p>
+<p>PS：为了记录方便，对于公式采用简化的纯文本写法，简单的上下标用unicode符号直接表示，复杂的用LaTex写法（正常文本_{下标}，正常文本^{上标}），∑、∏等不详细写范围。准确公式请参照原文或查询资料。</p>
+<h1 id="第1章-一些基础知识"><a href="#第1章-一些基础知识" class="headerlink" title="第1章 一些基础知识"></a>第1章 一些基础知识</h1><p>信息论：信息熵、联合熵、条件熵、相对熵（KL散度、信息增益）、互信息、交叉熵</p>
+<p>概率论、贝叶斯法则：P(x|y) = (P(y|x)P(x)) / P(y)</p>
+<p>先验概率（Prior probability）：P(x)，“因”的固有常识、经验概率</p>
+<p>后验概率（Posterior probability）：P(x|y)，通过“果”来推断“因”的条件概率</p>
+<p>似然函数（Likelihood function）：𝓛(y|x) = C×P(y|x)，由“因”导致“果”的可能性</p>
+<p>（ 对此查了一些资料，总结为：<a href="https://zhuanlan.zhihu.com/p/63485232" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/63485232</a> ）</p>
+<h1 id="第2章-寻求最优解"><a href="#第2章-寻求最优解" class="headerlink" title="第2章 寻求最优解"></a>第2章 寻求最优解</h1><p>几乎所有机器学习问题背后都是最优化问题，即：min 𝑓(x)  s.t. ℎ(x)=0, 𝑔(x) ⩽ 0</p>
+<ul>
+<li>没有约束条件ℎ和𝑔的叫无约束优化，只有ℎ的叫有等式约束优化，ℎ和𝑔都有的叫有不等式约束优化。</li>
+</ul>
+<p>目标函数（损失函数）：常见的有平方损失、绝对损失、合页损失、似然损失等</p>
+<p>正则化：L₀范数、L₁范数、L₂范数</p>
+<p>损失函数的期望最小化（经验风险最小化）+正则化最小化（结构风险最小化）</p>
+<p>优先选择熟悉的模型。如果模型了解非常透彻只需要代入数据，则叫参数估计；如果不够了解，则叫非参数估计。</p>
+<p>最大似然估计（概率派观点）</p>
+<ul>
+<li>θ_{MLE} = argmax_{θ} p(x|θ) = argmax_{θ} ∏ P(xᵢ|θ)</li>
+<li>换用对数形式，即 θ_{MLE} = argmax_{θ} ∑ log(p(xᵢ|θ))</li>
+</ul>
+<p>最大后验估计（贝叶斯派观点）</p>
+<ul>
+<li>θ_{MAP} = argmax_{θ} p(x|θ)p(θ)</li>
+</ul>
+<p>最小二乘法估计（仅针对高斯分布）</p>
+<ul>
+<li>使得平方和损失最小，解析解</li>
+</ul>
+<p>无约束优化问题，可以采用梯度下降、牛顿法/拟牛顿法、共轭梯度法等。</p>
+<ul>
+<li>梯度下降：批量梯度下降、随机梯度下降SGD、mini-batch梯度下降</li>
+</ul>
+<p>有约束优化问题，大多用拉格朗日乘子法转化为无约束优化问题求解。</p>
+<ul>
+<li>等式约束优化问题，拉格朗日乘子法：L(x,α) = f(x) + αh(x)</li>
+<li>不等式约束优化问题，拉格朗日乘子法：L(x,α,β) = f(x) + αh(x) + βg(x)  (β&gt;=0)</li>
+<li>原问题不好解决情况下，可以采用对偶问题</li>
+</ul>
+<h1 id="第3章-让机器像人一样学习"><a href="#第3章-让机器像人一样学习" class="headerlink" title="第3章 让机器像人一样学习"></a>第3章 让机器像人一样学习</h1><p>监督学习的两种模型</p>
+<ul>
+<li>判别式模型，其概率图是无向图，求解条件概率p(y|x)。只关心类的边界。例如LR、SVM、NN、CRF等</li>
+<li>生成式模型，其概率图是有向图，求解概率p(x|y)和p(y)，然后根据贝叶斯法则求后验概率。关心每个类的具体分布。例如朴素贝叶斯、HMM、贝叶斯网络、LDA等。</li>
+</ul>
+<h2 id="3-2-逻辑回归-因子分解机"><a href="#3-2-逻辑回归-因子分解机" class="headerlink" title="3.2 逻辑回归/因子分解机"></a>3.2 逻辑回归/因子分解机</h2><p><strong>线性回归模型</strong> y = f(x) = θᵀx</p>
+<p><strong>逻辑回归模型LR</strong>，在线性回归基础上加上sigmoid —— g(z)=1/(1+e⁻ᶻ^{-z})，则最终h_θ(x) = g(θᵀx)</p>
+<p>如果采用平方损失作为目标函数，由于sigmoid存在，其目标函数并非凸函数，没有最优解。</p>
+<p>因此采用最大似然估计：</p>
+<ul>
+<li>针对二分类，假设p(y=1|x,θ) = h_θ(x)，那么p(y=0|x,θ) = 1 - h_θ(x)</li>
+<li>概率分布p(y|x,θ) = (h_θ(x))ʸ (1 - h_θ(x))¹⁻ʸ</li>
+<li>似然函数𝓛(θ) = p(Y|X, θ) = ∏ p(yʲ|xʲ,θ)</li>
+<li>取log化，L(θ) = log𝓛(θ)</li>
+<li>L(θ)对θᵢ求导，得到(1/M) ∑ (yʲ - h_θ(xʲ)) xᵢʲ</li>
+<li>随后对其进行梯度上升法。（公式刚好与线性回归是一样的）</li>
+</ul>
+<p>把逻辑回归扩展到多分类，也就是使用softmax：</p>
+<ul>
+<li>p(y=c|x,θ_c) = softmax(θ_cᵀx)</li>
+<li>同样也可以通过最大似然估计，计算出梯度上升法公式。</li>
+</ul>
+<p><strong>因子分解机FM</strong></p>
+<p>考虑特征关联性，进行两两组合 y(x)=w₀+∑wᵢxᵢ + ∑∑wᵢⱼxᵢxⱼ</p>
+<p>但样本稀疏情况下很难训练</p>
+<p>针对wᵢⱼ组成的对称矩阵尝试分解 W = VᵀV，此时wᵢⱼ=<vᵢ,vⱼ> （点积）</vᵢ,vⱼ></p>
+<p>然后可以推导y(x)到相关参数wᵢ和vⱼ,ₖ的偏导，用于梯度上升计算</p>
+<p>延伸到在线计算，FTRL</p>
+<h2 id="3-3-最大熵模型-条件随机场"><a href="#3-3-最大熵模型-条件随机场" class="headerlink" title="3.3 最大熵模型/条件随机场"></a>3.3 最大熵模型/条件随机场</h2><p>最大熵模型</p>
+<ul>
+<li>特征函数f(x,y)，当x,y为样本中某个xᵢ,yᵢ时为1，否则为0</li>
+<li>样本期望p᠆(f) = ∑ p᠆(x,y) f(x,y)</li>
+<li>模型期望p(f) = ∑p(x,y)f(x,y) = ∑ p᠆(x) p(y|x) f(x,y)</li>
+<li>目标函数：X情况下Y的条件熵：argmaxₚH(p) = -∑ p᠆(x) p(y|x) log p(y|x)</li>
+<li>限制条件1：∀fᵢ ∑ p᠆(x,y) fᵢ(x,y) = ∑ p᠆(x) p(y|x) fᵢ(x,y)</li>
+<li>限制条件2：∀x ∑ p(y|x) = 1</li>
+<li>采用拉格朗日乘子法，其中参数采用一系列a，直接求导为零难以计算</li>
+<li>采用对偶原理，将minₚmaxₐ L(p, a)转换为maxₐminₚ L(p, a)</li>
+<li>计算得到p(y|x)解析解</li>
+<li>然而a难以继续解析求解，需要采用GIS、IIS、LBFGS等数值求解方法</li>
+<li>例如IIS，利用最大似然估计L’(a) = ∑p᠆(x,y) log p(y|x) 对a进行数值迭代求解</li>
+</ul>
+<p>条件随机场CRF简单提及，具有类似的方法，只不过概率图上会利用上下文</p>
+<h2 id="3-4-主题模型"><a href="#3-4-主题模型" class="headerlink" title="3.4 主题模型"></a>3.4 主题模型</h2><p>PLSA（Probabilistic Latent Semantic Analysis）</p>
+<ul>
+<li>d∈D表示文档，w∈V表示词语，z表示隐含主题</li>
+<li>P(dᵢ)表示单词在文档dᵢ中概率，P(zₖ|dᵢ)表示主题 zₖ在给定文档dᵢ下出现的概率，P(wⱼ|zₖ)表示单词 wⱼ在给定主题 zₖ下出现的概率</li>
+<li>P(dᵢ, wⱼ) = P(dᵢ) P(wⱼ|dᵢ) = P(dᵢ)  ∑  P(wⱼ|zₖ) P(zₖ|dᵢ)</li>
+<li>由于词与词之间是相互独立的，文档与文档之间也是相互独立的，则整个样本集的分布为：（n表示词在文档中的次数）<br>P(D,V) =  ∏ ∏ (P(dᵢ, wⱼ)^n( wⱼ, dᵢ))</li>
+<li>待估计的参数为θ = { P(wⱼ|zₖ),  P(zₖ|dᵢ) }</li>
+<li>样本集的log似然函数：<br>L(θ) = log P(D,V|θ) = ∑ᵢ∑ⱼ n(wⱼ, dᵢ) log P(dᵢ, wⱼ)</li>
+</ul>
+<p>EM算法</p>
+<ul>
+<li>对参数θ = { P(wⱼ|zₖ),  P(zₖ|dᵢ) }赋随机值</li>
+<li>第一步E-step：求后验概率<br>P(zₖ|dᵢ,wⱼ) = (P(wⱼ|zₖ)P(zₖ|dᵢ)) / (∑ₖP(wⱼ|zₖ)P(zₖ|dᵢ))</li>
+<li>第二步M-step：最大化似然函数的下限，解出新的参数<br>给定下限 Q(θ) = ∑ᵢ∑ⱼ n(wⱼ, dᵢ) ∑ₖP(zₖ|dᵢ,wⱼ)log(P(wⱼ|zₖ)P(zₖ|dᵢ)) ≤ L(θ)</li>
+<li>外加约束条件 ∑ⱼP(wⱼ|zₖ)=1和 ∑ₖP(zₖ|dᵢ)=1</li>
+<li>采用拉格朗日乘子，随后对P(wⱼ|zₖ)和P(zₖ|dᵢ)求导并得到新值</li>
+<li>把新值带入第一步E-step继续迭代</li>
+</ul>
+<p>LDA（Latent Dirichlet Allocation）</p>
+<ul>
+<li>相比PLSA增加了对参数的先验分布，从而避免过拟合</li>
+<li>假设了基于超参数的Dirichlet分布，以及与之共轭的Multinomial分布做下一步的先验分布</li>
+<li>由于LDA相比PLSA无法求解后验分布，所以要使用变分-EM算法，或者采用Gibbs Sampling算法</li>
+</ul>
+<p>Gibbs Sampling算法是MCMC的一个特例，如果概率不易求得，可以交替地固定某一维度，然后通过其他维度值进行抽样近似求解</p>
+<p>（书上有详细的讲解，还有配套代码，参考文献如下）</p>
+<ul>
+<li>《Variational Message Passing and Its Applications》</li>
+<li>《Latent Dirichlet Allocation》</li>
+<li>《Parameter Estimation for Text Analysis》</li>
+<li>《The Expectation Maximization Algorithm A Short Tutorial》</li>
+<li>《Gibbs Sampling in The Generative Model of Latent Dirichlet Allocation》</li>
+</ul>
+<h2 id="3-5-深度学习"><a href="#3-5-深度学习" class="headerlink" title="3.5 深度学习"></a>3.5 深度学习</h2><p>BP神经网络（1层隐藏层），及其向后传播的梯度推导过程</p>
+<p>浅层网络表达能力不强，而深层网络存在训练困难，因此早期采用贪婪式逐层学习方法</p>
+<h3 id="3-5-3-词表示（word-embedding）"><a href="#3-5-3-词表示（word-embedding）" class="headerlink" title="3.5.3 词表示（word embedding）"></a>3.5.3 词表示（word embedding）</h3><p>NNLM（神经网络语言模型）</p>
+<ul>
+<li>用前n-1个词，查询词向量，然后拼接：x = (C(w_{t-n+1}, …, C(w_{t-1})))</li>
+<li>网络结构：y = b + W·x + U·tanh(d + Hx)</li>
+<li>最后softmax，即P(w_t|w_{t-n+1}, …, w_{t-1}) = softmax(y_{w_t})</li>
+<li>参数为θ = (b,d,W,U,H,C)</li>
+</ul>
+<p>NNLM一种改进LBL（Log-Bilinear LM）</p>
+<ul>
+<li>对前n-1个词，查询词向量，然后乘以矩阵并加和：h_{wₙ} = ∑ Hᵢ × C(wᵢ)</li>
+<li>针对不同的词w_i，计算内积：y = C(wᵢ)ᵀ h_{wₙ}</li>
+<li>最后对y进行softmax</li>
+</ul>
+<p>RNNLM（循环神经网络语言模型）</p>
+<ul>
+<li>循环神经网络，w(t)为词w_t的one-hot向量，s(t-1)为上次状态，U为embedding：s(t) = sigmoid(U·w(t) + W·s(t-1))</li>
+<li>输出：P(w_{t+1} | w_t, s(t-1)) = y(t) = softmax(V·s(t))</li>
+</ul>
+<p>Word2Vec模型</p>
+<ul>
+<li>CBOW 给定一个词的窗口上下文，预测该词</li>
+<li>skip-gram 给定一个词，预测上下文</li>
+<li>Hierarchical softmax方法减少计算量</li>
+<li>Negative sampling方法减少计算量</li>
+</ul>
+<p>解决多义词方法（讲的不清楚，考虑近年ELMo、BERT已经优美解决，所以没有详细看）</p>
+<ul>
+<li>使用Topic Model得到每个词在每个类别的概率，然后融合到词表示模型中，但对长尾效果不好</li>
+<li>词聚类，把每个词根据上下文归入某一类，然后融合到词表示模型中，但对长尾效果不好</li>
+<li>实现挖掘各个词属于各个类别的先验概率，举了一种Word Multi-Embedding的方法</li>
+</ul>
+<p>词表示用法：</p>
+<ul>
+<li>把词表示当成一种额外特征补充引入模型</li>
+<li>把词表示作为直接输入完成一些nlp任务，见《Natural Language Processing (Almost) from Scratch》</li>
+</ul>
+<h3 id="3-5-4-句子表示（简单介绍没有展开）"><a href="#3-5-4-句子表示（简单介绍没有展开）" class="headerlink" title="3.5.4 句子表示（简单介绍没有展开）"></a>3.5.4 句子表示（简单介绍没有展开）</h3><ul>
+<li>方法一：直接将词向量累加平均</li>
+<li>方法二：2-gram进行卷积，最终平均池化</li>
+<li>方法三：结合句法分析，ReNN（递归神经网络）方式生成句子表示</li>
+<li>方法四：计算句向量时在每个句子前面赋予唯一的id，当训练结束后，id的向量就可以当做句向量。但无法处理新句。（《Distributed Representations of Sentences and Documents》）</li>
+<li>方法五：把句子看成词，直接训练。但无法处理新句。（《A Model of Coherence Based on Distributed Sentence Representation》）</li>
+<li>方法六：使用RNN将句子转变为向量，用它预测前后句子，使得概率最大。可以预测新句（《Skip-Thought Vectors》）</li>
+</ul>
+<h3 id="3-5-5-深度学习常见模型"><a href="#3-5-5-深度学习常见模型" class="headerlink" title="3.5.5 深度学习常见模型"></a>3.5.5 深度学习常见模型</h3><p>针对RNN任务，通常使用交叉熵损失函数，其中真实标签是one-hot的，则其损失函数等价于对数似然函数：</p>
+<p>E = -(1/T)  ∑ log(ỹ_{t,j})  其中j表示t时刻真实词的位置</p>
+<p>梯度下降的优化算法：（简单列了公式，需要查看更多资料）</p>
+<ul>
+<li>动量法：为当前迭代更新中，加入上一次的迭代更新</li>
+<li>AdaGrad：自适应地为各个参数分配不同学习率</li>
+<li>AdaDelta：用一阶方法近似模拟二阶牛顿法</li>
+<li>Rmsprop：在mini-batch学习上效果不错的算法</li>
+</ul>
+<p>RNN 循环神经网络</p>
+<ul>
+<li>hₜ = δ (W×xₜ + U×hₜ₋₁)  // 隐藏层，传递状态</li>
+<li>ỹₜ = f(V×hₜ)  // 输出层</li>
+<li>采用BPTT（基于时间的反向传播）进行训练，容易出现梯度爆炸和梯度消失问题。Mikolov提出对梯度爆炸的裁剪。梯度消失需要更好的模型解决。</li>
+</ul>
+<p>LSTM：一种基于门控制的优化RNN</p>
+<ul>
+<li>遗忘门（相应公式略，下同）</li>
+<li>输出门</li>
+<li>输入们</li>
+<li>隐藏层传递C_t和h_t两个状态</li>
+</ul>
+<p>GRU：一种比LSTM更简单的基于门控制的优化RNN</p>
+<ul>
+<li>更新门</li>
+<li>重置门</li>
+<li>隐藏层只传递h_t状态</li>
+</ul>
+<p>CW-RNN（Clockwork RNN） （没有深入了解）</p>
+<ul>
+<li>将神经元分组，并按组分配时钟周期T_i，每个组内神经元全连接</li>
+<li>时钟变化过程中，只有满足(t mod T_i) = 0的隐藏层组才会被执行</li>
+</ul>
+<p>以上几类RNN变种，其实都差不多——《LSTM: A Search Space Odyssey》</p>
+<p>Attention</p>
+<ul>
+<li>避免传统encoder-decoder架构中通过一个固定长度状态变量来传输全部信息的信息损失问题</li>
+<li>利用状态变量+上下文注意力信息</li>
+<li>最早提出：《Neural Machine Translation by Jointly Learning to Align and Translate》</li>
+<li>本书作者更倾向于在模型中加入先验信息的优化，比如《Contextural LSTM Models for Large Scale NLP Task》</li>
+</ul>
+<p>深度学习模型训练技巧：</p>
+<ul>
+<li>正则化：L1/L2</li>
+<li>Dropout</li>
+<li>增加验证集。如果验证集上效果变差，就提前停止训练</li>
+<li>增加并仔细筛选训练数据</li>
+<li>权重初始化的选择</li>
+<li>各种调参：batch大小、各层神经元数量、dropout比例、学习速率等</li>
+<li>激活函数的选择，ReLU</li>
+<li>文本任务中最后一步词汇量太大的话softmax计算量会很大，可以优化<ul>
+<li>Hierarchical softmax （word2vec相关论文提及）</li>
+<li>Noise Contrastive Estimation （word2vec相关论文提及）</li>
+<li>Approximate softmax （需要额外找资料理解）</li>
+</ul>
+</li>
+</ul>
+<p>CNN 卷积神经网络</p>
+<ul>
+<li>卷积层和池化层（也叫下采样层）</li>
+<li>CNN在图像上取得很好结果，也有很多时候用于文本</li>
+</ul>
+<p>GAN 生成式对抗网络</p>
+<ul>
+<li>生成网络G和判别网络D，轮流训练</li>
+<li>G的目标是去尽量生成真实图片欺骗D</li>
+<li>D的目标是尽量把G生成的图片和真实图片区分开</li>
+<li>目前在文本上并无明显作用，但可能对于生成式对话未来有提升</li>
+</ul>
+<h3 id="3-5-5-6-深度学习的一些应用"><a href="#3-5-5-6-深度学习的一些应用" class="headerlink" title="3.5.5.6 深度学习的一些应用"></a>3.5.5.6 深度学习的一些应用</h3><p>对话模型（简单罗列）</p>
+<ul>
+<li>使用seq2seq的机器翻译思路做对话《A Neural Conversational Model》《Neural Responding Machine for Short-Text Conversation》</li>
+<li>结合上下文信息《Attention with Intention for a Neural Network Conversation Model》《A Neural Network Approach to Context-Sensitive Generation of Conversational Responses》<ul>
+<li>在encoder和decoder之外建立intention network，用来传递前轮状态</li>
+<li>也可以把上下文c与当前输入m通过拼接，拼接后嵌入，或者分别嵌入等方式进入模型</li>
+</ul>
+</li>
+<li>采用MMI（最大互信息）作为目标函数提高多样性：《A Diversity-Promoting Objective Function for Neural Conversation Models》</li>
+<li>采用Pointwise Mutial Information预测名词，然后用两个网络分别生成名词前半部分和后半部分，避免泛泛而谈《Sequence to Backward and Forward Sequences: A Content-Introducing Approach to Generative Short-Text Conversation》</li>
+<li>引入增强学习，奖励非高频、不重复、互信息更好相关性《Deep Reinforcement Learning for Dialogue Generation》</li>
+<li>引入用户属性《A Persona-Based Neural Conversation Model》</li>
+<li>引入知识《Incorporating Unstructured Textual Knowledge Sources into Neural Dialogue System》</li>
+<li>引入在线反馈《On-line Active Reward Learning for Policy Optimization in Spoken Dialogue Systems》</li>
+</ul>
+<p>阅读理解模型（简单罗列）</p>
+<ul>
+<li>主流方案是IR信息检索，从大量文档中检索出候选集，然后通过NLP技术挑选最佳答案。《Deep Unordered Composition Rivals Syntactic Methods for Text Classification》</li>
+<li>Facebook《Memory Network》依然采用找到候选集再挑选的方法，但采用神经网络表示候选集并抽取答案。</li>
+<li>《End-To-End Memory Networks》</li>
+<li>《Teaching Machines to Read and Comprehend》</li>
+<li>《Text Understanding with The Attention Sum Reader Network》</li>
+</ul>
+<p>匹配模型（简单罗列）</p>
+<ul>
+<li>对候选集进行匹配，通常是把question和answer分别放入RNN或CNN形成向量，最后计算余弦相似度。</li>
+<li>《The Ubuntu Dialogue Corpus: A Large Dataset for Research in Unstructured Multi-Turn Dialogue Systems》</li>
+<li>《Deep Learning for Answer Sentence Selection: A Study and An Oten Task》</li>
+<li>《LSTM-Based Deep Learning Models for Non-factoid Answer Selection》</li>
+<li>《ABCNN: Attention-Based Convolutional Neural Network for Modeling Sentence Pairs》</li>
+<li>基于结构化知识三元组作为answer进行训练《Open Question Answering with Weakly Supervised Embedding Models》</li>
+<li>将问题和问题中实体关联的子图分别表示成向量来计算《Question Answering with Subgraph Embeddings》</li>
+</ul>
+<h2 id="3-6-其他模型"><a href="#3-6-其他模型" class="headerlink" title="3.6 其他模型"></a>3.6 其他模型</h2><p>kNN（k最近邻）：监督学习分类算法<br>k-means：无监督聚类</p>
+<p>DT（Decision Tree，决策树）：确定分支时ID3算法选择信息增益最大的特征属性，C4.5算法则采用信息增益比</p>
+<p>Bagging：典型的集成学习模型。有放回采样N个训练集，然后训练N个弱分类器，再多数投票。</p>
+<ul>
+<li>随机森林：对Bagging的升级版，随机选择一部分特征来做决策树的分支划分。</li>
+</ul>
+<p>Boosting：典型的集成学习模型。串行式训练多个弱分类器，后一个分类器取决于前一个分类器分错的样本。</p>
+<ul>
+<li>AdaBoost，前一个分类器分对的样本选中概率降低，分错的选中概率提高</li>
+</ul>
+<p>GBDT（Gradient Boosting Decision Tree）（写的非常简单，需要补充相关资料理解）</p>
+<ul>
+<li>Gradient Boosting是基于上一次弱模型的残差，进行下一次新的弱模型训练。</li>
+<li>GBDT中的决策树采用回归树，而非分类树</li>
+<li>GBDT可以直接用于分类或回归问题，也可以将叶子节点构成的向量作为新特征用于后续训练</li>
+</ul>
+<p>SVM （写的简单，需要补充相关资料理解）</p>
+<ul>
+<li>最优化分割间隔</li>
+<li>通过核函数映射到高维空间，然后线性划分</li>
+<li>核函数不需要真正映射，只需要能够快速算出映射到高维空间之后的向量内积即可，从而降低计算复杂度</li>
+<li>最后采用SMO算法求解最优化模型（凸二次规划问题）</li>
+</ul>
+<p>模型评价方法：</p>
+<ul>
+<li>准确率、召回率、F1</li>
+<li>PR曲线、ROC曲线、AUC面积</li>
+</ul>
+<h1 id="第4章-如何计算得更快"><a href="#第4章-如何计算得更快" class="headerlink" title="第4章 如何计算得更快"></a>第4章 如何计算得更快</h1><p>算法优化、代码优化、分布式（hadoop）</p>
+<h1 id="第5章-搜索引擎相关术语"><a href="#第5章-搜索引擎相关术语" class="headerlink" title="第5章 搜索引擎相关术语"></a>第5章 搜索引擎相关术语</h1><p>tf词频率，df词在文档的频率，idf逆文档频率 idfᵢ = log(|D| / dfᵢ)</p>
+<p>IG（Information Gain，信息增益）：特征tᵢ所带来的信息增益IG(tᵢ)=Cⱼ的信息熵 - tᵢ条件下Cⱼ的条件熵</p>
+<p>CHI（𝛘²统计量，卡方检验）：特征tᵢ与类别Cⱼ的相关联程度 𝛘²(tᵢ,Cⱼ)=∑((O-T)²/T)，采用四格表计算，随后对tᵢ与所有类别的𝛘²求最大值或者平均值作为全局性结果</p>
+<p>MI（Mutial Information，互信息）：MI(tᵢ,Cⱼ)=log(P(tᵢ,Cⱼ)/P(tᵢ)/P(Cⱼ)) = log(P(tᵢ|Cⱼ) / P(tᵢ))，同上可以对tᵢ进行全局性计算</p>
+<p>PageRank：根据投票原则，通过外链进行权重传递，最终收敛。《Deeper Inside PageRank》</p>
+<p>相似度计算</p>
+<ul>
+<li>距离方法：欧氏距离L₂范数、曼哈顿距离L₁范数、明氏距离、汉明距离、Jaccard相似系数、Jaccard距离、余弦距离、皮尔森相关系数、编辑距离等</li>
+<li>Hash方法：minhash（两个集合经随机转换后得到的两个最小hash值相等的概率等于两集合jaccard相似度）、simhash（使用simhash后的海明距离计算相似度）<br>文本中的相似度模型</li>
+<li>Bool模型：用词典数量为长度的向量表示，句子中存在某词，就标1，否则为0，然后计算两向量的余弦相似度</li>
+<li>tf<em>idf模型（增加词权重特征）：对Bool模型中词对应位置换用tf</em>idf数值</li>
+<li>BM25模型（增加长度特征）：增加长度相关归一化，避免长句占优</li>
+<li>Proximity模型（增加位置特征）：考虑位置信息<ul>
+<li>《Term Proximity Scoring for Keyword-Based Retrieval Systems》</li>
+</ul>
+</li>
+<li>语义特征模型（增加Topic主题特征）：Term相关性（同上）+Topic相关性，其中Topic相关性可以使用语言模型（没说清），或者基于主题分布的余弦相似度，或者基于主题分布的KL距离（为保证对称性，累加正反两个KL距离）<ul>
+<li>《Learning th Similarity of Documents: An Information-Geometric Approach to Document Retrieval and Categorization》</li>
+<li>《LDA Based Similarity Modeling for Question Answering》</li>
+<li>《Regularizing Ad Hoc Retrieval Scores》</li>
+</ul>
+</li>
+<li>句法特征模型（增加句法特征）：考虑句法树匹配程度，避免词类似但句法导致的含义巨变</li>
+<li>深度表示模型（增加语义特征）：<ul>
+<li>DSSM（见过，所以不详细看了）</li>
+<li>基于ReNN，针对句法分析树进行计算，形成句子表示，然后类似DSSM进行query-doc的相似度计算（没有写论文，难道是作者的业务经验？）</li>
+<li>基于LSTM生成句子向量，后续同上</li>
+</ul>
+</li>
+</ul>
+<h1 id="第6章-搜索引擎"><a href="#第6章-搜索引擎" class="headerlink" title="第6章 搜索引擎"></a>第6章 搜索引擎</h1><h2 id="6-1-搜索引擎原理"><a href="#6-1-搜索引擎原理" class="headerlink" title="6.1 搜索引擎原理"></a>6.1 搜索引擎原理</h2><p>假设Q为搜索词Query，Dᵢ为所有网页集合中第i个网页，P(Dᵢ|Q)表示给定Q时第i个网页满足用户需求的概率。</p>
+<p>概率语言模型：使用贝叶斯公式 P(Dᵢ|Q) = P(Q|Dᵢ) P(Dᵢ) / P(Q)</p>
+<ul>
+<li>P(Q)，对于同一个Query，它可视为无需计算的常数；但对不同Query来说，越常见的Query，分母越大，则需要更大的分子，即更好的结果。</li>
+<li>P(Dᵢ)，网页重要度，例如PageRank</li>
+<li>P(Q|Dᵢ)，给定网页满足需求时，查询Q的概率<ul>
+<li>可以假设Query中各词独立，转为P(t₁|Dᵢ)P(t₂|Dᵢ)…P(tₙ|Dᵢ)，形成词的倒排索引<br>然而实际使用中，直接获得P(Dᵢ|Q)可能比上述方法更好。可以依赖点击反馈直接获得，当然还要面临开发和探索问题（Exploitation&amp;Exploration）</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-2-搜索引擎架构"><a href="#6-2-搜索引擎架构" class="headerlink" title="6.2 搜索引擎架构"></a>6.2 搜索引擎架构</h2><p>线下模块</p>
+<ul>
+<li>爬虫抓取</li>
+<li>页面解析</li>
+<li>权重计算</li>
+<li>建立索引</li>
+</ul>
+<p>线上模块</p>
+<ul>
+<li>主控MC</li>
+<li>Query分析模块QA</li>
+<li>基础搜索模块BS，从索引库中读取索引并归并完成初次筛选，基础相关性进行二次筛选</li>
+<li>返回主控，进行高端排序AR，即rerank</li>
+<li>最后从摘要库AD获得摘要返回给用户</li>
+</ul>
+<h2 id="6-3-搜索引擎核心模块"><a href="#6-3-搜索引擎核心模块" class="headerlink" title="6.3 搜索引擎核心模块"></a>6.3 搜索引擎核心模块</h2><p>爬虫部分：深度或广度优先，遍历全网</p>
+<p>网页解析：格式转换、html标签处理、解析标题和正文等</p>
+<p>权重计算：页面不同部分term权重，语义特征，时间因子，文档质量，网页主题，PageRank等</p>
+<p>索引生成：基于term的倒排索引，索引扩展，高低质量分库，水平分库</p>
+<p>Query分析：</p>
+<ul>
+<li>term级别分析：分词、专名识别、term重要性、term紧密度</li>
+<li>query级别分析：意图识别（模板匹配、分类、点击反馈）、时效性判断、query变换（同义改写、纠错改写、省略变换）</li>
+</ul>
+<p>主控模块MC：整体调度</p>
+<p>基础检索BS：从索引库中进行一次过滤（简单模型比如BM25），一部分进行二次过滤（term权重、位置信息、语义信息、文档质量等）</p>
+<p>高端排序AR：页面质量调权、query需求调权、时效性调权、多样性调权、权威性调权、点击调权。</p>
+<ul>
+<li>点击模型《A Dynamic Bayesian Network Click Model for Web Search Ranking》</li>
+<li>多样性《Diversifying Search Results》</li>
+</ul>
+<p>Learning To Rank</p>
+<ul>
+<li>Pointwise：将排序问题转变为多分类问题或者回归问题，直接算出query下各文档得分。例如McRank算法。CTR预估通常采用pointwise。</li>
+<li>Pairwise：将排序问题转变为二元分类问题，针对同一query，计算两个doc之间的前后顺序。算法包括RankSVM、RankNet、Frank、RankBoost、GBRank等。</li>
+<li>Listwise：直接对排序指标（例如NDCG）进行优化。算法包括ListNet、SVM-MAP、LambdaRank、LambdaMART等。</li>
+<li>商业搜索引擎中通常LTR并非端到端使用，只是用来计算一些高级特征供上层排序使用。（此处没有详细展开）</li>
+</ul>
+<p>RankNet 《Learning to Rank using Gradient Descent》</p>
+<ul>
+<li>对于URL对{Uᵢ, Uⱼ}，模型输出得分为sᵢ和sⱼ</li>
+<li>Uᵢ 比 Uⱼ 更相关的真实概率（标注数据）为Ṗᵢⱼ = (1+Sᵢⱼ)/2，其中Sᵢⱼ在Uᵢ 比 Uⱼ 更相关时为1，反向为-1，相关性相同为0</li>
+<li>Uᵢ 比 Uⱼ 更相关的预测概率（模型输出）为Pᵢⱼ = 1 / (1 + e^{-σ(sᵢ-sⱼ)})</li>
+<li>采用两者交叉熵：Cᵢⱼ = -Ṗᵢⱼ log Pᵢⱼ - (1-Ṗᵢⱼ) log(1-Pᵢⱼ)，总计所有pair：C = ∑ Cᵢⱼ</li>
+<li>梯度下降，对模型参数进行训练</li>
+<li>可以限制pair对为有序对（即Uᵢ &gt; Uⱼ），则可大大简化公式</li>
+</ul>
+<p>LambdaRank</p>
+<ul>
+<li>相比RankNet仅优化错误对，更加关注NDCG</li>
+<li>NDCG非平滑不连续，无法直接求梯度，所以直接定义经验梯度：</li>
+<li>λᵢⱼ = ∂C(sᵢ-sⱼ) / ∂sᵢ = - σ / (1+e^{-σ(sᵢ-sⱼ)}) × |ΔNDCG|</li>
+<li>一部分包括RankNet中的梯度，一部分包括交换Uᵢ、Uⱼ位置后NDCG的变化差值</li>
+</ul>
+<p>LambdaMART</p>
+<ul>
+<li>基于LambdaRank的梯度，加上MART（GBDT）形成</li>
+<li>具体演进《From RankNet to LambdaRank to LambdaMART: An Overview》</li>
+</ul>
+<p>训练特征：query信息、文档信息、匹配信息、语义信息、用户信息等</p>
+<p>索引归并算法：</p>
+<ul>
+<li>Term-At-A-Time(TAAT)：每次只打开一条倒排链，对单个term的列表进行遍历</li>
+<li>Document-At-A-Time(DAAT)：同时对多倒排链进行归并，完整处理文档所有term<ul>
+<li>可以采用跳表来优化《Skip Lists: a Probabilistic Alternative to Balanced Trees》</li>
+</ul>
+</li>
+</ul>
+<p>查询表达式</p>
+<ul>
+<li>常用的包括AND、OR、NOT</li>
+<li>跳表可以优化AND</li>
+<li>但对于OR就需要剪枝限界，例如MaxScore和Weak-AND算法，基于估算相关性上限来提前结束 《Efficient Query Evaluation using a Two-Level Retrieval Process》</li>
+<li>也可以基于term的重要度，进行内部and和or操作，对权重低的term进行提前剪枝</li>
+</ul>
+<p>搜索引擎评价</p>
+<ul>
+<li>MAP（Mean Average Precision）：对准确的网页，按照位置调整权重并平均</li>
+<li>DCG（Discounted Cumulative Gain）：评价权重+位置权重，其与理想值IDCG的比值即NDCG</li>
+<li>MRR（Mean Reciprocal Rank）：第一个准确答案的排名情况，多用于导航和问答类评价</li>
+</ul>
+<p>搜索引擎更多论文《Ranking Relevance in Yahoo Search》《Newral Models for INformation Retrieval》</p>
+<p>搜索引擎其他模块：</p>
+<ul>
+<li>输入提示</li>
+<li>相关搜索</li>
+<li>反作弊、反垃圾</li>
+<li>网页驱虫</li>
+<li>缓存</li>
+<li>日志挖掘Query与Query关系乃至term之间关系等 《SimRank: A Measure of Structural-Context Similarity》</li>
+</ul>
+<h2 id="6-4-搜索广告"><a href="#6-4-搜索广告" class="headerlink" title="6.4 搜索广告"></a>6.4 搜索广告</h2><p>术语：CPC按每次点击收费，CPM按每千次展现收费，CPA按每次行动收费，CPS按销售收费，CPL按每次引导收费，CPD按天收费，CTR点击率，CVR转化率，RPM每千次展示收入</p>
+<p>RTB（Real-Time Bidding，实时竞价）广告</p>
+<ul>
+<li>Ad Exchange 广告交易平台</li>
+<li>DSP 需求方平台</li>
+<li>SSP 供应方平台</li>
+<li>DMP 数据管理平台</li>
+<li>针对每一次访问，根据用户的个性化标签，由各家广告主对此类用户的报价进行竞价</li>
+</ul>
+<p>广告系统框架（简单介绍）</p>
+<ul>
+<li>Query分析</li>
+<li>触发系统，根据query召回拍卖词，去广告库寻找广告</li>
+<li>排序模块，广告质量Q×出价Bid，其中广告质量部分通常使用pCTR（预估点击率）</li>
+<li>排序结果进行展现，对应触发计费系统。一般使用广义二阶价格。</li>
+</ul>
+<h1 id="第7章-如何让机器猜的更准（推荐）"><a href="#第7章-如何让机器猜的更准（推荐）" class="headerlink" title="第7章 如何让机器猜的更准（推荐）"></a>第7章 如何让机器猜的更准（推荐）</h1><h2 id="基于协同过滤的推荐（Collaborative-Filtering，-CF）"><a href="#基于协同过滤的推荐（Collaborative-Filtering，-CF）" class="headerlink" title="基于协同过滤的推荐（Collaborative Filtering， CF）"></a>基于协同过滤的推荐（Collaborative Filtering， CF）</h2><p>User-Based CF</p>
+<ul>
+<li>p(u,i) = ȓᵤ + ∑ (sim(u,v)×(rᵥᵢ - ȓᵥ)) / ∑ sim(u,v)</li>
+<li>p(u,i)表示用户u对物品i的打分预测值，sim(u,v)表示用户u和用户v的皮尔森相关系数，rᵥᵢ表示用户v对物品i的打分， ȓᵤ表示用户u的平均打分</li>
+</ul>
+<p>Item-Based CF</p>
+<ul>
+<li>p(u,i) = ∑ (sim(j,i)×rᵤⱼ) / ∑ sim(j,i)</li>
+</ul>
+<p>对比来说，Item-Based CF可以进行线下物品计算，减少线上计算量，用的更多。</p>
+<p>Slope One预测器《Slope One Predictors for Online Rating-Based Collaborative Filtering》</p>
+<p>CF的大规模计划改造《Google News Personalization: Scalable Online Collaborative Filtering》</p>
+<p>也可以基于SVD进行矩阵分解来做协同过滤《Application of Dimensionality Reducation in Recommender System - A Case Study》</p>
+<h2 id="基于内容的推荐"><a href="#基于内容的推荐" class="headerlink" title="基于内容的推荐"></a>基于内容的推荐</h2><p>可以基于内容的分类、聚类，来给用户推荐</p>
+<p>可以基于搜索，采用用户兴趣和用户上下文作为Query来进行搜索、排序<br>《Up Next: Retrieval Methods for Large Scale Related Video Suggestion》</p>
+<h2 id="混合推荐：真实的推荐系统架构（简单罗列）"><a href="#混合推荐：真实的推荐系统架构（简单罗列）" class="headerlink" title="混合推荐：真实的推荐系统架构（简单罗列）"></a>混合推荐：真实的推荐系统架构（简单罗列）</h2><p>用户画像</p>
+<p>排序模型：《Deep Neural Networks for Youtube Recommendations》《Wide&amp;Deep Learning for Recommender Systems》</p>
+<p>物品属性计算：《Personalized News Recommendation Based on Click Behavior》《Personalized Recommendation on Dynamic Content Using Predictive Bilinear Models》《A Contextural-Bandit Approach to Personalized News Article Recommendation》</p>
+<p>推荐系统评价：CTR、点击次数、多样性、新颖性等等。《Recommender System Performance Evaluation and Prediction: An Information Retrieval Perspective》《Evaluating the Accuracy and Utility of Recommender Systems》《Evaluating Recommendation Systems》</p>
+<h1 id="第8章-理解语言有多难"><a href="#第8章-理解语言有多难" class="headerlink" title="第8章 理解语言有多难"></a>第8章 理解语言有多难</h1><p>对NLP的一个分类：</p>
+<ul>
+<li>资源：知识库（知识抽取、知识表示、知识推理）、词典（Log挖掘、Click挖掘、Session挖掘、Web挖掘）</li>
+<li>词汇级别：词法层面分析（分词、词性标注、专名识别、新词发现）、词汇关系（Ontology构建、词聚类）</li>
+<li>句子级别：语义层面分析（中心词提取、意图识别、Topic分析、语义分析）、变换层面分析（同义改写、纠错改写）、结构层面分析（组块分析、句法分析）</li>
+<li>任务：文档分类/聚类、情感分析、机器翻译、摘要提取、搜索引擎/推荐系统、自动问答/人机对话</li>
+</ul>
+<p>专名识别</p>
+<ul>
+<li>CRF序列标注<ul>
+<li>BiLSTM-CRF《Neural Architectures for Named Entity Recognition》</li>
+<li>人名、地名、时间词比较好识别，但音乐、小说等边界比较宽泛，必须搭配词表</li>
+</ul>
+</li>
+</ul>
+<p><strong>句法分析</strong></p>
+<p>依存句法分析有两大类方法：</p>
+<ul>
+<li>基于图的方法：有向图中最大生成树求解问题</li>
+<li>基于策略的方法：局部贪心的序列动作，例如arc-standard和arc-eager</li>
+</ul>
+<p>近年基于深度学习的依存句法分析，例如《A Fast and Accurate Dependency Parser using Neural Networks》（简单介绍）</p>
+<p><strong>语义分析</strong></p>
+<p>将自然语言转化为逻辑表达式</p>
+<ul>
+<li>《semantic parsing via paraphrasing》</li>
+<li>《Semantic Parsing on Freebase from Question-Answer Pairs》</li>
+<li>《Large-scale Semantic Parsing via Schema Matching and Lexicon Extension》</li>
+<li>《Semantic Parsing via Staged Query Graph Generation: Question Answering with Knowledge Base》</li>
+<li>《SLING: A framework for frame semantic parsing》</li>
+</ul>
+<p><strong>知识库</strong></p>
+<p>无结构化知识和结构化知识（SPO三元组）</p>
+<ul>
+<li>基于模板的抽取</li>
+<li>基于统计模型的抽取</li>
+</ul>
+<ul>
+<li>《End-to-end Relation Extraction using LSTMs on Sequences and Tree Structures》</li>
+<li>《Language to Logical Form with Neural Attention》</li>
+<li>《Connecting Language and Knowledge Bases with Embedding Models for Relation Extraction》</li>
+<li>《Representing Text for Joint Embedding of Text and Knowledge Bases》<br>《Multilingual Relation Extraction using Compositional Universal Schema》</li>
+</ul>
+<p><strong>对话系统</strong>（整体讲的比较概括，而本身又非常复杂，需要额外找资料了解）</p>
+<p>问答型对话</p>
+<ul>
+<li>基于语义分析的方法</li>
+<li>基于信息抽取的方法</li>
+<li>端到端的方法</li>
+</ul>
+<p>任务型对话</p>
+<ul>
+<li>系统记录状态和相应动作</li>
+<li>DST（Dialog State Tracking）用于获得当前状态<ul>
+<li>生成式模型</li>
+<li>判别式模型</li>
+<li>规则系统</li>
+</ul>
+</li>
+<li>Dialog Policy用于根据当前状态做出决策动作</li>
+</ul>
+<p>闲聊型对话</p>
+<ul>
+<li>规则方法</li>
+<li>生成方法</li>
+<li>检索方法</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/22/arts-week-5/" rel="next" title="ARTS第5周（2019.4.22~28）">
+                <i class="fa fa-chevron-left"></i> ARTS第5周（2019.4.22~28）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/29/arts-week-6/" rel="prev" title="ARTS第6周（2019.4.29~5.5）">
+                ARTS第6周（2019.4.29~5.5） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ZhongChen</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">categories</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第1章-一些基础知识"><span class="nav-number">1.</span> <span class="nav-text">第1章 一些基础知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第2章-寻求最优解"><span class="nav-number">2.</span> <span class="nav-text">第2章 寻求最优解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第3章-让机器像人一样学习"><span class="nav-number">3.</span> <span class="nav-text">第3章 让机器像人一样学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-逻辑回归-因子分解机"><span class="nav-number">3.1.</span> <span class="nav-text">3.2 逻辑回归/因子分解机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-最大熵模型-条件随机场"><span class="nav-number">3.2.</span> <span class="nav-text">3.3 最大熵模型/条件随机场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-主题模型"><span class="nav-number">3.3.</span> <span class="nav-text">3.4 主题模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-深度学习"><span class="nav-number">3.4.</span> <span class="nav-text">3.5 深度学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-3-词表示（word-embedding）"><span class="nav-number">3.4.1.</span> <span class="nav-text">3.5.3 词表示（word embedding）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-4-句子表示（简单介绍没有展开）"><span class="nav-number">3.4.2.</span> <span class="nav-text">3.5.4 句子表示（简单介绍没有展开）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-5-深度学习常见模型"><span class="nav-number">3.4.3.</span> <span class="nav-text">3.5.5 深度学习常见模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-5-6-深度学习的一些应用"><span class="nav-number">3.4.4.</span> <span class="nav-text">3.5.5.6 深度学习的一些应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-其他模型"><span class="nav-number">3.5.</span> <span class="nav-text">3.6 其他模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第4章-如何计算得更快"><span class="nav-number">4.</span> <span class="nav-text">第4章 如何计算得更快</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第5章-搜索引擎相关术语"><span class="nav-number">5.</span> <span class="nav-text">第5章 搜索引擎相关术语</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第6章-搜索引擎"><span class="nav-number">6.</span> <span class="nav-text">第6章 搜索引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-搜索引擎原理"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 搜索引擎原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-搜索引擎架构"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 搜索引擎架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-搜索引擎核心模块"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 搜索引擎核心模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-搜索广告"><span class="nav-number">6.4.</span> <span class="nav-text">6.4 搜索广告</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第7章-如何让机器猜的更准（推荐）"><span class="nav-number">7.</span> <span class="nav-text">第7章 如何让机器猜的更准（推荐）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于协同过滤的推荐（Collaborative-Filtering，-CF）"><span class="nav-number">7.1.</span> <span class="nav-text">基于协同过滤的推荐（Collaborative Filtering， CF）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于内容的推荐"><span class="nav-number">7.2.</span> <span class="nav-text">基于内容的推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合推荐：真实的推荐系统架构（简单罗列）"><span class="nav-number">7.3.</span> <span class="nav-text">混合推荐：真实的推荐系统架构（简单罗列）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第8章-理解语言有多难"><span class="nav-number">8.</span> <span class="nav-text">第8章 理解语言有多难</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhongChen</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

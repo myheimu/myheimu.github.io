@@ -99,18 +99,17 @@
 
 
 
-  <meta name="description" content="开始看线性代数这本书 中文版勘误：http://www.ituring.com.cn/book/1239 日文版勘误：http://wiki.fdiary.net/lacs/?Errata 第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如： \begin{pmatrix} 2\\5\\7 \end{pmatrix}也可以写作 $(2,5,7)^T$ 对于元素在实数范围">
-<meta name="keywords" content="读书笔记,线性代数">
+  <meta name="description" content="Algorithm: LeetCode #11 Container With Most Waterhttps://leetcode.com/problems/container-with-most-water/ 解答：最直接的方法就是两两比较，算法复杂度 $O(n)$。 通过观察可以发现，一个“最佳结果”，其左边挡板不可能还有比它更左更高的存在，否则可以反证还有更好的最佳结果。右边也一样。 所以，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《程序员的数学3：线性代数》笔记">
-<meta property="og:url" content="https://zhong.blog/2019/05/04/linear-algebra-note/index.html">
+<meta property="og:title" content="ARTS第5周（2019.4.22~28）">
+<meta property="og:url" content="https://zhong.blog/2019/04/22/arts-week-5/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="开始看线性代数这本书 中文版勘误：http://www.ituring.com.cn/book/1239 日文版勘误：http://wiki.fdiary.net/lacs/?Errata 第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如： \begin{pmatrix} 2\\5\\7 \end{pmatrix}也可以写作 $(2,5,7)^T$ 对于元素在实数范围">
+<meta property="og:description" content="Algorithm: LeetCode #11 Container With Most Waterhttps://leetcode.com/problems/container-with-most-water/ 解答：最直接的方法就是两两比较，算法复杂度 $O(n)$。 通过观察可以发现，一个“最佳结果”，其左边挡板不可能还有比它更左更高的存在，否则可以反证还有更好的最佳结果。右边也一样。 所以，">
 <meta property="og:locale" content="zh">
 <meta property="og:updated_time" content="2019-05-05T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《程序员的数学3：线性代数》笔记">
-<meta name="twitter:description" content="开始看线性代数这本书 中文版勘误：http://www.ituring.com.cn/book/1239 日文版勘误：http://wiki.fdiary.net/lacs/?Errata 第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如： \begin{pmatrix} 2\\5\\7 \end{pmatrix}也可以写作 $(2,5,7)^T$ 对于元素在实数范围">
+<meta name="twitter:title" content="ARTS第5周（2019.4.22~28）">
+<meta name="twitter:description" content="Algorithm: LeetCode #11 Container With Most Waterhttps://leetcode.com/problems/container-with-most-water/ 解答：最直接的方法就是两两比较，算法复杂度 $O(n)$。 通过观察可以发现，一个“最佳结果”，其左边挡板不可能还有比它更左更高的存在，否则可以反证还有更好的最佳结果。右边也一样。 所以，">
 
 
 
@@ -118,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="https://zhong.blog/2019/05/04/linear-algebra-note/">
+  <link rel="canonical" href="https://zhong.blog/2019/04/22/arts-week-5/">
 
 
 
@@ -128,7 +127,7 @@
   };
 </script>
 
-  <title>《程序员的数学3：线性代数》笔记 | ZhongChen的技术博客</title>
+  <title>ARTS第5周（2019.4.22~28） | ZhongChen的技术博客</title>
   
 
 
@@ -297,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhong.blog/2019/05/04/linear-algebra-note/">
+    <link itemprop="mainEntityOfPage" href="https://zhong.blog/2019/04/22/arts-week-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhongChen">
@@ -314,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">《程序员的数学3：线性代数》笔记
+          <h1 class="post-title" itemprop="name headline">ARTS第5周（2019.4.22~28）
 
               
             
@@ -340,7 +339,7 @@
                 
               
 
-              <time title="Created: 2019-05-04 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-04T00:00:00+08:00">2019-05-04</time>
+              <time title="Created: 2019-04-22 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-22T00:00:00+08:00">2019-04-22</time>
             
 
             
@@ -374,7 +373,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ARTS/" itemprop="url" rel="index"><span itemprop="name">ARTS</span></a></span>
 
                 
                 
@@ -409,21 +408,20 @@
       
 
       
-        <p>开始看线性代数这本书</p>
-<p>中文版勘误：<a href="http://www.ituring.com.cn/book/1239" target="_blank" rel="noopener">http://www.ituring.com.cn/book/1239</a></p>
-<p>日文版勘误：<a href="http://wiki.fdiary.net/lacs/?Errata" target="_blank" rel="noopener">http://wiki.fdiary.net/lacs/?Errata</a></p>
-<h1 id="第1章：用空间的语言表达向量、矩阵、行列式"><a href="#第1章：用空间的语言表达向量、矩阵、行列式" class="headerlink" title="第1章：用空间的语言表达向量、矩阵、行列式"></a>第1章：用空间的语言表达向量、矩阵、行列式</h1><h2 id="向量与空间"><a href="#向量与空间" class="headerlink" title="向量与空间"></a>向量与空间</h2><p>把数列成一列就是向量，例如：</p>
-<script type="math/tex; mode=display">\begin{pmatrix}
-2\\5\\7
-\end{pmatrix}</script><p>也可以写作 $(2,5,7)^T$</p>
-<p>对于元素在实数范围内的向量和矩阵，称之为<strong>实向量</strong>和<strong>实矩阵</strong>；如果元素是复数，则称之为<strong>复向量</strong>和<strong>复矩阵</strong></p>
-<p>向量加法：</p>
-<script type="math/tex; mode=display">\begin{pmatrix} x_1\\\vdots\\x_n \end{pmatrix}+
-\begin{pmatrix} y_1\\\vdots\\y_n \end{pmatrix}=
-\begin{pmatrix} x_1+y_1\\\vdots\\x_n+y_n \end{pmatrix}</script><p>标量乘法：</p>
-<script type="math/tex; mode=display">c \begin{pmatrix} x_1\\\vdots\\x_n \end{pmatrix}=
-\begin{pmatrix} cx_1\\\vdots\\cx_n \end{pmatrix}</script><p>还有一系列朴素的计算公式。但是对于乘法和除法，尽管很多支持矩阵运算的计算机语言中有针对向量/矩阵对应位置的乘法或除法计算，但从线性代数角度来看，对应位置的乘法或除法依赖于自身坐标系，无法反应本身性质</p>
-
+        <h1 id="Algorithm-LeetCode-11-Container-With-Most-Water"><a href="#Algorithm-LeetCode-11-Container-With-Most-Water" class="headerlink" title="Algorithm: LeetCode #11 Container With Most Water"></a>Algorithm: LeetCode #11 Container With Most Water</h1><p><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank" rel="noopener">https://leetcode.com/problems/container-with-most-water/</a></p>
+<p>解答：最直接的方法就是两两比较，算法复杂度 $O(n)$。</p>
+<p>通过观察可以发现，一个“最佳结果”，其左边挡板不可能还有比它更左更高的存在，否则可以反证还有更好的最佳结果。右边也一样。</p>
+<p>所以，可以通过从左向右寻找当前最高值的方式，确定可以候选作为左挡板的位置；同理，右边也一样。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt; </span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = height.size();</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; right_pos;</span><br><span class="line">        <span class="keyword">int</span> right_max = height[size<span class="number">-1</span>];</span><br><span class="line">        right_pos.push_back(size<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = size<span class="number">-2</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (height[i] &gt; right_max) &#123;</span><br><span class="line">                right_pos.push_back(i);</span><br><span class="line">                right_max = height[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> left_max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> max_water = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (height[i] &gt; left_max) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">auto</span> j : right_pos) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (j &gt; i) &#123;</span><br><span class="line">                        <span class="keyword">int</span> sum = (j - i) * min(height[i], height[j]);</span><br><span class="line">                        <span class="keyword">if</span> (sum &gt; max_water) &#123;</span><br><span class="line">                            max_water = sum;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                left_max = height[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max_water;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<blockquote>
+<ul>
+<li>Runtime: 20 ms 超过98.41%的提交</li>
+<li>Memory Usage: 9.9 MB 超过92.63%的提交</li>
+</ul>
+</blockquote>
+<h1 id="Review-《DDD-101-—-The-5-Minute-Tour》"><a href="#Review-《DDD-101-—-The-5-Minute-Tour》" class="headerlink" title="Review: 《DDD 101 — The 5-Minute Tour》"></a>Review: 《DDD 101 — The 5-Minute Tour》</h1><p><a href="https://medium.com/the-coding-matrix/ddd-101-the-5-minute-tour-7a3037cf53b8" target="_blank" rel="noopener">https://medium.com/the-coding-matrix/ddd-101-the-5-minute-tour-7a3037cf53b8</a></p>
+<h1 id="Tips-LaTeX-数学公式用法"><a href="#Tips-LaTeX-数学公式用法" class="headerlink" title="Tips: $\LaTeX$ 数学公式用法"></a>Tips: $\LaTeX$ 数学公式用法</h1><h1 id="Share-《文本上的算法——深入浅出自然语言处理》读书笔记"><a href="#Share-《文本上的算法——深入浅出自然语言处理》读书笔记" class="headerlink" title="Share: 《文本上的算法——深入浅出自然语言处理》读书笔记"></a>Share: 《文本上的算法——深入浅出自然语言处理》读书笔记</h1>
       
     </div>
 
@@ -444,14 +442,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
-          
-            <a href="/tags/线性代数/" rel="tag"># 线性代数</a>
-          
-        </div>
-      
 
       
       
@@ -461,18 +451,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/03/probability-and-statistics-note/" rel="next" title="《程序员的数学2：概率统计》笔记">
-                <i class="fa fa-chevron-left"></i> 《程序员的数学2：概率统计》笔记
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/05/hello-world/" rel="prev" title="Hello 'Github Pages' World!">
-                Hello 'Github Pages' World! <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/27/algorithm-for-text-note/" rel="prev" title="《文本上的算法——深入浅出自然语言处理》读书笔记">
+                《文本上的算法——深入浅出自然语言处理》读书笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -618,7 +604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第1章：用空间的语言表达向量、矩阵、行列式"><span class="nav-number">1.</span> <span class="nav-text">第1章：用空间的语言表达向量、矩阵、行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量与空间"><span class="nav-number">1.1.</span> <span class="nav-text">向量与空间</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-11-Container-With-Most-Water"><span class="nav-number">1.</span> <span class="nav-text">Algorithm: LeetCode #11 Container With Most Water</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《DDD-101-—-The-5-Minute-Tour》"><span class="nav-number">2.</span> <span class="nav-text">Review: 《DDD 101 — The 5-Minute Tour》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips-LaTeX-数学公式用法"><span class="nav-number">3.</span> <span class="nav-text">Tips: $\LaTeX$ 数学公式用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-《文本上的算法——深入浅出自然语言处理》读书笔记"><span class="nav-number">4.</span> <span class="nav-text">Share: 《文本上的算法——深入浅出自然语言处理》读书笔记</span></a></li></ol></div>
             
 
           </div>
