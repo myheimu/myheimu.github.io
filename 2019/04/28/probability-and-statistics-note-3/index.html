@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,13 @@
 
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
@@ -73,7 +80,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.1.1',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
@@ -99,18 +106,18 @@
 
 
 
-  <meta name="description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    第7章 伪随机数\Huge{不要自己手动生成随机数！}随机数序列本书将 i.i.d. 随机变量序列 $X_1,X_2,\cdots$（或其对应的观测值）称为随机数序列或真随机数序列而在不通过物理模拟的前提下，获得一种以假乱真的随机数序列替代品方法，称之为伪随机数序列 伪随机数序列 $">
+  <meta name="description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    第7章 伪随机数$$\Huge{不要自己手动生成随机数！}$$ 随机数序列本书将 i.i.d. 随机变量序列 $X_1,X_2,\cdots$（或其对应的观测值）称为随机数序列或真随机数序列而在不通过物理模拟的前提下，获得一种以假乱真的随机数序列替代品方法，称之为伪随机数序列 伪随机">
 <meta name="keywords" content="读书笔记,概率论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《程序员的数学2：概率统计》笔记3">
 <meta property="og:url" content="https://zhong.blog/2019/04/28/probability-and-statistics-note-3/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    第7章 伪随机数\Huge{不要自己手动生成随机数！}随机数序列本书将 i.i.d. 随机变量序列 $X_1,X_2,\cdots$（或其对应的观测值）称为随机数序列或真随机数序列而在不通过物理模拟的前提下，获得一种以假乱真的随机数序列替代品方法，称之为伪随机数序列 伪随机数序列 $">
-<meta property="og:locale" content="zh">
+<meta property="og:description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    第7章 伪随机数$$\Huge{不要自己手动生成随机数！}$$ 随机数序列本书将 i.i.d. 随机变量序列 $X_1,X_2,\cdots$（或其对应的观测值）称为随机数序列或真随机数序列而在不通过物理模拟的前提下，获得一种以假乱真的随机数序列替代品方法，称之为伪随机数序列 伪随机">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-02T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《程序员的数学2：概率统计》笔记3">
-<meta name="twitter:description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    第7章 伪随机数\Huge{不要自己手动生成随机数！}随机数序列本书将 i.i.d. 随机变量序列 $X_1,X_2,\cdots$（或其对应的观测值）称为随机数序列或真随机数序列而在不通过物理模拟的前提下，获得一种以假乱真的随机数序列替代品方法，称之为伪随机数序列 伪随机数序列 $">
+<meta name="twitter:description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    第7章 伪随机数$$\Huge{不要自己手动生成随机数！}$$ 随机数序列本书将 i.i.d. 随机变量序列 $X_1,X_2,\cdots$（或其对应的观测值）称为随机数序列或真随机数序列而在不通过物理模拟的前提下，获得一种以假乱真的随机数序列替代品方法，称之为伪随机数序列 伪随机">
 
 
 
@@ -169,7 +176,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -193,14 +200,14 @@
     </div>
     
       
-        <p class="site-subtitle">技术是条无尽的道路</p>
+        <h1 class="site-subtitle" itemprop="description">技术是条无尽的道路</h1>
       
     
     
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -228,7 +235,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
         
@@ -245,7 +252,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
 
@@ -253,9 +260,6 @@
       
     </ul>
   
-
-  
-    
 
   
 
@@ -278,6 +282,9 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+            
+
+          
           <div id="content" class="content">
             
 
@@ -290,6 +297,8 @@
   
   
 
+  
+    <div class="reading-progress-bar"></div>
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -314,11 +323,11 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">《程序员的数学2：概率统计》笔记3
+          <h2 class="post-title" itemprop="name headline">《程序员的数学2：概率统计》笔记3
 
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -333,14 +342,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Created: 2019-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-28T00:00:00+08:00">2019-04-28</time>
+              <time title="创建时间：2019-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-28T00:00:00+08:00">2019-04-28</time>
             
 
             
@@ -355,9 +364,9 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">Edited on</span>
+                  <span class="post-meta-item-text">更新于</span>
                 
-                <time title="Modified: 2019-05-03 00:00:00" itemprop="dateModified" datetime="2019-05-03T00:00:00+08:00">2019-05-03</time>
+                <time title="修改时间：2019-05-03 00:00:00" itemprop="dateModified" datetime="2019-05-03T00:00:00+08:00">2019-05-03</time>
               
             
           </span>
@@ -371,7 +380,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
@@ -416,9 +425,9 @@
 </li>
 </ul>
 <hr>
-<h1><span id="第7章-伪随机数">第7章 伪随机数</span></h1><script type="math/tex; mode=display">\Huge{不要自己手动生成随机数！}</script><h2><span id="随机数序列">随机数序列</span></h2><p>本书将 i.i.d. 随机变量序列 $X_1,X_2,\cdots$（或其对应的观测值）称为随机数序列或真随机数序列<br>而在不通过物理模拟的前提下，获得一种以假乱真的随机数序列替代品方法，称之为<strong>伪随机数序列</strong></p>
-<p>伪随机数序列 $x_1,x_2,x_3,\cdots$ 通常由以下方式生成：</p>
-<script type="math/tex; mode=display">s_{t+1}\equiv g(s_t),  x_t\equiv h(s_t),  (t=1,2,3,\cdots)</script><p>通过函数 $g$ 更新内部状态 $s_t$，根据内部状态确定函数 $h$ 并输出为 $x_t$<br>开始的状态 $s_1$ 被称为种子，为真随机数，相同的种子产生相同的伪随机数序列</p>
+<h1><span id="第7章-伪随机数">第7章 伪随机数</span></h1><p>$$\Huge{不要自己手动生成随机数！}$$</p>
+<h2><span id="随机数序列">随机数序列</span></h2><p>本书将 i.i.d. 随机变量序列 $X_1,X_2,\cdots$（或其对应的观测值）称为随机数序列或真随机数序列<br>而在不通过物理模拟的前提下，获得一种以假乱真的随机数序列替代品方法，称之为<strong>伪随机数序列</strong></p>
+<p>伪随机数序列 $x_1,x_2,x_3,\cdots$ 通常由以下方式生成：<br>$$s_{t+1}\equiv g(s_t),  x_t\equiv h(s_t),  (t=1,2,3,\cdots)$$<br>通过函数 $g$ 更新内部状态 $s_t$，根据内部状态确定函数 $h$ 并输出为 $x_t$<br>开始的状态 $s_1$ 被称为种子，为真随机数，相同的种子产生相同的伪随机数序列</p>
 <h2><span id="梅森旋转算法">梅森旋转算法</span></h2><ul>
 <li>计算速度快</li>
 <li>周期较长 $p = 2^{19937}-1$</li>
@@ -444,8 +453,8 @@
 <p><strong>非均匀分布，通过概率密度函数生成：</strong></p>
 <p>绘制概率密度函数 f 的图像，在能够框住整个图像的矩形范围内随机打点，如果点位于图像下方则接受该点，并返回横轴值，如果点位于图像上方则重新生成点</p>
 <h2><span id="遵从正态分布的随机数的生成">遵从正态分布的随机数的生成</span></h2><p><strong>Box-Muller变换</strong></p>
-<p>将均匀分布转换为正态分布，设 $X_1,X_2$ 是在[0,1)上遵从均匀分布的i.i.d.随机变量，定义：</p>
-<script type="math/tex; mode=display">Y_1 ≡ g(X_1, X_2) ≡ \sqrt{-2\log X_1}\cos(2πX_2)</script><script type="math/tex; mode=display">Y_2 ≡ h(X_1, X_2) ≡ \sqrt{-2\log X_1}\sin(2πX_2)</script><p>则 $(Y_1,Y_2)^T$ 遵从二元正态分布，是两个独立的遵从正态分布的随机数</p>
+<p>将均匀分布转换为正态分布，设 $X_1,X_2$ 是在[0,1)上遵从均匀分布的i.i.d.随机变量，定义：<br>$$Y_1 ≡ g(X_1, X_2) ≡ \sqrt{-2\log X_1}\cos(2πX_2)$$<br>$$Y_2 ≡ h(X_1, X_2) ≡ \sqrt{-2\log X_1}\sin(2πX_2)$$</p>
+<p>则 $(Y_1,Y_2)^T$ 遵从二元正态分布，是两个独立的遵从正态分布的随机数</p>
 <p><strong>均匀分布的加法（近似遵从正态分布）</strong></p>
 <p>使用中心极限定理，设若干个在[0,1)上遵从均匀分布的i.i.d.随机变量 $X_1,X_2,⋯,X_{2n}$，设 $Y≡X_1+X_2+⋯+X_{2n}-n$，则 $Y$ 近似遵从正态分布</p>
 <p><strong>遵从多元正态分布的随机数生成</strong></p>
@@ -460,31 +469,22 @@
 <li>设 $(W_1, W_2) ≡ (Z_1+7, Z_2+3)$，位移</li>
 </ul>
 <p>也可以类似推广到高维情况</p>
-<h2><span id="球面上的均匀分布">球面上的均匀分布</span></h2><p>设 $Z_1, Z_2, Z_3$ 是遵从标准正态分布的i.i.d.随机变量，定义 $\boldsymbol{Z}\equiv(Z_1,\cdots,Z_3)^T$ 遵从3元标准正态分布</p>
-<script type="math/tex; mode=display">\boldsymbol{W}\equiv \frac{1}{\|\boldsymbol{Z}\|}\boldsymbol{Z}</script><p>即为标准球面上的均匀分布，因为正态分布各个方向分布相同</p>
+<h2><span id="球面上的均匀分布">球面上的均匀分布</span></h2><p>设 $Z_1, Z_2, Z_3$ 是遵从标准正态分布的i.i.d.随机变量，定义 $\boldsymbol{Z}\equiv(Z_1,\cdots,Z_3)^T$ 遵从3元标准正态分布<br>$$\boldsymbol{W}\equiv \frac{1}{|\boldsymbol{Z}|}\boldsymbol{Z}$$</p>
+<p>即为标准球面上的均匀分布，因为正态分布各个方向分布相同</p>
 <h1><span id="第8章-概率论的各类应用">第8章 概率论的各类应用</span></h1><h2><span id="81-回归分析与多变量分析">8.1 回归分析与多变量分析</span></h2><h3><span id="最小二乘法拟合直线">最小二乘法拟合直线</span></h3><p><strong>线性回归问题</strong></p>
 <p>一个误差遵从正态分布的试验项目，进行 $n$ 次试验，获得样本数据 $x_1,\cdots,x_n$ 和 $\check{y}_1,\dots,\check{y}_n$</p>
 <p>假设 $g(x)\equiv ax+b$ ，其中 $a,b$ 为未知常量，设 $Y_i\equiv g(x)+W_i$ ，其中误差 $W_i\sim\mathrm{N}(0,\sigma^2)$，且 $W_1,\cdots,W_n$ 满足i.i.d.条件。</p>
-<p>可以归纳为矩阵方式表示：</p>
-<script type="math/tex; mode=display">
-\boldsymbol{Y}=C\boldsymbol{a}+\boldsymbol{W},
-\boldsymbol{Y}\equiv\left(\begin{array}{c}Y_1\\\vdots\\Y_n\end{array}\right),
-C\equiv\left(\begin{array}{cc}x_1&1\\\vdots&\vdots\\x_n&1\end{array}\right),
-\boldsymbol{a}\equiv\left(\begin{array}{c}a\\b\end{array}\right),
-\boldsymbol{W}\equiv\left(\begin{array}{c}W_1\\\vdots\\W_n\end{array}\right)
-\sim\mathrm{N}(\boldsymbol{o}, \sigma^2I)</script><p>推导得到 $\boldsymbol{Y}\sim\mathrm{N}(C\boldsymbol{a},\sigma^2I)$</p>
-<p>概率密度函数形式如下：（其中 $\Box$ 为常量）</p>
-<script type="math/tex; mode=display">f_{\boldsymbol{Y}}(\boldsymbol{y})=\Box\exp(-\frac{1}{2\sigma^2}\|\boldsymbol{y}-C\boldsymbol{a}\|^2)</script><p>使用观测值 $\check{\boldsymbol{y}}\equiv(\check{y}_1,\cdots,\check{y}_n)^T$ 作为 $\boldsymbol{Y}$ 的观察值来估计 $\boldsymbol{a}$ 的值。采用<strong>最大似然估计</strong>，则使得 $f_{\boldsymbol{Y}}(\boldsymbol{y})$ 最大即可，也就是让 $|\check{\boldsymbol{y}}-C\boldsymbol{a}|^2$ 最小（即均方误差最小化）</p>
-<p>记 $h(a,b)=\sum_{i=1}^n(\check{y}_i-(ax_i+b))^2$，为求其最小值，需满足：</p>
-<script type="math/tex; mode=display">\frac{\partial h}{\partial a}=0\quad and \quad \frac{\partial h}{\partial b}=0</script><p>最终可形成对于 $a,b$ 的一元方程组，称之为“正则方程组”，即可算出结果。其矩阵表述可推导为：</p>
-<script type="math/tex; mode=display">C^TC\boldsymbol{a}=C^T \boldsymbol{\check{y}}</script><p>以上推导过程基于认为误差遵从正态分布，实际应用中通常会不在意是否遵从正态分布，直接采用均方误差来最小化。</p>
-<p>进一步从几何角度理解，由所有可能的 $C\boldsymbol{a}$ 构成的集合形成平面：</p>
-<script type="math/tex; mode=display">
-\mathrm{lm}C=span(\boldsymbol{x},\boldsymbol{u}),\qquad
-\boldsymbol{x}\equiv\left(\begin{array}{c}x_1\\\vdots\\x_n\end{array}\right),\quad
-\boldsymbol{u}\equiv\left(\begin{array}{c}1\\\vdots\\1\end{array}\right)</script><p>那么求 $|\boldsymbol{\check{y}}-C\boldsymbol{a}|^2$ 最小值就相当于寻找 $\mathrm{lm}C$ 上与 $\boldsymbol{\check{y}}$ 最近的点，也就是垂足</p>
-<h3><span id="吉洪诺夫正则化">吉洪诺夫正则化</span></h3><p>为避免线性方程组病态问题，通常可以加入正则化，例如上文问题中，最小化值如下，即吉洪诺夫正则化：</p>
-<script type="math/tex; mode=display">\|\boldsymbol{\check{y}}-C\boldsymbol{a}\|^2+\alpha\|\boldsymbol{a}\|^2\qquad(\alpha >0)</script><p>上文问题的基于贝叶斯估计的解法：</p>
+<p>可以归纳为矩阵方式表示：<br>$$<br>\boldsymbol{Y}=C\boldsymbol{a}+\boldsymbol{W},<br>\boldsymbol{Y}\equiv\left(\begin{array}{c}Y_1\\vdots\Y_n\end{array}\right),<br>C\equiv\left(\begin{array}{cc}x_1&amp;1\\vdots&amp;\vdots\x_n&amp;1\end{array}\right),<br>\boldsymbol{a}\equiv\left(\begin{array}{c}a\b\end{array}\right),<br>\boldsymbol{W}\equiv\left(\begin{array}{c}W_1\\vdots\W_n\end{array}\right)<br>\sim\mathrm{N}(\boldsymbol{o}, \sigma^2I)<br>$$</p>
+<p>推导得到 $\boldsymbol{Y}\sim\mathrm{N}(C\boldsymbol{a},\sigma^2I)$</p>
+<p>概率密度函数形式如下：（其中 $\Box$ 为常量）<br>$$f_{\boldsymbol{Y}}(\boldsymbol{y})=\Box\exp(-\frac{1}{2\sigma^2}|\boldsymbol{y}-C\boldsymbol{a}|^2)$$</p>
+<p>使用观测值 $\check{\boldsymbol{y}}\equiv(\check{y}_1,\cdots,\check{y}<em>n)^T$ 作为 $\boldsymbol{Y}$ 的观察值来估计 $\boldsymbol{a}$ 的值。采用<strong>最大似然估计</strong>，则使得 $f</em>{\boldsymbol{Y}}(\boldsymbol{y})$ 最大即可，也就是让 $|\check{\boldsymbol{y}}-C\boldsymbol{a}|^2$ 最小（即均方误差最小化）</p>
+<p>记 $h(a,b)=\sum_{i=1}^n(\check{y}_i-(ax_i+b))^2$，为求其最小值，需满足：<br>$$\frac{\partial h}{\partial a}=0\quad and \quad \frac{\partial h}{\partial b}=0$$</p>
+<p>最终可形成对于 $a,b$ 的一元方程组，称之为“正则方程组”，即可算出结果。其矩阵表述可推导为：<br>$$C^TC\boldsymbol{a}=C^T \boldsymbol{\check{y}}$$</p>
+<p>以上推导过程基于认为误差遵从正态分布，实际应用中通常会不在意是否遵从正态分布，直接采用均方误差来最小化。</p>
+<p>进一步从几何角度理解，由所有可能的 $C\boldsymbol{a}$ 构成的集合形成平面：<br>$$<br>\mathrm{lm}C=span(\boldsymbol{x},\boldsymbol{u}),\qquad<br>\boldsymbol{x}\equiv\left(\begin{array}{c}x_1\\vdots\x_n\end{array}\right),\quad<br>\boldsymbol{u}\equiv\left(\begin{array}{c}1\\vdots\1\end{array}\right)<br>$$</p>
+<p>那么求 $|\boldsymbol{\check{y}}-C\boldsymbol{a}|^2$ 最小值就相当于寻找 $\mathrm{lm}C$ 上与 $\boldsymbol{\check{y}}$ 最近的点，也就是垂足</p>
+<h3><span id="吉洪诺夫正则化">吉洪诺夫正则化</span></h3><p>为避免线性方程组病态问题，通常可以加入正则化，例如上文问题中，最小化值如下，即吉洪诺夫正则化：<br>$$|\boldsymbol{\check{y}}-C\boldsymbol{a}|^2+\alpha|\boldsymbol{a}|^2\qquad(\alpha &gt;0)$$</p>
+<p>上文问题的基于贝叶斯估计的解法：</p>
 <ul>
 <li>设 $\boldsymbol{A}$ 为遵从 $m$ 元正态分布 $\mathrm{N}(o,\tau^2I)$ 的向量值随机变量</li>
 <li>对于已知 $n\times m$ 矩阵 $C$，得到 $\boldsymbol{Y}\equiv C\boldsymbol{A}+\boldsymbol{W}$，其中噪声 $\boldsymbol{W}\sim\mathrm{N}(o,\sigma^2I)$，且与 $\boldsymbol{A}$ 独立</li>
@@ -501,11 +501,10 @@ C\equiv\left(\begin{array}{cc}x_1&1\\\vdots&\vdots\\x_n&1\end{array}\right),
 <p>此处假设期望值 $E[\boldsymbol{X}]=\boldsymbol{o}$ （即平均值为零）。可通过高维椭圆来表现协方差矩阵 $V[\boldsymbol{X}]$，如果数据沿着某一特定方向散布，则该高维椭圆中长度较长的主轴很少，大部分主轴非常短，主成分分析将沿着较短主轴方向压缩椭圆</p>
 <p>参照前文对一般协方差矩阵计算椭圆的方法，各主轴半径为 $V[\boldsymbol{X}]$ 的特征值 $\lambda_1,\lambda_2,\cdots$ 的平方根，且主轴方向与对应特征向量 $\boldsymbol{q}_1,\boldsymbol{q}_2,\cdots$ 方向一致。将特征值从大到小排序，并保证特征向量为单位向量且相互正交，则称得到的 $\boldsymbol{q}_i$ 为第 $i$ 主成分向量</p>
 <p>主成分分析则会仅保留前 $k$ 个特征值与特征向量而舍弃后面的。其中主成分个数 $k$ 的确定方式，可以根据 $\lambda_i$ 阈值或大幅度缩小，或者贡献率来决定</p>
-<p>选中的主成分会形成一个由 $\boldsymbol{q}_1,\cdots,\boldsymbol{q}_k$ 张成的 $k$ 维超平面 $\Pi$，将原始向量 $\boldsymbol{x}$ 正交投影至 $\Pi$，则完成维度压缩：（$z_i$称为$\boldsymbol{x}$的第$i$主成分）</p>
-<script type="math/tex; mode=display">\boldsymbol{y}=z_1\boldsymbol{q}_1+z_2\boldsymbol{q}_2+\cdots+z_k\boldsymbol{q}_k</script><script type="math/tex; mode=display">z_i=\boldsymbol{q}_i\cdot\boldsymbol{x}=\boldsymbol{q}_i^T\boldsymbol{x}</script><p>矩阵表示为：</p>
-<script type="math/tex; mode=display">\boldsymbol{z}=R^T\boldsymbol{x},\qquad R\equiv(\boldsymbol{q}_1,\cdots,\boldsymbol{q}_k)</script><script type="math/tex; mode=display">\boldsymbol{y}=R\boldsymbol{z}=RR^T\boldsymbol{x}</script><p><strong>保留成分个数</strong></p>
-<p>原始数据 $\boldsymbol{x}$ 与由压缩数据 $\boldsymbol{z}$ 还原的 $\boldsymbol{y}$ 之间差值 $\boldsymbol{x}-\boldsymbol{y}$ 相当于被舍弃部分，定义随机变量 $\boldsymbol{Y}\equiv RR^T\boldsymbol{X}$，有：</p>
-<script type="math/tex; mode=display">\mathrm{E}[\|\boldsymbol{X}-\boldsymbol{Y}\|^2]=\lambda_{k+1}+\cdots+\lambda_m</script><script type="math/tex; mode=display">\mathrm{E}[\|\boldsymbol{X}\|^2]=\mathrm{Tr}\ \mathrm{V}[\boldsymbol{X}]=\lambda_1+\cdots+\lambda_m</script><p>记 $\frac{\mathrm{E}[|\boldsymbol{X}-\boldsymbol{Y}|^2]}{\mathrm{E}[|\boldsymbol{X}|^2]}$ 为前 $k$ 个主成分的累积贡献率。通过对其限定一个百分比，从而确定 $k$</p>
+<p>选中的主成分会形成一个由 $\boldsymbol{q}_1,\cdots,\boldsymbol{q}_k$ 张成的 $k$ 维超平面 $\Pi$，将原始向量 $\boldsymbol{x}$ 正交投影至 $\Pi$，则完成维度压缩：（$z_i$称为$\boldsymbol{x}$的第$i$主成分）<br>$$\boldsymbol{y}=z_1\boldsymbol{q}_1+z_2\boldsymbol{q}_2+\cdots+z_k\boldsymbol{q}_k$$<br>$$z_i=\boldsymbol{q}_i\cdot\boldsymbol{x}=\boldsymbol{q}_i^T\boldsymbol{x}$$</p>
+<p>矩阵表示为：<br>$$\boldsymbol{z}=R^T\boldsymbol{x},\qquad R\equiv(\boldsymbol{q}_1,\cdots,\boldsymbol{q}_k)$$<br>$$\boldsymbol{y}=R\boldsymbol{z}=RR^T\boldsymbol{x}$$</p>
+<p><strong>保留成分个数</strong></p>
+<p>原始数据 $\boldsymbol{x}$ 与由压缩数据 $\boldsymbol{z}$ 还原的 $\boldsymbol{y}$ 之间差值 $\boldsymbol{x}-\boldsymbol{y}$ 相当于被舍弃部分，定义随机变量 $\boldsymbol{Y}\equiv RR^T\boldsymbol{X}$，有：<br>$$\mathrm{E}[|\boldsymbol{X}-\boldsymbol{Y}|^2]=\lambda_{k+1}+\cdots+\lambda_m$$<br>$$\mathrm{E}[|\boldsymbol{X}|^2]=\mathrm{Tr}\ \mathrm{V}[\boldsymbol{X}]=\lambda_1+\cdots+\lambda_m$$<br>记 $\frac{\mathrm{E}[|\boldsymbol{X}-\boldsymbol{Y}|^2]}{\mathrm{E}[|\boldsymbol{X}|^2]}$ 为前 $k$ 个主成分的累积贡献率。通过对其限定一个百分比，从而确定 $k$</p>
 <p><strong>平均值不为零的数据PCA处理</strong></p>
 <p>给定高维向量数据 $\boldsymbol{x}_1,\cdots,\boldsymbol{x}_n$ 平均值不为零的话，则统一减去平均值向量，然后做PCA即可</p>
 <p><strong>注意事项</strong></p>
@@ -513,43 +512,30 @@ C\equiv\left(\begin{array}{cc}x_1&1\\\vdots&\vdots\\x_n&1\end{array}\right),
 <h2><span id="82-随机过程stochastic-process">8.2 随机过程（stochastic process）</span></h2><p>一些随着时间随机变化的序列，可以视作随机变量序列，即随机过程</p>
 <h3><span id="随机游走random-walk">随机游走（random walk）</span></h3><p>例如随机抛硬币，每次如果正面向上则向左走一步，否则向右走一步</p>
 <p>随机游走可以有衍生版本，比如概率不同、多个方向等，但以下仅考虑一元等概率左右移动的随机游走</p>
-<p>设 $Z_1,Z_2,\cdots,$ 是i.i.d.随机变量，且取值为+1或-1概率各为0.5，则有：</p>
-<script type="math/tex; mode=display">X_0=0, \qquad X_t=X_{t-1}+Z_t\quad(t=1,2,\cdots)</script><p><strong>习题1</strong></p>
+<p>设 $Z_1,Z_2,\cdots,$ 是i.i.d.随机变量，且取值为+1或-1概率各为0.5，则有：<br>$$X_0=0, \qquad X_t=X_{t-1}+Z_t\quad(t=1,2,\cdots)$$</p>
+<p><strong>习题1</strong></p>
 <p>抛20次硬币，正面加一，反面减一，最终恰好为10。</p>
 <p>即求 $X_20=10$ 的概率，明显应当是20次中15次向上，5次向下，则采用二项分布 $\mathrm{Bn}(20,1/2)$ 在 $15$ 位置的概率。</p>
 <p><strong>习题2</strong></p>
 <p>抛20次硬币，中途至少获得过5，但最终归为0的概率。即 $\mathrm{P}(X_{20}=0且之前出现过5)$</p>
 <p>以最后一次到达5位置的时刻 $T$，对后续路线进行翻转操作（反射原理，reflection principle），则相当于最终到达10位置。结果和上题结果一致。</p>
 <p><strong>习题3</strong></p>
-<p>到达10时停止，求恰好是20次的概率。</p>
-<script type="math/tex; mode=display">\mathrm{P}(t=20时X_t=10首次成立)=\mathrm{P}(X_{19}=9且之前没有出现过10)*\mathrm{P}(Z_{20}=+1)</script><script type="math/tex; mode=display">\mathrm{P}(X_{19}=9且之前没有出现过10)=P(X_{19}=9)-P(X_{19}=9且之前出现过10)</script><p><strong>其他</strong></p>
+<p>到达10时停止，求恰好是20次的概率。<br>$$\mathrm{P}(t=20时X_t=10首次成立)=\mathrm{P}(X_{19}=9且之前没有出现过10)*\mathrm{P}(Z_{20}=+1)$$<br>$$\mathrm{P}(X_{19}=9且之前没有出现过10)=P(X_{19}=9)-P(X_{19}=9且之前出现过10)$$</p>
+<p><strong>其他</strong></p>
 <p>当 $n\to\infty$ 时，游戏过程中手头金额为正数的时间比例小于 $\alpha$ 的概率趋向于 $(2/\pi)\arcsin\sqrt{\alpha}$ （反正弦定律），也就可以算出来盈利时间比超过99.5%的极端情况发生概率高达4.5%左右</p>
-<p>盈亏逆转的概率也极低，随着n变大，逆转次数提升非常少。但这并不影响再已经盈利或亏损情况下再次下注的情况，因为条件概率下：</p>
-<script type="math/tex; mode=display">\mathrm{E}[X_j|X_i=a]=a\qquad (j>i)</script><p>博弈论中“鞅”（martingale）模型即用于描述该性质</p>
+<p>盈亏逆转的概率也极低，随着n变大，逆转次数提升非常少。但这并不影响再已经盈利或亏损情况下再次下注的情况，因为条件概率下：<br>$$\mathrm{E}[X_j|X_i=a]=a\qquad (j&gt;i)$$</p>
+<p>博弈论中“鞅”（martingale）模型即用于描述该性质</p>
 <h3><span id="卡尔曼滤波器">卡尔曼滤波器</span></h3><p>针对随机过程中 $t$ 时刻的实数值随机变量 $X_t$，考虑误差 $Z_t$，则有测定值 $Y_t=X_t+Z_t$。定义两次位置变化量为 $W_t$，则有 $X_t=X_{t-1}+W_t$ 。假定 $X_0\sim\mathrm{N}(0,\sigma^2_0),W_t\sim\mathrm{N}(0,\alpha^2),Z_t\sim\mathrm{N}(0,\beta^2)$，所有 $X_0,W_i,Z_i$ 均相互独立。试图通过 $Y_1,\cdots,Y_t$ 来估计 $X_t$ ：</p>
 <p><strong>计算过程</strong></p>
-<p>考虑 $t=1$ 情况，表示为矩阵形式为：</p>
-<script type="math/tex; mode=display">\left(\begin{matrix} Y_1\\X_1 \end{matrix}\right)=
-J\left(\begin{matrix}Z_1\\W_1\\X_0\end{matrix}\right),\qquad
-J=\left(\begin{matrix}1&1&1\\0&1&1\end{matrix}\right)</script><p>由于 $(Z_1,W_1,X_0)^T\sim\mathrm{N}(\boldsymbol{o},\mathrm{diag}(\beta^2,\alpha^2,\sigma^2_0))$ ，则通过 $J$ 投影后的 $(Y_1,X_1)^T$ 将遵从二元正态分布：</p>
-<script type="math/tex; mode=display">\left(\begin{matrix} Y_1\\X_1 \end{matrix}\right)\sim\mathrm{N}(\boldsymbol{o},V_1)</script><script type="math/tex; mode=display">V_1\equiv J \left(\begin{matrix} \beta^2&0&0\\0&\alpha^2&0\\0&0&\sigma^2_0 \end{matrix}\right) J^T = 
-\left(\begin{matrix}\tau^2_1+\beta^2&\tau^2_1\\\tau^2_1&\tau^2_1 \end{matrix}\right),\qquad
-\tau^2_1\equiv \mathrm{V}[X_1]=\sigma^2_0+\alpha^2</script><p>则可推导出当 $Y_1=y_1$ 时 $X_1$ 的条件分布 $\mathrm{N}(\mu_1,\sigma^2_1)$ （根据多元正态分布的条件分布计算方法）：</p>
-<script type="math/tex; mode=display">\mu_1\equiv \mathrm{E}[X_1|Y_1=y_1]=\frac{\tau^2_1y_1}{\tau^2_1+\beta^2}</script><script type="math/tex; mode=display">\sigma^2_1\equiv \mathrm{V}[X_1|Y_1=y_1]=\frac{\tau^2_1\beta^2}{\tau^2_1+\beta^2}</script><p>推广到一般的 $t$ 情况，矩阵形式为：</p>
-<script type="math/tex; mode=display">\left(\begin{matrix} Y_t\\X_t \end{matrix}\right)=
-J\left(\begin{matrix}Z_t\\W_t\\X_{t-1}\end{matrix}\right),\qquad
-J=\left(\begin{matrix}1&1&1\\0&1&1\end{matrix}\right)</script><p>基于条件 $Y_{t_1}=y_t,\cdots,Y_1=y_1$，有 $(Z_t,W_2,X_{t-1})^T\sim\mathrm{N}((0,0,\mu_{t-1})^T,\mathrm{diag}(\beta^2,\alpha^2,\sigma^2_{t-1}))$，有：</p>
-<script type="math/tex; mode=display">\tau^2_t\equiv \mathrm{V}[X_t|Y_{t-1}=y_{t-1},\cdots,Y_1=y_1]=\sigma^2_{t-1}+\alpha^2</script><p>增加一个条件 $Y_t=y_t$ ，可知 $X$ 的条件分布  $\mathrm{N}(\mu_t,\sigma^2_t)$：</p>
-<script type="math/tex; mode=display">\mu_t\equiv \mathrm{E}[X_t|Y_t=y_t,\cdots,Y_1=y_1]=\frac{\tau^2_ty_t+\beta^2\mu_{t-1}}{\tau^2_t+\beta^2}</script><script type="math/tex; mode=display">\sigma^2_t\equiv \mathrm{V}[X_t|Y_t=y_t,\cdots,Y_1=y_1]=\frac{\tau^2_t\beta^2}{\tau^2_t+\beta^2}</script><p>对此的形象化表述为：目标的上一个位置 $\mu_{t-1}$ 由之前数据估计得到（误差为 $\sigma^2_{t-1}$），那么本次位置应该仍然在 $\mu_{t-1}$ 附近，但误差增大到 $\tau^2_t=\sigma^2_{t-1}+\alpha^2$，然而根据本次数据，当前位置也应该在 $y_t$ 附近（误差为 $\beta^2$），因此以他们的误差作为权重，对两个位置进行加权平均</p>
-<p><strong>形式化表述</strong></p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-f&(y_t,x_t|y_{t_1},\cdots,y_1)\\
-&=\int_{-\infty}^{\infty}f(y_t,x_t,x_{t-1}|y_{t-1},\cdots,y_1)\mathrm{d}x_{t-1}\\
-&=\int_{-\infty}^{\infty}f(y_t|x_t,x_{t-1},y_{t-1},\cdots,y_1)f(x_t|x_{t-1},y_{t-1},\cdots,y_1)f(x_{t-1}|y_{t-1},\cdots,y_1)\mathrm{d}x_{t-1}\\
-&=\int_{-\infty}^{\infty}f(y_t|x_t)f(x_t|x_{t-1})f(x_{t-1}|y_{t-1},\cdots,y_1)\mathrm{d}x_{t-1}\\
-&=\int_{-\infty}^{\infty}g(y_t;x_t,\beta^2)g(x_t;x_{t-1},\alpha^2)g(x_{t-1};\mu_{t-1},\sigma_{t-1}^2)\mathrm{d}x_{t-1}\\
-\end{aligned}</script><p>其中 $g(x;\mu,\sigma^2)$ 表示 $\mathrm{N}(\mu,\sigma^2)$ 的概率密度函数</p>
+<p>考虑 $t=1$ 情况，表示为矩阵形式为：<br>$$\left(\begin{matrix} Y_1\X_1 \end{matrix}\right)=<br>J\left(\begin{matrix}Z_1\W_1\X_0\end{matrix}\right),\qquad<br>J=\left(\begin{matrix}1&amp;1&amp;1\0&amp;1&amp;1\end{matrix}\right)$$</p>
+<p>由于 $(Z_1,W_1,X_0)^T\sim\mathrm{N}(\boldsymbol{o},\mathrm{diag}(\beta^2,\alpha^2,\sigma^2_0))$ ，则通过 $J$ 投影后的 $(Y_1,X_1)^T$ 将遵从二元正态分布：</p>
+<p>$$\left(\begin{matrix} Y_1\X_1 \end{matrix}\right)\sim\mathrm{N}(\boldsymbol{o},V_1)$$<br>$$V_1\equiv J \left(\begin{matrix} \beta^2&amp;0&amp;0\0&amp;\alpha^2&amp;0\0&amp;0&amp;\sigma^2_0 \end{matrix}\right) J^T =<br>\left(\begin{matrix}\tau^2_1+\beta^2&amp;\tau^2_1\\tau^2_1&amp;\tau^2_1 \end{matrix}\right),\qquad<br>\tau^2_1\equiv \mathrm{V}[X_1]=\sigma^2_0+\alpha^2$$</p>
+<p>则可推导出当 $Y_1=y_1$ 时 $X_1$ 的条件分布 $\mathrm{N}(\mu_1,\sigma^2_1)$ （根据多元正态分布的条件分布计算方法）：<br>$$\mu_1\equiv \mathrm{E}[X_1|Y_1=y_1]=\frac{\tau^2_1y_1}{\tau^2_1+\beta^2}$$<br>$$\sigma^2_1\equiv \mathrm{V}[X_1|Y_1=y_1]=\frac{\tau^2_1\beta^2}{\tau^2_1+\beta^2}$$</p>
+<p>推广到一般的 $t$ 情况，矩阵形式为：<br>$$\left(\begin{matrix} Y_t\X_t \end{matrix}\right)=<br>J\left(\begin{matrix}Z_t\W_t\X_{t-1}\end{matrix}\right),\qquad<br>J=\left(\begin{matrix}1&amp;1&amp;1\0&amp;1&amp;1\end{matrix}\right)$$</p>
+<p>基于条件 $Y_{t_1}=y_t,\cdots,Y_1=y_1$，有 $(Z_t,W_2,X_{t-1})^T\sim\mathrm{N}((0,0,\mu_{t-1})^T,\mathrm{diag}(\beta^2,\alpha^2,\sigma^2_{t-1}))$，有：<br>$$\tau^2_t\equiv \mathrm{V}[X_t|Y_{t-1}=y_{t-1},\cdots,Y_1=y_1]=\sigma^2_{t-1}+\alpha^2$$<br>增加一个条件 $Y_t=y_t$ ，可知 $X$ 的条件分布  $\mathrm{N}(\mu_t,\sigma^2_t)$：<br>$$\mu_t\equiv \mathrm{E}[X_t|Y_t=y_t,\cdots,Y_1=y_1]=\frac{\tau^2_ty_t+\beta^2\mu_{t-1}}{\tau^2_t+\beta^2}$$<br>$$\sigma^2_t\equiv \mathrm{V}[X_t|Y_t=y_t,\cdots,Y_1=y_1]=\frac{\tau^2_t\beta^2}{\tau^2_t+\beta^2}$$</p>
+<p>对此的形象化表述为：目标的上一个位置 $\mu_{t-1}$ 由之前数据估计得到（误差为 $\sigma^2_{t-1}$），那么本次位置应该仍然在 $\mu_{t-1}$ 附近，但误差增大到 $\tau^2_t=\sigma^2_{t-1}+\alpha^2$，然而根据本次数据，当前位置也应该在 $y_t$ 附近（误差为 $\beta^2$），因此以他们的误差作为权重，对两个位置进行加权平均</p>
+<p><strong>形式化表述</strong><br>$$<br>\begin{aligned}<br>f&amp;(y_t,x_t|y_{t_1},\cdots,y_1)\<br>&amp;=\int_{-\infty}^{\infty}f(y_t,x_t,x_{t-1}|y_{t-1},\cdots,y_1)\mathrm{d}x_{t-1}\<br>&amp;=\int_{-\infty}^{\infty}f(y_t|x_t,x_{t-1},y_{t-1},\cdots,y_1)f(x_t|x_{t-1},y_{t-1},\cdots,y_1)f(x_{t-1}|y_{t-1},\cdots,y_1)\mathrm{d}x_{t-1}\<br>&amp;=\int_{-\infty}^{\infty}f(y_t|x_t)f(x_t|x_{t-1})f(x_{t-1}|y_{t-1},\cdots,y_1)\mathrm{d}x_{t-1}\<br>&amp;=\int_{-\infty}^{\infty}g(y_t;x_t,\beta^2)g(x_t;x_{t-1},\alpha^2)g(x_{t-1};\mu_{t-1},\sigma_{t-1}^2)\mathrm{d}x_{t-1}\<br>\end{aligned}<br>$$</p>
+<p>其中 $g(x;\mu,\sigma^2)$ 表示 $\mathrm{N}(\mu,\sigma^2)$ 的概率密度函数</p>
 <p><strong>进阶</strong></p>
 <p>不仅可以用于估计当前位置的值，也可以预测下一位置的值：在 $Y_1=y_1,\cdots,Y_{t-1}=y_{t-1}$ 条件下，$X_t$ 的条件分布为 $\mathrm{N}(\mu_{t-1},\tau^2_t)$</p>
 <p>卡尔曼滤波器更多适用于高维情况，有对应的高维向量推导。另外不仅可以用于位置不会突然改变情况，也可以用于速度不会突然改变情况。</p>
@@ -557,31 +543,17 @@ f&(y_t,x_t|y_{t_1},\cdots,y_1)\\
 <p><strong>（离散时间有限状态的平稳）马尔可夫链：</strong></p>
 <p>随机变量序列 $X_0,X_1,X_2,\cdots$，且 $X_t$ 的取值范围为 $1,2,\cdots,n$ 。定义 $n$ 个状态，随着时间 $t$ 的变化，状态将不断转移。定义转移概率 $\mathrm{P}(X_{t+1}=i|X_t=j)$ （仅讨论时间平稳情况，即与时间无关），记为 $p_{i\gets j}$</p>
 <p><strong>转移概率矩阵</strong></p>
-<p>记 $P$ 为转移概率矩阵，其每列数字之和全都为1，但各行不一定</p>
-<script type="math/tex; mode=display">P\equiv\begin{pmatrix}
-p_{1\gets 1}&\cdots&p_{1\gets n}\\
-\vdots &&\vdots\\
-p_{n\gets 1}&\cdots&p_{n\gets n}\\
-\end{pmatrix}</script><p>将 $X_t$ 的分布表示为向量 $\boldsymbol{u}_t$：</p>
-<script type="math/tex; mode=display">\boldsymbol{u}_t\equiv\begin{pmatrix}
-\mathrm{P}(X_t=1)\\
-\vdots\\
-\mathrm{P}(X_t=n)\\
-\end{pmatrix}</script><p>初始分布和转移概率矩阵决定了马尔可夫链的所有分布，即：</p>
-<script type="math/tex; mode=display">\boldsymbol{u}_{t+1}=P\boldsymbol{u}_t,\qquad\boldsymbol{u}_t=P^t\boldsymbol{u}_0</script><p>对于条件分布，例如状态个数 $n=3$，而 $X_t=2$ 时的条件分布：</p>
-<script type="math/tex; mode=display">\begin{pmatrix}
-P(X_{t+k}=1|X_t=2)\\
-P(X_{t+k}=2|X_t=2)\\
-P(X_{t+k}=3|X_t=2)\\
-\end{pmatrix}=P^k
-\begin{pmatrix}
-0\\1\\0
-\end{pmatrix}</script><p><strong>平稳分布</strong></p>
+<p>记 $P$ 为转移概率矩阵，其每列数字之和全都为1，但各行不一定<br>$$P\equiv\begin{pmatrix}<br>p_{1\gets 1}&amp;\cdots&amp;p_{1\gets n}\<br>\vdots &amp;&amp;\vdots\<br>p_{n\gets 1}&amp;\cdots&amp;p_{n\gets n}\<br>\end{pmatrix} $$</p>
+<p>将 $X_t$ 的分布表示为向量 $\boldsymbol{u}_t$：<br>$$\boldsymbol{u}_t\equiv\begin{pmatrix}<br>\mathrm{P}(X_t=1)\<br>\vdots\<br>\mathrm{P}(X_t=n)\<br>\end{pmatrix}$$</p>
+<p>初始分布和转移概率矩阵决定了马尔可夫链的所有分布，即：<br>$$\boldsymbol{u}_{t+1}=P\boldsymbol{u}_t,\qquad\boldsymbol{u}_t=P^t\boldsymbol{u}_0$$</p>
+<p>对于条件分布，例如状态个数 $n=3$，而 $X_t=2$ 时的条件分布：<br>$$\begin{pmatrix}<br>P(X_{t+k}=1|X_t=2)\<br>P(X_{t+k}=2|X_t=2)\<br>P(X_{t+k}=3|X_t=2)\<br>\end{pmatrix}=P^k<br>\begin{pmatrix}<br>0\1\0<br>\end{pmatrix}$$</p>
+<p><strong>平稳分布</strong></p>
 <p>满足 $P\boldsymbol{u}_0=\boldsymbol{u}_0$，则分布不会随着时间变化，保持不变，称之为平稳分布。任何转移概率矩阵 $P$ 都存在对应的平稳分布，可以通过列方程组，满足  $P\boldsymbol{u}_0=\boldsymbol{u}_0$ 以及每列数字之和为1条件，求出平稳分布</p>
 <p><strong>极限分布</strong></p>
 <p>对于很多状态概率矩阵 $P$，无论初始分布 $\boldsymbol{u}_0$ 如何，经过一定时间总能收敛到一个平稳分布 $\boldsymbol{u}_t$，则该分布 $\boldsymbol{u}$ 称之为极限分布</p>
-<script type="math/tex; mode=display">\lim_{t\to\infty}P^t=\Bigg(\boldsymbol{u}\Bigg|\cdots\Bigg|\boldsymbol{u}\Bigg)=\boldsymbol{u}\boldsymbol{1}^T, \quad\boldsymbol{1}^T\equiv(1,\cdots,1)</script><script type="math/tex; mode=display">\lim_{t\to\infty}P^t\boldsymbol{u}_0=(\boldsymbol{u}\boldsymbol{1}^T)\boldsymbol{u}_0=\boldsymbol{u}</script><p>设 $\boldsymbol{u}\equiv(u_1,\cdots,u_n)^T$，各状态 $i$ 所占时间比例将收敛至 $u_i$，即：</p>
-<script type="math/tex; mode=display">\lim_{t\to\infty}\frac{X_1,\cdots,X_t中值为i的变量个数}{t} = u_i</script><ul>
+<p>$$\lim_{t\to\infty}P^t=\Bigg(\boldsymbol{u}\Bigg|\cdots\Bigg|\boldsymbol{u}\Bigg)=\boldsymbol{u}\boldsymbol{1}^T, \quad\boldsymbol{1}^T\equiv(1,\cdots,1)$$<br>$$\lim_{t\to\infty}P^t\boldsymbol{u}_0=(\boldsymbol{u}\boldsymbol{1}^T)\boldsymbol{u}_0=\boldsymbol{u}$$</p>
+<p>设 $\boldsymbol{u}\equiv(u_1,\cdots,u_n)^T$，各状态 $i$ 所占时间比例将收敛至 $u_i$，即：<br>$$\lim_{t\to\infty}\frac{X_1,\cdots,X_t中值为i的变量个数}{t} = u_i$$</p>
+<ul>
 <li>左式为人类视角：随着时间变化，持续观察序列，其中状态 $i$ 的出现比例</li>
 <li>右式为上帝视角：在时间 $t$，横跨各平行世界观察</li>
 </ul>
@@ -594,24 +566,19 @@ P(X_{t+k}=3|X_t=2)\\
 <p>举例语音识别技术，简化版本为：定义字符串 $X_0,X_1,\cdots$ 来表示人所说的话（正确答案），而只能观察到辅音部分，记为 $Y_0,Y_1,\cdots$。</p>
 <p>为 $X_t$ 构造马尔可夫链：统计各音节位于句首的概率，各音节紧跟在其他音节之后的概率等。最终通过观察到的 $Y_t$ 来估计 $X_t$</p>
 <p>为加快速度，有Viterbi算法，使用动态规划来计算条件概率最大的音节序列。也会借助Forward-Backword算法（Baum-Welch算法）来估计转移概率矩阵</p>
-<h2><span id="83-信息论">8.3 信息论</span></h2><h3><span id="熵">熵</span></h3><p>熵表示信息量的大小，可以理解为得到该消息的意外程度（如果采用 $\log_2$，则熵的单位是bit）。当得知 $X=x$ 时的意外程度为：</p>
-<script type="math/tex; mode=display">h(x)\equiv\log\frac{1}{\mathrm{P}(X=x)}</script><p>对于离散值随机变量 $X$ 的分布的熵记为 $\mathrm{H}[X]$，则：</p>
-<script type="math/tex; mode=display">\mathrm{H}[X]\equiv\mathrm{E}[h(X)]=\sum_{x}\mathrm{P}(X=x)\log\frac{1}{\mathrm{P}(X=x)}</script><p>如果 $X$ 的可能取值有 $m$ 种，则当遵从均匀分布时熵最大，为 $\mathrm{H}[X]=\log m$</p>
-<p>对于实数值随机变量 $X$ 的分布的熵，可计算为：</p>
-<script type="math/tex; mode=display">\mathrm{H}[X]\equiv\mathrm{E}[h(X)]=\int f_X(x)\log\frac{1}{f_X(x)}\mathrm{d}x\quad（积分范围为f_X(x)不为零的全部部分）</script><h3><span id="二元熵">二元熵</span></h3><p>对于联合分布，当得知 $X=x,Y=y$ 时的意外程度为：</p>
-<script type="math/tex; mode=display">h(x,y)\equiv\log\frac{1}{\mathrm{P}(X=x,Y=y)}</script><p>其期望值称为<strong>联合熵</strong>：</p>
-<script type="math/tex; mode=display">\mathrm{H}[X,Y]\equiv\mathrm{E}[h(X,Y)]=\sum_x\sum_y\mathrm{P}(X=x,Y=y)\log\frac{1}{\mathrm{P}(X=x,Y=y)}</script><p>当已知 $X=x$ 情况下，得知 $Y=y$ 的意外程度为：</p>
-<script type="math/tex; mode=display">h(y|x)\equiv\log\frac{1}{\mathrm{P}(Y=y|X=y)}</script><p>其期望值称为<strong>条件熵</strong>：</p>
-<script type="math/tex; mode=display">\mathrm{H}[Y|X]\equiv\mathrm{E}[h(Y|X)]=\sum_x\sum_y\mathrm{P}(X=x,Y=y)\log\frac{1}{\mathrm{P}(Y=y|X=x)}</script><p>联合熵与条件熵具有性质：</p>
-<script type="math/tex; mode=display">\mathrm{H}[X,Y]=\mathrm{H}[Y|X]+\mathrm{H}[X]=\mathrm{H}[X|Y]+\mathrm{H}[Y]</script><p><strong>互信息</strong>，没有条件情况下得知 $X$ 与没有条件情况下得知 $Y$ 的信息量差异，如果差异越大，说明相互包含信息越多：</p>
-<script type="math/tex; mode=display">\mathrm{I}[X;Y]\equiv\mathrm{H}(Y)-\mathrm{H}[Y|X]=\mathrm{H}(X)-\mathrm{H}[X|Y]</script><script type="math/tex; mode=display">\mathrm{I}[X;Y]=0\quad\Leftrightarrow\quad X与Y独立 \quad\Rightarrow\quad\rho_{X,Y}=0</script><p>联合熵、条件熵、互信息的关系：</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-&|\Leftarrow && \mathrm{H}[X,Y] && \qquad\Rightarrow&|\\
-&|\Leftarrow \qquad\mathrm{H}[X] && \Rightarrow&|&\Leftarrow\quad\mathrm{H}[Y|X]\Rightarrow&|\\
-&|\Leftarrow\mathrm{H}[X|Y]\Rightarrow&|&\Leftarrow && \mathrm{H}[Y]\qquad\Rightarrow &|\\
-&| &|& \Leftarrow\mathrm{I}[X;Y]\Rightarrow &|& &|\\
-\end{aligned}</script><h3><span id="信源编码">信源编码</span></h3><p>例如对字符串进行压缩，原始字符串 $X$ 长度为 $n$，由 $k$ 种不同的字符 $a_1,\cdots,a_k$ 组成。目标是压缩为长度为 $m$ 的比特序列 $Y$。要进行压缩，必然 $k^n&gt;2^m$。研究问题是对于给定的一段字符串，最大可以压缩到多小：</p>
+<h2><span id="83-信息论">8.3 信息论</span></h2><h3><span id="熵">熵</span></h3><p>熵表示信息量的大小，可以理解为得到该消息的意外程度（如果采用 $\log_2$，则熵的单位是bit）。当得知 $X=x$ 时的意外程度为：<br>$$h(x)\equiv\log\frac{1}{\mathrm{P}(X=x)}$$</p>
+<p>对于离散值随机变量 $X$ 的分布的熵记为 $\mathrm{H}[X]$，则：<br>$$\mathrm{H}[X]\equiv\mathrm{E}[h(X)]=\sum_{x}\mathrm{P}(X=x)\log\frac{1}{\mathrm{P}(X=x)}$$</p>
+<p>如果 $X$ 的可能取值有 $m$ 种，则当遵从均匀分布时熵最大，为 $\mathrm{H}[X]=\log m$</p>
+<p>对于实数值随机变量 $X$ 的分布的熵，可计算为：<br>$$\mathrm{H}[X]\equiv\mathrm{E}[h(X)]=\int f_X(x)\log\frac{1}{f_X(x)}\mathrm{d}x\quad（积分范围为f_X(x)不为零的全部部分）$$</p>
+<h3><span id="二元熵">二元熵</span></h3><p>对于联合分布，当得知 $X=x,Y=y$ 时的意外程度为：<br>$$h(x,y)\equiv\log\frac{1}{\mathrm{P}(X=x,Y=y)}$$</p>
+<p>其期望值称为<strong>联合熵</strong>：<br>$$\mathrm{H}[X,Y]\equiv\mathrm{E}[h(X,Y)]=\sum_x\sum_y\mathrm{P}(X=x,Y=y)\log\frac{1}{\mathrm{P}(X=x,Y=y)}$$</p>
+<p>当已知 $X=x$ 情况下，得知 $Y=y$ 的意外程度为：<br>$$h(y|x)\equiv\log\frac{1}{\mathrm{P}(Y=y|X=y)}$$</p>
+<p>其期望值称为<strong>条件熵</strong>：<br>$$\mathrm{H}[Y|X]\equiv\mathrm{E}[h(Y|X)]=\sum_x\sum_y\mathrm{P}(X=x,Y=y)\log\frac{1}{\mathrm{P}(Y=y|X=x)}$$</p>
+<p>联合熵与条件熵具有性质：<br>$$\mathrm{H}[X,Y]=\mathrm{H}[Y|X]+\mathrm{H}[X]=\mathrm{H}[X|Y]+\mathrm{H}[Y]$$</p>
+<p><strong>互信息</strong>，没有条件情况下得知 $X$ 与没有条件情况下得知 $Y$ 的信息量差异，如果差异越大，说明相互包含信息越多：<br>$$\mathrm{I}[X;Y]\equiv\mathrm{H}(Y)-\mathrm{H}[Y|X]=\mathrm{H}(X)-\mathrm{H}[X|Y]$$</p>
+<p>$$\mathrm{I}[X;Y]=0\quad\Leftrightarrow\quad X与Y独立 \quad\Rightarrow\quad\rho_{X,Y}=0$$</p>
+<p>联合熵、条件熵、互信息的关系：<br>$$<br>\begin{aligned}<br>&amp;|\Leftarrow &amp;&amp; \mathrm{H}[X,Y] &amp;&amp; \qquad\Rightarrow&amp;|\<br>&amp;|\Leftarrow \qquad\mathrm{H}[X] &amp;&amp; \Rightarrow&amp;|&amp;\Leftarrow\quad\mathrm{H}[Y|X]\Rightarrow&amp;|\<br>&amp;|\Leftarrow\mathrm{H}[X|Y]\Rightarrow&amp;|&amp;\Leftarrow &amp;&amp; \mathrm{H}[Y]\qquad\Rightarrow &amp;|\<br>&amp;| &amp;|&amp; \Leftarrow\mathrm{I}[X;Y]\Rightarrow &amp;|&amp; &amp;|\<br>\end{aligned}<br>$$</p>
+<h3><span id="信源编码">信源编码</span></h3><p>例如对字符串进行压缩，原始字符串 $X$ 长度为 $n$，由 $k$ 种不同的字符 $a_1,\cdots,a_k$ 组成。目标是压缩为长度为 $m$ 的比特序列 $Y$。要进行压缩，必然 $k^n&gt;2^m$。研究问题是对于给定的一段字符串，最大可以压缩到多小：</p>
 <ul>
 <li>当压缩率 $m/n&lt;\mathrm{H}[X_i]$，只要n足够大，压缩成功率将非常接近于1</li>
 <li>当压缩率 $m/n&gt;\mathrm{H}[X_i]$，只要n足够大，压缩成功率将非常接近于0</li>
@@ -629,16 +596,13 @@ P(X_{t+k}=3|X_t=2)\\
 <li>整数集 $\mathbb{Z}$、有理数集 $\mathbb{Q}$ 均为可数集</li>
 <li>实数集 $\mathbb{R}$ 不是可数集，其集合的势为 $\aleph_2$</li>
 </ul>
-<p><strong>高斯积分</strong></p>
-<script type="math/tex; mode=display">\int_{-\infty}^{\infty}\exp(-ax^2)\mathrm{d}x=\sqrt\frac{\pi}{a}</script><p><strong>内积</strong></p>
-<p>假设某个内积空间的两个标准正交基</p>
-<script type="math/tex; mode=display">
-\boldsymbol{x}=\begin{pmatrix} x_1\\\vdots\\x_n \end{pmatrix},\qquad
-\boldsymbol{y}=\begin{pmatrix} y_1\\\vdots\\y_n \end{pmatrix}</script><p>内积计算：</p>
-<script type="math/tex; mode=display">\boldsymbol{x}\cdot\boldsymbol{y}=\boldsymbol{y}\cdot\boldsymbol{x}=\boldsymbol{x}^T\boldsymbol{y}=\boldsymbol{y}^T\boldsymbol{x}</script><script type="math/tex; mode=display">\boldsymbol{x}\cdot\boldsymbol{y}=\|\boldsymbol{x}\|\|\boldsymbol{y}\|\cos\theta</script><script type="math/tex; mode=display">\|\boldsymbol{x}\|^2=\boldsymbol{x}\cdot\boldsymbol{x}=\boldsymbol{x}^T\boldsymbol{x}</script><p><strong>琴生不等式、吉布斯不等式、马尔可夫不等式、切比雪夫不等式、切尔诺夫界、民科夫斯基不等式、赫尔德不等式</strong>(略)</p>
+<p><strong>高斯积分</strong><br>$$\int_{-\infty}^{\infty}\exp(-ax^2)\mathrm{d}x=\sqrt\frac{\pi}{a}$$</p>
+<p><strong>内积</strong></p>
+<p>假设某个内积空间的两个标准正交基<br>$$<br>\boldsymbol{x}=\begin{pmatrix} x_1\\vdots\x_n \end{pmatrix},\qquad<br>\boldsymbol{y}=\begin{pmatrix} y_1\\vdots\y_n \end{pmatrix}<br>$$<br>内积计算：<br>$$\boldsymbol{x}\cdot\boldsymbol{y}=\boldsymbol{y}\cdot\boldsymbol{x}=\boldsymbol{x}^T\boldsymbol{y}=\boldsymbol{y}^T\boldsymbol{x}$$<br>$$\boldsymbol{x}\cdot\boldsymbol{y}=|\boldsymbol{x}||\boldsymbol{y}|\cos\theta$$<br>$$|\boldsymbol{x}|^2=\boldsymbol{x}\cdot\boldsymbol{x}=\boldsymbol{x}^T\boldsymbol{x}$$</p>
+<p><strong>琴生不等式、吉布斯不等式、马尔可夫不等式、切比雪夫不等式、切尔诺夫界、民科夫斯基不等式、赫尔德不等式</strong>(略)</p>
 <p><strong>特征函数</strong></p>
-<p>实数值随机变量 $X$，定义特征函数为：</p>
-<script type="math/tex; mode=display">\phi_X(t)\equiv\mathrm{E}[e^{\mathrm{i}tX}]=\int_{-\infty}^{\infty}f_X(x)e^{\mathrm{i}tx}\mathrm{d}x</script><p><strong>KL散度与大偏差原理</strong>（略）</p>
+<p>实数值随机变量 $X$，定义特征函数为：<br>$$\phi_X(t)\equiv\mathrm{E}[e^{\mathrm{i}tX}]=\int_{-\infty}^{\infty}f_X(x)e^{\mathrm{i}tx}\mathrm{d}x$$</p>
+<p><strong>KL散度与大偏差原理</strong>（略）</p>
 
       
     </div>
@@ -656,6 +620,30 @@ P(X_{t+k}=3|X_t=2)\\
     
     
 
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ZhongChen</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://zhong.blog/2019/04/28/probability-and-statistics-note-3/" title="《程序员的数学2：概率统计》笔记3">https://zhong.blog/2019/04/28/probability-and-statistics-note-3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -735,10 +723,10 @@ P(X_{t+k}=3|X_t=2)\\
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -759,7 +747,7 @@ P(X_{t+k}=3|X_t=2)\\
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">9</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
@@ -780,7 +768,7 @@ P(X_{t+k}=3|X_t=2)\\
                       
                     
                     <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">categories</span>
+                    <span class="site-state-item-name">分类</span>
                   
                 </div>
               
@@ -799,7 +787,7 @@ P(X_{t+k}=3|X_t=2)\\
                       
                     
                     <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">标签</span>
                   
                 </div>
               
@@ -812,6 +800,16 @@ P(X_{t+k}=3|X_t=2)\\
 
           
 
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
           
 
           
@@ -869,7 +867,7 @@ P(X_{t+k}=3|X_t=2)\\
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -877,7 +875,7 @@ P(X_{t+k}=3|X_t=2)\\
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
 
 
 
@@ -940,6 +938,8 @@ P(X_{t+k}=3|X_t=2)\\
 
 
 
+  
+
 
 
   
@@ -950,6 +950,9 @@ P(X_{t+k}=3|X_t=2)\\
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
 
 
   
@@ -965,7 +968,10 @@ P(X_{t+k}=3|X_t=2)\\
   
 
 
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
 
 
 

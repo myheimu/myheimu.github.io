@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,13 @@
 
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
@@ -73,7 +80,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.1.1',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
@@ -106,7 +113,7 @@
 <meta property="og:url" content="https://zhong.blog/2019/04/28/probability-and-statistics-note-1/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
 <meta property="og:description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    这本书整体来说很不错，把重点放在用形象化、几何化的方法来描述概率相关问题，而相关的公式推导和习题也是限于引出结论而并非教科书般罗列。比如用“平行世界”、“协方差矩阵就是椭圆”来描述概率问题。 前五章主要描述了基础知识，整体比较简单；后三章是具体应用，有一定难度，但好在讲解集中于整体思">
-<meta property="og:locale" content="zh">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-02T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《程序员的数学2：概率统计》笔记1">
@@ -169,7 +176,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -193,14 +200,14 @@
     </div>
     
       
-        <p class="site-subtitle">技术是条无尽的道路</p>
+        <h1 class="site-subtitle" itemprop="description">技术是条无尽的道路</h1>
       
     
     
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -228,7 +235,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
         
@@ -245,7 +252,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
 
@@ -253,9 +260,6 @@
       
     </ul>
   
-
-  
-    
 
   
 
@@ -278,6 +282,9 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+            
+
+          
           <div id="content" class="content">
             
 
@@ -290,6 +297,8 @@
   
   
 
+  
+    <div class="reading-progress-bar"></div>
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -314,11 +323,11 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">《程序员的数学2：概率统计》笔记1
+          <h2 class="post-title" itemprop="name headline">《程序员的数学2：概率统计》笔记1
 
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -333,14 +342,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Created: 2019-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-28T00:00:00+08:00">2019-04-28</time>
+              <time title="创建时间：2019-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-28T00:00:00+08:00">2019-04-28</time>
             
 
             
@@ -355,9 +364,9 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">Edited on</span>
+                  <span class="post-meta-item-text">更新于</span>
                 
-                <time title="Modified: 2019-05-03 00:00:00" itemprop="dateModified" datetime="2019-05-03T00:00:00+08:00">2019-05-03</time>
+                <time title="修改时间：2019-05-03 00:00:00" itemprop="dateModified" datetime="2019-05-03T00:00:00+08:00">2019-05-03</time>
               
             
           </span>
@@ -371,7 +380,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
@@ -421,14 +430,10 @@
 <p>中文版小错误不少，需要提前查看中文版勘误：<a href="http://www.ituring.com.cn/book/1254" target="_blank" rel="noopener">http://www.ituring.com.cn/book/1254</a></p>
 <p>如果觉得中文版推导和表述有些问题，也可以查看日文版《プログラミングのための確率統計》草稿：<a href="http://wiki.fdiary.net/lacs/?PSCS.PDF" target="_blank" rel="noopener">http://wiki.fdiary.net/lacs/?PSCS.PDF</a> ，起码公式部分是能看懂的，我就发现了几个翻译过程中的公式错误，已经将勘误提交给中文版网站。</p>
 <h1><span id="第1章-概率的定义">第1章 概率的定义</span></h1><blockquote>
-<ul>
-<li>A：根据我的调查，明年经济景气的概率是71.42857…%</li>
-<li>B：你怎么能得到那么精确的数字？</li>
-<li>A：模拟了7种设定后，其中5种情况下经济将会好转，所以5/7=0.7142857…</li>
-<li>B：呃……槽点太多都不知道该怎么回答你了。总之我们先了解一下概率究竟是什么意思吧。</li>
-</ul>
+<p>A：根据我的调查，明年经济景气的概率是71.42857…%<br>B：你怎么能得到那么精确的数字？<br>A：模拟了7种设定后，其中5种情况下经济将会好转，所以5/7=0.7142857…<br>B：呃……槽点太多都不知道该怎么回答你了。总之我们先了解一下概率究竟是什么意思吧。</p>
 </blockquote>
-<script type="math/tex; mode=display">\Huge{概率即是面积}</script><p><strong>三扇门问题（蒙提霍尔问题）</strong></p>
+<p>$$\Huge{概率即是面积}$$</p>
+<p><strong>三扇门问题（蒙提霍尔问题）</strong></p>
 <ul>
 <li>“有三扇门，其中只有一扇是正确的门。挑战者选择一扇门打开，而主持人从剩下两扇门中的任选一扇错误的门打开（如果只有一扇错误，则打开它，如果有两扇错误，则随机选择一扇打开）。问挑战者是否要重选？重选和不重选概率如何？”</li>
 <li>基础视角，容易得出错误答案</li>
@@ -443,33 +448,22 @@
 <li>人类视角的概率分布 $\mathrm{P}(X=k)$，就是上帝视角的 $X(ω)=k$ 时 $ω$ 所占的区域面积</li>
 </ul>
 <h1><span id="第2章-多个随机变量之间的关系">第2章 多个随机变量之间的关系</span></h1><blockquote>
-<ul>
-<li>A：根据我的调查，拥有游戏机的人中犯罪率高达50%以上。我们应该立法解决这一问题。</li>
-<li>B：这个数字怎么会那么高？</li>
-<li>A：最近的青少年犯罪中半数以上的嫌犯都拥有游戏机呀。</li>
-<li>B：呃……这让我咋吐槽好呢？你能不能先不要考虑犯罪问题，调查一下现在青少年中游戏机的持有率再说？</li>
-</ul>
+<p>A：根据我的调查，拥有游戏机的人中犯罪率高达50%以上。我们应该立法解决这一问题。<br>B：这个数字怎么会那么高？<br>A：最近的青少年犯罪中半数以上的嫌犯都拥有游戏机呀。<br>B：呃……这让我咋吐槽好呢？你能不能先不要考虑犯罪问题，调查一下现在青少年中游戏机的持有率再说？</p>
 </blockquote>
 <p>对于两个离散值随机变量 $X$ 和 $Y$</p>
-<p><strong>联合概率</strong></p>
-<script type="math/tex; mode=display">\mathrm{P}(X=a, Y=b)</script><p><strong>边缘概率</strong></p>
-<script type="math/tex; mode=display">\mathrm{P}(X=a) = \sum_b\mathrm{P}(X=a, Y=b)\\
-\mathrm{P}(Y=b) = \sum_a\mathrm{P}(X=a, Y=b)</script><p><strong>条件概率</strong></p>
-<script type="math/tex; mode=display">\mathrm{P}(Y=b|X=a) = \frac{\mathrm{P}(X=a, Y=b)}{\mathrm{P}(X=a)}</script><p><strong>贝叶斯公式</strong></p>
-<script type="math/tex; mode=display">\mathrm{P}(X=a|Y=b) = \frac{\mathrm{P}(Y=b|X=a)\mathrm{P}(X=a)}{\mathrm{P}(Y=b)}</script><p><strong>独立性</strong></p>
+<p><strong>联合概率</strong><br>$$\mathrm{P}(X=a, Y=b)$$</p>
+<p><strong>边缘概率</strong><br>$$\mathrm{P}(X=a) = \sum_b\mathrm{P}(X=a, Y=b)\<br>\mathrm{P}(Y=b) = \sum_a\mathrm{P}(X=a, Y=b)$$</p>
+<p><strong>条件概率</strong><br>$$\mathrm{P}(Y=b|X=a) = \frac{\mathrm{P}(X=a, Y=b)}{\mathrm{P}(X=a)}$$</p>
+<p><strong>贝叶斯公式</strong><br>$$\mathrm{P}(X=a|Y=b) = \frac{\mathrm{P}(Y=b|X=a)\mathrm{P}(X=a)}{\mathrm{P}(Y=b)}$$</p>
+<p><strong>独立性</strong></p>
 <p>条件：对于随机变量所有取值，均有 $\mathrm{P}(X=a|Y=b)=\mathrm{P}(X=a|Y≠b)$，称之为随机变量独立</p>
-<p>当具备独立性时，可以推导出一些公式，其中最重要的是“联合概率是边缘概率的乘积”：</p>
-<script type="math/tex; mode=display">\forall a,b\qquad  \mathrm{P}(X=a,Y=b) = \mathrm{P}(X=a) \mathrm{P}(Y=b)</script><p>三个及以上随机变量的独立性</p>
+<p>当具备独立性时，可以推导出一些公式，其中最重要的是“联合概率是边缘概率的乘积”：<br>$$\forall a,b\qquad  \mathrm{P}(X=a,Y=b) = \mathrm{P}(X=a) \mathrm{P}(Y=b)$$</p>
+<p>三个及以上随机变量的独立性</p>
 <ul>
 <li>各对事件相互独立不表示所有事件相互独立</li>
 </ul>
 <h1><span id="第3章-离散值的概率分布">第3章 离散值的概率分布</span></h1><blockquote>
-<ul>
-<li>A：有一份统计大家“每个月喝几次啤酒”的调查问卷，结果显示为月平均8次。另一份“每次喝几瓶啤酒”的调查问卷显示平均每次会喝1.5瓶。看来大家都不太诚实啊。</li>
-<li>B：为什么这么说？</li>
-<li>A：因为实际调查后，发现啤酒的人均月消耗量是15瓶，而根据调查问卷结果，8*1.5=12瓶，数字对不上。</li>
-<li>B：呃……都不知道该怎么说你了。总之，你先去了解一下期望值的概念吧。</li>
-</ul>
+<p>A：有一份统计大家“每个月喝几次啤酒”的调查问卷，结果显示为月平均8次。另一份“每次喝几瓶啤酒”的调查问卷显示平均每次会喝1.5瓶。看来大家都不太诚实啊。<br>B：为什么这么说？<br>A：因为实际调查后，发现啤酒的人均月消耗量是15瓶，而根据调查问卷结果，8*1.5=12瓶，数字对不上。<br>B：呃……都不知道该怎么说你了。总之，你先去了解一下期望值的概念吧。</p>
 </blockquote>
 <h2><span id="离散值随机变量">离散值随机变量</span></h2><ul>
 <li>每一个事件的概率都大于等于0</li>
@@ -480,98 +474,80 @@
 <li>$n$ 次抛正面向上概率为 $p$ 的硬币，有 $k$ 次正面向上的概率</li>
 <li>$\mathrm{Bn}(n, p)$ 分布情况：$C_n^k p^k (1-p)^{n-k}\quad(k=0,1,2,\cdots,n)$</li>
 </ul>
-<p><strong>期望值</strong>，可以视为“上帝视角”下的所有平行世界平均值，形象化模拟为积雪体积</p>
-<script type="math/tex; mode=display">\mathrm{E}[X]=\sum_k k\mathrm{P}(X=k)</script><script type="math/tex; mode=display">\mathrm{E}[g(X)]=\sum_k g(k)\mathrm{P}(X=k)</script><p>满足独立性的情况下，多随机变量乘积的期望值 = 各随机变量期望值的乘积</p>
-<script type="math/tex; mode=display">如果X与Y独立，\mathrm{E}[XY]=\mathrm{E}[X]\mathrm{E}[Y]</script><p>期望值可能存在不存在的情况，包括无穷大、无穷小和其他不收敛情况</p>
+<p><strong>期望值</strong>，可以视为“上帝视角”下的所有平行世界平均值，形象化模拟为积雪体积<br>$$\mathrm{E}[X]=\sum_k k\mathrm{P}(X=k)$$<br>$$\mathrm{E}[g(X)]=\sum_k g(k)\mathrm{P}(X=k)$$</p>
+<p>满足独立性的情况下，多随机变量乘积的期望值 = 各随机变量期望值的乘积<br>$$如果X与Y独立，\mathrm{E}[XY]=\mathrm{E}[X]\mathrm{E}[Y]$$</p>
+<p>期望值可能存在不存在的情况，包括无穷大、无穷小和其他不收敛情况</p>
 <p><strong>方差与标准差</strong></p>
 <p>方差（此处并非传统课本上讲的方差的无偏估计版本，求平均时分母不为 $n-1$）</p>
-<script type="math/tex; mode=display">\mathrm{V}[X]\equiv\mathrm{E}[(X-\mu)^2]\qquad其中\mu\equiv\mathrm{E}[X]</script><p>标准差</p>
-<script type="math/tex; mode=display">\sigma\equiv\sqrt{\mathrm{V}[X]}</script><p>各随机变量独立时，和的方差等于方差的和</p>
-<script type="math/tex; mode=display">\mathrm{V}[X+Y] = \mathrm{V}[X] + \mathrm{V}[Y]</script><p>平方的期望值与方差</p>
-<script type="math/tex; mode=display">\mathrm{V}[X] = \mathrm{E}[X²] - \mathrm{E}[X]²</script><script type="math/tex; mode=display">\mathrm{E}[X]^2 = \mu^2+\sigma^2\qquad其中\mu\equiv\mathrm{E}[X],\sigma^2\equiv\mathrm{V}[X]</script><p><strong>独立同分布</strong></p>
+<p>$$\mathrm{V}[X]\equiv\mathrm{E}[(X-\mu)^2]\qquad其中\mu\equiv\mathrm{E}[X]$$</p>
+<p>标准差<br>$$\sigma\equiv\sqrt{\mathrm{V}[X]}$$</p>
+<p>各随机变量独立时，和的方差等于方差的和<br>$$\mathrm{V}[X+Y] = \mathrm{V}[X] + \mathrm{V}[Y]$$</p>
+<p>平方的期望值与方差<br>$$\mathrm{V}[X] = \mathrm{E}[X²] - \mathrm{E}[X]²$$<br>$$\mathrm{E}[X]^2 = \mu^2+\sigma^2\qquad其中\mu\equiv\mathrm{E}[X],\sigma^2\equiv\mathrm{V}[X]$$</p>
+<p><strong>独立同分布</strong></p>
 <p>当一批随机变量符合 1)每一个随机变量的边缘分布相同 2)任意相互独立，则为独立同分布（i.i.d.）</p>
 <h2><span id="大数定律">大数定律</span></h2><p>独立同分布的一批随机变量的平均值 $Z\equiv(\sum_i X_i) / n$</p>
 <p>计算得 $\mathrm{E}[Z]=\mu$，$\mathrm{V}[Z] = \sigma^2/n$</p>
 <p>从“上帝视角”来看，每个随机变量在各个世界的平均值都是 $\mu$，所以每个世界的一批随机变量平均值的期望也是 $\mu$</p>
 <p>当随机变量个数 $n$ 无限增加时，方差 $\mathrm{E}[Z]$ 趋近于0，这时 $Z$ 值也就收敛于 $\mu$</p>
-<p><strong>条件期望</strong></p>
-<script type="math/tex; mode=display">\mathrm{E}[Y|X=a]\equiv\sum_b b\mathrm{P}(Y=b|X=a)</script><p><strong>条件方差</strong></p>
-<script type="math/tex; mode=display">\mathrm{V}[Y|X=a]\equiv\mathrm{E}[(Y-\mu(a))^2|X=a]\quad其中\mathrm{E}[Y|X=a]\equiv\mu(a)</script><h2><span id="最小二乘法">最小二乘法</span></h2><ul>
+<p><strong>条件期望</strong><br>$$\mathrm{E}[Y|X=a]\equiv\sum_b b\mathrm{P}(Y=b|X=a)$$</p>
+<p><strong>条件方差</strong><br>$$\mathrm{V}[Y|X=a]\equiv\mathrm{E}[(Y-\mu(a))^2|X=a]\quad其中\mathrm{E}[Y|X=a]\equiv\mu(a)$$</p>
+<h2><span id="最小二乘法">最小二乘法</span></h2><ul>
 <li>已知条件分布 $\mathrm{P}(Y=b|X=a)$，尝试编写函数 $g(X)$，让输入 $X$ 后的估计值 $\hat{Y}$ ，使得平方误差期望值 $\mathrm{E}[(Y-\hat{Y})^2]$ 尽量小。</li>
 <li>答案就是应该使 $g(a) = \mathrm{E}[Y|X=a]$</li>
 <li>上帝视角：铺平 $X$ 相同的区域的 $Y$ 值</li>
 </ul>
 <h1><span id="第4章-连续值的概率分布">第4章 连续值的概率分布</span></h1><blockquote>
-<ul>
-<li>A：我试着用正态分布去拟合数据，不过，用的这款统计软件好像有点问题啊。</li>
-<li>B：怎么了？</li>
-<li>A：它生成的正态分布图的高竟然超过了1,。概率怎么可能是1.7呢？概率为1就表示事件必然发生，不可能比这还要大呀。</li>
-<li>B：嗯……依然是槽点太多不知道该说什么才好了。你还是重新学习一下概率密度函数的概念吧。</li>
-</ul>
+<p>A：我试着用正态分布去拟合数据，不过，用的这款统计软件好像有点问题啊。<br>B：怎么了？<br>A：它生成的正态分布图的高竟然超过了1,。概率怎么可能是1.7呢？概率为1就表示事件必然发生，不可能比这还要大呀。<br>B：嗯……依然是槽点太多不知道该说什么才好了。你还是重新学习一下概率密度函数的概念吧。</p>
 </blockquote>
 <h2><span id="实数值随机变量">实数值随机变量</span></h2><p>上帝视角：在一条色带上用油墨自左向右打印渐变色，最终消耗油墨总量为单位值，打印油墨的浓淡就是概率密度函数，而某一时刻累积消耗量就是累积分布函数</p>
-<p><strong>累积分布函数</strong></p>
-<script type="math/tex; mode=display">F_X(a)\equiv\mathrm{P}(X\le a)</script><p><strong>概率密度函数</strong></p>
-<script type="math/tex; mode=display">f_X(x)\equiv F_X^\prime(x)=\frac{\mathrm{d}F_X(x)}{\mathrm{d}x}</script><p>一些性质</p>
-<script type="math/tex; mode=display">\mathrm{P}(a\le X\le b)=\int_a^b f_X(x)\mathrm{d}x</script><script type="math/tex; mode=display">\int_{-\infty}^{\infty}f_X(x)\mathrm{d}x=1</script><p>任意一点的概率为0</p>
-<script type="math/tex; mode=display">\mathrm{P}(X=a) = 0</script><p><strong>均匀分布</strong>：在一个区间$[\alpha,\beta]$范围内均匀分布</p>
-<script type="math/tex; mode=display">f_X(x)=\begin{cases}
-\frac{1}{\beta-\alpha}&(\alpha\le x \le \beta)\\
-0&(x<\alpha\ or\ x>\beta)
-\end{cases}</script><p><strong>概率密度函数的变量变换</strong></p>
+<p><strong>累积分布函数</strong><br>$$F_X(a)\equiv\mathrm{P}(X\le a)$$</p>
+<p><strong>概率密度函数</strong><br>$$f_X(x)\equiv F_X^\prime(x)=\frac{\mathrm{d}F_X(x)}{\mathrm{d}x}$$</p>
+<p>一些性质<br>$$\mathrm{P}(a\le X\le b)=\int_a^b f_X(x)\mathrm{d}x$$<br>$$\int_{-\infty}^{\infty}f_X(x)\mathrm{d}x=1$$</p>
+<p>任意一点的概率为0<br>$$\mathrm{P}(X=a) = 0$$</p>
+<p><strong>均匀分布</strong>：在一个区间$[\alpha,\beta]$范围内均匀分布<br>$$f_X(x)=\begin{cases}<br>\frac{1}{\beta-\alpha}&amp;(\alpha\le x \le \beta)\<br>0&amp;(x&lt;\alpha\ or\ x&gt;\beta)<br>\end{cases}$$</p>
+<p><strong>概率密度函数的变量变换</strong></p>
 <ul>
 <li>随机变量增大n倍，会让对应部分概率密度函数缩小n倍</li>
 <li>上帝视角：类似对打印好的渐变色带进行局部或整体的拉伸</li>
 </ul>
 <p><strong>联合分布</strong></p>
 <p>两个实数值随机变量 $X$ 与 $Y$ ，组成二元向量 $W\equiv(X,Y)$ 的概率分布，称为联合分布</p>
-<script type="math/tex; mode=display">\mathrm{P}(a\le X\le b,c\le Y\le d)=\int_c^d\int_a^bf_{XY}(x,y)\mathrm{d}x\mathrm{d}y</script><script type="math/tex; mode=display">\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f_{XY}(x,y)\mathrm{d}x\mathrm{d}y = 1</script><p>上帝视角为：一个平面上用油墨进行打印，最终消耗油墨总量为1</p>
-<p><strong>边缘概率</strong></p>
-<script type="math/tex; mode=display">f_X(x) =  \int_{-∞}^{∞} f_{X,Y}(x,y) \mathrm{d}y</script><script type="math/tex; mode=display">f_Y(x) =  \int_{-∞}^{∞} f_{X,Y}(x,y)\mathrm{d}x</script><p>上帝视角：边缘概率密度，即按照x轴或y轴平行竖直截面面积</p>
-<p><strong>条件分布</strong></p>
-<script type="math/tex; mode=display">f_{Y|X}(b|a) = \frac{f_{X,Y}(a,b)}{f_X(a)}</script><p>上帝视角：在 X=a 处进行截面，将截面内的分布扩大到累积量为1，即为条件分布</p>
-<p><strong>贝叶斯公式</strong></p>
-<script type="math/tex; mode=display">f_{X|Y}(a|b)=\frac{f_{Y|X}(b|a)f_X(a)}{\int_{-\infty}^{\infty}f_{Y|X}(b|x)f_X(x)\mathrm{d}x}</script><p><strong>独立性</strong></p>
-<script type="math/tex; mode=display">\forall a,b:\qquad f_{Y|X}(b|a) = f_Y(b)</script><p>上式始终成立，才能称 $X$ 与 $Y$ 独立</p>
+<p>$$\mathrm{P}(a\le X\le b,c\le Y\le d)=\int_c^d\int_a^bf_{XY}(x,y)\mathrm{d}x\mathrm{d}y$$<br>$$\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f_{XY}(x,y)\mathrm{d}x\mathrm{d}y = 1$$</p>
+<p>上帝视角为：一个平面上用油墨进行打印，最终消耗油墨总量为1</p>
+<p><strong>边缘概率</strong><br>$$f_X(x) =  \int_{-∞}^{∞} f_{X,Y}(x,y) \mathrm{d}y$$<br>$$f_Y(x) =  \int_{-∞}^{∞} f_{X,Y}(x,y)\mathrm{d}x$$<br>上帝视角：边缘概率密度，即按照x轴或y轴平行竖直截面面积</p>
+<p><strong>条件分布</strong><br>$$f_{Y|X}(b|a) = \frac{f_{X,Y}(a,b)}{f_X(a)}$$<br>上帝视角：在 X=a 处进行截面，将截面内的分布扩大到累积量为1，即为条件分布</p>
+<p><strong>贝叶斯公式</strong><br>$$f_{X|Y}(a|b)=\frac{f_{Y|X}(b|a)f_X(a)}{\int_{-\infty}^{\infty}f_{Y|X}(b|x)f_X(x)\mathrm{d}x}$$</p>
+<p><strong>独立性</strong><br>$$\forall a,b:\qquad f_{Y|X}(b|a) = f_Y(b)$$<br>上式始终成立，才能称 $X$ 与 $Y$ 独立</p>
 <p><strong>任意区域概率</strong></p>
 <p>除了前面随机变量 $(X,Y)$ 形成的矩形区域，也可以是平面上任意区域形成的柱型体积，作为这一区域的概率</p>
 <p><strong>均匀分布</strong></p>
-<p>对于随机变量 $(X,Y)$ 构成平面上的某个特定区域 $C$（面积有限），可以形成均匀分布：</p>
-<script type="math/tex; mode=display">f_{X,Y}(x,y)=\begin{cases}
-1/C的面积&((x,y)位于C内)\\
-0&((x,y)位于C外)
-\end{cases}</script><h2><span id="联合分布的变量变换">联合分布的变量变换</span></h2><p><strong>横向拉伸</strong>：$Z\equiv 2X, W\equiv Y$</p>
-<script type="math/tex; mode=display">f_{Z,W}(z,w) = \frac{1}{2}f_{X,Y}(z/2, w)</script><p><strong>纵向拉伸</strong>：$Z≡X, W=1.5Y$</p>
-<script type="math/tex; mode=display">f_{Z,W}(z,w) = \frac{1}{1.5}f_{X,Y}(z, w/1.5)</script><p><strong>横向纵向同时拉伸</strong>：$Z≡2X, W=1.5Y$</p>
-<script type="math/tex; mode=display">f_{Z,W}(z,w) = \frac{1}{3}f_{X,Y}(z/2, w/1.5)</script><p><strong>翻转</strong>：$Z≡-2X, W=1.5Y$</p>
-<script type="math/tex; mode=display">f_{Z,W}(z,w) = \frac{1}{3}*f_{X,Y}(-z/2, w/1.5)</script><p><strong>斜向缩放</strong>：$Z≡3X+Y, W≡X+2Y$</p>
-<p>变换方程组为$X=(2Z-W)/5, Y=(3W-Z)/5$，计算出面积扩大到原来5倍</p>
-<script type="math/tex; mode=display">f_{Z,W}(z,w) = 1/5*f_{X,Y}((2z-w)/5, (3w-z)/5)</script><p><strong>线性变换</strong>：$Z≡aX+bY, W≡cX+dY$</p>
-<p>改写为$\begin{pmatrix}Z\\W\end{pmatrix}=A\begin{pmatrix}X\\Y\end{pmatrix},A\equiv\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}$</p>
-<script type="math/tex; mode=display">f_{Z,W}(z,w)=\frac{1}{|\det A|}f_{X,Y}(x,y)，其中\begin{pmatrix}x\\y\end{pmatrix}\equiv A^{-1}\begin{pmatrix}z\\w\end{pmatrix}</script><p><strong>具有曲率的变换</strong>：$Z≡Xe^Y, W≡Y$</p>
-<script type="math/tex; mode=display">f_{Z,W}(z,w) = \frac{1}{e^w}f_{X,Y}(ze^{-w}, w)</script><p><strong>一一对应的非线性变换</strong>：$Z≡g(X,Y), W≡h(X,Y)$</p>
-<p>雅克比式（Jacobian）：</p>
-<script type="math/tex; mode=display">\frac{\partial(z,w)}{\partial(x,y)}\equiv\det\begin{pmatrix}
-\frac{\partial z}{\partial x} & \frac{\partial z}{\partial y}\\
-\frac{\partial w}{\partial x} & \frac{\partial w}{\partial y}\\
-\end{pmatrix}</script><script type="math/tex; mode=display">f_{Z,W}(z,w) = \frac{1}{|∂(z,w)/∂(x,y)|}f_{X,Y}(x,y)</script><p>也可以扩展到多变量情况</p>
+<p>对于随机变量 $(X,Y)$ 构成平面上的某个特定区域 $C$（面积有限），可以形成均匀分布：<br>$$f_{X,Y}(x,y)=\begin{cases}<br>1/C的面积&amp;((x,y)位于C内)\<br>0&amp;((x,y)位于C外)<br>\end{cases}$$</p>
+<h2><span id="联合分布的变量变换">联合分布的变量变换</span></h2><p><strong>横向拉伸</strong>：$Z\equiv 2X, W\equiv Y$<br>$$f_{Z,W}(z,w) = \frac{1}{2}f_{X,Y}(z/2, w)$$<br><strong>纵向拉伸</strong>：$Z≡X, W=1.5Y$<br>$$f_{Z,W}(z,w) = \frac{1}{1.5}f_{X,Y}(z, w/1.5)$$<br><strong>横向纵向同时拉伸</strong>：$Z≡2X, W=1.5Y$<br>$$f_{Z,W}(z,w) = \frac{1}{3}f_{X,Y}(z/2, w/1.5)$$<br><strong>翻转</strong>：$Z≡-2X, W=1.5Y$<br>$$f_{Z,W}(z,w) = \frac{1}{3}*f_{X,Y}(-z/2, w/1.5)$$<br><strong>斜向缩放</strong>：$Z≡3X+Y, W≡X+2Y$</p>
+<p>变换方程组为$X=(2Z-W)/5, Y=(3W-Z)/5$，计算出面积扩大到原来5倍<br>$$f_{Z,W}(z,w) = 1/5*f_{X,Y}((2z-w)/5, (3w-z)/5)$$</p>
+<p><strong>线性变换</strong>：$Z≡aX+bY, W≡cX+dY$</p>
+<p>改写为$\begin{pmatrix}Z\W\end{pmatrix}=A\begin{pmatrix}X\Y\end{pmatrix},A\equiv\begin{pmatrix}a&amp;b\c&amp;d\end{pmatrix}$</p>
+<p>$$f_{Z,W}(z,w)=\frac{1}{|\det A|}f_{X,Y}(x,y)，其中\begin{pmatrix}x\y\end{pmatrix}\equiv A^{-1}\begin{pmatrix}z\w\end{pmatrix}$$</p>
+<p><strong>具有曲率的变换</strong>：$Z≡Xe^Y, W≡Y$<br>$$f_{Z,W}(z,w) = \frac{1}{e^w}f_{X,Y}(ze^{-w}, w)$$</p>
+<p><strong>一一对应的非线性变换</strong>：$Z≡g(X,Y), W≡h(X,Y)$</p>
+<p>雅克比式（Jacobian）：<br>$$\frac{\partial(z,w)}{\partial(x,y)}\equiv\det\begin{pmatrix}<br>\frac{\partial z}{\partial x} &amp; \frac{\partial z}{\partial y}\<br>\frac{\partial w}{\partial x} &amp; \frac{\partial w}{\partial y}\<br>\end{pmatrix}$$<br>$$f_{Z,W}(z,w) = \frac{1}{|∂(z,w)/∂(x,y)|}f_{X,Y}(x,y)$$</p>
+<p>也可以扩展到多变量情况</p>
 <p><strong>期望值、方差与标准差</strong></p>
 <p>与离散值定义一致，不过需要变换为积分形式（略）</p>
-<h2><span id="正态分布">正态分布</span></h2><p><strong>标准正态分布（标准高斯分布）</strong></p>
-<script type="math/tex; mode=display">f(z) = \frac{1}{\sqrt{2\pi}}\exp(\frac{-z^2}{2})</script><p>期望 $\mathrm{E}[Z]=0$，方差 $\mathrm{V}[Z]=1$</p>
+<h2><span id="正态分布">正态分布</span></h2><p><strong>标准正态分布（标准高斯分布）</strong><br>$$f(z) = \frac{1}{\sqrt{2\pi}}\exp(\frac{-z^2}{2})$$</p>
+<p>期望 $\mathrm{E}[Z]=0$，方差 $\mathrm{V}[Z]=1$</p>
 <p>通过高斯积分算得$\sqrt{2\pi}$，使用该系数使得积分为1；exp内部系数 $1/2$ 使得方差为1</p>
 <p><strong>一般正态分布</strong></p>
 <p>对标准正态分布进行缩放+平移：$X≡σZ+μ$</p>
 <p>期望 $\mathrm{E}[X]=μ$，方差 $\mathrm{V}[X]=σ^2$</p>
 <p>则称为 $X$ 符合期望为 $μ$，方差为 $σ^2$ 的正态分布，记作 $X\sim \mathrm{N}(μ, σ^2)$</p>
-<p>如果随机变量 $X$ 的概率密度函数符合以下形式，则必然遵从正态分布：</p>
-<script type="math/tex; mode=display">f_X(x) = \Box\cdot\exp(x的二次式)\qquad（\Box为不含x的常量，二次式为ax²+bx+c形式）</script><p>独立的多个符合正态分布随机变量的线性加和，仍然是正态分布</p>
+<p>如果随机变量 $X$ 的概率密度函数符合以下形式，则必然遵从正态分布：<br>$$f_X(x) = \Box\cdot\exp(x的二次式)\qquad（\Box为不含x的常量，二次式为ax²+bx+c形式）$$</p>
+<p>独立的多个符合正态分布随机变量的线性加和，仍然是正态分布</p>
 <p><strong>中心极限定理</strong></p>
 <p>n个独立同分布i.i.d.的随机变量 $X_1,\cdots,X_n$，假设他们的期望值均为0，方差均为$σ^2$</p>
 <p>简单累加 $X_1+\cdots+X_n$ 的方差 $nσ^2$ 随着 $n\to\infty$ 会趋向$\infty$</p>
-<p>设 $W_n$ 如下，随着 $n\to\infty$，它将依分布收敛于 $\mathrm{N}(0,1)$：</p>
-<script type="math/tex; mode=display">W_n\equiv\frac{X_1+\cdots+X_n}{\sqrt{n}\sigma}</script><p>如果期望值不为0，则改写如下，仍然是收敛为 $\mathrm{N}(0,1)$ 标准正态分布：</p>
-<script type="math/tex; mode=display">W_n\equiv\frac{((X_1-\mu)+\cdots+(X_n-\mu)}{\sqrt{n}\sigma}</script><hr>
+<p>设 $W_n$ 如下，随着 $n\to\infty$，它将依分布收敛于 $\mathrm{N}(0,1)$：<br>$$W_n\equiv\frac{X_1+\cdots+X_n}{\sqrt{n}\sigma}$$</p>
+<p>如果期望值不为0，则改写如下，仍然是收敛为 $\mathrm{N}(0,1)$ 标准正态分布：<br>$$W_n\equiv\frac{((X_1-\mu)+\cdots+(X_n-\mu)}{\sqrt{n}\sigma}$$</p>
+<hr>
 <ul>
 <li><a href="/2019/04/28/probability-and-statistics-note-1/" title="《程序员的数学2：概率统计》笔记1">《程序员的数学2：概率统计》笔记1</a></li>
 <li><a href="/2019/04/28/probability-and-statistics-note-2/" title="《程序员的数学2：概率统计》笔记2">《程序员的数学2：概率统计》笔记2</a></li>
@@ -594,6 +570,30 @@
     
     
 
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ZhongChen</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://zhong.blog/2019/04/28/probability-and-statistics-note-1/" title="《程序员的数学2：概率统计》笔记1">https://zhong.blog/2019/04/28/probability-and-statistics-note-1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -673,10 +673,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -697,7 +697,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">9</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
@@ -718,7 +718,7 @@
                       
                     
                     <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">categories</span>
+                    <span class="site-state-item-name">分类</span>
                   
                 </div>
               
@@ -737,7 +737,7 @@
                       
                     
                     <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">标签</span>
                   
                 </div>
               
@@ -750,6 +750,16 @@
 
           
 
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
           
 
           
@@ -807,7 +817,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -815,7 +825,7 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
 
 
 
@@ -878,6 +888,8 @@
 
 
 
+  
+
 
 
   
@@ -888,6 +900,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
 
 
   
@@ -903,7 +918,10 @@
   
 
 
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
 
 
 

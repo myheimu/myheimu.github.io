@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,13 @@
 
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
@@ -73,7 +80,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.1.1',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
@@ -99,18 +106,18 @@
 
 
 
-  <meta name="description" content="开始看线性代数这本书 中文版勘误：http://www.ituring.com.cn/book/1239 日文版勘误：http://wiki.fdiary.net/lacs/?Errata 第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如： \begin{pmatrix} 2\\5\\7 \end{pmatrix}也可以写作 $(2,5,7)^T$ 对于元素在实数范围">
+  <meta name="description" content="开始看线性代数这本书 中文版勘误：http://www.ituring.com.cn/book/1239 日文版勘误：http://wiki.fdiary.net/lacs/?Errata 第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如：$$\begin{pmatrix}2\5\7\end{pmatrix}$$ 也可以写作 $(2,5,7)^T$ 对于元素在实数范围">
 <meta name="keywords" content="读书笔记,线性代数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《程序员的数学3：线性代数》笔记">
 <meta property="og:url" content="https://zhong.blog/2019/05/04/linear-algebra-note/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="开始看线性代数这本书 中文版勘误：http://www.ituring.com.cn/book/1239 日文版勘误：http://wiki.fdiary.net/lacs/?Errata 第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如： \begin{pmatrix} 2\\5\\7 \end{pmatrix}也可以写作 $(2,5,7)^T$ 对于元素在实数范围">
-<meta property="og:locale" content="zh">
+<meta property="og:description" content="开始看线性代数这本书 中文版勘误：http://www.ituring.com.cn/book/1239 日文版勘误：http://wiki.fdiary.net/lacs/?Errata 第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如：$$\begin{pmatrix}2\5\7\end{pmatrix}$$ 也可以写作 $(2,5,7)^T$ 对于元素在实数范围">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-05T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《程序员的数学3：线性代数》笔记">
-<meta name="twitter:description" content="开始看线性代数这本书 中文版勘误：http://www.ituring.com.cn/book/1239 日文版勘误：http://wiki.fdiary.net/lacs/?Errata 第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如： \begin{pmatrix} 2\\5\\7 \end{pmatrix}也可以写作 $(2,5,7)^T$ 对于元素在实数范围">
+<meta name="twitter:description" content="开始看线性代数这本书 中文版勘误：http://www.ituring.com.cn/book/1239 日文版勘误：http://wiki.fdiary.net/lacs/?Errata 第1章：用空间的语言表达向量、矩阵、行列式向量与空间把数列成一列就是向量，例如：$$\begin{pmatrix}2\5\7\end{pmatrix}$$ 也可以写作 $(2,5,7)^T$ 对于元素在实数范围">
 
 
 
@@ -169,7 +176,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -193,14 +200,14 @@
     </div>
     
       
-        <p class="site-subtitle">技术是条无尽的道路</p>
+        <h1 class="site-subtitle" itemprop="description">技术是条无尽的道路</h1>
       
     
     
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -228,7 +235,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
         
@@ -245,7 +252,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
 
@@ -253,9 +260,6 @@
       
     </ul>
   
-
-  
-    
 
   
 
@@ -278,6 +282,9 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+            
+
+          
           <div id="content" class="content">
             
 
@@ -290,6 +297,8 @@
   
   
 
+  
+    <div class="reading-progress-bar"></div>
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -314,11 +323,11 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">《程序员的数学3：线性代数》笔记
+          <h2 class="post-title" itemprop="name headline">《程序员的数学3：线性代数》笔记
 
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -333,14 +342,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Created: 2019-05-04 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-04T00:00:00+08:00">2019-05-04</time>
+              <time title="创建时间：2019-05-04 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-04T00:00:00+08:00">2019-05-04</time>
             
 
             
@@ -355,9 +364,9 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">Edited on</span>
+                  <span class="post-meta-item-text">更新于</span>
                 
-                <time title="Modified: 2019-05-06 00:00:00" itemprop="dateModified" datetime="2019-05-06T00:00:00+08:00">2019-05-06</time>
+                <time title="修改时间：2019-05-06 00:00:00" itemprop="dateModified" datetime="2019-05-06T00:00:00+08:00">2019-05-06</time>
               
             
           </span>
@@ -371,7 +380,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
@@ -412,17 +421,12 @@
         <p>开始看线性代数这本书</p>
 <p>中文版勘误：<a href="http://www.ituring.com.cn/book/1239" target="_blank" rel="noopener">http://www.ituring.com.cn/book/1239</a></p>
 <p>日文版勘误：<a href="http://wiki.fdiary.net/lacs/?Errata" target="_blank" rel="noopener">http://wiki.fdiary.net/lacs/?Errata</a></p>
-<h1><span id="第1章用空间的语言表达向量-矩阵-行列式">第1章：用空间的语言表达向量、矩阵、行列式</span></h1><h2><span id="向量与空间">向量与空间</span></h2><p>把数列成一列就是向量，例如：</p>
-<script type="math/tex; mode=display">\begin{pmatrix}
-2\\5\\7
-\end{pmatrix}</script><p>也可以写作 $(2,5,7)^T$</p>
+<h1><span id="第1章用空间的语言表达向量-矩阵-行列式">第1章：用空间的语言表达向量、矩阵、行列式</span></h1><h2><span id="向量与空间">向量与空间</span></h2><p>把数列成一列就是向量，例如：<br>$$\begin{pmatrix}<br>2\5\7<br>\end{pmatrix}$$</p>
+<p>也可以写作 $(2,5,7)^T$</p>
 <p>对于元素在实数范围内的向量和矩阵，称之为<strong>实向量</strong>和<strong>实矩阵</strong>；如果元素是复数，则称之为<strong>复向量</strong>和<strong>复矩阵</strong></p>
-<p>向量加法：</p>
-<script type="math/tex; mode=display">\begin{pmatrix} x_1\\\vdots\\x_n \end{pmatrix}+
-\begin{pmatrix} y_1\\\vdots\\y_n \end{pmatrix}=
-\begin{pmatrix} x_1+y_1\\\vdots\\x_n+y_n \end{pmatrix}</script><p>标量乘法：</p>
-<script type="math/tex; mode=display">c \begin{pmatrix} x_1\\\vdots\\x_n \end{pmatrix}=
-\begin{pmatrix} cx_1\\\vdots\\cx_n \end{pmatrix}</script><p>还有一系列朴素的计算公式。但是对于乘法和除法，尽管很多支持矩阵运算的计算机语言中有针对向量/矩阵对应位置的乘法或除法计算，但从线性代数角度来看，对应位置的乘法或除法依赖于自身坐标系，无法反应本身性质</p>
+<p>向量加法：<br>$$\begin{pmatrix} x_1\\vdots\x_n \end{pmatrix}+<br>\begin{pmatrix} y_1\\vdots\y_n \end{pmatrix}=<br>\begin{pmatrix} x_1+y_1\\vdots\x_n+y_n \end{pmatrix}$$</p>
+<p>标量乘法：<br>$$c \begin{pmatrix} x_1\\vdots\x_n \end{pmatrix}=<br>\begin{pmatrix} cx_1\\vdots\cx_n \end{pmatrix}<br>$$</p>
+<p>还有一系列朴素的计算公式。但是对于乘法和除法，尽管很多支持矩阵运算的计算机语言中有针对向量/矩阵对应位置的乘法或除法计算，但从线性代数角度来看，对应位置的乘法或除法依赖于自身坐标系，无法反应本身性质</p>
 <p>n维向量可以被描述为n维空间中的一个位置，也可以用从原点起始的一个有向线段来来表示。</p>
 <p>对于空间中的向量，实际上可以把空间的方向和刻度去掉，只保留原点，此时向量加法和数量乘法运算仍然成立。因此针对这样的一个附加了加法与数量乘法的空间，称之为<strong>线性空间</strong>或<strong>向量空间</strong></p>
 
@@ -442,6 +446,30 @@
     
     
 
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ZhongChen</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://zhong.blog/2019/05/04/linear-algebra-note/" title="《程序员的数学3：线性代数》笔记">https://zhong.blog/2019/05/04/linear-algebra-note/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -521,10 +549,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -545,7 +573,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">9</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
@@ -566,7 +594,7 @@
                       
                     
                     <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">categories</span>
+                    <span class="site-state-item-name">分类</span>
                   
                 </div>
               
@@ -585,7 +613,7 @@
                       
                     
                     <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">标签</span>
                   
                 </div>
               
@@ -598,6 +626,16 @@
 
           
 
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
           
 
           
@@ -655,7 +693,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -663,7 +701,7 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
 
 
 
@@ -726,6 +764,8 @@
 
 
 
+  
+
 
 
   
@@ -736,6 +776,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
 
 
   
@@ -751,7 +794,10 @@
   
 
 
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
 
 
 

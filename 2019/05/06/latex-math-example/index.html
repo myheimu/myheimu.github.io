@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,13 @@
 
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
@@ -73,7 +80,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.1.1',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
@@ -105,7 +112,7 @@
 <meta property="og:url" content="https://zhong.blog/2019/05/06/latex-math-example/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
 <meta property="og:description" content="$\TeX$（读作/tɛx/，音“泰赫”） 是高德纳（Donald E. Knuth）在编纂巨著《计算机程序设计艺术》时觉得当时排版系统太难用而发明的排版系统引擎。 $\LaTeX$ 是一个宏包，用于利用预定义的页面设置 由于搭配宏包的不同，不同系统里对以下功能支持范围也有所不同。如果在页面中显示为$\unknownsomething$（红色），则说明当前系统不支持该命令。 详细内容参见 一份不太">
-<meta property="og:locale" content="zh">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-05T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTeX数学公式入门">
@@ -168,7 +175,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -192,14 +199,14 @@
     </div>
     
       
-        <p class="site-subtitle">技术是条无尽的道路</p>
+        <h1 class="site-subtitle" itemprop="description">技术是条无尽的道路</h1>
       
     
     
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -227,7 +234,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
         
@@ -244,7 +251,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
 
@@ -252,9 +259,6 @@
       
     </ul>
   
-
-  
-    
 
   
 
@@ -277,6 +281,9 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+            
+
+          
           <div id="content" class="content">
             
 
@@ -289,6 +296,8 @@
   
   
 
+  
+    <div class="reading-progress-bar"></div>
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -313,11 +322,11 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LaTeX数学公式入门
+          <h2 class="post-title" itemprop="name headline">LaTeX数学公式入门
 
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -332,14 +341,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Created: 2019-05-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-06T00:00:00+08:00">2019-05-06</time>
+              <time title="创建时间：2019-05-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-06T00:00:00+08:00">2019-05-06</time>
             
 
             
@@ -354,7 +363,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具/" itemprop="url" rel="index"><span itemprop="name">工具</span></a></span>
@@ -397,75 +406,29 @@
 <p>由于搭配宏包的不同，不同系统里对以下功能支持范围也有所不同。如果在页面中显示为$\unknownsomething$（红色），则说明当前系统不支持该命令。</p>
 <p>详细内容参见 <a href="http://www.mohu.org/info/lshort-cn.pdf" target="_blank" rel="noopener">一份不太简短的$\LaTeX2e$介绍</a></p>
 <h1><span id="基本使用">基本使用</span></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">单个 $ 符号代表行内公式：$a_&#123;1&#125;$，两个 $ 符号代码行间公式：</span><br><span class="line">$$a_&#123;1&#125;$$</span><br></pre></td></tr></table></figure>
-<p>单个 <script type="math/tex">` 符号代表行内公式：$a_{1}$，两个 `</script> 符号代码行间公式：</p>
-<script type="math/tex; mode=display">a_{1}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$空格：3/18小空格|\,|，4/18小空格|\:|，5/18小空格|\;|，中等空格|\ |$$</span><br><span class="line">$$大空格|\quad|，大空格|\qquad|，-3/18空格a\!b$$</span><br><span class="line">$$换行\\用双斜杠$$</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">空格：3/18小空格|\,|，4/18小空格|\:|，5/18小空格|\;|，中等空格|\ |</script><script type="math/tex; mode=display">大空格|\quad|，大空格|\qquad|，-3/18空格a\!b</script><script type="math/tex; mode=display">换行\\用双斜杠</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$上标\qquad a^1 a^&#123;123&#125; e^&#123;a^n&#125;$$</span><br><span class="line">$$下标\qquad a_b a_&#123;bcd&#125; a_&#123;b_c&#125;$$</span><br><span class="line">$$上下标\qquad a_&#123;b&#125;^&#123;c&#125;$$</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">上标\qquad a^1 a^{123} e^{a^n}</script><script type="math/tex; mode=display">下标\qquad a_b a_{bcd} a_{b_c}</script><script type="math/tex; mode=display">上下标\qquad a_{b}^{c}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$平方根\qquad \sqrt&#123;x&#125; \sqrt[3]&#123;y&#125; \sqrt[n]&#123;\sqrt&#123;n&#125;+y&#125;$$</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">平方根\qquad \sqrt{x} \sqrt[3]{y} \sqrt[n]{\sqrt{n}+y}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$上下水平线\qquad \overline&#123;m+n&#125; \qquad \underline&#123;m+n&#125;$$</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">上下水平线\qquad \overline{m+n} \qquad \underline{m+n}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$上下花括号加注释\qquad \overbrace&#123;0,0,\dots,0&#125;^&#123;\text&#123;共n项&#125;&#125; \qquad \underbrace&#123;0,0,\dots,0&#125;_&#123;\text&#123;共n项&#125;&#125;$$</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">上下花括号加注释\qquad \overbrace{0,0,\dots,0}^{\text{共n项}} \qquad \underbrace{0,0,\dots,0}_{\text{共n项}}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$分数\qquad \frac&#123;1&#125;&#123;2+3+4^5&#125;$$</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">分数\qquad \frac{1}{2+3+4^5}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$求和 \sum_&#123;i=1&#125;^&#123;n&#125;x_i 、乘积 \prod_i&#123;x_i&#125;、积分\int_&#123;-\infty&#125;^&#123;\infty&#125;x$$</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">求和 \sum_{i=1}^{n}x_i 、乘积 \prod_i{x_i}、积分\int_{-\infty}^{\infty}x</script><h1><span id="矩阵和类似形状">矩阵和类似形状</span></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">a&amp;b\\</span><br><span class="line">c&amp;d\\</span><br><span class="line">\end&#123;matrix&#125; \quad</span><br><span class="line">\begin&#123;bmatrix&#125; a&amp;b\\ c&amp;d\\ \end&#123;bmatrix&#125; \quad</span><br><span class="line">\begin&#123;vmatrix&#125; a&amp;b\\ c&amp;d\\ \end&#123;vmatrix&#125; \quad</span><br><span class="line">\begin&#123;pmatrix&#125; a&amp;b\\ c&amp;d\\ \end&#123;pmatrix&#125; \quad</span><br><span class="line">\begin&#123;Bmatrix&#125; a&amp;b\\ c&amp;d\\ \end&#123;Bmatrix&#125; \quad</span><br><span class="line">\begin&#123;Vmatrix&#125; a&amp;b\\ c&amp;d\\ \end&#123;Vmatrix&#125;</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">
-\begin{matrix}
-a&b\\
-c&d\\
-\end{matrix} \quad
-\begin{bmatrix} a&b\\ c&d\\ \end{bmatrix} \quad
-\begin{vmatrix} a&b\\ c&d\\ \end{vmatrix} \quad
-\begin{pmatrix} a&b\\ c&d\\ \end{pmatrix} \quad
-\begin{Bmatrix} a&b\\ c&d\\ \end{Bmatrix} \quad
-\begin{Vmatrix} a&b\\ c&d\\ \end{Vmatrix}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$P=\begin&#123;pmatrix&#125;</span><br><span class="line">X_&#123;11&#125;&amp;X_&#123;12&#125;&amp;\cdots&amp;X_&#123;1n&#125;\\</span><br><span class="line">X_&#123;21&#125;&amp;X_&#123;22&#125;&amp;\cdots&amp;X_&#123;2n&#125;\\</span><br><span class="line">\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\</span><br><span class="line">X_&#123;m1&#125;&amp;X_&#123;m2&#125;&amp;\cdots&amp;X_&#123;mn&#125;\\</span><br><span class="line">\end&#123;pmatrix&#125;</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">P=\begin{pmatrix}
-X_{11}&X_{12}&\cdots&X_{1n}\\
-X_{21}&X_{22}&\cdots&X_{2n}\\
-\vdots&\vdots&\ddots&\vdots\\
-X_{m1}&X_{m2}&\cdots&X_{mn}\\
-\end{pmatrix}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$Y= \begin&#123;cases&#125;</span><br><span class="line">a&amp;if(x&gt;0)\\</span><br><span class="line">b&amp;if(x&lt;0)\\</span><br><span class="line">0&amp;else</span><br><span class="line">\end&#123;cases&#125; $$</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">Y= \begin{cases}
-a&if(x>0)\\
-b&if(x<0)\\
-0&else
-\end{cases}</script><h1><span id="对齐">对齐</span></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;aligned&#125;</span><br><span class="line">f(x) &amp; =  \cos(x) \\</span><br><span class="line">x &amp; =  -\sin(x+y) \\</span><br><span class="line"> &amp; =  \tan(z)+\cot(z) \\</span><br><span class="line">\end&#123;aligned&#125;$$</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">\begin{aligned}
-f(x) & =  \cos(x) \\
-x & =  -\sin(x+y) \\
- & =  \tan(z)+\cot(z) \\
-\end{aligned}</script><h1><span id="字体和大小">字体和大小</span></h1><script type="math/tex; mode=display">\begin{cases}
-{AMO,\beta\mu,012}& 默认\\
-\mathbf{AMO,\beta\mu,012}& \backslash mathbf\\
-\bm{AMO,\beta\mu,012}&\backslash bm（需bm支持）\\
-\boldsymbol{AMO,\beta\mu,012} &\backslash boldsymbol（需asmmath支持）\\
-\pmb{AMO,\beta\mu,012} &\backslash pmb（需asmmath支持）\\
-\end{cases}</script><script type="math/tex; mode=display">\begin{cases}
-{AMO,\beta\mu,012}& 默认\\
-\mathrm{AMO,\beta\mu,012}&\backslash mathrm\\
-\mathbf{AMO,\beta\mu,012}& \backslash mathbf\\
-\mathsf{AMO,\beta\mu,012}& \backslash mathsf\\
-\mathtt{AMO,\beta\mu,012}& \backslash mathtt\\
-\mathit{AMO,\beta\mu,012}& \backslash mathit\\
-\mathnormal{AMO,\beta\mu,012}& \backslash mathnormal\\
-\end{cases}</script><script type="math/tex; mode=display">\begin{cases}
-ABCdef\alpha\mu 123&默认\\
-\mathcal{ABCdef\alpha\mu 123}&\backslash mathcal\\
-\mathscr{ABCdef\alpha\mu 123}&\backslash mathscr\\
-\mathfrak{ABCdef\alpha\mu 123}&\backslash mathfrak（需eufrak支持）\\
-\mathbb{ABCdef\alpha\mu 123}&\backslash mathbb（需amsfonts或asmsymb）\\
-\end{cases}</script><h1><span id="重音">重音</span></h1><script type="math/tex; mode=display">\begin{array}{cccc}
-\acute{A}&\backslash acute&
-\bar{A}&\backslash bar&
-\breve{A}&\backslash breve&
-\check{A}&\backslash check&\\
-\dot{A}&\backslash dot&
-\ddot{A}&\backslash ddot&
-\hat{A}&\backslash hat&
-\grave{A}&\backslash grave&\\
-\mathring{A}&\backslash mathring&
-\tilde{A}&\backslash tilde&
-\vec{A}&\backslash vec&\\
-\widehat{A}&\backslash widehat&
-\widetilde{A}&\backslash widetilde&
-\end{array}</script><h1><span id="各类字符略">各类字符（略）</span></h1><h2><span id="希腊字母大小写">希腊字母（大小写）</span></h2><h2><span id="二元关系符">二元关系符</span></h2><h2><span id="二元运算符">二元运算符</span></h2><h2><span id="大尺寸运算符">大尺寸运算符</span></h2><h2><span id="箭头">箭头</span></h2><h2><span id="定界符-大尺寸定界符">定界符、大尺寸定界符</span></h2><h2><span id="ams-各类扩展符号">AMS 各类扩展符号</span></h2>
+<p>单个 <code>$</code> 符号代表行内公式：$a_{1}$，两个 <code>$</code> 符号代码行间公式：<br>$$a_{1}$$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$空格：3/18小空格|\,|，4/18小空格|\:|，5/18小空格|\;|，中等空格|\ |$$</span><br><span class="line">$$大空格|\quad|，大空格|\qquad|，-3/18空格a\!b$$</span><br><span class="line">$$换行\\用双斜杠$$</span><br></pre></td></tr></table></figure>
+<p>$$空格：3/18小空格|\,|，4/18小空格|\:|，5/18小空格|\;|，中等空格|\ |$$<br>$$大空格|\quad|，大空格|\qquad|，-3/18空格a!b$$<br>$$换行\用双斜杠$$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$上标\qquad a^1 a^&#123;123&#125; e^&#123;a^n&#125;$$</span><br><span class="line">$$下标\qquad a_b a_&#123;bcd&#125; a_&#123;b_c&#125;$$</span><br><span class="line">$$上下标\qquad a_&#123;b&#125;^&#123;c&#125;$$</span><br></pre></td></tr></table></figure>
+<p>$$上标\qquad a^1 a^{123} e^{a^n}$$<br>$$下标\qquad a_b a_{bcd} a_{b_c}$$<br>$$上下标\qquad a_{b}^{c}$$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$平方根\qquad \sqrt&#123;x&#125; \sqrt[3]&#123;y&#125; \sqrt[n]&#123;\sqrt&#123;n&#125;+y&#125;$$</span><br></pre></td></tr></table></figure></p>
+<p>$$平方根\qquad \sqrt{x} \sqrt[3]{y} \sqrt[n]{\sqrt{n}+y}$$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$上下水平线\qquad \overline&#123;m+n&#125; \qquad \underline&#123;m+n&#125;$$</span><br></pre></td></tr></table></figure></p>
+<p>$$上下水平线\qquad \overline{m+n} \qquad \underline{m+n}$$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$上下花括号加注释\qquad \overbrace&#123;0,0,\dots,0&#125;^&#123;\text&#123;共n项&#125;&#125; \qquad \underbrace&#123;0,0,\dots,0&#125;_&#123;\text&#123;共n项&#125;&#125;$$</span><br></pre></td></tr></table></figure></p>
+<p>$$上下花括号加注释\qquad \overbrace{0,0,\dots,0}^{\text{共n项}} \qquad \underbrace{0,0,\dots,0}_{\text{共n项}}$$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$分数\qquad \frac&#123;1&#125;&#123;2+3+4^5&#125;$$</span><br></pre></td></tr></table></figure></p>
+<p>$$分数\qquad \frac{1}{2+3+4^5}$$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$求和 \sum_&#123;i=1&#125;^&#123;n&#125;x_i 、乘积 \prod_i&#123;x_i&#125;、积分\int_&#123;-\infty&#125;^&#123;\infty&#125;x$$</span><br></pre></td></tr></table></figure></p>
+<p>$$求和 \sum_{i=1}^{n}x_i 、乘积 \prod_i{x_i}、积分\int_{-\infty}^{\infty}x$$</p>
+<h1><span id="矩阵和类似形状">矩阵和类似形状</span></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">a&amp;b\\</span><br><span class="line">c&amp;d\\</span><br><span class="line">\end&#123;matrix&#125; \quad</span><br><span class="line">\begin&#123;bmatrix&#125; a&amp;b\\ c&amp;d\\ \end&#123;bmatrix&#125; \quad</span><br><span class="line">\begin&#123;vmatrix&#125; a&amp;b\\ c&amp;d\\ \end&#123;vmatrix&#125; \quad</span><br><span class="line">\begin&#123;pmatrix&#125; a&amp;b\\ c&amp;d\\ \end&#123;pmatrix&#125; \quad</span><br><span class="line">\begin&#123;Bmatrix&#125; a&amp;b\\ c&amp;d\\ \end&#123;Bmatrix&#125; \quad</span><br><span class="line">\begin&#123;Vmatrix&#125; a&amp;b\\ c&amp;d\\ \end&#123;Vmatrix&#125;</span><br></pre></td></tr></table></figure>
+<p>$$<br>\begin{matrix}<br>a&amp;b\<br>c&amp;d\<br>\end{matrix} \quad<br>\begin{bmatrix} a&amp;b\ c&amp;d\ \end{bmatrix} \quad<br>\begin{vmatrix} a&amp;b\ c&amp;d\ \end{vmatrix} \quad<br>\begin{pmatrix} a&amp;b\ c&amp;d\ \end{pmatrix} \quad<br>\begin{Bmatrix} a&amp;b\ c&amp;d\ \end{Bmatrix} \quad<br>\begin{Vmatrix} a&amp;b\ c&amp;d\ \end{Vmatrix}<br>$$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$P=\begin&#123;pmatrix&#125;</span><br><span class="line">X_&#123;11&#125;&amp;X_&#123;12&#125;&amp;\cdots&amp;X_&#123;1n&#125;\\</span><br><span class="line">X_&#123;21&#125;&amp;X_&#123;22&#125;&amp;\cdots&amp;X_&#123;2n&#125;\\</span><br><span class="line">\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\</span><br><span class="line">X_&#123;m1&#125;&amp;X_&#123;m2&#125;&amp;\cdots&amp;X_&#123;mn&#125;\\</span><br><span class="line">\end&#123;pmatrix&#125;</span><br></pre></td></tr></table></figure>
+<p>$$P=\begin{pmatrix}<br>X_{11}&amp;X_{12}&amp;\cdots&amp;X_{1n}\<br>X_{21}&amp;X_{22}&amp;\cdots&amp;X_{2n}\<br>\vdots&amp;\vdots&amp;\ddots&amp;\vdots\<br>X_{m1}&amp;X_{m2}&amp;\cdots&amp;X_{mn}\<br>\end{pmatrix}<br>$$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$Y= \begin&#123;cases&#125;</span><br><span class="line">a&amp;if(x&gt;0)\\</span><br><span class="line">b&amp;if(x&lt;0)\\</span><br><span class="line">0&amp;else</span><br><span class="line">\end&#123;cases&#125; $$</span><br></pre></td></tr></table></figure>
+<p>$$Y= \begin{cases}<br>a&amp;if(x&gt;0)\<br>b&amp;if(x&lt;0)\<br>0&amp;else<br>\end{cases} $$</p>
+<h1><span id="对齐">对齐</span></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;aligned&#125;</span><br><span class="line">f(x) &amp; =  \cos(x) \\</span><br><span class="line">x &amp; =  -\sin(x+y) \\</span><br><span class="line"> &amp; =  \tan(z)+\cot(z) \\</span><br><span class="line">\end&#123;aligned&#125;$$</span><br></pre></td></tr></table></figure>
+<p>$$\begin{aligned}<br>f(x) &amp; =  \cos(x) \<br>x &amp; =  -\sin(x+y) \<br> &amp; =  \tan(z)+\cot(z) \<br>\end{aligned}$$</p>
+<h1><span id="字体和大小">字体和大小</span></h1><p>$$\begin{cases}<br>{AMO,\beta\mu,012}&amp; 默认\<br>\mathbf{AMO,\beta\mu,012}&amp; \backslash mathbf\<br>\bm{AMO,\beta\mu,012}&amp;\backslash bm（需bm支持）\<br>\boldsymbol{AMO,\beta\mu,012} &amp;\backslash boldsymbol（需asmmath支持）\<br>\pmb{AMO,\beta\mu,012} &amp;\backslash pmb（需asmmath支持）\<br>\end{cases}$$</p>
+<p>$$\begin{cases}<br>{AMO,\beta\mu,012}&amp; 默认\<br>\mathrm{AMO,\beta\mu,012}&amp;\backslash mathrm\<br>\mathbf{AMO,\beta\mu,012}&amp; \backslash mathbf\<br>\mathsf{AMO,\beta\mu,012}&amp; \backslash mathsf\<br>\mathtt{AMO,\beta\mu,012}&amp; \backslash mathtt\<br>\mathit{AMO,\beta\mu,012}&amp; \backslash mathit\<br>\mathnormal{AMO,\beta\mu,012}&amp; \backslash mathnormal\<br>\end{cases}$$</p>
+<p>$$\begin{cases}<br>ABCdef\alpha\mu 123&amp;默认\<br>\mathcal{ABCdef\alpha\mu 123}&amp;\backslash mathcal\<br>\mathscr{ABCdef\alpha\mu 123}&amp;\backslash mathscr\<br>\mathfrak{ABCdef\alpha\mu 123}&amp;\backslash mathfrak（需eufrak支持）\<br>\mathbb{ABCdef\alpha\mu 123}&amp;\backslash mathbb（需amsfonts或asmsymb）\<br>\end{cases}$$</p>
+<h1><span id="重音">重音</span></h1><p>$$ \begin{array}{cccc}<br>\acute{A}&amp;\backslash acute&amp;<br>\bar{A}&amp;\backslash bar&amp;<br>\breve{A}&amp;\backslash breve&amp;<br>\check{A}&amp;\backslash check&amp;\<br>\dot{A}&amp;\backslash dot&amp;<br>\ddot{A}&amp;\backslash ddot&amp;<br>\hat{A}&amp;\backslash hat&amp;<br>\grave{A}&amp;\backslash grave&amp;\<br>\mathring{A}&amp;\backslash mathring&amp;<br>\tilde{A}&amp;\backslash tilde&amp;<br>\vec{A}&amp;\backslash vec&amp;\<br>\widehat{A}&amp;\backslash widehat&amp;<br>\widetilde{A}&amp;\backslash widetilde&amp;<br>\end{array} $$</p>
+<h1><span id="各类字符略">各类字符（略）</span></h1><h2><span id="希腊字母大小写">希腊字母（大小写）</span></h2><h2><span id="二元关系符">二元关系符</span></h2><h2><span id="二元运算符">二元运算符</span></h2><h2><span id="大尺寸运算符">大尺寸运算符</span></h2><h2><span id="箭头">箭头</span></h2><h2><span id="定界符-大尺寸定界符">定界符、大尺寸定界符</span></h2><h2><span id="ams-各类扩展符号">AMS 各类扩展符号</span></h2>
       
     </div>
 
@@ -482,6 +445,30 @@ ABCdef\alpha\mu 123&默认\\
     
     
 
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ZhongChen</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://zhong.blog/2019/05/06/latex-math-example/" title="LaTeX数学公式入门">https://zhong.blog/2019/05/06/latex-math-example/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -549,10 +536,10 @@ ABCdef\alpha\mu 123&默认\\
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -573,7 +560,7 @@ ABCdef\alpha\mu 123&默认\\
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">9</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
@@ -594,7 +581,7 @@ ABCdef\alpha\mu 123&默认\\
                       
                     
                     <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">categories</span>
+                    <span class="site-state-item-name">分类</span>
                   
                 </div>
               
@@ -613,7 +600,7 @@ ABCdef\alpha\mu 123&默认\\
                       
                     
                     <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">标签</span>
                   
                 </div>
               
@@ -626,6 +613,16 @@ ABCdef\alpha\mu 123&默认\\
 
           
 
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
           
 
           
@@ -683,7 +680,7 @@ ABCdef\alpha\mu 123&默认\\
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -691,7 +688,7 @@ ABCdef\alpha\mu 123&默认\\
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
 
 
 
@@ -754,6 +751,8 @@ ABCdef\alpha\mu 123&默认\\
 
 
 
+  
+
 
 
   
@@ -764,6 +763,9 @@ ABCdef\alpha\mu 123&默认\\
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
 
 
   
@@ -779,7 +781,10 @@ ABCdef\alpha\mu 123&默认\\
   
 
 
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
 
 
 

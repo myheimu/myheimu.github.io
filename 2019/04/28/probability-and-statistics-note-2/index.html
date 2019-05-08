@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,13 @@
 
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
@@ -73,7 +80,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.1.1',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
@@ -99,18 +106,18 @@
 
 
 
-  <meta name="description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    第5章 协方差矩阵、多元正态分布与椭圆  A：已收到去年入学考试成绩数据，我便马上分析了一下，发现使用的统计软件有问题啊。 B：怎么了？ A：这个软件预测在模拟考中考出700分的人实际考试时得分为650分。以防万一又反过来拿650分作为实际考试成绩试了一下，结果得出的模拟考分数只有6">
+  <meta name="description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    第5章 协方差矩阵、多元正态分布与椭圆 A：已收到去年入学考试成绩数据，我便马上分析了一下，发现使用的统计软件有问题啊。B：怎么了？A：这个软件预测在模拟考中考出700分的人实际考试时得分为650分。以防万一又反过来拿650分作为实际考试成绩试了一下，结果得出的模拟考分数只有600。">
 <meta name="keywords" content="读书笔记,概率论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《程序员的数学2：概率统计》笔记2">
 <meta property="og:url" content="https://zhong.blog/2019/04/28/probability-and-statistics-note-2/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    第5章 协方差矩阵、多元正态分布与椭圆  A：已收到去年入学考试成绩数据，我便马上分析了一下，发现使用的统计软件有问题啊。 B：怎么了？ A：这个软件预测在模拟考中考出700分的人实际考试时得分为650分。以防万一又反过来拿650分作为实际考试成绩试了一下，结果得出的模拟考分数只有6">
-<meta property="og:locale" content="zh">
+<meta property="og:description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    第5章 协方差矩阵、多元正态分布与椭圆 A：已收到去年入学考试成绩数据，我便马上分析了一下，发现使用的统计软件有问题啊。B：怎么了？A：这个软件预测在模拟考中考出700分的人实际考试时得分为650分。以防万一又反过来拿650分作为实际考试成绩试了一下，结果得出的模拟考分数只有600。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-02T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《程序员的数学2：概率统计》笔记2">
-<meta name="twitter:description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    第5章 协方差矩阵、多元正态分布与椭圆  A：已收到去年入学考试成绩数据，我便马上分析了一下，发现使用的统计软件有问题啊。 B：怎么了？ A：这个软件预测在模拟考中考出700分的人实际考试时得分为650分。以防万一又反过来拿650分作为实际考试成绩试了一下，结果得出的模拟考分数只有6">
+<meta name="twitter:description" content="《程序员的数学2：概率统计》笔记1 《程序员的数学2：概率统计》笔记2 《程序员的数学2：概率统计》笔记3    第5章 协方差矩阵、多元正态分布与椭圆 A：已收到去年入学考试成绩数据，我便马上分析了一下，发现使用的统计软件有问题啊。B：怎么了？A：这个软件预测在模拟考中考出700分的人实际考试时得分为650分。以防万一又反过来拿650分作为实际考试成绩试了一下，结果得出的模拟考分数只有600。">
 
 
 
@@ -169,7 +176,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -193,14 +200,14 @@
     </div>
     
       
-        <p class="site-subtitle">技术是条无尽的道路</p>
+        <h1 class="site-subtitle" itemprop="description">技术是条无尽的道路</h1>
       
     
     
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -228,7 +235,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
         
@@ -245,7 +252,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
 
@@ -253,9 +260,6 @@
       
     </ul>
   
-
-  
-    
 
   
 
@@ -278,6 +282,9 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+            
+
+          
           <div id="content" class="content">
             
 
@@ -290,6 +297,8 @@
   
   
 
+  
+    <div class="reading-progress-bar"></div>
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -314,11 +323,11 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">《程序员的数学2：概率统计》笔记2
+          <h2 class="post-title" itemprop="name headline">《程序员的数学2：概率统计》笔记2
 
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -333,14 +342,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Created: 2019-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-28T00:00:00+08:00">2019-04-28</time>
+              <time title="创建时间：2019-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-28T00:00:00+08:00">2019-04-28</time>
             
 
             
@@ -355,9 +364,9 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">Edited on</span>
+                  <span class="post-meta-item-text">更新于</span>
                 
-                <time title="Modified: 2019-05-03 00:00:00" itemprop="dateModified" datetime="2019-05-03T00:00:00+08:00">2019-05-03</time>
+                <time title="修改时间：2019-05-03 00:00:00" itemprop="dateModified" datetime="2019-05-03T00:00:00+08:00">2019-05-03</time>
               
             
           </span>
@@ -371,7 +380,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
@@ -417,76 +426,59 @@
 </ul>
 <hr>
 <h1><span id="第5章-协方差矩阵-多元正态分布与椭圆">第5章 协方差矩阵、多元正态分布与椭圆</span></h1><blockquote>
-<ul>
-<li>A：已收到去年入学考试成绩数据，我便马上分析了一下，发现使用的统计软件有问题啊。</li>
-<li>B：怎么了？</li>
-<li>A：这个软件预测在模拟考中考出700分的人实际考试时得分为650分。以防万一又反过来拿650分作为实际考试成绩试了一下，结果得出的模拟考分数只有600。按理说应该得到700分才对吧？</li>
-<li>B：嗯……依然是槽点太多不知道该说什么才好了。你还是重新学习一下多元正态分布的性质吧。</li>
-</ul>
+<p>A：已收到去年入学考试成绩数据，我便马上分析了一下，发现使用的统计软件有问题啊。<br>B：怎么了？<br>A：这个软件预测在模拟考中考出700分的人实际考试时得分为650分。以防万一又反过来拿650分作为实际考试成绩试了一下，结果得出的模拟考分数只有600。按理说应该得到700分才对吧？<br>B：嗯……依然是槽点太多不知道该说什么才好了。你还是重新学习一下多元正态分布的性质吧。</p>
+</blockquote>
+<blockquote>
 <p>PS：下文中“椭圆”一般代表对椭圆、椭球、高维椭球等的统称</p>
 </blockquote>
-<h2><span id="协方差与相关系数">协方差与相关系数</span></h2><p>随机变量 $X,Y$ 的期望值分别是 $\mu,v$，则 $X$ 与 $Y$ 的协方差定义为：</p>
-<script type="math/tex; mode=display">\mathrm{Cov}[X,Y] \equiv \mathrm{E}[(X-μ)(Y-v)]</script><p>协方差&gt;0 称X与Y正相关，协方差&lt;0 称X与Y负相关，协方差=0 称X与Y不相关</p>
+<h2><span id="协方差与相关系数">协方差与相关系数</span></h2><p>随机变量 $X,Y$ 的期望值分别是 $\mu,v$，则 $X$ 与 $Y$ 的协方差定义为：<br>$$\mathrm{Cov}[X,Y] \equiv \mathrm{E}[(X-μ)(Y-v)]$$</p>
+<p>协方差&gt;0 称X与Y正相关，协方差&lt;0 称X与Y负相关，协方差=0 称X与Y不相关</p>
 <p>随机变量X和Y相互独立，则不相关；反之不行。</p>
 <p><strong>相关系数</strong></p>
 <p>为了避免X和Y的比例变换影响协方差，则对其进行标准化，对X和Y分别除以各自的标准差，得到相关系数：</p>
-<script type="math/tex; mode=display">ρ_{XY} = \frac{\mathrm{Cov}[X,Y]}{\sqrt{\mathrm{V}[X]}\sqrt{\mathrm{V}[Y]}}</script><p>相关系数取值为-1 ~ +1；相关系数越接近+1，则(X,Y)越趋向于左下右上方向的直线；相关系数越接近-1，则(X,Y)越趋向于左上右下方向的直线</p>
+<p>$$ρ_{XY} = \frac{\mathrm{Cov}[X,Y]}{\sqrt{\mathrm{V}[X]}\sqrt{\mathrm{V}[Y]}}$$</p>
+<p>相关系数取值为-1 ~ +1；相关系数越接近+1，则(X,Y)越趋向于左下右上方向的直线；相关系数越接近-1，则(X,Y)越趋向于左上右下方向的直线</p>
 <p>协方差与相关系数都有局限性，不能完全代表数据情况</p>
 <h2><span id="协方差矩阵">协方差矩阵</span></h2><p>对于随机变量 $X_1,\cdots,X_n$，其中两两的方差或协方差可以构成一个矩阵，被称为协方差矩阵，或方差-协方差矩阵，该矩阵为对称矩阵：</p>
-<script type="math/tex; mode=display">\begin{pmatrix}
-\mathrm{V}[X_1]&\mathrm{Cov}[X_1,X_2]&\cdots&\mathrm{Cov}[X_1,X_n]\\
-\mathrm{Cov}[X_2,X_1]&\mathrm{V}[X_2]&\cdots&\mathrm{Cov}[X_2,X_n]\\
-\vdots&\vdots&\ddots&\vdots\\
-\mathrm{Cov}[X_n,X_1]&\mathrm{Cov}[X_n,X_2]&\cdots&\mathrm{V}[X_n]\\
-\end{pmatrix}</script><p><strong>向量值随机变量与协方差矩阵</strong></p>
-<p>将一系列的随机变量，列为一个列向量，称为向量值随机变量：</p>
-<script type="math/tex; mode=display">\boldsymbol{X}\equiv\begin{pmatrix} X_1\\X_2\\\vdots\\X_n \end{pmatrix}</script><p>则协方差矩阵可以表示为：（这里仍然用 $\mathrm{V}$ 符号，也有书用 $\Sigma$ 或 $\mathrm{Cov}$ 符号）</p>
-<script type="math/tex; mode=display">\mathrm{V}[\boldsymbol{X}]=\mathrm{E}[(\boldsymbol{X}-\boldsymbol{\mu})(\boldsymbol{X}-\boldsymbol{\mu})^T]\qquad其中\boldsymbol{\mu}\equiv\mathrm{E}[\boldsymbol{X}]</script><p><strong>向量值随机变量的运算</strong></p>
-<p>设 $\boldsymbol{X}$ 为n元随机列向量，或者叫n元向量值随机变量</p>
-<script type="math/tex; mode=display">\mathrm{E}[\boldsymbol{X}]\equiv
-\begin{pmatrix}
-\mathrm{E}[X_1]\\ \mathrm{E}[X_2]\\ \vdots\\ \mathrm{E}[X_n]\\
-\end{pmatrix}</script><script type="math/tex; mode=display">\mathrm{E}[c\boldsymbol{X}] = c\mathrm{E}[\boldsymbol{X}] \quad（c为数值常量）</script><script type="math/tex; mode=display">\mathrm{E}[\boldsymbol{X}+\boldsymbol{a}] = \mathrm{E}[\boldsymbol{X}]+\boldsymbol{a} \quad（\boldsymbol{a}为相同维度的固定向量）</script><script type="math/tex; mode=display">\mathrm{E}[\boldsymbol{X}+\boldsymbol{Y}] = \mathrm{E}[\boldsymbol{X}]+\mathrm{E}[\boldsymbol{Y}]\quad (\boldsymbol{Y}为另外一个向量值随机变量)</script><script type="math/tex; mode=display">\mathrm{E}[\boldsymbol{a}\cdot\boldsymbol{X}] = \mathrm{E}[\boldsymbol{a}^T\boldsymbol{X}] = \boldsymbol{a}^T\mathrm{E}[\boldsymbol{X}] = \boldsymbol{a}\cdot\mathrm{E}[\boldsymbol{X}]\quad（\boldsymbol{a}为相同维度的固定向量）</script><script type="math/tex; mode=display">\mathrm{E}[A\boldsymbol{X}] = A\mathrm{E}[\boldsymbol{X}]\quad（A为维度匹配的固定值矩阵）</script><p>设矩阵 $R$ 由多个向量值随机变量组成：</p>
-<script type="math/tex; mode=display">R=\Bigg(\begin{array}{c|c|c}
-\boldsymbol{R}_1&\cdots&\boldsymbol{R}_k
-\end{array}\Bigg)</script><script type="math/tex; mode=display">\mathrm{E}[AR]=A\mathrm{E}[R],\ \mathrm{E}[RB]=\mathrm{E}[R]B,\ \mathrm{E}[ARB]=A\mathrm{E}[R]B\quad（A、B为固定值矩阵）</script><script type="math/tex; mode=display">\mathrm{E}[cR]=c\mathrm{E}[R],\ 
-\mathrm{E}[R+A]=\mathrm{E}[R]+A,\ 
-\mathrm{E}[R+S]=\mathrm{E}[R]+\mathrm{E}[S],\ 
-\mathrm{E}[R^T]=\mathrm{E}[R]^T</script><p>引入向量值随机变量的概率与密度函数定义：</p>
-<script type="math/tex; mode=display">f_\boldsymbol{X}(\boldsymbol{x})\equiv f_{X_1,\cdots,X_n}(x_1,\cdots,x_n), 其中\boldsymbol{x}\equiv\begin{pmatrix} x_1\\\vdots\\x_n \end{pmatrix}</script><p>则有向量值随机变量的概率定义（书写方式为理工领域的省略方式，严格的需要重积分）：</p>
-<script type="math/tex; mode=display">\mathrm{P}(\boldsymbol{X}处于某一范围D内)=\int_Df_\boldsymbol{X}(\boldsymbol{x})\mathrm{d}\boldsymbol{x}</script><p>向量值随机变量的期望值也可简写为：（其中 $\boldsymbol{R}^n$ 表示n元实向量空间）</p>
-<script type="math/tex; mode=display">\mathrm{E}[\boldsymbol{X}]=\int_{\boldsymbol{R}^n}\boldsymbol{x}f_\boldsymbol{X}(\boldsymbol{x})\mathrm{d}\boldsymbol{x}</script><script type="math/tex; mode=display">\mathrm{E}[g(\boldsymbol{X})]=\int_{\boldsymbol{R}^n}g(\boldsymbol{x})f_\boldsymbol{X}(\boldsymbol{x})\mathrm{d}\boldsymbol{x}</script><p>向量值随机变量的独立性：</p>
-<script type="math/tex; mode=display">\boldsymbol{X},\boldsymbol{Y},\boldsymbol{Z}独立 \Leftrightarrow\forall\boldsymbol{x,y,z}:\ f_{\boldsymbol{X,Y,Z}}(\boldsymbol{x,y,z})=f_{\boldsymbol{X}}(\boldsymbol{x})f_{\boldsymbol{Y}}(\boldsymbol{y})f_{\boldsymbol{Z}}(\boldsymbol{z})</script><p>还有很多实数值和离散值的公式，也可推广到向量值</p>
-<p><strong>协方差矩阵的变量变换</strong></p>
-<script type="math/tex; mode=display">\mathrm{V}[a\boldsymbol{X}]=a^2\mathrm{V}[\boldsymbol{X}]\quad(a为数值常量)</script><script type="math/tex; mode=display">\mathrm{V}[\boldsymbol{a}^T\boldsymbol{X}]=\boldsymbol{a}^T\mathrm{V}[\boldsymbol{X}]\boldsymbol{a}\quad(\boldsymbol{a}为固定值列向量)</script><script type="math/tex; mode=display">\mathrm{V}[A^T\boldsymbol{X}]=A^T\mathrm{V}[\boldsymbol{X}]A\quad(A为固定值矩阵)</script><script type="math/tex; mode=display">\mathrm{V}[\boldsymbol{X}+\boldsymbol{a}]=\mathrm{V}[\boldsymbol{X}]</script><script type="math/tex; mode=display">\mathrm{V}[\boldsymbol{X+Y}]=\mathrm{V}[\boldsymbol{X}]+\mathrm{V}[\boldsymbol{Y}]</script><p><strong>任意方向的发散程度</strong></p>
+<p>$$\begin{pmatrix}<br>\mathrm{V}[X_1]&amp;\mathrm{Cov}[X_1,X_2]&amp;\cdots&amp;\mathrm{Cov}[X_1,X_n]\<br>\mathrm{Cov}[X_2,X_1]&amp;\mathrm{V}[X_2]&amp;\cdots&amp;\mathrm{Cov}[X_2,X_n]\<br>\vdots&amp;\vdots&amp;\ddots&amp;\vdots\<br>\mathrm{Cov}[X_n,X_1]&amp;\mathrm{Cov}[X_n,X_2]&amp;\cdots&amp;\mathrm{V}[X_n]\<br>\end{pmatrix}$$</p>
+<p><strong>向量值随机变量与协方差矩阵</strong></p>
+<p>将一系列的随机变量，列为一个列向量，称为向量值随机变量：<br>$$\boldsymbol{X}\equiv\begin{pmatrix} X_1\X_2\\vdots\X_n \end{pmatrix}$$</p>
+<p>则协方差矩阵可以表示为：（这里仍然用 $\mathrm{V}$ 符号，也有书用 $\Sigma$ 或 $\mathrm{Cov}$ 符号）<br>$$\mathrm{V}[\boldsymbol{X}]=\mathrm{E}[(\boldsymbol{X}-\boldsymbol{\mu})(\boldsymbol{X}-\boldsymbol{\mu})^T]\qquad其中\boldsymbol{\mu}\equiv\mathrm{E}[\boldsymbol{X}]$$</p>
+<p><strong>向量值随机变量的运算</strong></p>
+<p>设 $\boldsymbol{X}$ 为n元随机列向量，或者叫n元向量值随机变量<br>$$\mathrm{E}[\boldsymbol{X}]\equiv<br>\begin{pmatrix}<br>\mathrm{E}[X_1]\ \mathrm{E}[X_2]\ \vdots\ \mathrm{E}[X_n]\<br>\end{pmatrix}$$<br>$$\mathrm{E}[c\boldsymbol{X}] = c\mathrm{E}[\boldsymbol{X}] \quad（c为数值常量）$$<br>$$\mathrm{E}[\boldsymbol{X}+\boldsymbol{a}] = \mathrm{E}[\boldsymbol{X}]+\boldsymbol{a} \quad（\boldsymbol{a}为相同维度的固定向量）$$<br>$$\mathrm{E}[\boldsymbol{X}+\boldsymbol{Y}] = \mathrm{E}[\boldsymbol{X}]+\mathrm{E}[\boldsymbol{Y}]\quad (\boldsymbol{Y}为另外一个向量值随机变量)$$<br>$$\mathrm{E}[\boldsymbol{a}\cdot\boldsymbol{X}] = \mathrm{E}[\boldsymbol{a}^T\boldsymbol{X}] = \boldsymbol{a}^T\mathrm{E}[\boldsymbol{X}] = \boldsymbol{a}\cdot\mathrm{E}[\boldsymbol{X}]\quad（\boldsymbol{a}为相同维度的固定向量）$$<br>$$\mathrm{E}[A\boldsymbol{X}] = A\mathrm{E}[\boldsymbol{X}]\quad（A为维度匹配的固定值矩阵）$$</p>
+<p>设矩阵 $R$ 由多个向量值随机变量组成：<br>$$R=\Bigg(\begin{array}{c|c|c}<br>\boldsymbol{R}_1&amp;\cdots&amp;\boldsymbol{R}_k<br>\end{array}\Bigg)$$<br>$$\mathrm{E}[AR]=A\mathrm{E}[R],\ \mathrm{E}[RB]=\mathrm{E}[R]B,\ \mathrm{E}[ARB]=A\mathrm{E}[R]B\quad（A、B为固定值矩阵）$$<br>$$\mathrm{E}[cR]=c\mathrm{E}[R],\<br>\mathrm{E}[R+A]=\mathrm{E}[R]+A,\<br>\mathrm{E}[R+S]=\mathrm{E}[R]+\mathrm{E}[S],\<br>\mathrm{E}[R^T]=\mathrm{E}[R]^T$$</p>
+<p>引入向量值随机变量的概率与密度函数定义：<br>$$f_\boldsymbol{X}(\boldsymbol{x})\equiv f_{X_1,\cdots,X_n}(x_1,\cdots,x_n), 其中\boldsymbol{x}\equiv\begin{pmatrix} x_1\\vdots\x_n \end{pmatrix}$$</p>
+<p>则有向量值随机变量的概率定义（书写方式为理工领域的省略方式，严格的需要重积分）：<br>$$\mathrm{P}(\boldsymbol{X}处于某一范围D内)=\int_Df_\boldsymbol{X}(\boldsymbol{x})\mathrm{d}\boldsymbol{x}$$</p>
+<p>向量值随机变量的期望值也可简写为：（其中 $\boldsymbol{R}^n$ 表示n元实向量空间）<br>$$\mathrm{E}[\boldsymbol{X}]=\int_{\boldsymbol{R}^n}\boldsymbol{x}f_\boldsymbol{X}(\boldsymbol{x})\mathrm{d}\boldsymbol{x}$$<br>$$\mathrm{E}[g(\boldsymbol{X})]=\int_{\boldsymbol{R}^n}g(\boldsymbol{x})f_\boldsymbol{X}(\boldsymbol{x})\mathrm{d}\boldsymbol{x}$$</p>
+<p>向量值随机变量的独立性：<br>$$\boldsymbol{X},\boldsymbol{Y},\boldsymbol{Z}独立 \Leftrightarrow\forall\boldsymbol{x,y,z}:\ f_{\boldsymbol{X,Y,Z}}(\boldsymbol{x,y,z})=f_{\boldsymbol{X}}(\boldsymbol{x})f_{\boldsymbol{Y}}(\boldsymbol{y})f_{\boldsymbol{Z}}(\boldsymbol{z})$$</p>
+<p>还有很多实数值和离散值的公式，也可推广到向量值</p>
+<p><strong>协方差矩阵的变量变换</strong><br>$$\mathrm{V}[a\boldsymbol{X}]=a^2\mathrm{V}[\boldsymbol{X}]\quad(a为数值常量)$$<br>$$\mathrm{V}[\boldsymbol{a}^T\boldsymbol{X}]=\boldsymbol{a}^T\mathrm{V}[\boldsymbol{X}]\boldsymbol{a}\quad(\boldsymbol{a}为固定值列向量)$$<br>$$\mathrm{V}[A^T\boldsymbol{X}]=A^T\mathrm{V}[\boldsymbol{X}]A\quad(A为固定值矩阵)$$<br>$$\mathrm{V}[\boldsymbol{X}+\boldsymbol{a}]=\mathrm{V}[\boldsymbol{X}]$$<br>$$\mathrm{V}[\boldsymbol{X+Y}]=\mathrm{V}[\boldsymbol{X}]+\mathrm{V}[\boldsymbol{Y}]$$</p>
+<p><strong>任意方向的发散程度</strong></p>
 <p>协方差矩阵 $\mathrm{V}[\boldsymbol{X}]$ 的对角线部分为方差 $\mathrm{V}[X_1],\mathrm{V}[X_2],\cdots,\mathrm{V}[X_n]$，他们分别表示自己方向上的发散程度</p>
-<p>对于任意方向（用单位长度的向量 $\boldsymbol{u}$ 表示）， 则 $\boldsymbol{X}$ 向 $\boldsymbol{u}$ 投影得到 $Z$ （$Z$为实数值随机向量），即：</p>
-<script type="math/tex; mode=display">Z= \boldsymbol{u}^T\boldsymbol{X} = \|\boldsymbol{X}\|\cos\theta</script><p>则在 $\boldsymbol{u}$ 方向上的发散程度为：</p>
-<script type="math/tex; mode=display">\mathrm{V}[Z] = \mathrm{V}[\boldsymbol{u}^T\boldsymbol{X}] = \boldsymbol{u}^T\mathrm{V}[\boldsymbol{X}]\boldsymbol{u}</script><h2><span id="多元正态分布">多元正态分布</span></h2><p><strong>多元标准正态分布</strong></p>
+<p>对于任意方向（用单位长度的向量 $\boldsymbol{u}$ 表示）， 则 $\boldsymbol{X}$ 向 $\boldsymbol{u}$ 投影得到 $Z$ （$Z$为实数值随机向量），即：<br>$$Z= \boldsymbol{u}^T\boldsymbol{X} = |\boldsymbol{X}|\cos\theta$$</p>
+<p>则在 $\boldsymbol{u}$ 方向上的发散程度为：<br>$$\mathrm{V}[Z] = \mathrm{V}[\boldsymbol{u}^T\boldsymbol{X}] = \boldsymbol{u}^T\mathrm{V}[\boldsymbol{X}]\boldsymbol{u}$$</p>
+<h2><span id="多元正态分布">多元正态分布</span></h2><p><strong>多元标准正态分布</strong></p>
 <p>由n个遵从标准正态分布的i.i.d.随机变量组成的列向量 $\boldsymbol{Z}\equiv(Z_1,\cdots,Z_n)^T$</p>
-<p>$\boldsymbol{Z}$ 的概率密度函数为：</p>
-<script type="math/tex; mode=display">f_\boldsymbol{Z}(\boldsymbol{z})=d\exp(-\frac{1}{2}\|\boldsymbol{z}\|^2)\qquad(d为使总概率为1的常量)</script><p>期望与协方差矩阵：</p>
-<script type="math/tex; mode=display">\mathrm{E}[\boldsymbol{Z}]=\boldsymbol{o}\qquad(\boldsymbol{o}表示零向量)</script><script type="math/tex; mode=display">\mathrm{V}[\boldsymbol{Z}]=\begin{pmatrix}
-1&0&\cdots&0\\0&1&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&1
-\end{pmatrix}
-=I\qquad(I表示单位矩阵)</script><p>综上，记作 $\boldsymbol{Z}\sim\mathrm{N}(\boldsymbol{o},I)$ ，即遵从n元标准正态分布</p>
+<p>$\boldsymbol{Z}$ 的概率密度函数为：<br>$$f_\boldsymbol{Z}(\boldsymbol{z})=d\exp(-\frac{1}{2}|\boldsymbol{z}|^2)\qquad(d为使总概率为1的常量)$$</p>
+<p>期望与协方差矩阵：<br>$$\mathrm{E}[\boldsymbol{Z}]=\boldsymbol{o}\qquad(\boldsymbol{o}表示零向量)$$<br>$$\mathrm{V}[\boldsymbol{Z}]=\begin{pmatrix}<br>1&amp;0&amp;\cdots&amp;0\0&amp;1&amp;\cdots&amp;0\\vdots&amp;\vdots&amp;\ddots&amp;\vdots\0&amp;0&amp;\cdots&amp;1<br>\end{pmatrix}<br>=I\qquad(I表示单位矩阵)$$</p>
+<p>综上，记作 $\boldsymbol{Z}\sim\mathrm{N}(\boldsymbol{o},I)$ ，即遵从n元标准正态分布</p>
 <p><strong>多元一般正态分布</strong></p>
 <p>对n元标准正态分布 $\mathrm{N}(\boldsymbol{o},I)$ 进行变换：</p>
-<p><strong>缩放与位移</strong>：设 $\boldsymbol{X}=\sigma\boldsymbol{Z}+\boldsymbol{\mu}$，则变换为</p>
-<script type="math/tex; mode=display">\mathrm{E}[\boldsymbol{X}]=\boldsymbol{\mu}，\mathrm{V}[\boldsymbol{X}]=\sigma^2 I</script><p><strong>纵向缩放与横向缩放</strong>：设 $\boldsymbol{X}=(\sigma_1Z_1,\cdots,\sigma_n Z_n)^T+\boldsymbol{\mu}$，则变换为：</p>
-<script type="math/tex; mode=display">\mathrm{E}[\boldsymbol{X}]=\boldsymbol{\mu}，\mathrm{V}[\boldsymbol{X}] = D^2=\mathrm{diag}(\sigma_1^2,\cdots,\sigma_n^2)</script><p>可以记为 $\mathrm{N}(\boldsymbol{\mu}, D^2)$ 的多元正态分布</p>
+<p><strong>缩放与位移</strong>：设 $\boldsymbol{X}=\sigma\boldsymbol{Z}+\boldsymbol{\mu}$，则变换为<br>$$\mathrm{E}[\boldsymbol{X}]=\boldsymbol{\mu}，\mathrm{V}[\boldsymbol{X}]=\sigma^2 I$$</p>
+<p><strong>纵向缩放与横向缩放</strong>：设 $\boldsymbol{X}=(\sigma_1Z_1,\cdots,\sigma_n Z_n)^T+\boldsymbol{\mu}$，则变换为：<br>$$\mathrm{E}[\boldsymbol{X}]=\boldsymbol{\mu}，\mathrm{V}[\boldsymbol{X}] = D^2=\mathrm{diag}(\sigma_1^2,\cdots,\sigma_n^2)$$</p>
+<p>可以记为 $\mathrm{N}(\boldsymbol{\mu}, D^2)$ 的多元正态分布</p>
 <p><strong>旋转变换</strong>：</p>
-<p>设 $\boldsymbol{X}\equiv D\boldsymbol{Z}$，则 $\boldsymbol{X}\sim\mathrm{N}(\boldsymbol{o},D^2)$，再乘上一个正交矩阵 $Q$（正交矩阵为满足 $Q^TQ=I$），得到 $\boldsymbol{Y}\equiv Q\boldsymbol{X}$，则：</p>
-<script type="math/tex; mode=display">\mathrm{E}[\boldsymbol{Y}]=Q\mathrm{E}[\boldsymbol{X}]=\boldsymbol{o}</script><script type="math/tex; mode=display">\mathrm{V}[\boldsymbol{Y}]=Q\mathrm{V}[\boldsymbol{X}]Q^T=QD^2Q^T</script><p>记 $V=QD^2Q^T$，给定 $V$ 的情况下，可以使用一种通过对称矩阵和正交矩阵实现矩阵对角化的方法来计算 $Q$ 和 $D$。</p>
+<p>设 $\boldsymbol{X}\equiv D\boldsymbol{Z}$，则 $\boldsymbol{X}\sim\mathrm{N}(\boldsymbol{o},D^2)$，再乘上一个正交矩阵 $Q$（正交矩阵为满足 $Q^TQ=I$），得到 $\boldsymbol{Y}\equiv Q\boldsymbol{X}$，则：<br>$$\mathrm{E}[\boldsymbol{Y}]=Q\mathrm{E}[\boldsymbol{X}]=\boldsymbol{o}$$<br>$$\mathrm{V}[\boldsymbol{Y}]=Q\mathrm{V}[\boldsymbol{X}]Q^T=QD^2Q^T$$</p>
+<p>记 $V=QD^2Q^T$，给定 $V$ 的情况下，可以使用一种通过对称矩阵和正交矩阵实现矩阵对角化的方法来计算 $Q$ 和 $D$。</p>
 <p>以上称之为遵从多元正态分布 $\mathrm{N}(\boldsymbol{o},V)$</p>
 <p>另外也可以最后加上位移 $\boldsymbol{\mu}$ 而成为一般的多元正态分布 $\mathrm{N}(\boldsymbol{\mu}, V)$</p>
 <p><strong>独立性</strong></p>
 <p>符合正态分布的多个随机变量构成的向量值随机变量，并不一定遵从多元正态分布。</p>
 <p>符合正态分布且独立的多个随机变量构成的向量值随机变量，必定遵从多元正态分布。</p>
 <p><strong>多元正态分布的概率密度函数</strong></p>
-<p>遵从n元标准正态分布 $\mathrm{N}(\boldsymbol{o},I)$ 的 $\boldsymbol{Z}$，其概率密度函数为：</p>
-<script type="math/tex; mode=display">f_\boldsymbol{Z}(\boldsymbol{z}) = \frac{1}{\sqrt{2\pi}^n}\exp(-\frac{1}{2}\|\boldsymbol{z}\|^2)</script><p>可以推导出多元一般正态分布 $\boldsymbol{X}\sim\mathrm{N}(\boldsymbol{\mu}, V)$ 的概率密度函数为：</p>
-<script type="math/tex; mode=display">f_\boldsymbol{X}(\boldsymbol{x}) = \frac{1}{\sqrt{(2\pi)^n\mathrm{det}V}}\exp(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^TV^{-1}(\boldsymbol{x}-\boldsymbol{\mu}))</script><p>可以抽象为：$f(\boldsymbol{x})=\Box\exp(\boldsymbol{x}的元素的二次式)$（$\Box$为不含 $\boldsymbol{x}$ 的常量）</p>
+<p>遵从n元标准正态分布 $\mathrm{N}(\boldsymbol{o},I)$ 的 $\boldsymbol{Z}$，其概率密度函数为：<br>$$f_\boldsymbol{Z}(\boldsymbol{z}) = \frac{1}{\sqrt{2\pi}^n}\exp(-\frac{1}{2}|\boldsymbol{z}|^2)$$</p>
+<p>可以推导出多元一般正态分布 $\boldsymbol{X}\sim\mathrm{N}(\boldsymbol{\mu}, V)$ 的概率密度函数为：<br>$$f_\boldsymbol{X}(\boldsymbol{x}) = \frac{1}{\sqrt{(2\pi)^n\mathrm{det}V}}\exp(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^TV^{-1}(\boldsymbol{x}-\boldsymbol{\mu}))$$</p>
+<p>可以抽象为：$f(\boldsymbol{x})=\Box\exp(\boldsymbol{x}的元素的二次式)$（$\Box$为不含 $\boldsymbol{x}$ 的常量）</p>
 <p>反之，如果 $\boldsymbol{X}$ 的概率密度函数符合上式，则其分布就是一种正态分布</p>
 <h2><span id="多元正态分布性质">多元正态分布性质</span></h2><ul>
 <li>可以由期望值向量与协方差矩阵确定具体分布</li>
@@ -495,40 +487,21 @@
 </ul>
 <h2><span id="截面条件分布">截面（条件分布）</span></h2><p><strong>“多元正态分布的条件分布也是多元正态分布”</strong></p>
 <p>假设 $\boldsymbol{X}\equiv(X_1,X_2,\cdots,X_n)^T$遵从n元正态分布在给定条件 $X_1=c$ 条件下，条件分布的概率密度函数为：</p>
-<script type="math/tex; mode=display">f_{\boldsymbol{\tilde{X}}|X_1}(x_2,\cdots,x_n|c)</script><p>可以推导出符合 $\Box\exp(\boldsymbol{\tilde{x}}的二次式)$，因此遵从n-1元正态分布</p>
+<p>$$f_{\boldsymbol{\tilde{X}}|X_1}(x_2,\cdots,x_n|c)$$</p>
+<p>可以推导出符合 $\Box\exp(\boldsymbol{\tilde{x}}的二次式)$，因此遵从n-1元正态分布</p>
 <p>从图像角度来看，n=3时，概率密度函数的等值面是椭球体，而椭球体的截面也是椭圆</p>
 <p>PS：截面可能偏离椭球主轴，所以截面的中心点不一定在原分布的主轴上</p>
-<p>一般化为：</p>
-<script type="math/tex; mode=display">\begin{pmatrix} \boldsymbol{X}\\\boldsymbol{Y}\end{pmatrix}\sim
-\mathrm{N}\Big(
-  \begin{pmatrix} \boldsymbol{\mu}\\\boldsymbol{v} \end{pmatrix},
-  \begin{pmatrix} 甲&乙\\乙^T&丁 \end{pmatrix}
-\Big)</script><p>则给定 $\boldsymbol{X}=\boldsymbol{c}$，$\boldsymbol{Y}$ 的条件分布为 $\mathrm{N}(\boldsymbol{\tilde{v}},\boldsymbol{\tilde{W}})$：</p>
-<script type="math/tex; mode=display">\boldsymbol{\tilde{v}}\equiv\boldsymbol{v}+乙^T甲^{-1}(\boldsymbol{c}-\boldsymbol\mu)</script><script type="math/tex; mode=display">\boldsymbol{\tilde{W}}\equiv丁-乙^T甲^{-1}乙</script><h2><span id="投影边缘分布">投影（边缘分布）</span></h2><p><strong>“多元正态分布的边缘分布也是多元正态分布”</strong></p>
+<p>一般化为：<br>$$\begin{pmatrix} \boldsymbol{X}\\boldsymbol{Y}\end{pmatrix}\sim<br>\mathrm{N}\Big(<br>  \begin{pmatrix} \boldsymbol{\mu}\\boldsymbol{v} \end{pmatrix},<br>  \begin{pmatrix} 甲&amp;乙\乙^T&amp;丁 \end{pmatrix}<br>\Big)$$<br>则给定 $\boldsymbol{X}=\boldsymbol{c}$，$\boldsymbol{Y}$ 的条件分布为 $\mathrm{N}(\boldsymbol{\tilde{v}},\boldsymbol{\tilde{W}})$：<br>$$\boldsymbol{\tilde{v}}\equiv\boldsymbol{v}+乙^T甲^{-1}(\boldsymbol{c}-\boldsymbol\mu)$$<br>$$\boldsymbol{\tilde{W}}\equiv丁-乙^T甲^{-1}乙$$</p>
+<h2><span id="投影边缘分布">投影（边缘分布）</span></h2><p><strong>“多元正态分布的边缘分布也是多元正态分布”</strong></p>
 <p>从图像角度来看，n=3时，椭球体的投影也是一个椭圆</p>
 <p>边缘分布的期望值向量和协方差矩阵，就是从原期望值向量和协方差矩阵中去除掉投影的项目位置所对应的行与列。例如一个3元正态分布向第1维度投影：（$\boldsymbol{X}\equiv(X_1,X_2,X_3)^T$，$\boldsymbol{\tilde{X}}\equiv(X_2,X_3)^T$）</p>
-<script type="math/tex; mode=display">\mathrm{E}[\boldsymbol{X}]=
-\begin{pmatrix} \mathrm{E}[X_1]\\ \hline \mathrm{E}[X_2]\\ \mathrm{E}[X_3] \end{pmatrix}
-=\begin{pmatrix} *\\ \hline \\ \mathrm{E}[\boldsymbol{\tilde{X}}]\\ \end{pmatrix}</script><script type="math/tex; mode=display">
-\mathrm{V}[\boldsymbol{X}]=
-\Bigg(\begin{array}{c|cc}
-\mathrm{V}[X_1]&\mathrm{Cov}[X_1,X_2]&\mathrm{Cov}[X_1,X_3]\\
-\hline
-\mathrm{Cov}[X_2,X_1]&\mathrm{V}[X_2]&\mathrm{Cov}[X_2,X_3]\\
-\mathrm{Cov}[X_3,X_1]&\mathrm{Cov}[X_3,X_2]&\mathrm{V}[X_3]\\
-\end{array}\Bigg)=
-\Bigg(\begin{array}{c|cc}
-*&*&*\\
-\hline
-*&&\\
-*&&\mathrm{V}[\boldsymbol{\tilde{X}}]\\
-\end{array}\Bigg)</script><h2><span id="卡方分布">卡方分布</span></h2><p>$\boldsymbol{Z}\sim \mathrm{N}(\boldsymbol{o},I)$ 的长度 $|\boldsymbol{Z}|$ 的概率密度函数并非随长度增加而下降，而是根据元数 $n$ 的不同而决定 </p>
+<p>$$\mathrm{E}[\boldsymbol{X}]=<br>\begin{pmatrix} \mathrm{E}[X_1]\ \hline \mathrm{E}[X_2]\ \mathrm{E}[X_3] \end{pmatrix}<br>=\begin{pmatrix} *\ \hline \ \mathrm{E}[\boldsymbol{\tilde{X}}]\ \end{pmatrix}$$</p>
+<p>$$<br>\mathrm{V}[\boldsymbol{X}]=<br>\Bigg(\begin{array}{c|cc}<br>\mathrm{V}[X_1]&amp;\mathrm{Cov}[X_1,X_2]&amp;\mathrm{Cov}[X_1,X_3]\<br>\hline<br>\mathrm{Cov}[X_2,X_1]&amp;\mathrm{V}[X_2]&amp;\mathrm{Cov}[X_2,X_3]\<br>\mathrm{Cov}[X_3,X_1]&amp;\mathrm{Cov}[X_3,X_2]&amp;\mathrm{V}[X_3]\<br>\end{array}\Bigg)=<br>\Bigg(\begin{array}{c|cc}<br><em>&amp;</em>&amp;<em>\<br>\hline
+</em>&amp;&amp;\<br>*&amp;&amp;\mathrm{V}[\boldsymbol{\tilde{X}}]\<br>\end{array}\Bigg)<br>$$</p>
+<h2><span id="卡方分布">卡方分布</span></h2><p>$\boldsymbol{Z}\sim \mathrm{N}(\boldsymbol{o},I)$ 的长度 $|\boldsymbol{Z}|$ 的概率密度函数并非随长度增加而下降，而是根据元数 $n$ 的不同而决定 </p>
 <p>设 $n$ 元标准正态分布的长度的平方的分布为自由度为 $n$ 的 $\chi^2$ 分布（卡方分布）</p>
-<p>$\chi^2$ 分布的概率密度函数为：（其中 $\Gamma$ 代表 $\Gamma$函数）</p>
-<script type="math/tex; mode=display">f(x)=\begin{cases}
-\frac{1}{2\Gamma(n/2)}(\frac{n}{2})^{n/2-1}\exp(-\frac{x}{2})&(x\ge 0)\\
-0&(x<0)\\
-\end{cases}</script><p>当 $n=2$ 时，$\chi^2$ 分布概率密度函数为 $f(x)=(1/2)\exp(-x/2)$，这与普通指数函数形式相似，在后文中可以用来生成遵从正态分布的伪随机数</p>
+<p>$\chi^2$ 分布的概率密度函数为：（其中 $\Gamma$ 代表 $\Gamma$函数）<br>$$f(x)=\begin{cases}<br>\frac{1}{2\Gamma(n/2)}(\frac{n}{2})^{n/2-1}\exp(-\frac{x}{2})&amp;(x\ge 0)\<br>0&amp;(x&lt;0)\<br>\end{cases}$$</p>
+<p>当 $n=2$ 时，$\chi^2$ 分布概率密度函数为 $f(x)=(1/2)\exp(-x/2)$，这与普通指数函数形式相似，在后文中可以用来生成遵从正态分布的伪随机数</p>
 <h2><span id="协方差矩阵与椭圆的关系">协方差矩阵与椭圆的关系</span></h2><p>一般分布的图像不一定是椭圆（或者椭球、超椭球体，下同），但仍然可以获得其基准椭圆</p>
 <p>对向量值随机变量 $\boldsymbol{X}$，求 $\boldsymbol{\mu}≡\mathrm{E}[\boldsymbol{X}]$ 和 $V≡\mathrm{V}[\boldsymbol{X}]$，然后根据多元正态分布 $\mathrm{N}(\boldsymbol{\mu}, V)$ 绘制对应的基准椭圆</p>
 <p><strong>（实例一）单位矩阵与圆</strong></p>
@@ -545,7 +518,8 @@
 <p>将一般矩阵进行空间变换为对角阵，绘制基准椭圆，再变换回去</p>
 <p>可以推导出存在正交矩阵 $Q$，使得 $Q^TV[\boldsymbol{X}]Q$ 为对角阵 $\mathrm{diag}(\lambda_1,\lambda_2,\cdots,\lambda_n)$，则可以取 $A=Q^T$ 作为变换矩阵</p>
 <p>矩阵 $Q$ 中的每个特征向量 $\boldsymbol{q}_i$ 都与椭圆的主轴同向，且椭圆各主轴半径为$\sqrt{\lambda_i}$</p>
-<script type="math/tex; mode=display">\Huge{协方差矩阵就是椭圆}</script><p>协方差矩阵局限性：当观察3个以上随机变量时，协方差矩阵只是看到两两之间的关系，但无法发掘高阶相关</p>
+<p>$$\Huge{协方差矩阵就是椭圆}$$</p>
+<p>协方差矩阵局限性：当观察3个以上随机变量时，协方差矩阵只是看到两两之间的关系，但无法发掘高阶相关</p>
 <h1><span id="第6章-估计与检验">第6章 估计与检验</span></h1><h2><span id="估计的概念">估计的概念</span></h2><p>例如抛硬币，正面向上概率为 $p$，而且i.i.d.，抛 $n$ 次，会得到 $n$ 个随机变量 $X_1,X_2,\cdots,X_n$ 的观测值，此时正面向上的比例，称之为“经验分布”</p>
 <p>上帝视角：平行世界整体 $\Omega$ 中的每个世界 $\omega$ 都会形成自己对 $X_1,X_2,\cdots,X_n$ 的观测结果，整体 $\Omega$ 内统计每个随机变量都是符合正面 $p$ 与反面 $1-p$ 比例的，但每个世界 $\omega$ 内只能观察到自己的部分</p>
 <ul>
@@ -565,13 +539,13 @@
 <p>通常情况下，条件给出的数据分布可以由有限维度的向量值参数 $\theta≡(\theta_1,\cdots,\theta_k)$ 确定，需要做的就是通过观测值估计 $θ$ 的值（此处只讨论点估计）</p>
 <p>此后记 $X=(X_1,X_2,\cdots,X_n)$，$\theta$ 的估计值（或叫估计方法）记为 $\hat\theta$，或明确写为 $\hat\theta(X)$ 来表示与 $X$ 相关</p>
 <p><strong>如何评价一种估计方法 $\hat\theta$ ？</strong></p>
-<p>选择最佳估计量的评价基准多种多样，常用的比如平方误差的期望：</p>
-<script type="math/tex; mode=display">R_{\hat\theta}(\theta) = \mathrm{E}[\|\hat\theta(X)-\theta\|^2]\qquad（其中X是随机值，\theta 为固定值）</script><p>对于不同的正确答案 $θ$，平方误差期望值 $R_{\hat\theta}(\theta)$ 也不同</p>
+<p>选择最佳估计量的评价基准多种多样，常用的比如平方误差的期望：<br>$$R_{\hat\theta}(\theta) = \mathrm{E}[|\hat\theta(X)-\theta|^2]\qquad（其中X是随机值，\theta 为固定值）$$</p>
+<p>对于不同的正确答案 $θ$，平方误差期望值 $R_{\hat\theta}(\theta)$ 也不同</p>
 <p>一般来说无法找到一个在所有 $\theta$ 上均优于其他方法的评估方法，所以需要进行“多目标优化”</p>
 <p>设 $\check{x}_i$ 为 $X_i$ 的观测值，记 $\check{x}$ 为 $X$ 的观测值</p>
 <p><strong>（策略一) 减少候选项——最小方差无偏估计（UMVUE）</strong></p>
-<p>无偏性是一种常见的筛选条件</p>
-<script type="math/tex; mode=display">\forall\theta:\qquad \mathrm{E}[\hat\theta(X)] = \theta</script><p>对于遵从正态分布的i.i.d.数据，使用观测值的平均值 $\bar{X}\equiv(X_1+\cdots+X_n)/n$ 来估计期望值 $\mu$ 就是 UMVUE</p>
+<p>无偏性是一种常见的筛选条件<br>$$\forall\theta:\qquad \mathrm{E}[\hat\theta(X)] = \theta$$</p>
+<p>对于遵从正态分布的i.i.d.数据，使用观测值的平均值 $\bar{X}\equiv(X_1+\cdots+X_n)/n$ 来估计期望值 $\mu$ 就是 UMVUE</p>
 <p>而 $S^2≡\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X})^2$ 则是对方差 $\sigma^2$ 的UMVUE（一般来说，分母为 $(n-1)$ 可以称为无偏方差，而分母为 $n$ 的称为样本方差；但也有人将分母为 $(n-1)$ 的称之为样本方差）</p>
 <p><strong>（策略二）弱化最优定义——最大似然估计</strong></p>
 <p>不要求全能的最优解，只要求：</p>
@@ -580,9 +554,9 @@
 <li>渐进有效性：样本容量 $n\to\infty$ 时，$n\mathrm{E}[(估计结果-正确答案)^2]$ 收敛于理论边界</li>
 </ul>
 <p>符合如上条件的最常见的估计方法就是最大似然估计</p>
-<p>最大似然估计（离散值），求使以下概率最大化的 $\theta$：（随后对数化便于计算）</p>
-<script type="math/tex; mode=display">\mathrm{P}(X_1=\check{x}_1,\cdots,X_n=\check{x}_n)</script><script type="math/tex; mode=display">\log\mathrm{P}(X_1=\check{x}_1,\cdots,X_n=\check{x}_n)=\log\mathrm{P}(X_1=\check{x}_1)+\cdots+\log\mathrm{P}(X_n=\check{x}_n)</script><p>最大似然估计（随机值），求使以下概率最大化的 $\theta$：（随后对数化便于计算）</p>
-<script type="math/tex; mode=display">f_{X_1,\cdots,X_n}(\check{x}_1,\cdots,\check{x}_n)</script><script type="math/tex; mode=display">\log f_{X_1,\cdots,X_n}(\check{x}_1,\cdots,\check{x}_n)=\log f_{X_1}(\check{x}_1)+\cdots+\log f_{X_n}(\check{x}_n)</script><p>最大似然估计相比UMVUE来说：</p>
+<p>最大似然估计（离散值），求使以下概率最大化的 $\theta$：（随后对数化便于计算）<br>$$\mathrm{P}(X_1=\check{x}_1,\cdots,X_n=\check{x}_n)$$<br>$$\log\mathrm{P}(X_1=\check{x}_1,\cdots,X_n=\check{x}_n)=\log\mathrm{P}(X_1=\check{x}_1)+\cdots+\log\mathrm{P}(X_n=\check{x}_n)$$</p>
+<p>最大似然估计（随机值），求使以下概率最大化的 $\theta$：（随后对数化便于计算）<br>$$f_{X_1,\cdots,X_n}(\check{x}_1,\cdots,\check{x}<em>n)$$<br>$$\log f</em>{X_1,\cdots,X_n}(\check{x}_1,\cdots,\check{x}<em>n)=\log f</em>{X_1}(\check{x}<em>1)+\cdots+\log f</em>{X_n}(\check{x}_n)$$</p>
+<p>最大似然估计相比UMVUE来说：</p>
 <ul>
 <li>可以通过简单计算求得</li>
 <li>对参数进行变换后估计结果依然符合要求，例如 $\sigma^2$ 的最大似然估计为 $\widehat{\sigma^2}$，那么 $\sigma$ 的最大似然估计则为 $\sqrt{\widehat{\sigma^2}}$</li>
@@ -607,11 +581,7 @@
 <li>当样本容量n增加时，先验分布的作用逐渐变小，逐渐趋近于最大似然（毕竟越来越多的事实，也让人不得不相信）</li>
 </ul>
 <h2><span id="检验理论">检验理论</span></h2><blockquote>
-<ul>
-<li>甲：我俩比赛了100次，我赢了61次，所以我比你更强</li>
-<li>乙：不，这纯属偶然</li>
-<li>甲：如果只是偶然，那出现现在这种情况的概率小于5%，这几乎不可能</li>
-</ul>
+<p>甲：我俩比赛了100次，我赢了61次，所以我比你更强<br>乙：不，这纯属偶然<br>甲：如果只是偶然，那出现现在这种情况的概率小于5%，这几乎不可能</p>
 </blockquote>
 <ul>
 <li>虚无假设 $H_0$：甲获胜概率=0.5 ……甲试图驳斥的主张</li>
@@ -624,7 +594,7 @@
 <li>如果 p值&gt;=α 则无法拒绝/接受对照假设 $H_0$，无法判断谁更正确</li>
 </ul>
 <blockquote>
-<p>例子：<br><br>假设100次比赛为随机变量 $X_1,\cdots,X_{100}$（i.i.d.），每个 $X_i$ 当甲赢则为1，否则为0。<br><br>如果按照虚无假设（双方势均力敌），则根据 $S\sim\mathrm{Bn}(100,1/2)$，而 $\mathrm{P}(S\ge 61)\approx 0.02$，这小于显著性水平0.05，则对立假设被接受，甲确实实力更强</p>
+<p>例子：<br>假设100次比赛为随机变量 $X_1,\cdots,X_{100}$（i.i.d.），每个 $X_i$ 当甲赢则为1，否则为0。<br>如果按照虚无假设（双方势均力敌），则根据 $S\sim\mathrm{Bn}(100,1/2)$，而 $\mathrm{P}(S\ge 61)\approx 0.02$，这小于显著性水平0.05，则对立假设被接受，甲确实实力更强</p>
 </blockquote>
 <p>检验理论，与估计理论一样，都是有一堆可以根据输入数据而输出检验结果的程序/方法，需要从中寻找最优方法。为了比较优劣，引入：</p>
 <ul>
@@ -639,17 +609,14 @@
 <li>虚无假设 $H_0$：$X$ 的概率密度函数为 $g_0(x)$ ……希望驳斥的主张</li>
 <li>对立假设 $H_1$：$X$ 的概率密度函数为 $g_1(x)$ ……希望肯定的主张</li>
 </ul>
-<p>寻找检验程序 $δ$，记 $δ$ 收到输入数据 $X$ 时的输出结果为 $δ(X)$，从而描述排除标准：</p>
-<script type="math/tex; mode=display">对于 H_0，\mathrm{P}(δ(X)=“拒绝”) \le \alpha</script><p>换而言之，对于 $x=(x_1,x_2,\cdots,x_n)$ ，以下不等式成立：</p>
-<script type="math/tex; mode=display">\int_A g_0(x)\mathrm{d}u \le \alpha \qquad（积分范围A是由所有满足δ(X)=“拒绝”的x组成的集合）</script><p>我们希望在所有符合条件的 $δ$ 中找到第二类错误发生概率 $β$ 最小的程序，其中 $β$ 定义为：</p>
-<script type="math/tex; mode=display">对于 H_1，\mathrm{P}(δ(X)=“接受”)</script><p>换而言之，积分计算为：</p>
-<script type="math/tex; mode=display">\int_B g_1(x)\mathrm{d}u \qquad（积分范围B是所有 δ(X)=“接受” 的 x 组成的集合）</script><p>形象化比喻：青虫吃菜叶问题，菜叶里有营养和微量毒素，毒素的分布为 $g_0(x)$ ㎎/㎠，营养的分布为 $g_1(x)$ ㎎/㎠，青虫最多可以承受 $α$ ㎎ 的毒素，希望获得最多营养，那么吃哪一块？</p>
+<p>寻找检验程序 $δ$，记 $δ$ 收到输入数据 $X$ 时的输出结果为 $δ(X)$，从而描述排除标准：<br>$$对于 H_0，\mathrm{P}(δ(X)=“拒绝”) \le \alpha$$</p>
+<p>换而言之，对于 $x=(x_1,x_2,\cdots,x_n)$ ，以下不等式成立：<br>$$\int_A g_0(x)\mathrm{d}u \le \alpha \qquad（积分范围A是由所有满足δ(X)=“拒绝”的x组成的集合）$$</p>
+<p>我们希望在所有符合条件的 $δ$ 中找到第二类错误发生概率 $β$ 最小的程序，其中 $β$ 定义为：<br>$$对于 H_1，\mathrm{P}(δ(X)=“接受”)$$</p>
+<p>换而言之，积分计算为：<br>$$\int_B g_1(x)\mathrm{d}u \qquad（积分范围B是所有 δ(X)=“接受” 的 x 组成的集合）$$</p>
+<p>形象化比喻：青虫吃菜叶问题，菜叶里有营养和微量毒素，毒素的分布为 $g_0(x)$ ㎎/㎠，营养的分布为 $g_1(x)$ ㎎/㎠，青虫最多可以承受 $α$ ㎎ 的毒素，希望获得最多营养，那么吃哪一块？</p>
 <p>一般而言，设毒素浓度 $g_0(x)$ 和营养浓度 $g_1(x)$ 随位置 $x$ 连续变化，先求 $g_1(x)/g_0(x)$ 并按结果从大到小排序，当毒素累积达到 $α$ 时停滞，此时 $g_1(x)/g_0(x)=c$，因此应当选择吃 $g_1(x)/g_0(x)&gt;c$ 的所有部分</p>
-<p>即最佳检验程序的判断标准为：</p>
-<script type="math/tex; mode=display">\delta(x)=\begin{cases}
-“拒绝”&(g_1(x)/g_0(x)>c)\\
-“接受”&(g_1(x)/g_0(x)\le c)\\
-\end{cases}</script><p>通过调节 $c$ ，使得第一类错误发生概率恰为 $α$ —— 这就是<strong>奈曼·皮尔逊引理</strong></p>
+<p>即最佳检验程序的判断标准为：<br>$$\delta(x)=\begin{cases}<br>“拒绝”&amp;(g_1(x)/g_0(x)&gt;c)\<br>“接受”&amp;(g_1(x)/g_0(x)\le c)\<br>\end{cases}$$</p>
+<p>通过调节 $c$ ，使得第一类错误发生概率恰为 $α$ —— 这就是<strong>奈曼·皮尔逊引理</strong></p>
 <p><strong>复合假设</strong></p>
 <p>复合假设包括了多个分布，需要面临多目标优化相似的问题。具体方法包括一致最大功效无偏检验（UMPUT）、最大似然比检验等 （不再展开）</p>
 <hr>
@@ -675,6 +642,30 @@
     
     
 
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ZhongChen</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://zhong.blog/2019/04/28/probability-and-statistics-note-2/" title="《程序员的数学2：概率统计》笔记2">https://zhong.blog/2019/04/28/probability-and-statistics-note-2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -754,10 +745,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -778,7 +769,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">9</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
@@ -799,7 +790,7 @@
                       
                     
                     <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">categories</span>
+                    <span class="site-state-item-name">分类</span>
                   
                 </div>
               
@@ -818,7 +809,7 @@
                       
                     
                     <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">标签</span>
                   
                 </div>
               
@@ -831,6 +822,16 @@
 
           
 
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
           
 
           
@@ -888,7 +889,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -896,7 +897,7 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
 
 
 
@@ -959,6 +960,8 @@
 
 
 
+  
+
 
 
   
@@ -969,6 +972,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
 
 
   
@@ -984,7 +990,10 @@
   
 
 
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
 
 
 
