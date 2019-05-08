@@ -402,6 +402,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">16k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">15 分钟</span>
+              
+            </div>
+          
 
           
 
@@ -441,12 +469,12 @@
 <p>优先选择熟悉的模型。如果模型了解非常透彻只需要代入数据，则叫参数估计；如果不够了解，则叫非参数估计。</p>
 <p>最大似然估计（概率派观点）</p>
 <ul>
-<li>θ<em>{MLE} = argmax</em>{θ} p(x|θ) = argmax_{θ} ∏ P(xᵢ|θ)</li>
-<li>换用对数形式，即 θ<em>{MLE} = argmax</em>{θ} ∑ log(p(xᵢ|θ))</li>
+<li>θ_{MLE} = argmax_{θ} p(x|θ) = argmax_{θ} ∏ P(xᵢ|θ)</li>
+<li>换用对数形式，即 θ_{MLE} = argmax_{θ} ∑ log(p(xᵢ|θ))</li>
 </ul>
 <p>最大后验估计（贝叶斯派观点）</p>
 <ul>
-<li>θ<em>{MAP} = argmax</em>{θ} p(x|θ)p(θ)</li>
+<li>θ_{MAP} = argmax_{θ} p(x|θ)p(θ)</li>
 </ul>
 <p>最小二乘法估计（仅针对高斯分布）</p>
 <ul>
@@ -487,7 +515,7 @@
 <p><strong>因子分解机FM</strong></p>
 <p>考虑特征关联性，进行两两组合 y(x)=w₀+∑wᵢxᵢ + ∑∑wᵢⱼxᵢxⱼ</p>
 <p>但样本稀疏情况下很难训练</p>
-<p>针对wᵢⱼ组成的对称矩阵尝试分解 W = VᵀV，此时wᵢⱼ=&lt;vᵢ,vⱼ&gt; （点积）</p>
+<p>针对wᵢⱼ组成的对称矩阵尝试分解 W = VᵀV，此时wᵢⱼ=<vᵢ,vⱼ> （点积）</vᵢ,vⱼ></p>
 <p>然后可以推导y(x)到相关参数wᵢ和vⱼ,ₖ的偏导，用于梯度上升计算</p>
 <p>延伸到在线计算，FTRL</p>
 <h2><span id="33-最大熵模型条件随机场">3.3 最大熵模型/条件随机场</span></h2><p>最大熵模型</p>
@@ -1201,7 +1229,21 @@
   <span class="author" itemprop="copyrightHolder">ZhongChen</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">57k</span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">52 分钟</span>
   
 </div>
 
