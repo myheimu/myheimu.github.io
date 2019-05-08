@@ -453,18 +453,18 @@
 </li>
 </ul>
 <hr>
-<h1><span id="第5章-协方差矩阵-多元正态分布与椭圆">第5章 协方差矩阵、多元正态分布与椭圆</span></h1><blockquote>
+<h1 id="第5章-协方差矩阵、多元正态分布与椭圆"><a href="#第5章-协方差矩阵、多元正态分布与椭圆" class="headerlink" title="第5章 协方差矩阵、多元正态分布与椭圆"></a>第5章 协方差矩阵、多元正态分布与椭圆</h1><blockquote>
 <p>A：已收到去年入学考试成绩数据，我便马上分析了一下，发现使用的统计软件有问题啊。<br>B：怎么了？<br>A：这个软件预测在模拟考中考出700分的人实际考试时得分为650分。以防万一又反过来拿650分作为实际考试成绩试了一下，结果得出的模拟考分数只有600。按理说应该得到700分才对吧？<br>B：嗯……依然是槽点太多不知道该说什么才好了。你还是重新学习一下多元正态分布的性质吧。</p>
-<p>PS：下文中“椭圆”一般代表对椭圆、椭球、高维椭球等的统称</p>
 </blockquote>
-<h2><span id="协方差与相关系数">协方差与相关系数</span></h2><p>随机变量 $X,Y$ 的期望值分别是 $\mu,v$，则 $X$ 与 $Y$ 的协方差定义为：</p>
+<p>（PS：下文中“椭圆”一般代表对椭圆、椭球、高维椭球等的统称）</p>
+<h2 id="协方差与相关系数"><a href="#协方差与相关系数" class="headerlink" title="协方差与相关系数"></a>协方差与相关系数</h2><p>随机变量 $X,Y$ 的期望值分别是 $\mu,v$，则 $X$ 与 $Y$ 的协方差定义为：</p>
 <script type="math/tex; mode=display">\mathrm{Cov}[X,Y] \equiv \mathrm{E}[(X-μ)(Y-v)]</script><p>协方差&gt;0 称X与Y正相关，协方差&lt;0 称X与Y负相关，协方差=0 称X与Y不相关</p>
 <p>随机变量X和Y相互独立，则不相关；反之不行。</p>
 <p><strong>相关系数</strong></p>
 <p>为了避免X和Y的比例变换影响协方差，则对其进行标准化，对X和Y分别除以各自的标准差，得到相关系数：</p>
 <script type="math/tex; mode=display">ρ_{XY} = \frac{\mathrm{Cov}[X,Y]}{\sqrt{\mathrm{V}[X]}\sqrt{\mathrm{V}[Y]}}</script><p>相关系数取值为-1 ~ +1；相关系数越接近+1，则(X,Y)越趋向于左下右上方向的直线；相关系数越接近-1，则(X,Y)越趋向于左上右下方向的直线</p>
 <p>协方差与相关系数都有局限性，不能完全代表数据情况</p>
-<h2><span id="协方差矩阵">协方差矩阵</span></h2><p>对于随机变量 $X_1,\cdots,X_n$，其中两两的方差或协方差可以构成一个矩阵，被称为协方差矩阵，或方差-协方差矩阵，该矩阵为对称矩阵：</p>
+<h2 id="协方差矩阵"><a href="#协方差矩阵" class="headerlink" title="协方差矩阵"></a>协方差矩阵</h2><p>对于随机变量 $X_1,\cdots,X_n$，其中两两的方差或协方差可以构成一个矩阵，被称为协方差矩阵，或方差-协方差矩阵，该矩阵为对称矩阵：</p>
 <script type="math/tex; mode=display">\begin{pmatrix}
 \mathrm{V}[X_1]&\mathrm{Cov}[X_1,X_2]&\cdots&\mathrm{Cov}[X_1,X_n]\\
 \mathrm{Cov}[X_2,X_1]&\mathrm{V}[X_2]&\cdots&\mathrm{Cov}[X_2,X_n]\\
@@ -494,7 +494,7 @@
 <p>协方差矩阵 $\mathrm{V}[\boldsymbol{X}]$ 的对角线部分为方差 $\mathrm{V}[X_1],\mathrm{V}[X_2],\cdots,\mathrm{V}[X_n]$，他们分别表示自己方向上的发散程度</p>
 <p>对于任意方向（用单位长度的向量 $\boldsymbol{u}$ 表示）， 则 $\boldsymbol{X}$ 向 $\boldsymbol{u}$ 投影得到 $Z$ （$Z$为实数值随机向量），即：</p>
 <script type="math/tex; mode=display">Z= \boldsymbol{u}^T\boldsymbol{X} = \|\boldsymbol{X}\|\cos\theta</script><p>则在 $\boldsymbol{u}$ 方向上的发散程度为：</p>
-<script type="math/tex; mode=display">\mathrm{V}[Z] = \mathrm{V}[\boldsymbol{u}^T\boldsymbol{X}] = \boldsymbol{u}^T\mathrm{V}[\boldsymbol{X}]\boldsymbol{u}</script><h2><span id="多元正态分布">多元正态分布</span></h2><p><strong>多元标准正态分布</strong></p>
+<script type="math/tex; mode=display">\mathrm{V}[Z] = \mathrm{V}[\boldsymbol{u}^T\boldsymbol{X}] = \boldsymbol{u}^T\mathrm{V}[\boldsymbol{X}]\boldsymbol{u}</script><h2 id="多元正态分布"><a href="#多元正态分布" class="headerlink" title="多元正态分布"></a>多元正态分布</h2><p><strong>多元标准正态分布</strong></p>
 <p>由n个遵从标准正态分布的i.i.d.随机变量组成的列向量 $\boldsymbol{Z}\equiv(Z_1,\cdots,Z_n)^T$</p>
 <p>$\boldsymbol{Z}$ 的概率密度函数为：</p>
 <script type="math/tex; mode=display">f_\boldsymbol{Z}(\boldsymbol{z})=d\exp(-\frac{1}{2}\|\boldsymbol{z}\|^2)\qquad(d为使总概率为1的常量)</script><p>期望与协方差矩阵：</p>
@@ -520,12 +520,12 @@
 <script type="math/tex; mode=display">f_\boldsymbol{Z}(\boldsymbol{z}) = \frac{1}{\sqrt{2\pi}^n}\exp(-\frac{1}{2}\|\boldsymbol{z}\|^2)</script><p>可以推导出多元一般正态分布 $\boldsymbol{X}\sim\mathrm{N}(\boldsymbol{\mu}, V)$ 的概率密度函数为：</p>
 <script type="math/tex; mode=display">f_\boldsymbol{X}(\boldsymbol{x}) = \frac{1}{\sqrt{(2\pi)^n\mathrm{det}V}}\exp(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^TV^{-1}(\boldsymbol{x}-\boldsymbol{\mu}))</script><p>可以抽象为：$f(\boldsymbol{x})=\Box\exp(\boldsymbol{x}的元素的二次式)$（$\Box$为不含 $\boldsymbol{x}$ 的常量）</p>
 <p>反之，如果 $\boldsymbol{X}$ 的概率密度函数符合上式，则其分布就是一种正态分布</p>
-<h2><span id="多元正态分布性质">多元正态分布性质</span></h2><ul>
+<h2 id="多元正态分布性质"><a href="#多元正态分布性质" class="headerlink" title="多元正态分布性质"></a>多元正态分布性质</h2><ul>
 <li>可以由期望值向量与协方差矩阵确定具体分布</li>
 <li>如果各随机变量不相关，则一定独立（非正态分布则不一定）</li>
 <li>多元正态分布在做线性边缘后仍然是多元正态分布</li>
 </ul>
-<h2><span id="截面条件分布">截面（条件分布）</span></h2><p><strong>“多元正态分布的条件分布也是多元正态分布”</strong></p>
+<h2 id="截面（条件分布）"><a href="#截面（条件分布）" class="headerlink" title="截面（条件分布）"></a>截面（条件分布）</h2><p><strong>“多元正态分布的条件分布也是多元正态分布”</strong></p>
 <p>假设 $\boldsymbol{X}\equiv(X_1,X_2,\cdots,X_n)^T$遵从n元正态分布在给定条件 $X_1=c$ 条件下，条件分布的概率密度函数为：</p>
 <script type="math/tex; mode=display">f_{\boldsymbol{\tilde{X}}|X_1}(x_2,\cdots,x_n|c)</script><p>可以推导出符合 $\Box\exp(\boldsymbol{\tilde{x}}的二次式)$，因此遵从n-1元正态分布</p>
 <p>从图像角度来看，n=3时，概率密度函数的等值面是椭球体，而椭球体的截面也是椭圆</p>
@@ -536,7 +536,7 @@
   \begin{pmatrix} \boldsymbol{\mu}\\\boldsymbol{v} \end{pmatrix},
   \begin{pmatrix} 甲&乙\\乙^T&丁 \end{pmatrix}
 \Big)</script><p>则给定 $\boldsymbol{X}=\boldsymbol{c}$，$\boldsymbol{Y}$ 的条件分布为 $\mathrm{N}(\boldsymbol{\tilde{v}},\boldsymbol{\tilde{W}})$：</p>
-<script type="math/tex; mode=display">\boldsymbol{\tilde{v}}\equiv\boldsymbol{v}+乙^T甲^{-1}(\boldsymbol{c}-\boldsymbol\mu)</script><script type="math/tex; mode=display">\boldsymbol{\tilde{W}}\equiv丁-乙^T甲^{-1}乙</script><h2><span id="投影边缘分布">投影（边缘分布）</span></h2><p><strong>“多元正态分布的边缘分布也是多元正态分布”</strong></p>
+<script type="math/tex; mode=display">\boldsymbol{\tilde{v}}\equiv\boldsymbol{v}+乙^T甲^{-1}(\boldsymbol{c}-\boldsymbol\mu)</script><script type="math/tex; mode=display">\boldsymbol{\tilde{W}}\equiv丁-乙^T甲^{-1}乙</script><h2 id="投影（边缘分布）"><a href="#投影（边缘分布）" class="headerlink" title="投影（边缘分布）"></a>投影（边缘分布）</h2><p><strong>“多元正态分布的边缘分布也是多元正态分布”</strong></p>
 <p>从图像角度来看，n=3时，椭球体的投影也是一个椭圆</p>
 <p>边缘分布的期望值向量和协方差矩阵，就是从原期望值向量和协方差矩阵中去除掉投影的项目位置所对应的行与列。例如一个3元正态分布向第1维度投影：（$\boldsymbol{X}\equiv(X_1,X_2,X_3)^T$，$\boldsymbol{\tilde{X}}\equiv(X_2,X_3)^T$）</p>
 <script type="math/tex; mode=display">\mathrm{E}[\boldsymbol{X}]=
@@ -554,14 +554,14 @@
 \hline
 *&&\\
 *&&\mathrm{V}[\boldsymbol{\tilde{X}}]\\
-\end{array}\Bigg)</script><h2><span id="卡方分布">卡方分布</span></h2><p>$\boldsymbol{Z}\sim \mathrm{N}(\boldsymbol{o},I)$ 的长度 $|\boldsymbol{Z}|$ 的概率密度函数并非随长度增加而下降，而是根据元数 $n$ 的不同而决定 </p>
+\end{array}\Bigg)</script><h2 id="卡方分布"><a href="#卡方分布" class="headerlink" title="卡方分布"></a>卡方分布</h2><p>$\boldsymbol{Z}\sim \mathrm{N}(\boldsymbol{o},I)$ 的长度 $|\boldsymbol{Z}|$ 的概率密度函数并非随长度增加而下降，而是根据元数 $n$ 的不同而决定 </p>
 <p>设 $n$ 元标准正态分布的长度的平方的分布为自由度为 $n$ 的 $\chi^2$ 分布（卡方分布）</p>
 <p>$\chi^2$ 分布的概率密度函数为：（其中 $\Gamma$ 代表 $\Gamma$函数）</p>
 <script type="math/tex; mode=display">f(x)=\begin{cases}
 \frac{1}{2\Gamma(n/2)}(\frac{n}{2})^{n/2-1}\exp(-\frac{x}{2})&(x\ge 0)\\
 0&(x<0)\\
 \end{cases}</script><p>当 $n=2$ 时，$\chi^2$ 分布概率密度函数为 $f(x)=(1/2)\exp(-x/2)$，这与普通指数函数形式相似，在后文中可以用来生成遵从正态分布的伪随机数</p>
-<h2><span id="协方差矩阵与椭圆的关系">协方差矩阵与椭圆的关系</span></h2><p>一般分布的图像不一定是椭圆（或者椭球、超椭球体，下同），但仍然可以获得其基准椭圆</p>
+<h2 id="协方差矩阵与椭圆的关系"><a href="#协方差矩阵与椭圆的关系" class="headerlink" title="协方差矩阵与椭圆的关系"></a>协方差矩阵与椭圆的关系</h2><p>一般分布的图像不一定是椭圆（或者椭球、超椭球体，下同），但仍然可以获得其基准椭圆</p>
 <p>对向量值随机变量 $\boldsymbol{X}$，求 $\boldsymbol{\mu}≡\mathrm{E}[\boldsymbol{X}]$ 和 $V≡\mathrm{V}[\boldsymbol{X}]$，然后根据多元正态分布 $\mathrm{N}(\boldsymbol{\mu}, V)$ 绘制对应的基准椭圆</p>
 <p><strong>（实例一）单位矩阵与圆</strong></p>
 <p>如果协方差矩阵 $V$ 是单位矩阵 $I$，根据先前计算，在任意方向 $\boldsymbol{u}$ 上的方差均为1（也就是标准差为1）</p>
@@ -578,7 +578,7 @@
 <p>可以推导出存在正交矩阵 $Q$，使得 $Q^TV[\boldsymbol{X}]Q$ 为对角阵 $\mathrm{diag}(\lambda_1,\lambda_2,\cdots,\lambda_n)$，则可以取 $A=Q^T$ 作为变换矩阵</p>
 <p>矩阵 $Q$ 中的每个特征向量 $\boldsymbol{q}_i$ 都与椭圆的主轴同向，且椭圆各主轴半径为$\sqrt{\lambda_i}$</p>
 <script type="math/tex; mode=display">\Huge{协方差矩阵就是椭圆}</script><p>协方差矩阵局限性：当观察3个以上随机变量时，协方差矩阵只是看到两两之间的关系，但无法发掘高阶相关</p>
-<h1><span id="第6章-估计与检验">第6章 估计与检验</span></h1><h2><span id="估计的概念">估计的概念</span></h2><p>例如抛硬币，正面向上概率为 $p$，而且i.i.d.，抛 $n$ 次，会得到 $n$ 个随机变量 $X_1,X_2,\cdots,X_n$ 的观测值，此时正面向上的比例，称之为“经验分布”</p>
+<h1 id="第6章-估计与检验"><a href="#第6章-估计与检验" class="headerlink" title="第6章 估计与检验"></a>第6章 估计与检验</h1><h2 id="估计的概念"><a href="#估计的概念" class="headerlink" title="估计的概念"></a>估计的概念</h2><p>例如抛硬币，正面向上概率为 $p$，而且i.i.d.，抛 $n$ 次，会得到 $n$ 个随机变量 $X_1,X_2,\cdots,X_n$ 的观测值，此时正面向上的比例，称之为“经验分布”</p>
 <p>上帝视角：平行世界整体 $\Omega$ 中的每个世界 $\omega$ 都会形成自己对 $X_1,X_2,\cdots,X_n$ 的观测结果，整体 $\Omega$ 内统计每个随机变量都是符合正面 $p$ 与反面 $1-p$ 比例的，但每个世界 $\omega$ 内只能观察到自己的部分</p>
 <ul>
 <li>假定真实观测值与真实分布相关，切试图根据观测值来推测真实分布</li>
@@ -593,7 +593,7 @@
 <ul>
 <li>期望值与方差不确定性但遵从正态分布的问题</li>
 </ul>
-<h2><span id="估计方法">估计方法</span></h2><p>假设 $X_1,X_2,\cdots,X_n$ 都遵从某一正态分布 $\mathrm{N}(\mu,\sigma^2)$，基于观测值来推算 $\mu$ 就属于一种参数估计，而推算 $\sigma^2$ 也是一种参数估计</p>
+<h2 id="估计方法"><a href="#估计方法" class="headerlink" title="估计方法"></a>估计方法</h2><p>假设 $X_1,X_2,\cdots,X_n$ 都遵从某一正态分布 $\mathrm{N}(\mu,\sigma^2)$，基于观测值来推算 $\mu$ 就属于一种参数估计，而推算 $\sigma^2$ 也是一种参数估计</p>
 <p>通常情况下，条件给出的数据分布可以由有限维度的向量值参数 $\theta≡(\theta_1,\cdots,\theta_k)$ 确定，需要做的就是通过观测值估计 $θ$ 的值（此处只讨论点估计）</p>
 <p>此后记 $X=(X_1,X_2,\cdots,X_n)$，$\theta$ 的估计值（或叫估计方法）记为 $\hat\theta$，或明确写为 $\hat\theta(X)$ 来表示与 $X$ 相关</p>
 <p><strong>如何评价一种估计方法 $\hat\theta$ ？</strong></p>
@@ -638,7 +638,7 @@
 <li>但反对者认为先验分布直接影响答案准确性，先验分布过于随意</li>
 <li>当样本容量n增加时，先验分布的作用逐渐变小，逐渐趋近于最大似然（毕竟越来越多的事实，也让人不得不相信）</li>
 </ul>
-<h2><span id="检验理论">检验理论</span></h2><blockquote>
+<h2 id="检验理论"><a href="#检验理论" class="headerlink" title="检验理论"></a>检验理论</h2><blockquote>
 <p>甲：我俩比赛了100次，我赢了61次，所以我比你更强<br>乙：不，这纯属偶然<br>甲：如果只是偶然，那出现现在这种情况的概率小于5%，这几乎不可能</p>
 </blockquote>
 <ul>
@@ -917,7 +917,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">第5章 协方差矩阵、多元正态分布与椭圆</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">协方差与相关系数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">协方差矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">多元正态分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">多元正态分布性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">截面（条件分布）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">投影（边缘分布）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">卡方分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">协方差矩阵与椭圆的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">第6章 估计与检验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">估计的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">估计方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">检验理论</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第5章-协方差矩阵、多元正态分布与椭圆"><span class="nav-text">第5章 协方差矩阵、多元正态分布与椭圆</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#协方差与相关系数"><span class="nav-text">协方差与相关系数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协方差矩阵"><span class="nav-text">协方差矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多元正态分布"><span class="nav-text">多元正态分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多元正态分布性质"><span class="nav-text">多元正态分布性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#截面（条件分布）"><span class="nav-text">截面（条件分布）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#投影（边缘分布）"><span class="nav-text">投影（边缘分布）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡方分布"><span class="nav-text">卡方分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协方差矩阵与椭圆的关系"><span class="nav-text">协方差矩阵与椭圆的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第6章-估计与检验"><span class="nav-text">第6章 估计与检验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#估计的概念"><span class="nav-text">估计的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#估计方法"><span class="nav-text">估计方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检验理论"><span class="nav-text">检验理论</span></a></li></ol></li></ol></div>
             
 
           </div>
