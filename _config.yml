@@ -4,11 +4,11 @@
 
 # Site
 title: ZhongChen的技术博客
-subtitle:
+subtitle: 技术是条无尽的道路
 description:
 keywords:
 author: ZhongChen
-language: zh
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -81,3 +81,12 @@ deploy:
   type: git
   repository: https://github.com/myheimu/myheimu.github.io
   branch: master
+
+
+# Add By Myself
+symbols_count_time:
+  symbols: true # 文章字数
+  time: true # 阅读时长
+  total_symbols: true # 所有文章总字数
+  total_time: true # 所有文章阅读中时长
+
