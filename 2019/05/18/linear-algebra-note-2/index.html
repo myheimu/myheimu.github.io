@@ -498,8 +498,8 @@
 <script type="math/tex; mode=display">\boldsymbol{l}(2)=\frac{1}{a_{11}(2)}\begin{pmatrix}a_{11}(2)\\\vdots\\a_{m'1}(2)\end{pmatrix}, \quad \boldsymbol{u}(2)^T=(a_{11}(2),\cdots,a_{1n'}(2))</script><script type="math/tex; mode=display">\boldsymbol{l}_2=\begin{pmatrix}0\\\hline\\\boldsymbol{l}(2)\\\end{pmatrix},\quad \boldsymbol{u}_2^T=\left(\begin{array}{c|c}0&\boldsymbol{u}(2)^T\end{array}\right)</script><script type="math/tex; mode=display">\left(\begin{array}{c|ccc}0&0&&\cdots&&0\\\hline 0\\\vdots&&&A(2)\\0\\\end{array}\right)
 -\boldsymbol{l}_2\boldsymbol{u}_2^T=
 \left(\begin{array}{cc|ccc}0&0&0&\cdots&0\\0&0&0&\cdots&0\\\hline 0&0\\\vdots&\vdots&&A(3)\\0&0\\\end{array}\right)</script><p>最终可以算得 $A=\boldsymbol{l}_1\boldsymbol{u}_1^T+\cdots+\boldsymbol{l}_s\boldsymbol{u}_s^T+O$ 的全部数字</p>
-<p>在实际开发之中，一方面可以把 L 和 U 矩阵合并存放在一起（L的对角线部分不需要存储），一方面可以共用原矩阵 A 的空间，因为所需计算不会依赖于已经被覆盖的元素，如下图中*代表处理中的原矩阵，□代表算出来的L，■代表算出来的U</p>
-<p>\begin{pmatrix}■&amp;■&amp;■&amp;■&amp;■\\□&amp;■&amp;■&amp;■&amp;■\\□&amp;□&amp;<em>&amp;</em>&amp;<em>\\□&amp;□&amp;</em>&amp;<em>&amp;</em>\\□&amp;□&amp;<em>&amp;</em>&amp;*\end{pmatrix}</p>
+<p>在实际开发之中，一方面可以把 L 和 U 矩阵合并存放在一起（L的对角线部分不需要存储），一方面可以共用原矩阵 A 的空间，因为所需计算不会依赖于已经被覆盖的元素，如下图中▲代表处理中的原矩阵，□代表算出来的L，■代表算出来的U</p>
+<p>\begin{pmatrix}■&amp;■&amp;■&amp;■&amp;■\\□&amp;■&amp;■&amp;■&amp;■\\□&amp;□&amp;▲&amp;▲&amp;▲\\□&amp;□&amp;▲&amp;▲&amp;▲\\□&amp;□&amp;▲&amp;▲&amp;▲\end{pmatrix}</p>
 <h2 id="LU分解求行列式值"><a href="#LU分解求行列式值" class="headerlink" title="LU分解求行列式值"></a>LU分解求行列式值</h2><p>基于行列式形式，以及下三角和上三角矩阵行列式都是对角元素乘积的性质，可得：</p>
 <script type="math/tex; mode=display">\det A = \det(LU) = \det L \det U=\det U=U的对角元素乘积</script><h2 id="LU分解求线性方程组"><a href="#LU分解求线性方程组" class="headerlink" title="LU分解求线性方程组"></a>LU分解求线性方程组</h2><p>将寻找满足 $A\boldsymbol{x}=\boldsymbol{y}$ 的向量 $\boldsymbol{x}$，转变为：</p>
 <ul>
