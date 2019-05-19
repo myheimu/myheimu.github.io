@@ -110,17 +110,18 @@
 
 
 
-  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（我理解为自己写一篇）  本周完成内容为： Algorithm: LeetCode #15 3Sumhttps://leetcode.com/problems/3sum/  问题：从一堆数">
+  <meta name="description" content="《程序员的数学3：线性代数》笔记1 《程序员的数学3：线性代数》笔记2 《程序员的数学3：线性代数》笔记3    第5章 计算机上的计算（2）——特征值算法概要高次代数方程在计算机中求解，受到精度影响误差可能很大 那么可以绕开解特征方程方法，通过寻找可逆矩阵 $P$，使得 $P^{-1}AP=(对角矩阵或上三角矩阵)$ （即对角化或上三角化），从而使得对角元素就是要求的特征值 伽罗华（Galoi">
+<meta name="keywords" content="读书笔记,线性代数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ARTS挑战第6周（2019.4.29~5.5）">
-<meta property="og:url" content="https://zhong.blog/2019/05/05/arts-week-6/index.html">
+<meta property="og:title" content="《程序员的数学3：线性代数》笔记3">
+<meta property="og:url" content="https://zhong.blog/2019/05/19/linear-algebra-note-3/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（我理解为自己写一篇）  本周完成内容为： Algorithm: LeetCode #15 3Sumhttps://leetcode.com/problems/3sum/  问题：从一堆数">
+<meta property="og:description" content="《程序员的数学3：线性代数》笔记1 《程序员的数学3：线性代数》笔记2 《程序员的数学3：线性代数》笔记3    第5章 计算机上的计算（2）——特征值算法概要高次代数方程在计算机中求解，受到精度影响误差可能很大 那么可以绕开解特征方程方法，通过寻找可逆矩阵 $P$，使得 $P^{-1}AP=(对角矩阵或上三角矩阵)$ （即对角化或上三角化），从而使得对角元素就是要求的特征值 伽罗华（Galoi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-05T16:00:00.000Z">
+<meta property="og:updated_time" content="2019-05-18T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ARTS挑战第6周（2019.4.29~5.5）">
-<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（我理解为自己写一篇）  本周完成内容为： Algorithm: LeetCode #15 3Sumhttps://leetcode.com/problems/3sum/  问题：从一堆数">
+<meta name="twitter:title" content="《程序员的数学3：线性代数》笔记3">
+<meta name="twitter:description" content="《程序员的数学3：线性代数》笔记1 《程序员的数学3：线性代数》笔记2 《程序员的数学3：线性代数》笔记3    第5章 计算机上的计算（2）——特征值算法概要高次代数方程在计算机中求解，受到精度影响误差可能很大 那么可以绕开解特征方程方法，通过寻找可逆矩阵 $P$，使得 $P^{-1}AP=(对角矩阵或上三角矩阵)$ （即对角化或上三角化），从而使得对角元素就是要求的特征值 伽罗华（Galoi">
 
 
 
@@ -128,7 +129,7 @@
 
   
   
-  <link rel="canonical" href="https://zhong.blog/2019/05/05/arts-week-6/">
+  <link rel="canonical" href="https://zhong.blog/2019/05/19/linear-algebra-note-3/">
 
 
 
@@ -138,7 +139,7 @@
   };
 </script>
 
-  <title>ARTS挑战第6周（2019.4.29~5.5） | ZhongChen的技术博客</title>
+  <title>《程序员的数学3：线性代数》笔记3 | ZhongChen的技术博客</title>
   
 
 
@@ -309,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhong.blog/2019/05/05/arts-week-6/">
+    <link itemprop="mainEntityOfPage" href="https://zhong.blog/2019/05/19/linear-algebra-note-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhongChen">
@@ -326,7 +327,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">ARTS挑战第6周（2019.4.29~5.5）
+          <h2 class="post-title" itemprop="name headline">《程序员的数学3：线性代数》笔记3
 
               
             
@@ -352,25 +353,9 @@
                 
               
 
-              <time title="创建时间：2019-05-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-05T00:00:00+08:00">2019-05-05</time>
+              <time title="创建时间：2019-05-19 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-19T00:00:00+08:00">2019-05-19</time>
             
 
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-06 00:00:00" itemprop="dateModified" datetime="2019-05-06T00:00:00+08:00">2019-05-06</time>
-              
             
           </span>
 
@@ -386,7 +371,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ARTS/" itemprop="url" rel="index"><span itemprop="name">ARTS</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
 
                 
                 
@@ -415,7 +400,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.9k</span>
+                <span title="本文字数">1.1k</span>
               
 
               
@@ -429,7 +414,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -449,52 +434,35 @@
       
 
       
-        <p><a href="https://www.zhihu.com/question/301150832" target="_blank" rel="noopener">ARTS挑战</a> 指每周完成：</p>
-<ul>
-<li>Algorithm：每周至少做一个 leetcode 的算法题</li>
-<li>Review：阅读并点评至少一篇英文技术文章</li>
-<li>Tip：学习至少一个技术技巧</li>
-<li>Share：分享一篇有观点和思考的技术文章（我理解为自己写一篇）</li>
-</ul>
-<p>本周完成内容为：<br><!-- toc --></p>
-<h1 id="Algorithm-LeetCode-15-3Sum"><a href="#Algorithm-LeetCode-15-3Sum" class="headerlink" title="Algorithm: LeetCode #15 3Sum"></a>Algorithm: LeetCode #15 3Sum</h1><p><a href="https://leetcode.com/problems/3sum/" target="_blank" rel="noopener">https://leetcode.com/problems/3sum/</a></p>
-<blockquote>
-<p>问题：从一堆数字中寻找三个数能够和为0</p>
-</blockquote>
-<p>解答：第一个坑在于元素不能重用，比如数组里只有一个-1，但已经取了这个元素，随后通过hash之类方式发现剩下还需要一个-1的时候，就需要增加额外逻辑判断是否有足够的-1可以使用</p>
-<p>第二个坑在于tuple的重复性，比如[-1,1,0]和[1,-1,0]只能保留一个，这个可以通过最后时刻的入库对比来去重，但要想速度够快，还是得在设计的时候就充分考虑顺序，避免重复出现</p>
-<p>第三点在于性能，最差的模拟时间复杂度是 $O(n^3)$，稍微优化的版本是遍历前两个元素，对第三个元素通过查找方式寻找（如果是hash则为$O(n^2)$，如果是二分类方法则为$O(n^2\log{n})$）。最优的方法则是对第一个元素进行遍历，然后在后面的范围内对后两个元素进行两端逼近，复杂度能够控制在 $O(n^2)$ 以内</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; threeSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; results;</span><br><span class="line">        <span class="keyword">int</span> size = nums.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] &gt; <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">int</span> j = i+<span class="number">1</span>; </span><br><span class="line">            <span class="keyword">int</span> k = nums.size()<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">while</span> (j &lt; k) &#123;</span><br><span class="line">                <span class="keyword">int</span> sum = nums[j]+nums[k];</span><br><span class="line">                <span class="keyword">if</span> (sum &lt; -nums[i]) &#123; j++; <span class="keyword">continue</span>; &#125;</span><br><span class="line">                <span class="keyword">if</span> (sum &gt; -nums[i]) &#123; k--; <span class="keyword">continue</span>; &#125;</span><br><span class="line">                results.push_back(&#123;nums[i], nums[j], nums[k]&#125;);</span><br><span class="line">                <span class="keyword">int</span> last_j_num = nums[j];</span><br><span class="line">                <span class="keyword">int</span> last_k_num = nums[k];</span><br><span class="line">                <span class="keyword">while</span> (j+<span class="number">1</span> &lt; nums.size() &amp;&amp; nums[j+<span class="number">1</span>] == last_j_num)</span><br><span class="line">                    j++;</span><br><span class="line">                <span class="keyword">while</span> (k<span class="number">-1</span> &gt;= <span class="number">0</span> &amp;&amp; nums[k<span class="number">-1</span>]  == last_k_num)</span><br><span class="line">                    k--;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (i+<span class="number">1</span> &lt; nums.size() &amp;&amp; nums[i] == nums[i+<span class="number">1</span>])</span><br><span class="line">                i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> move(results);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<blockquote>
-<p>Runtime: 96 ms，超过98.00%的提交<br>Memory Usage: 14.7 MB，超过99.00%的提交</p>
-</blockquote>
-<h1 id="Review-《Five-Machine-Learning-Paradoxes-that-will-Change-the-Way-You-Think-About-Data》"><a href="#Review-《Five-Machine-Learning-Paradoxes-that-will-Change-the-Way-You-Think-About-Data》" class="headerlink" title="Review: 《Five Machine Learning Paradoxes that will Change the Way You Think About Data》"></a>Review: 《Five Machine Learning Paradoxes that will Change the Way You Think About Data》</h1><p><a href="https://towardsdatascience.com/five-machine-learning-paradoxes-that-will-change-the-way-you-think-about-data-e100be5620d7" target="_blank" rel="noopener">https://towardsdatascience.com/five-machine-learning-paradoxes-that-will-change-the-way-you-think-about-data-e100be5620d7</a></p>
-<p>悖论，就是针对问题的原始前提而导致了明显的自相矛盾结论。</p>
-<p>例如<strong>忒休斯之船悖论</strong>：一艘船逐渐替换其中腐烂的零件，当全部零件都被更换之后，这艘船还是原来的船么？</p>
-<p>例如<strong>罗素悖论</strong>：对于一条规则“自己不属于自己”而构成的集合R，如果R属于R，那么根据定义R不属于R，如果R不属于R，那么根据定义，R属于R。</p>
-<p>机器学习中同样有一些著名的悖论：</p>
-<p><strong>辛普森悖论</strong></p>
-<p>“一所大学，分学院申请，一定比例通过并入学，每个学院的女性入学通过率均高于男性，但整个学校平均的女性入学通过率却高于男性”</p>
-<p>简单的平均值没有考虑到数据集中特定集合的相关性。</p>
-<p>所以机器学习中，针对不同数据集的无监督训练，可能在合并数据集之中产生巨大变化。</p>
-<p><strong>布雷斯（Braess）悖论</strong><br>“在拥挤的交通网络中增加一条道路，反而可能增加拥堵”</p>
-<p>在纳什均衡游戏中，当其他人都坚持使用相同策略，那么单个人没有动力应用新策略。</p>
-<p>该悖论在自主的多智能体强化学习场景中需要考虑。</p>
-<p><strong>莫拉维克（Moravec）悖论</strong><br>“与普遍的认知相反，高级推理需要的计算量低于低级无意识认知”</p>
-<p>简单的AI就可以完成非常复杂的统计和数据任务，这些对人来说是不可能的，然而很多对于人来说微不足道的小事儿，比如用手抓住物体，却需要非常复杂的AI模型。</p>
-<p>从迁移学习角度来看，Moravec悖论告诉我们应当在不同的机器学习模型之间推广知识。另外，机器学习可以考虑将人与算法结合。</p>
-<p><strong>准确率悖论</strong><br>“准确率并不总是对模型的一个良好指标”</p>
-<p>主要是在于数据集非常不平衡的情况下，单纯看准确率指标无法做出充分的区分。可以更加深入观察精度和召回率，并针对不同类型的问题，设置不同的指标倾向。</p>
-<p><strong>可学习性-哥德尔（Learnability-Godel）悖论</strong><br>哥德尔连续统假设与机器学习的可学习性可以联系起来，机器学习的可学习性也是无法通过选择一个公理宇宙就能解决的状态。</p>
-<h1 id="Tips-使用Github-Pages-amp-Hexo搭建技术博客"><a href="#Tips-使用Github-Pages-amp-Hexo搭建技术博客" class="headerlink" title="Tips: 使用Github Pages &amp; Hexo搭建技术博客"></a>Tips: 使用Github Pages &amp; Hexo搭建技术博客</h1><a href="/2019/05/05/hello-github-pages-world/" title="Hello 'Github Pages' World!">Hello 'Github Pages' World!</a>
-<h1 id="Share-《程序员的数学2：概率统计》读书笔记"><a href="#Share-《程序员的数学2：概率统计》读书笔记" class="headerlink" title="Share: 《程序员的数学2：概率统计》读书笔记"></a>Share: 《程序员的数学2：概率统计》读书笔记</h1><ul>
-<li><a href="/2019/04/28/probability-and-statistics-note-1/" title="《程序员的数学2：概率统计》笔记1">《程序员的数学2：概率统计》笔记1</a></li>
-<li><a href="/2019/04/28/probability-and-statistics-note-2/" title="《程序员的数学2：概率统计》笔记2">《程序员的数学2：概率统计》笔记2</a></li>
-<li><a href="/2019/04/28/probability-and-statistics-note-3/" title="《程序员的数学2：概率统计》笔记3">《程序员的数学2：概率统计》笔记3</a>
+        <ul>
+<li><a href="/2019/05/04/linear-algebra-note-1/" title="《程序员的数学3：线性代数》笔记1">《程序员的数学3：线性代数》笔记1</a></li>
+<li><a href="/2019/05/18/linear-algebra-note-2/" title="《程序员的数学3：线性代数》笔记2">《程序员的数学3：线性代数》笔记2</a></li>
+<li><a href="/2019/05/19/linear-algebra-note-3/" title="《程序员的数学3：线性代数》笔记3">《程序员的数学3：线性代数》笔记3</a>
 </li>
 </ul>
-
+<hr>
+<h1 id="第5章-计算机上的计算（2）——特征值算法"><a href="#第5章-计算机上的计算（2）——特征值算法" class="headerlink" title="第5章 计算机上的计算（2）——特征值算法"></a>第5章 计算机上的计算（2）——特征值算法</h1><h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>高次代数方程在计算机中求解，受到精度影响误差可能很大</p>
+<p>那么可以绕开解特征方程方法，通过寻找可逆矩阵 $P$，使得 $P^{-1}AP=(对角矩阵或上三角矩阵)$ （即对角化或上三角化），从而使得对角元素就是要求的特征值</p>
+<h3 id="伽罗华（Galois）理论"><a href="#伽罗华（Galois）理论" class="headerlink" title="伽罗华（Galois）理论"></a>伽罗华（Galois）理论</h3><p><strong>n次代数方程</strong>，例如1到4次的代数方程：</p>
+<script type="math/tex; mode=display">\begin{aligned}
+ax+b&=0\\
+ax^2+bx+c&=0\\
+ax^3+bx^2+cx+d&=0\\
+ax^4+bx^3+cx^2+dx+e&=0\\
+\end{aligned}</script><p>1次方程解为 $x=-\frac{b}{a}$，2次方程解为 $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$，3次方程使用Cardano公式（Tartaglia公式），4次方程使用Ferrari公式</p>
+<p><strong>“5次及以上代数方程没有求解公式”</strong> （求解公式限于对系数进行加减乘除、方根等基础运算）</p>
+<p>对于任意方阵A’，可以进行相似变换到 A：</p>
+<script type="math/tex; mode=display">A=\begin{pmatrix}
+0&0&\cdots&0&-a_0\\
+1&0&\cdots&0&-a_1\\
+0&1&\ddots&\vdots&\vdots\\
+\vdots&\ddots&\ddots&0&-a_{n-2}\\
+0&\cdots&0&1&-a_{n-1}\\
+\end{pmatrix}</script><p>则特征方程可以通过计算 $\det(\lambda I-A)$ 得到，即：</p>
+<script type="math/tex; mode=display">\lambda^n+a_{n-1}\lambda^{n-1}+a_{n-2}\lambda^{n-2}+\cdots+a_1\lambda+a_0=0</script><p>称矩阵 A 为此代数方程的<strong>友矩阵</strong></p>
+<p>由于伽罗华理论，所以也可以推断出<strong>“5次以上矩阵的特征值一定不存在通用的求解方法/求解步骤”</strong></p>
+<p>只有一些通过不断逼近，求近似值的方法，比如Jacobi方法和QR方法</p>
+<h2 id="Jacobi方法"><a href="#Jacobi方法" class="headerlink" title="Jacobi方法"></a>Jacobi方法</h2><h3 id="平面旋转"><a href="#平面旋转" class="headerlink" title="平面旋转"></a>平面旋转</h3><h3 id="通过平面旋转进行相似变换"><a href="#通过平面旋转进行相似变换" class="headerlink" title="通过平面旋转进行相似变换"></a>通过平面旋转进行相似变换</h3><h3 id="计算过程优化"><a href="#计算过程优化" class="headerlink" title="计算过程优化"></a>计算过程优化</h3><h2 id="幂法原理"><a href="#幂法原理" class="headerlink" title="幂法原理"></a>幂法原理</h2><h3 id="求绝对值最大的特征值"><a href="#求绝对值最大的特征值" class="headerlink" title="求绝对值最大的特征值"></a>求绝对值最大的特征值</h3><h3 id="求绝对值最小的特征值"><a href="#求绝对值最小的特征值" class="headerlink" title="求绝对值最小的特征值"></a>求绝对值最小的特征值</h3><h3 id="QR分解"><a href="#QR分解" class="headerlink" title="QR分解"></a>QR分解</h3><h3 id="求所有特征值"><a href="#求所有特征值" class="headerlink" title="求所有特征值"></a>求所有特征值</h3><h2 id="QR方法"><a href="#QR方法" class="headerlink" title="QR方法"></a>QR方法</h2><h3 id="QR方法原理"><a href="#QR方法原理" class="headerlink" title="QR方法原理"></a>QR方法原理</h3><h3 id="Hessenberg矩阵"><a href="#Hessenberg矩阵" class="headerlink" title="Hessenberg矩阵"></a>Hessenberg矩阵</h3><h3 id="Householder方法"><a href="#Householder方法" class="headerlink" title="Householder方法"></a>Householder方法</h3><h3 id="Hessenberg矩阵的QR迭代"><a href="#Hessenberg矩阵的QR迭代" class="headerlink" title="Hessenberg矩阵的QR迭代"></a>Hessenberg矩阵的QR迭代</h3><h3 id="原点位移、降阶"><a href="#原点位移、降阶" class="headerlink" title="原点位移、降阶"></a>原点位移、降阶</h3><h3 id="对称矩阵的情况"><a href="#对称矩阵的情况" class="headerlink" title="对称矩阵的情况"></a>对称矩阵的情况</h3><h3 id="反幂法"><a href="#反幂法" class="headerlink" title="反幂法"></a>反幂法</h3><h1 id="附录B-复数"><a href="#附录B-复数" class="headerlink" title="附录B 复数"></a>附录B 复数</h1><h1 id="附录C-基底"><a href="#附录C-基底" class="headerlink" title="附录C 基底"></a>附录C 基底</h1><h1 id="附录D-微分方程解法"><a href="#附录D-微分方程解法" class="headerlink" title="附录D 微分方程解法"></a>附录D 微分方程解法</h1><h1 id="附录E-内积、对称矩阵、正交矩阵"><a href="#附录E-内积、对称矩阵、正交矩阵" class="headerlink" title="附录E 内积、对称矩阵、正交矩阵"></a>附录E 内积、对称矩阵、正交矩阵</h1><h2 id="内积空间"><a href="#内积空间" class="headerlink" title="内积空间"></a>内积空间</h2><h2 id="对称矩阵与正交矩阵——实矩阵情况"><a href="#对称矩阵与正交矩阵——实矩阵情况" class="headerlink" title="对称矩阵与正交矩阵——实矩阵情况"></a>对称矩阵与正交矩阵——实矩阵情况</h2><h2 id="埃尔米特矩阵与酉矩阵——复矩阵情况"><a href="#埃尔米特矩阵与酉矩阵——复矩阵情况" class="headerlink" title="埃尔米特矩阵与酉矩阵——复矩阵情况"></a>埃尔米特矩阵与酉矩阵——复矩阵情况</h2>
       
     </div>
 
@@ -528,7 +496,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://zhong.blog/2019/05/05/arts-week-6/" title="ARTS挑战第6周（2019.4.29~5.5）">https://zhong.blog/2019/05/05/arts-week-6/</a>
+    <a href="https://zhong.blog/2019/05/19/linear-algebra-note-3/" title="《程序员的数学3：线性代数》笔记3">https://zhong.blog/2019/05/19/linear-algebra-note-3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -539,6 +507,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
+          
+            <a href="/tags/线性代数/" rel="tag"># 线性代数</a>
+          
+        </div>
+      
 
       
       
@@ -548,8 +524,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/04/linear-algebra-note-1/" rel="next" title="《程序员的数学3：线性代数》笔记1">
-                <i class="fa fa-chevron-left"></i> 《程序员的数学3：线性代数》笔记1
+              <a href="/2019/05/18/linear-algebra-note-2/" rel="next" title="《程序员的数学3：线性代数》笔记2">
+                <i class="fa fa-chevron-left"></i> 《程序员的数学3：线性代数》笔记2
               </a>
             
           </div>
@@ -557,10 +533,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/05/hello-github-pages-world/" rel="prev" title="Hello 'Github Pages' World!">
-                Hello 'Github Pages' World! <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -717,7 +689,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-15-3Sum"><span class="nav-text">Algorithm: LeetCode #15 3Sum</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《Five-Machine-Learning-Paradoxes-that-will-Change-the-Way-You-Think-About-Data》"><span class="nav-text">Review: 《Five Machine Learning Paradoxes that will Change the Way You Think About Data》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips-使用Github-Pages-amp-Hexo搭建技术博客"><span class="nav-text">Tips: 使用Github Pages &amp; Hexo搭建技术博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-《程序员的数学2：概率统计》读书笔记"><span class="nav-text">Share: 《程序员的数学2：概率统计》读书笔记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第5章-计算机上的计算（2）——特征值算法"><span class="nav-text">第5章 计算机上的计算（2）——特征值算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概要"><span class="nav-text">概要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#伽罗华（Galois）理论"><span class="nav-text">伽罗华（Galois）理论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jacobi方法"><span class="nav-text">Jacobi方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平面旋转"><span class="nav-text">平面旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过平面旋转进行相似变换"><span class="nav-text">通过平面旋转进行相似变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算过程优化"><span class="nav-text">计算过程优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂法原理"><span class="nav-text">幂法原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#求绝对值最大的特征值"><span class="nav-text">求绝对值最大的特征值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求绝对值最小的特征值"><span class="nav-text">求绝对值最小的特征值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QR分解"><span class="nav-text">QR分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求所有特征值"><span class="nav-text">求所有特征值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QR方法"><span class="nav-text">QR方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#QR方法原理"><span class="nav-text">QR方法原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hessenberg矩阵"><span class="nav-text">Hessenberg矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Householder方法"><span class="nav-text">Householder方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hessenberg矩阵的QR迭代"><span class="nav-text">Hessenberg矩阵的QR迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原点位移、降阶"><span class="nav-text">原点位移、降阶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对称矩阵的情况"><span class="nav-text">对称矩阵的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反幂法"><span class="nav-text">反幂法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录B-复数"><span class="nav-text">附录B 复数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录C-基底"><span class="nav-text">附录C 基底</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录D-微分方程解法"><span class="nav-text">附录D 微分方程解法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录E-内积、对称矩阵、正交矩阵"><span class="nav-text">附录E 内积、对称矩阵、正交矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内积空间"><span class="nav-text">内积空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称矩阵与正交矩阵——实矩阵情况"><span class="nav-text">对称矩阵与正交矩阵——实矩阵情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#埃尔米特矩阵与酉矩阵——复矩阵情况"><span class="nav-text">埃尔米特矩阵与酉矩阵——复矩阵情况</span></a></li></ol></li></ol></div>
             
 
           </div>
