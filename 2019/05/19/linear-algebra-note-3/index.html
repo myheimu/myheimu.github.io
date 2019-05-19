@@ -110,18 +110,18 @@
 
 
 
-  <meta name="description" content="《程序员的数学3：线性代数》笔记1 《程序员的数学3：线性代数》笔记2 《程序员的数学3：线性代数》笔记3    第5章 计算机上的计算（2）——特征值算法概要高次代数方程在计算机中求解，受到精度影响误差可能很大 那么可以绕开解特征方程方法，通过寻找可逆矩阵 $P$，使得 $P^{-1}AP=(对角矩阵或上三角矩阵)$ （即对角化或上三角化），从而使得对角元素就是要求的特征值 伽罗华（Galoi">
+  <meta name="description" content="《程序员的数学3：线性代数》笔记1 《程序员的数学3：线性代数》笔记2 《程序员的数学3：线性代数》笔记3    第5章 计算机上的计算（2）——特征值算法高次代数方程在计算机中求解，受到精度影响误差可能很大 那么可以绕开解特征方程方法，通过寻找可逆矩阵 $P$，使得 $P^{-1}AP=(对角矩阵或上三角矩阵)$ （即对角化或上三角化），从而使得对角元素就是要求的特征值 伽罗华（Galois）">
 <meta name="keywords" content="读书笔记,线性代数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《程序员的数学3：线性代数》笔记3">
 <meta property="og:url" content="https://zhong.blog/2019/05/19/linear-algebra-note-3/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="《程序员的数学3：线性代数》笔记1 《程序员的数学3：线性代数》笔记2 《程序员的数学3：线性代数》笔记3    第5章 计算机上的计算（2）——特征值算法概要高次代数方程在计算机中求解，受到精度影响误差可能很大 那么可以绕开解特征方程方法，通过寻找可逆矩阵 $P$，使得 $P^{-1}AP=(对角矩阵或上三角矩阵)$ （即对角化或上三角化），从而使得对角元素就是要求的特征值 伽罗华（Galoi">
+<meta property="og:description" content="《程序员的数学3：线性代数》笔记1 《程序员的数学3：线性代数》笔记2 《程序员的数学3：线性代数》笔记3    第5章 计算机上的计算（2）——特征值算法高次代数方程在计算机中求解，受到精度影响误差可能很大 那么可以绕开解特征方程方法，通过寻找可逆矩阵 $P$，使得 $P^{-1}AP=(对角矩阵或上三角矩阵)$ （即对角化或上三角化），从而使得对角元素就是要求的特征值 伽罗华（Galois）">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-18T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《程序员的数学3：线性代数》笔记3">
-<meta name="twitter:description" content="《程序员的数学3：线性代数》笔记1 《程序员的数学3：线性代数》笔记2 《程序员的数学3：线性代数》笔记3    第5章 计算机上的计算（2）——特征值算法概要高次代数方程在计算机中求解，受到精度影响误差可能很大 那么可以绕开解特征方程方法，通过寻找可逆矩阵 $P$，使得 $P^{-1}AP=(对角矩阵或上三角矩阵)$ （即对角化或上三角化），从而使得对角元素就是要求的特征值 伽罗华（Galoi">
+<meta name="twitter:description" content="《程序员的数学3：线性代数》笔记1 《程序员的数学3：线性代数》笔记2 《程序员的数学3：线性代数》笔记3    第5章 计算机上的计算（2）——特征值算法高次代数方程在计算机中求解，受到精度影响误差可能很大 那么可以绕开解特征方程方法，通过寻找可逆矩阵 $P$，使得 $P^{-1}AP=(对角矩阵或上三角矩阵)$ （即对角化或上三角化），从而使得对角元素就是要求的特征值 伽罗华（Galois）">
 
 
 
@@ -400,7 +400,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.1k</span>
+                <span title="本文字数">12k</span>
               
 
               
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">11 分钟</span>
               
             </div>
           
@@ -441,7 +441,7 @@
 </li>
 </ul>
 <hr>
-<h1 id="第5章-计算机上的计算（2）——特征值算法"><a href="#第5章-计算机上的计算（2）——特征值算法" class="headerlink" title="第5章 计算机上的计算（2）——特征值算法"></a>第5章 计算机上的计算（2）——特征值算法</h1><h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>高次代数方程在计算机中求解，受到精度影响误差可能很大</p>
+<h1 id="第5章-计算机上的计算（2）——特征值算法"><a href="#第5章-计算机上的计算（2）——特征值算法" class="headerlink" title="第5章 计算机上的计算（2）——特征值算法"></a>第5章 计算机上的计算（2）——特征值算法</h1><p>高次代数方程在计算机中求解，受到精度影响误差可能很大</p>
 <p>那么可以绕开解特征方程方法，通过寻找可逆矩阵 $P$，使得 $P^{-1}AP=(对角矩阵或上三角矩阵)$ （即对角化或上三角化），从而使得对角元素就是要求的特征值</p>
 <h3 id="伽罗华（Galois）理论"><a href="#伽罗华（Galois）理论" class="headerlink" title="伽罗华（Galois）理论"></a>伽罗华（Galois）理论</h3><p><strong>n次代数方程</strong>，例如1到4次的代数方程：</p>
 <script type="math/tex; mode=display">\begin{aligned}
@@ -461,8 +461,203 @@ ax^4+bx^3+cx^2+dx+e&=0\\
 \end{pmatrix}</script><p>则特征方程可以通过计算 $\det(\lambda I-A)$ 得到，即：</p>
 <script type="math/tex; mode=display">\lambda^n+a_{n-1}\lambda^{n-1}+a_{n-2}\lambda^{n-2}+\cdots+a_1\lambda+a_0=0</script><p>称矩阵 A 为此代数方程的<strong>友矩阵</strong></p>
 <p>由于伽罗华理论，所以也可以推断出<strong>“5次以上矩阵的特征值一定不存在通用的求解方法/求解步骤”</strong></p>
-<p>只有一些通过不断逼近，求近似值的方法，比如Jacobi方法和QR方法</p>
-<h2 id="Jacobi方法"><a href="#Jacobi方法" class="headerlink" title="Jacobi方法"></a>Jacobi方法</h2><h3 id="平面旋转"><a href="#平面旋转" class="headerlink" title="平面旋转"></a>平面旋转</h3><h3 id="通过平面旋转进行相似变换"><a href="#通过平面旋转进行相似变换" class="headerlink" title="通过平面旋转进行相似变换"></a>通过平面旋转进行相似变换</h3><h3 id="计算过程优化"><a href="#计算过程优化" class="headerlink" title="计算过程优化"></a>计算过程优化</h3><h2 id="幂法原理"><a href="#幂法原理" class="headerlink" title="幂法原理"></a>幂法原理</h2><h3 id="求绝对值最大的特征值"><a href="#求绝对值最大的特征值" class="headerlink" title="求绝对值最大的特征值"></a>求绝对值最大的特征值</h3><h3 id="求绝对值最小的特征值"><a href="#求绝对值最小的特征值" class="headerlink" title="求绝对值最小的特征值"></a>求绝对值最小的特征值</h3><h3 id="QR分解"><a href="#QR分解" class="headerlink" title="QR分解"></a>QR分解</h3><h3 id="求所有特征值"><a href="#求所有特征值" class="headerlink" title="求所有特征值"></a>求所有特征值</h3><h2 id="QR方法"><a href="#QR方法" class="headerlink" title="QR方法"></a>QR方法</h2><h3 id="QR方法原理"><a href="#QR方法原理" class="headerlink" title="QR方法原理"></a>QR方法原理</h3><h3 id="Hessenberg矩阵"><a href="#Hessenberg矩阵" class="headerlink" title="Hessenberg矩阵"></a>Hessenberg矩阵</h3><h3 id="Householder方法"><a href="#Householder方法" class="headerlink" title="Householder方法"></a>Householder方法</h3><h3 id="Hessenberg矩阵的QR迭代"><a href="#Hessenberg矩阵的QR迭代" class="headerlink" title="Hessenberg矩阵的QR迭代"></a>Hessenberg矩阵的QR迭代</h3><h3 id="原点位移、降阶"><a href="#原点位移、降阶" class="headerlink" title="原点位移、降阶"></a>原点位移、降阶</h3><h3 id="对称矩阵的情况"><a href="#对称矩阵的情况" class="headerlink" title="对称矩阵的情况"></a>对称矩阵的情况</h3><h3 id="反幂法"><a href="#反幂法" class="headerlink" title="反幂法"></a>反幂法</h3><h1 id="附录B-复数"><a href="#附录B-复数" class="headerlink" title="附录B 复数"></a>附录B 复数</h1><h1 id="附录C-基底"><a href="#附录C-基底" class="headerlink" title="附录C 基底"></a>附录C 基底</h1><h1 id="附录D-微分方程解法"><a href="#附录D-微分方程解法" class="headerlink" title="附录D 微分方程解法"></a>附录D 微分方程解法</h1><h1 id="附录E-内积、对称矩阵、正交矩阵"><a href="#附录E-内积、对称矩阵、正交矩阵" class="headerlink" title="附录E 内积、对称矩阵、正交矩阵"></a>附录E 内积、对称矩阵、正交矩阵</h1><h2 id="内积空间"><a href="#内积空间" class="headerlink" title="内积空间"></a>内积空间</h2><h2 id="对称矩阵与正交矩阵——实矩阵情况"><a href="#对称矩阵与正交矩阵——实矩阵情况" class="headerlink" title="对称矩阵与正交矩阵——实矩阵情况"></a>对称矩阵与正交矩阵——实矩阵情况</h2><h2 id="埃尔米特矩阵与酉矩阵——复矩阵情况"><a href="#埃尔米特矩阵与酉矩阵——复矩阵情况" class="headerlink" title="埃尔米特矩阵与酉矩阵——复矩阵情况"></a>埃尔米特矩阵与酉矩阵——复矩阵情况</h2>
+<p>只有一些通过不断逼近，求近似值的方法，比如 Jacobi 方法和 QR 方法</p>
+<h2 id="Jacobi方法"><a href="#Jacobi方法" class="headerlink" title="Jacobi方法"></a>Jacobi方法</h2><p>Jacobi 方法是 Carl Gustav Jacob Jacobi 于1846年发表的算法，即使放在现在而言，对于10×10以内矩阵，它也是很有效的算法，即便对于更大的矩阵，虽然速度比QR等算法慢一些，但精度上更佳</p>
+<p>另外 Jacobi 方法也可以用于（近似）对角化</p>
+<h3 id="平面旋转"><a href="#平面旋转" class="headerlink" title="平面旋转"></a>平面旋转</h3><p>定义 $n\times n$ 矩阵：</p>
+<script type="math/tex; mode=display">R(\theta,p,q)=\begin{pmatrix}
+1\\
+&\ddots\\
+&&1\\
+&&&\cos\theta&&&&-\sin\theta\\
+&&&&1\\
+&&&&&\ddots\\
+&&&&&&1\\
+&&&\sin\theta&&&&\cos\theta\\
+&&&&&&&&1\\
+&&&&&&&&&\ddots\\
+&&&&&&&&&&1\\
+\end{pmatrix}\quad(空白元素都是0)\\
+\cos\theta位于(p,p)和(q,q)位置\\
+\sin\theta位于(p,q)位置，-\sin\theta位于(q,p)位置</script><p>也就是说 $R(\theta,p,q)$ 几乎就是一个n阶单位矩阵，只是其中四个位置被替换成了2*2旋转矩阵中的四个元素：</p>
+<script type="math/tex; mode=display">R(\theta)=\begin{pmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{pmatrix}</script><p>考虑 $R(\theta,1,2)$，其几何含义就是将三维空间内的点，保持 z 轴不变，在 x-y 平行平面上旋转 $\theta$ 角度；考虑 $R(\theta,2,3)$，其几何含义就是保持 x 轴不变，在 y-z 平行平面上旋转；考虑 $R(\theta,1,3)$，即保持 y 轴不变，在 x-z 平行平面上旋转</p>
+<p>一般而言：</p>
+<script type="math/tex; mode=display">R(\theta,p,q)\begin{pmatrix}x_1\\\vdots\\x_p\\\vdots\\x_q\\\vdots\\x_n\end{pmatrix}=
+\begin{pmatrix}x_1\\\vdots\\x_p\cos\theta-x_q\sin\theta\\\vdots\\x_p\sin\theta+x_q\cos\theta\\\vdots\\x_n\end{pmatrix}</script><p>几何含义为，除了 $x_p$ 和 $x_q$ 以外，其他轴位置不变，而在第 p 和第 q 轴构成平面上，受到旋转矩阵 $R(\theta)$ 的影响</p>
+<p>旋转矩阵 $R(\theta)$ 满足 $R(\theta)R(\theta)^T=I$，即为正交矩阵，有转置矩阵等于逆矩阵</p>
+<p>同样也可推导出 $R(\theta,p,q)$ 是正交矩阵，有转置矩阵等于逆矩阵</p>
+<h3 id="通过平面旋转进行相似变换"><a href="#通过平面旋转进行相似变换" class="headerlink" title="通过平面旋转进行相似变换"></a>通过平面旋转进行相似变换</h3><p>Jacobi 方法就是：对于给定矩阵 A，选择不同的 $p,q,\theta$，通过平面旋转反复进行如下相似变换，直到矩阵接近对角化形式为止：</p>
+<script type="math/tex; mode=display">A'=R(\theta,p,q)^TAR(\theta,p,q)</script><p>可以推导如下：（详细推导略）</p>
+<script type="math/tex; mode=display">\begin{pmatrix}
+&&a'_{1p}&&a'_{1q}\\
+&&\vdots&&\vdots\\
+a'_{p1}&\cdots&a'_{pp}&\cdots&a'_{pq}&\cdots&a'_{pn}\\
+&&\vdots&&\vdots\\
+a'_{q1}&\cdots&a'_{qp}&\cdots&a'_{qq}&\cdots&a'_{qn}\\
+&&\vdots&&\vdots\\
+&&a'_{np}&&a'_{nq}\\
+\end{pmatrix}\\
+=R(\theta,p,q)^T
+\begin{pmatrix}
+&&a_{1p}&&a_{1q}\\
+&&\vdots&&\vdots\\
+a_{p1}&\cdots&a_{pp}&\cdots&a_{pq}&\cdots&a_{pn}\\
+&&\vdots&&\vdots\\
+a_{q1}&\cdots&a_{qp}&\cdots&a_{qq}&\cdots&a_{qn}\\
+&&\vdots&&\vdots\\
+&&a_{np}&&a_{nq}\\
+\end{pmatrix}
+R(\theta,p,q)\\（空白位置的元素数值不变）</script><p>由于 Jacobi 处理的矩阵 A是对称矩阵，所以变化的数值公式为：</p>
+<script type="math/tex; mode=display">a'_{pj}=\phantom{-}a_{pj}\cos\theta+a_{qj}\sin\theta\quad (j\ne p,q)\\
+a'_{qj}=-a_{pj}\sin\theta+a_{qj}\cos\theta\quad (j\ne p,q)\\
+a'_{ip}=\phantom{-}a_{ip}\cos\theta+a_{iq}\sin\theta\quad (i\ne p,q)\\
+a'_{iq}=-a_{ip}\sin\theta+a_{iq}\cos\theta\quad (i\ne p,q)\\
+a'_{pp}=a_{pp}\cos^2\theta+a_{qq}\sin^2\theta+2a_{pq}\sin\theta\cos\theta\\
+a'_{qq}=a_{pp}\sin^2\theta+a_{qq}\cos^2\theta-2a_{pq}\sin\theta\cos\theta\\
+a'_{pq}=a_{pq}(\cos^2\theta-\sin^2\theta)+(a_{qq}-a_{pp})\sin\theta\cos\theta</script><p>为了尽量对角化，则期望相似变换后使得 $a’_{pq}=0$，可以推导出：</p>
+<script type="math/tex; mode=display">\frac12\tan(2\theta)=\frac{a_{pq}}{a_{pp}-a_{qq}}\\
+\theta=\frac12\tan^{-1}\frac{2a_{pq}}{a_{pp}-a_{qq}}</script><p>另外为了观察矩阵是否朝着对角化方向靠近，定义函数：</p>
+<script type="math/tex; mode=display">f(A)=\sum_{i\ne j}a_{ij}^2,\quad g(A)=\sum_i a_{ii}^2</script><p>期待非对角元素平方和 $f(A)$ 能够越来越小，然而可以计算得到 $a_{pj},a_{qj}$ 变化之后，$f(A)$ 并没有变化，因此只有 $a_{pq},a_{qp}$ 的变化才会影响 $f(A)$：</p>
+<script type="math/tex; mode=display">f(A')=f(A)-2a_{pq}^2</script><p>因此整体逻辑就是寻找使 $a_{pq}$ 最大的 $p,q\ (p\ne q)$，并反复进行使得 $a’_{pq}=0$ 的旋转，使得 $f(A)$ 趋向于0</p>
+<h3 id="计算过程优化"><a href="#计算过程优化" class="headerlink" title="计算过程优化"></a>计算过程优化</h3><p>并不需要真的计算出 $\theta$，前面已经得知 $\tan(2\theta)$ 的值，则：</p>
+<script type="math/tex; mode=display">\cos\theta=\sqrt{\frac12(1+\frac{1}{\sqrt{1+\tan^2 2\theta}})}\\
+\sin\theta=\sqrt{1-\cos^2\theta}</script><h2 id="幂法原理"><a href="#幂法原理" class="headerlink" title="幂法原理"></a>幂法原理</h2><p>幂法可以用于求绝对值最大、最小的特征值，乃至所有特征值，但主要为后面QR方法和反幂法做铺垫</p>
+<h3 id="求绝对值最大的特征值"><a href="#求绝对值最大的特征值" class="headerlink" title="求绝对值最大的特征值"></a>求绝对值最大的特征值</h3><p>在矩阵 $A(\ne O)$ 可对角化情况下，按特征值绝对值大小排序：</p>
+<script type="math/tex; mode=display">\begin{cases}
+A\boldsymbol{x}_1=\lambda_1\boldsymbol{x}_1\\
+A\boldsymbol{x}_2=\lambda_2\boldsymbol{x}_2\\\vdots\\
+A\boldsymbol{x}_n=\lambda_n\boldsymbol{x}_n\\
+\end{cases}\qquad
+|\lambda_1|\ge|\lambda_2|\ge\cdots\ge|\lambda_n|</script><p>适当选择初始向量 $\boldsymbol{v}$，反复左乘矩阵 $A$，则会渐渐靠近 $A$ 的绝对值最大的特征值对应的特征向量方向：</p>
+<script type="math/tex; mode=display">\boldsymbol{v},A\boldsymbol{v},A^2\boldsymbol{v},A^3\boldsymbol{v},\cdots\rightarrow(\boldsymbol{x}_1的方向)</script><p>对于适当选择的初始向量：</p>
+<script type="math/tex; mode=display">\boldsymbol{v}=v_1\boldsymbol{x}_1+v_2\boldsymbol{x}_2+\cdots+v_n\boldsymbol{x}_n</script><p>反复左乘 A，共 k 次，趋向无穷后，则有向量方向平行关系：</p>
+<script type="math/tex; mode=display">A^k\boldsymbol{v} \mathbin{\!/\mkern-5mu/\!} v_1\boldsymbol{x}_1+v_2(\frac{\lambda_2}{\lambda_1})^k\boldsymbol{x}_2+\cdots+v_n(\frac{\lambda_n}{\lambda_1})^k\boldsymbol{x}_n</script><p>只需要采用较大的 k，然后反推在该方向上伸缩了多少倍，除以 k，即得到绝对值最大的特征值 $\lambda_1$</p>
+<p>在实际计算中为了避免数值过大过小导致精度问题，每一步需要进行归一化调整幅度</p>
+<h3 id="求绝对值最小的特征值"><a href="#求绝对值最小的特征值" class="headerlink" title="求绝对值最小的特征值"></a>求绝对值最小的特征值</h3><p>适当选择初始向量 $\boldsymbol{v}$，反复左乘逆矩阵 $A^{-1}$，则会渐渐靠近 $A$ 的绝对值最小的特征值对应的特征向量方向：</p>
+<script type="math/tex; mode=display">\boldsymbol{v},A^{-1}\boldsymbol{v},(A^{-1})^2\boldsymbol{v},(A^{-1})^3\boldsymbol{v},\cdots\rightarrow(\boldsymbol{x}_n的方向)</script><p>由于计算逆矩阵计算量较大，可以进行LU分解，然后将左乘 $A^{-1}$改变为计算线性方程组 $L\boldsymbol{z}=\boldsymbol{y}$ 和 $U\boldsymbol{x}=\boldsymbol{z}$</p>
+<h3 id="QR分解"><a href="#QR分解" class="headerlink" title="QR分解"></a>QR分解</h3><p>分解 $A=QR$，就是“Q是A的列向量的<strong>Gram-Schemidt标准正交化</strong>，R是在A的列向量的标准正交基下的坐标表示”</p>
+<p>把矩阵 $A$ 分区为n个线性无关的n维列向量 $\boldsymbol{a}_1,\boldsymbol{a}_2,\cdots,\boldsymbol{a}_n$ 通过 Gram-Schemidt方法进行正交化，得到正交基 $\boldsymbol{q}_1,\boldsymbol{q}_2,\cdots,\boldsymbol{q}_n$：</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\boldsymbol{q}_1=\boldsymbol{p}_1/\|\boldsymbol{p}_1\|, \quad& \boldsymbol{p}_1=\boldsymbol{a}_1\\
+\boldsymbol{q}_2=\boldsymbol{p}_2/\|\boldsymbol{p}_2\|, \quad& \boldsymbol{p}_2=\boldsymbol{a}_2-(\boldsymbol{a}_2\cdot\boldsymbol{q}_1)\boldsymbol{q}_1\\
+\boldsymbol{q}_3=\boldsymbol{p}_3/\|\boldsymbol{p}_3\|, \quad&\boldsymbol{p}_3=\boldsymbol{a}_3-(\boldsymbol{a}_3\cdot\boldsymbol{q}_1)\boldsymbol{q}_1-(\boldsymbol{a}_3\cdot\boldsymbol{q}_2)\boldsymbol{q}_2\\
+\vdots\\
+\boldsymbol{q}_n=\boldsymbol{p}_n/\|\boldsymbol{p}_n\|, \quad&
+\boldsymbol{p}_n=\boldsymbol{a}_n-(\boldsymbol{a}_n\cdot\boldsymbol{q}_1)\boldsymbol{q}_1-\cdots-(\boldsymbol{a}_{n}\cdot\boldsymbol{q}_{n-1})\boldsymbol{q}_{n-1}\\
+\end{aligned}</script><p>采用以上列向量 $\boldsymbol{q}_i$ 同样方式构成矩阵 $Q$</p>
+<p>定义：</p>
+<script type="math/tex; mode=display">r_{ii}=\|\boldsymbol{p}_i\| \quad (1\le i \le n)\\
+r_{ij}=\boldsymbol{a}_j\cdot\boldsymbol{q}_i\quad (1\le i < j \le n)</script><p>则可以将Gram-Schemidt标准正交化公式，改写为：</p>
+<script type="math/tex; mode=display">\begin{pmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+a_{21}&a_{22}&\cdots&a_{2n}\\
+\vdots&\vdots&\ddots&\vdots\\
+a_{n1}&a_{n2}&\cdots&a_{nn}\\
+\end{pmatrix}=
+\begin{pmatrix}
+q_{11}&q_{12}&\cdots&q_{1n}\\
+q_{21}&q_{22}&\cdots&q_{2n}\\
+\vdots&\vdots&\ddots&\vdots\\
+q_{n1}&q_{n2}&\cdots&q_{nn}\\
+\end{pmatrix}
+\begin{pmatrix}
+r_{11}&r_{12}&\cdots&r_{1n}\\
+0&r_{22}&\cdots&r_{2n}\\
+\vdots&\ddots&\ddots&\vdots\\
+0&\cdots&0&r_{nn}\\
+\end{pmatrix}</script><p>这就是矩阵 A 的 QR分解，把最右边矩阵记作 $R$，则为：</p>
+<script type="math/tex; mode=display">A=QR</script><p>因为矩阵 Q 各列都经过标准正交化，所以 $Q^TQ=I$，Q为正交矩阵，因此任意一个列向量线性无关的矩阵 A，都可以分解为正交矩阵 Q 和上三角矩阵 R 的乘积形式</p>
+<p>实际之中并不会采用Gram-Schemidt标准正交化方法，因为会累计误差，而是多采用基于平面旋转变换和镜像变换算法</p>
+<h4 id="正交矩阵集合构成李群"><a href="#正交矩阵集合构成李群" class="headerlink" title="正交矩阵集合构成李群"></a>正交矩阵集合构成李群</h4><p>对于“n×n矩阵的全体”所构成集合中某个子集满足以下几点，则构成“群”：</p>
+<ul>
+<li>该子集中含有单位矩阵</li>
+<li>该子集中的矩阵的逆矩阵也在该子集内</li>
+<li>该子集中的任意两个矩阵的乘积也在该子集内</li>
+</ul>
+<p>可以得知“n×n正交矩阵的全体”所构成集合，“可逆的n×n上三角矩阵的全体”所构成的集合都符合上述“群”定义，并且他们是“连续的”矩阵群，也就是所谓“李群”的一种</p>
+<h3 id="求所有特征值"><a href="#求所有特征值" class="headerlink" title="求所有特征值"></a>求所有特征值</h3><p>选择 n 个适当的线性无关的初始向量 $\boldsymbol{v}_1,\boldsymbol{v}_2,\cdots,\boldsymbol{v}_n$，对其反复左乘 A，然后把所有结果进行 Gram-Schemidt 标准正交化，那么最终结果就会接近 A 的特征向量所张成的子空间的标准正交基</p>
+<p>对于按绝对值大小排列、且不存在绝对值相等的特征值 $\lambda_1,\lambda_2,\cdots,\lambda_n$，对应的特征向量 $\boldsymbol{x}_1,\boldsymbol{x}_2,\cdots,\boldsymbol{x}_n$</p>
+<p>设 $A^k\boldsymbol{v}_1,A^k\boldsymbol{v}_2,\cdots,A^k\boldsymbol{v}_n$ 标准正交化之后得到 $\boldsymbol{q}_1(k),\boldsymbol{q}_2(k),\cdots,\boldsymbol{q}_n(k)$</p>
+<p>随着 k 增大后，会有：（证明略，主要思想就是 r 个向量$\boldsymbol{v}_i$进行反复左乘 A，张成的 r 维空间，会突出前 r 个绝对值最大的特征值的方向）</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\mathrm{span}\{\boldsymbol{q}_1(k)\}\rightarrow \mathrm{span}\{\boldsymbol{x}_1\}\\
+&\mathrm{span}\{\boldsymbol{q}_1(k),\boldsymbol{q}_2(k)\}\rightarrow \mathrm{span}\{\boldsymbol{x}_1,\boldsymbol{x}_2\}\\
+&\quad\vdots\\
+&\mathrm{span}\{\boldsymbol{q}_1(k),\boldsymbol{q}_2(k),\cdots,\boldsymbol{q}_n(k)\}\rightarrow \mathrm{span}\{\boldsymbol{x}_1,\boldsymbol{x}_2,\cdots,\boldsymbol{x}_n\}\\
+\end{aligned}</script><p>以上 $\boldsymbol{q}_i$ 作为列向量拼成的矩阵 $Q(k)$，即为 QR 分解结果：</p>
+<script type="math/tex; mode=display">A^kV=Q(k)R(k)</script><p>（证明略）可以推导 $Q(k)^TAQ(k)$ 会趋近于上三角矩阵，则计算该上三角矩阵，其对角元素就是特征值</p>
+<h2 id="QR方法"><a href="#QR方法" class="headerlink" title="QR方法"></a>QR方法</h2><p>QR 方法是 Francis 于1961年发表的算法，对于对称矩阵和非对称矩阵均使用</p>
+<h3 id="QR方法原理"><a href="#QR方法原理" class="headerlink" title="QR方法原理"></a>QR方法原理</h3><h4 id="QR-迭代基本流程"><a href="#QR-迭代基本流程" class="headerlink" title="QR 迭代基本流程"></a>QR 迭代基本流程</h4><ul>
+<li>对需要求解特征值的矩阵进行 QR 分解：$A_{k-1}=Q_{k-1}R_{k-1}$</li>
+<li>对分解出来的结果进行逆向相乘：$A_k=R_{k-1}Q_{k-1}$</li>
+</ul>
+<p>反复执行以上流程，最终将趋近一个上三角矩阵，其对角元素就是原矩阵的特征值</p>
+<p>对于存在绝对值相等的特征值，幂法不能使用，所以本方法也不能简单套用；实矩阵存在复特征值情况，也不适用</p>
+<h4 id="相似性"><a href="#相似性" class="headerlink" title="相似性"></a>相似性</h4><p>对于一步计算：</p>
+<script type="math/tex; mode=display">A_{k+1}=R_kQ_k=Q_k^{-1}Q_kR_kQ_k=Q_k^{-1}A_kQ_k</script><p>因此每一步，都是基于正交矩阵 $Q_k$ 进行相似变换，因此特征值不变</p>
+<h4 id="趋向上三角矩阵"><a href="#趋向上三角矩阵" class="headerlink" title="趋向上三角矩阵"></a>趋向上三角矩阵</h4><p>对于从 $A_0$ 出发，进行相似变换到第 k 次时：</p>
+<script type="math/tex; mode=display">A_k=Q_{k-1}^{-1}\cdots Q_{0}^{-1}A_0Q_0\cdots Q_{k-1}</script><p>可以整理为：</p>
+<script type="math/tex; mode=display">A_k=(Q_0Q_1\cdots Q_{k-1})^{-1}A_0(Q_0Q_1\cdots Q_{k-1})</script><p>考虑对 $A_0^k$ 进行 QR分解，例如 $k=3$ 时：</p>
+<script type="math/tex; mode=display">\begin{aligned}
+A_0^3&=(Q_0R_0)(Q_0R_0)(Q_0R_0)\\
+&=Q_0(R_0Q_0)(R_0Q_0)R_0\\
+&=Q_0(Q_1R_1)(Q_1R_1)R_0\\
+&=Q_0Q_1(A_2)R_1R_0\\
+&=(Q_0Q_1Q_2)(R_2R_1R_0)
+\end{aligned}</script><p>正交矩阵乘积依然是正交矩阵，上三角矩阵乘积仍然是上三角矩阵，所以可以得到：</p>
+<script type="math/tex; mode=display">Q_0Q_1\cdots Q_{k-1}\ 正是\ A_0^k\ 的\ QR\ 分解正交矩阵</script><p>又由于 $A_0^kI=Q(k)R(k)\Rightarrow Q(k)=Q_0Q_1\cdots Q_{k-1}$</p>
+<p>则 QR 方法中的第 k 步出现的 $A_k$，实际上与以单位矩阵为初始矩阵的幂法的第 k 步得到的矩阵一致，因此也是趋向上三角矩阵</p>
+<h3 id="Hessenberg矩阵"><a href="#Hessenberg矩阵" class="headerlink" title="Hessenberg矩阵"></a>Hessenberg矩阵</h3><p>实际使用 QR 方法时，会先进行相似变化，得到 Hessenberg 矩阵的形式，如下：</p>
+<script type="math/tex; mode=display">\begin{pmatrix}
+*&*&*&*&*\\
+*&*&*&*&*\\
+0&*&*&*&*\\
+0&0&*&*&*\\
+0&0&0&*&*\\
+\end{pmatrix}</script><p>即在上三角矩阵基础上，对角线左下方一条斜线也不为零</p>
+<p>可以推导，Hessenberg 矩阵在进行 QR迭代之后，仍然能保持 Hessenberg 形式，从而减少计算量（证明略）</p>
+<h3 id="Householder方法"><a href="#Householder方法" class="headerlink" title="Householder方法"></a>Householder方法</h3><p>Householder 方法可以将一般的非对称矩阵通过相似变换约化为 Hessenberg 矩阵</p>
+<p><strong>镜像变换</strong>指把空间中任意一点，变换到经过原点的某一超平面对称的另一点</p>
+<p>令“经过原点的超平面”的单位法向量为 $\boldsymbol{u}$，那么 $\boldsymbol{u}\boldsymbol{u}^T$ 为把任意向量正投影到单位法向量所在直线上的线性变换</p>
+<p>则镜像变换公式为：</p>
+<script type="math/tex; mode=display">\boldsymbol{x}'=(I-2\boldsymbol{u}\boldsymbol{u}^T)\boldsymbol{x}</script><p>镜像变换的矩阵为： $H=I-2\boldsymbol{u}\boldsymbol{u}^T$，（证明略）它为对称矩阵、正交阵</p>
+<p><strong>例子</strong>：尝试把一个 4×4 矩阵变换为 Hessenberg 矩阵</p>
+<p>给定两个向量 $\boldsymbol{x},\boldsymbol{y}$，它们模长一致，考虑以 $\boldsymbol{x}-\boldsymbol{y}$ 为法向量的超平面，则其镜像变换为：</p>
+<script type="math/tex; mode=display">H=I-2\boldsymbol{u}\boldsymbol{u}^T,\quad \boldsymbol{u}=\frac{\boldsymbol{x}-\boldsymbol{y}}{\|\boldsymbol{x}-\boldsymbol{y}\|}</script><script type="math/tex; mode=display">H\boldsymbol{x}=\boldsymbol{y},\quad H\boldsymbol{y}=\boldsymbol{x}</script><p>对于其中的 $\boldsymbol{x}$ 无限制，但特别设置 $\boldsymbol{y}$ 除了第1分量之外均为0，可以设为：</p>
+<script type="math/tex; mode=display">\boldsymbol{y}=(|\boldsymbol{x}|,0,0)^T</script><p>则该映射 H 为从 $\boldsymbol{x}=(x,y,z)^T$ 到 $\boldsymbol{y}=(|\boldsymbol{x}|,0,0)^T$</p>
+<script type="math/tex; mode=display">\left(\begin{array}{c|ccc}
+1&0&0&0\\\hline 0\\0&&H\\0\\
+\end{array}\right)
+\begin{pmatrix}*&*&*&*\\x&*&*&*\\y&*&*&*\\z&*&*&*\end{pmatrix}=
+\begin{pmatrix}*&*&*&*\\\|\boldsymbol{x}\|&*&*&*\\0&*&*&*\\0&*&*&*\end{pmatrix}</script><p>根据对应位置的 x,y,z 生成对应的镜像变换矩阵 H，随后执行如上变换，随后再右乘相同矩阵</p>
+<script type="math/tex; mode=display">\begin{pmatrix}*&*&*&*\\\|\boldsymbol{x}\|&*&*&*\\0&*&*&*\\0&*&*&*\end{pmatrix}
+\left(\begin{array}{c|ccc}
+1&0&0&0\\\hline 0\\0&&H\\0\\
+\end{array}\right)=
+\begin{pmatrix}*&*&*&*\\\|\boldsymbol{x}\|&*&*&*\\0&*&*&*\\0&*&*&*\end{pmatrix}</script><p>则通过这次相似变换，完成了第一列的 Hessenberg 化</p>
+<p>后续迭代，直到变成 Hessenberg 矩阵</p>
+<h3 id="Hessenberg矩阵的QR迭代"><a href="#Hessenberg矩阵的QR迭代" class="headerlink" title="Hessenberg矩阵的QR迭代"></a>Hessenberg矩阵的QR迭代</h3><p>仍然以 4×4 矩阵为例，执行左乘旋转矩阵变换，做到相应位置 $a’_{pq}=0$：</p>
+<script type="math/tex; mode=display">A_k=\begin{pmatrix}*&*&*&*\\*&*&*&*\\0&*&*&*\\0&0&*&*\end{pmatrix} \Rightarrow R(\theta_1,1,2)^TA_k=\begin{pmatrix}*&*&*&*\\\boxed{0}&*&*&*\\0&*&*&*\\0&0&*&*\end{pmatrix}</script><script type="math/tex; mode=display">R(\theta_2,2,3)^TR(\theta_1,1,2)^TA_k=\begin{pmatrix}*&*&*&*\\0&*&*&*\\0&\boxed{0}&*&*\\0&0&*&*\end{pmatrix}</script><script type="math/tex; mode=display">R(\theta_3,3,4)^TR(\theta_2,2,3)^TR(\theta_1,1,2)^TA_k=\begin{pmatrix}*&*&*&*\\0&*&*&*\\0&0&*&*\\0&0&\boxed{0}&*\end{pmatrix}=R</script><p>则完成 QR 分解：</p>
+<script type="math/tex; mode=display">R=R(\theta_3,3,4)^TR(\theta_2,2,3)^TR(\theta_1,1,2)^TA_k\\
+Q=R(\theta_1,1,2)R(\theta_2,2,3)R(\theta_3,3,4)</script><h3 id="原点位移、降阶"><a href="#原点位移、降阶" class="headerlink" title="原点位移、降阶"></a>原点位移、降阶</h3><p>实际中，通常会先想办法得到一个特征值的估计值 $\hat{\lambda}$，然后用 $A-\hat\lambda I$ 来代替 $A$ 进行 QR 迭代，称之为<strong>原点位移</strong></p>
+<p>在迭代过程中，第 n 行的非对角元素将加速趋近于 0（公式中的 $\boxed{0}$），从而尽早获得一个特征值 $\blacksquare$：</p>
+<script type="math/tex; mode=display">\begin{pmatrix}
+*&*&*&*\\
+*&*&*&*\\
+0&*&*&*\\
+0&0&\boxed{0}&\blacksquare
+\end{pmatrix}</script><p>从而可以将第 n 列和第 n 行去除，获得一个 n-1 维方阵，继续计算，迭代下去</p>
+<h3 id="对称矩阵的情况"><a href="#对称矩阵的情况" class="headerlink" title="对称矩阵的情况"></a>对称矩阵的情况</h3><p>对一般的对称矩阵使用 Householder 变换，可以得到对称的 Hessenberg 矩阵，也就是<strong>三对角矩阵</strong>：</p>
+<script type="math/tex; mode=display">\begin{pmatrix}
+*&*&0&\cdots&0\\
+*&*&*&\ddots&\vdots\\
+0&*&*&\ddots&0\\
+\vdots&\ddots&\ddots&\ddots&*\\
+0&\cdots&0&*&*\\
+\end{pmatrix}</script><p>后续 QR 迭代，将不断趋近于对角矩阵</p>
+<h3 id="反幂法（反迭代法）"><a href="#反幂法（反迭代法）" class="headerlink" title="反幂法（反迭代法）"></a>反幂法（反迭代法）</h3><p>对于矩阵 A 的某一个特征值 $\lambda_k$，假设现在得到一个精度一般的近似值 $\hat\lambda_k$</p>
+<p>则矩阵 $A-\hat\lambda_k I$ 会有一个很小的特征值 $\lambda_k-\hat\lambda_k$，则采用幂法求绝对值最小的特征值的算法，从而得到修正值，从而提高精度</p>
+<h1 id="附录B-复数"><a href="#附录B-复数" class="headerlink" title="附录B 复数"></a>附录B 复数</h1><h1 id="附录C-基底"><a href="#附录C-基底" class="headerlink" title="附录C 基底"></a>附录C 基底</h1><h1 id="附录D-微分方程解法"><a href="#附录D-微分方程解法" class="headerlink" title="附录D 微分方程解法"></a>附录D 微分方程解法</h1><h1 id="附录E-内积、对称矩阵、正交矩阵"><a href="#附录E-内积、对称矩阵、正交矩阵" class="headerlink" title="附录E 内积、对称矩阵、正交矩阵"></a>附录E 内积、对称矩阵、正交矩阵</h1><h2 id="内积空间"><a href="#内积空间" class="headerlink" title="内积空间"></a>内积空间</h2><h2 id="对称矩阵与正交矩阵——实矩阵情况"><a href="#对称矩阵与正交矩阵——实矩阵情况" class="headerlink" title="对称矩阵与正交矩阵——实矩阵情况"></a>对称矩阵与正交矩阵——实矩阵情况</h2><h2 id="埃尔米特矩阵与酉矩阵——复矩阵情况"><a href="#埃尔米特矩阵与酉矩阵——复矩阵情况" class="headerlink" title="埃尔米特矩阵与酉矩阵——复矩阵情况"></a>埃尔米特矩阵与酉矩阵——复矩阵情况</h2>
       
     </div>
 
@@ -689,7 +884,7 @@ ax^4+bx^3+cx^2+dx+e&=0\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第5章-计算机上的计算（2）——特征值算法"><span class="nav-text">第5章 计算机上的计算（2）——特征值算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概要"><span class="nav-text">概要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#伽罗华（Galois）理论"><span class="nav-text">伽罗华（Galois）理论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jacobi方法"><span class="nav-text">Jacobi方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平面旋转"><span class="nav-text">平面旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过平面旋转进行相似变换"><span class="nav-text">通过平面旋转进行相似变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算过程优化"><span class="nav-text">计算过程优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂法原理"><span class="nav-text">幂法原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#求绝对值最大的特征值"><span class="nav-text">求绝对值最大的特征值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求绝对值最小的特征值"><span class="nav-text">求绝对值最小的特征值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QR分解"><span class="nav-text">QR分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求所有特征值"><span class="nav-text">求所有特征值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QR方法"><span class="nav-text">QR方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#QR方法原理"><span class="nav-text">QR方法原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hessenberg矩阵"><span class="nav-text">Hessenberg矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Householder方法"><span class="nav-text">Householder方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hessenberg矩阵的QR迭代"><span class="nav-text">Hessenberg矩阵的QR迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原点位移、降阶"><span class="nav-text">原点位移、降阶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对称矩阵的情况"><span class="nav-text">对称矩阵的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反幂法"><span class="nav-text">反幂法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录B-复数"><span class="nav-text">附录B 复数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录C-基底"><span class="nav-text">附录C 基底</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录D-微分方程解法"><span class="nav-text">附录D 微分方程解法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录E-内积、对称矩阵、正交矩阵"><span class="nav-text">附录E 内积、对称矩阵、正交矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内积空间"><span class="nav-text">内积空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称矩阵与正交矩阵——实矩阵情况"><span class="nav-text">对称矩阵与正交矩阵——实矩阵情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#埃尔米特矩阵与酉矩阵——复矩阵情况"><span class="nav-text">埃尔米特矩阵与酉矩阵——复矩阵情况</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第5章-计算机上的计算（2）——特征值算法"><span class="nav-text">第5章 计算机上的计算（2）——特征值算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#伽罗华（Galois）理论"><span class="nav-text">伽罗华（Galois）理论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jacobi方法"><span class="nav-text">Jacobi方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平面旋转"><span class="nav-text">平面旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过平面旋转进行相似变换"><span class="nav-text">通过平面旋转进行相似变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算过程优化"><span class="nav-text">计算过程优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂法原理"><span class="nav-text">幂法原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#求绝对值最大的特征值"><span class="nav-text">求绝对值最大的特征值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求绝对值最小的特征值"><span class="nav-text">求绝对值最小的特征值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QR分解"><span class="nav-text">QR分解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正交矩阵集合构成李群"><span class="nav-text">正交矩阵集合构成李群</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求所有特征值"><span class="nav-text">求所有特征值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QR方法"><span class="nav-text">QR方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#QR方法原理"><span class="nav-text">QR方法原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#QR-迭代基本流程"><span class="nav-text">QR 迭代基本流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相似性"><span class="nav-text">相似性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#趋向上三角矩阵"><span class="nav-text">趋向上三角矩阵</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hessenberg矩阵"><span class="nav-text">Hessenberg矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Householder方法"><span class="nav-text">Householder方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hessenberg矩阵的QR迭代"><span class="nav-text">Hessenberg矩阵的QR迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原点位移、降阶"><span class="nav-text">原点位移、降阶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对称矩阵的情况"><span class="nav-text">对称矩阵的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反幂法（反迭代法）"><span class="nav-text">反幂法（反迭代法）</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#附录B-复数"><span class="nav-text">附录B 复数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录C-基底"><span class="nav-text">附录C 基底</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录D-微分方程解法"><span class="nav-text">附录D 微分方程解法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录E-内积、对称矩阵、正交矩阵"><span class="nav-text">附录E 内积、对称矩阵、正交矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内积空间"><span class="nav-text">内积空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称矩阵与正交矩阵——实矩阵情况"><span class="nav-text">对称矩阵与正交矩阵——实矩阵情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#埃尔米特矩阵与酉矩阵——复矩阵情况"><span class="nav-text">埃尔米特矩阵与酉矩阵——复矩阵情况</span></a></li></ol></li></div>
             
 
           </div>
@@ -722,7 +917,7 @@ ax^4+bx^3+cx^2+dx+e&=0\\
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">95k</span>
+    <span title="站点总字数">105k</span>
   
 
   
@@ -731,7 +926,7 @@ ax^4+bx^3+cx^2+dx+e&=0\\
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:26</span>
+    <span title="站点阅读时长">1:36</span>
   
 </div>
 
