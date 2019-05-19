@@ -400,7 +400,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.2k</span>
+                <span title="本文字数">19k</span>
               
 
               
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">4 分钟</span>
+                <span title="阅读时长">17 分钟</span>
               
             </div>
           
@@ -528,11 +528,237 @@
 0&\boxed{0}&周&冯\\
 \end{array}\right)</script><p>安装初等变换记法，有 $A’=S_{2,4}A$，则 $A=S_{2,4}^{-1}LU=S_{2,4}LU$，由于可以多次变换，所以最终：</p>
 <script type="math/tex; mode=display">A=PLU\\P=S_{*,*}S_{*,*}\cdots S_{*,*}</script><p>（其中矩阵P，每一行中恰好有一个1，每一列中也恰好有一个1，其他元素为0，称之为<strong>置换矩阵</strong>）</p>
-<p>对于计算行列式，则需要看 $\det P$，也就是 $S_{<em>,</em>}$ 的个数为偶数时不变号，为奇数时变号</p>
+<p>对于计算行列式，则需要看 $\det P$，也就是其中S变换的个数为偶数时不变号，为奇数时变号</p>
 <p>对于线性方程组，由于 $P^{-1}=P^T$，则计算 $LU\boldsymbol{x}=\boldsymbol{y}’\quad(\boldsymbol{y}’\equiv P^T \boldsymbol{y})$</p>
 <p>更极端的情况下，其他行对应位置也全部为0，则需要允许列交换：</p>
 <script type="math/tex; mode=display">A=PLUP'\quad(P,P'均为置换矩阵)</script><p>如果其他行、其他列都为0，也就分解完毕了</p>
 <p>但从实践来说，可逆矩阵一定可以分解成 $A=PLU$ 形式，所以通常遇到必须列交换或提前分解完毕时，已经可以确定矩阵不可逆，无需后续操作了</p>
+<h1 id="第4章-特征值、对角化、Jordan标准型——判断失控风险"><a href="#第4章-特征值、对角化、Jordan标准型——判断失控风险" class="headerlink" title="第4章 特征值、对角化、Jordan标准型——判断失控风险"></a>第4章 特征值、对角化、Jordan标准型——判断失控风险</h1><h2 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h2><p>可以构想不同输入 $u$ 下，一个“魔法箱”（<strong>差分方程</strong>）可以反馈 $\xi$，而该“魔法箱”包含了时间因素和先前 $u$ 的因素</p>
+<script type="math/tex; mode=display">u\Longrightarrow {\Large\boxed{魔法箱}} \Longrightarrow\xi</script><p>一种简单的“魔法盒”就是<strong>自回归模型</strong>：</p>
+<ul>
+<li><p>离散时间例子：</p>
+<script type="math/tex; mode=display">\xi(t)=-0.5\xi(t-1)+0.34\xi(t-2)+0.08\xi(t-3)+2u(t)</script></li>
+<li><p>连续时间例子：</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d}^2}{\mathrm{d}t^2}\xi(t)=-3\frac{\mathrm{d}}{\mathrm{d}t}\xi(t)-2\xi(t)+2u(t)</script></li>
+</ul>
+<p>随着时间推迟，$|\xi(t)|$是否会趋向于无限大（失控）？</p>
+<p>严格定义，“不失控”是指对于任意初始值 $\boldsymbol{x}(0)$，总可以找到一个足够大的数 M，满足任意时刻 t，总有 $|x_i(t)|&lt;M\ (i=1,…,n)$ 成立</p>
+<p>“稳定”（李亚普诺夫稳定），表示保持在附近，即对于无论多么小的 $\epsilon&gt;0$，总能找到足够小的 $\delta&gt;0$，满足从与 $\boldsymbol{c}$ 点距离不超过 $\delta$ 的点 $\boldsymbol{x}(0)$ 出发，在任何时刻t，$\boldsymbol{c}$ 与  $\boldsymbol{x}(t)$ 之间距离都保持在 $\epsilon$ 以内</p>
+<p>“不失控”是全局性概念，“稳定”则是局部性概念</p>
+<p>差分方程有众多形式，以下只考虑无外部输入（例如$u(t)$）情况下的自回归模型</p>
+<h2 id="一维情况"><a href="#一维情况" class="headerlink" title="一维情况"></a>一维情况</h2><p>一般而言，对于系统 $x(t)=ax(t-1)$，可以得到 $x(t)=a^tx(0)$，如果 $|a|&gt;1$ 则失控，否则不失控</p>
+<h2 id="对角矩阵情况"><a href="#对角矩阵情况" class="headerlink" title="对角矩阵情况"></a>对角矩阵情况</h2><p>设 $\boldsymbol{x}(t)=(x_1(t),\cdots,x_n(t))^T$，系数矩阵是对角矩阵 $A=\mathrm{diag}(a_1,\cdots,a_n)$，系统为 $\boldsymbol{x}(t)=A\boldsymbol{x}(t-1)$，则可得：</p>
+<script type="math/tex; mode=display">\boldsymbol{x}(t)=\mathrm{diag}(a_1^t,\cdots,a_n^t)\boldsymbol{x}(0)</script><p>只要 $|a_1|,\cdots,|a_n|$ 中任一大于1，则系统失控，反之系统不失控</p>
+<h2 id="可对角化情况"><a href="#可对角化情况" class="headerlink" title="可对角化情况"></a>可对角化情况</h2><h3 id="对角化"><a href="#对角化" class="headerlink" title="对角化"></a>对角化</h3><p>选择特定的矩阵 $C$，将 $\boldsymbol{x}(t)$ 变成另一组 $\boldsymbol{y}(t)=C\boldsymbol{x}(t)$</p>
+<p>将关于 $\boldsymbol{x}(t)$ 的差分方程改写成关于 $\boldsymbol{y}(t)$ 的差分方程</p>
+<p>期望新方程的系数矩阵是对角矩阵，从而求解 $\boldsymbol{y}(t)$，然后再反推回  $\boldsymbol{x}(t)$ </p>
+<p>由于矩阵 $C$ 必须可逆，为了方便，记 $P=C^{-1}$</p>
+<script type="math/tex; mode=display">\boldsymbol{x}(t)=P\boldsymbol{y}(t)</script><script type="math/tex; mode=display">\boldsymbol{y}(t)=P^{-1}\boldsymbol{x}(t)=P^{-1}A\boldsymbol{x}(t-1)=(P^{-1}AP)\boldsymbol{y}(t-1)</script><p>可记为：</p>
+<script type="math/tex; mode=display">\boldsymbol{y}(t)=\Lambda\boldsymbol{y}(t-1)\\ \Lambda=P^{-1}AP</script><p>期望 $\Lambda$ 为对角矩阵，则可以求得：</p>
+<script type="math/tex; mode=display">\boldsymbol{y}(t)=\Lambda^t\boldsymbol{y}(0)</script><script type="math/tex; mode=display">\boldsymbol{x}(t)=P\boldsymbol{y}(t)=P\Lambda^t\boldsymbol{y}(0)=P\Lambda^tP^{-1}\boldsymbol{x}(0)</script><p>最核心问题变成：找到合适的可逆矩阵 $P$，使得 $P^{-1}AP$ 是对角矩阵，也就是<strong>对角化</strong></p>
+<h3 id="对角化算法"><a href="#对角化算法" class="headerlink" title="对角化算法"></a>对角化算法</h3><script type="math/tex; mode=display">P^{-1}AP\equiv \Lambda=\mathrm{diag}(\lambda_1,\cdots,\lambda_n)</script><p>将矩阵 $P$ 分解为列向量 $(\boldsymbol{p}_1,\cdots,\boldsymbol{p}_n)$，上式两边左乘 P，可变换为：</p>
+<script type="math/tex; mode=display">A(\boldsymbol{p}_1,\cdots,\boldsymbol{p}_n)=(\boldsymbol{p}_1,\cdots,\boldsymbol{p}_n)\mathrm{diag}(\lambda_1,\cdots,\lambda_n)</script><p>分拆为：</p>
+<script type="math/tex; mode=display">A\boldsymbol{p}_1=\lambda_1\boldsymbol{p}_1\\\vdots\\A\boldsymbol{p}_n=\lambda_n\boldsymbol{p}_n</script><p>即寻找</p>
+<script type="math/tex; mode=display">A\boldsymbol{p}=\lambda\boldsymbol{p}\quad(\boldsymbol{p}\ne \boldsymbol{o})</script><p>其中数 $\lambda$ 即<strong>特征值</strong>，向量 $\boldsymbol{p}$ 即<strong>特征向量</strong></p>
+<p>最后问题变为，这些特征值 $|\lambda_1|,\cdots,|\lambda_n|$ 中任一大于1，则失控，反之，则不失控</p>
+<h3 id="坐标变换角度理解"><a href="#坐标变换角度理解" class="headerlink" title="坐标变换角度理解"></a>坐标变换角度理解</h3><p>将n维向量考虑为n维空间内的坐标，将矩阵A考虑为映射 $\mathcal{A}(\vec{v})$，则上述系统可以表示为：</p>
+<script type="math/tex; mode=display">\vec{x}(t)=\mathcal{A}(\vec{x}(t-1))\quad 其中\vec{x}(t)=x_1(t)\vec{e}_1+\cdots+x_n(t)\vec{e}_n</script><p>设 A 的特征值 $\lambda_1,\cdots,\lambda_n$，而用 $\vec{p}_1,\cdots,\vec{p}_n$ 表示对应的特征向量，使用这些向量作为基底，则可以表示为：</p>
+<script type="math/tex; mode=display">\vec{x}(t)=y_1(t)\vec{p}_1+\cdots+y_n(t)\vec{p}_n</script><p>则有：</p>
+<script type="math/tex; mode=display">\mathcal{A}(\vec{x}(t-1))=\lambda_1 y_1(t)\vec{p}_1+\cdots+\lambda_n y_n(t)\vec{p}_n</script><p>相当于在原基底下，映射 $\mathcal{A}$ 比较别扭，而更换基底之后，映射 $\mathcal{A}$ 变成了简单的不同方向上的伸缩</p>
+<h3 id="乘方角度理解"><a href="#乘方角度理解" class="headerlink" title="乘方角度理解"></a>乘方角度理解</h3><script type="math/tex; mode=display">\boldsymbol{x}(t)=A^t\boldsymbol{x}(0)</script><p>那么其实要求的就是 $A^t$，如果 $A$ 是对角矩阵，当然很好求，当它不是对角矩阵时，可以选择合适的可逆矩阵 $P$，使得 $P^{-1}AP$ 变成对角矩阵 $\Lambda$</p>
+<script type="math/tex; mode=display">(P^{-1}AP)^t=(P^{-1}AP)(P^{-1}AP)\cdots(P^{-1}AP)=P^{-1}A^tP</script><p>因此：</p>
+<script type="math/tex; mode=display">A^t=P(P^{-1}AP)^tP^{-1}=P\Lambda^tP^{-1}</script><h2 id="特征值、特征向量"><a href="#特征值、特征向量" class="headerlink" title="特征值、特征向量"></a>特征值、特征向量</h2><h3 id="几何学意义"><a href="#几何学意义" class="headerlink" title="几何学意义"></a>几何学意义</h3><p>特征向量乘上矩阵 $A$ 之后，除了长度会随着对应特征值发生伸缩变化，方向不发生变化</p>
+<p>即便是实矩阵，其特征值和特征向量也可能出现复数，即便出现复数，也不影响前面对失控的判断</p>
+<h3 id="特征值、特征向量的性质"><a href="#特征值、特征向量的性质" class="headerlink" title="特征值、特征向量的性质"></a>特征值、特征向量的性质</h3><ul>
+<li>“A有0特征值”等价于“A是奇异矩阵”</li>
+<li>上三角方阵或者下三角方阵，特征值就等于对角元素（特征向量却并不简单）</li>
+<li>行列式就是特征值的积，即 $\det A=\det(P^{-1}AP)=\det\Lambda=\lambda_1\cdots\lambda_n$<ul>
+<li>几何角度理解，选择特征向量作为基底，映射A就单纯变成了坐标轴方向的伸缩变换，那么其体积变换就可以用特征值的积来表示</li>
+</ul>
+</li>
+<li>不相等的一批特征值所对应的的特征向量，两两线性无关</li>
+<li>如果n阶方阵 $A$ 有n个互不相同的特征值，则由其特征向量组成的矩阵可逆，并且可以用其进行对角化（逆命题不成立，有重复特征值情况下也可能可以对角化）</li>
+</ul>
+<h3 id="特征值的计算：特征方程"><a href="#特征值的计算：特征方程" class="headerlink" title="特征值的计算：特征方程"></a>特征值的计算：特征方程</h3><p>所谓向量 $\boldsymbol{p}$ 是n阶方阵 $A$ 的特征向量（特征值$\lambda$）</p>
+<script type="math/tex; mode=display">A\boldsymbol{p}=\lambda\boldsymbol{p}\quad \Longrightarrow\quad (\lambda I-A)\boldsymbol{p}=\boldsymbol{o}</script><p>在非零向量 $\boldsymbol{p}$ 上左乘 $(\lambda I-A)$ 得到了零向量，说明该矩阵进行了“压缩扁平化”</p>
+<p>定义<strong>特征多项式</strong>（特征多项式等于0，等价于 λ 是 A 的特征值）</p>
+<script type="math/tex; mode=display">\phi_A(\lambda)\equiv \det(\lambda I-A)</script><p><strong>特征方程</strong>： $\phi_A(\lambda)=0$</p>
+<p>行列式计算方法确保了特征多项式是变量 λ 的 n 次多项式，那么在包括重根和复根的情况下，特征值也刚好是 n 个，其中互不相同的特征值个数不超过 n 个</p>
+<p>将特征方程展开为 $\phi_A(\lambda)=\lambda^n-a_{n-1}\lambda^{n-1}+a_{n-2}\lambda^{n-2}-\cdots+(-1)^{n-1}a_1\lambda+(-1)^na_0$，这些系数 $a_i$ 都是相似变换下的不变量</p>
+<p>对于任何可逆矩阵P，可得 $\phi_{P^{-1}AP}(\lambda)=\phi_A(\lambda)$，即系数 $a_i$ 不变</p>
+<p>其中 $a_0=\det A$，而 $a_{n-1}$ 称为<strong>迹</strong>（trace），记为 $\mathrm{Tr}\ A$，等于 A 中对角线元素的和</p>
+<h3 id="附带：凯莱-哈密顿（Cayley-Hamilton）定理"><a href="#附带：凯莱-哈密顿（Cayley-Hamilton）定理" class="headerlink" title="附带：凯莱-哈密顿（Cayley-Hamilton）定理"></a>附带：凯莱-哈密顿（Cayley-Hamilton）定理</h3><p>凯莱-哈密顿定理即 $\phi_A(A)=O$，务必注意并非 $\det(AI-A)=0$ 的意思，而是向多项式 $\phi_A(\lambda)$ 中带入矩阵运算</p>
+<p>例如 $A=\begin{pmatrix}2&amp;-1\\4&amp;3\end{pmatrix}$ 情况下：</p>
+<script type="math/tex; mode=display">\phi_A(\lambda)=\lambda^2-5\lambda+10</script><p>则可以通过该定理得到：</p>
+<script type="math/tex; mode=display">\phi_A(A)=A^2-5A+10=O</script><p>可以用于矩阵乘方的简化计算，或者用于判断线性系统的可控性（略）</p>
+<h3 id="特征向量的计算"><a href="#特征向量的计算" class="headerlink" title="特征向量的计算"></a>特征向量的计算</h3><p>先通过特征方程，算出根，即特征值之后，用特征值带入 $A\boldsymbol{p}=\lambda\boldsymbol{p}$ 形成线性方程组</p>
+<p>无重复特征值情况下通常可以获得类似这样的特征向量：</p>
+<script type="math/tex; mode=display">\boldsymbol{p}=\alpha\begin{pmatrix}*\\\vdots\\*\end{pmatrix}，其中\alpha 为0以外任意数</script><p>有重复特征值情况下，k重的重复特征值可能解出包含k个特征向量的解，将其分解成线性无关的k个部分即可，例如：</p>
+<script type="math/tex; mode=display">\boldsymbol{q}=\beta\begin{pmatrix}*\\\vdots\\*\end{pmatrix}+\gamma\begin{pmatrix}*\\\vdots\\*\end{pmatrix}，其中\beta和\gamma 为0以外任意数</script><p>有重复特征值情况下，k重的重复特征根也可能无法取出足够个数的特征向量，后续处理</p>
+<h2 id="连续时间系统"><a href="#连续时间系统" class="headerlink" title="连续时间系统"></a>连续时间系统</h2><h3 id="微分方程"><a href="#微分方程" class="headerlink" title="微分方程"></a>微分方程</h3><p>高阶微分可以考虑变成针对矩阵的一阶微分方程，例如设 $\boldsymbol{x}(t)=(\frac{\mathrm{d}}{\mathrm{d}t}q(t),q(t))^T$，则可以转换：</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d}^2}{\mathrm{d}t^2}q(t)=-\frac{R}{L}\frac{\mathrm{d}}{\mathrm{d}t}q(t)-\frac{1}{LC}q(t)\\\Downarrow\\
+\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{x}(t)=\begin{pmatrix}-R/L&-1/(LC)\\1&0\end{pmatrix}\boldsymbol{x}(t)</script><p>以下研究判断 $\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{x}(t)=A\boldsymbol{x}(t)$ 的微分方程，对应的系统是否有失控的危险</p>
+<h3 id="一阶情况"><a href="#一阶情况" class="headerlink" title="一阶情况"></a>一阶情况</h3><p>一般而言，对于方程</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}t}x(t)=ax(t)</script><p>解为 $x(t)=\mathrm{e}^{at}x(0)$，如果 $a&gt;0$ 则会失控，否则不会失控</p>
+<h3 id="对角矩阵情况-1"><a href="#对角矩阵情况-1" class="headerlink" title="对角矩阵情况"></a>对角矩阵情况</h3><script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{x}(t)=A\boldsymbol{x}(t)\\
+A=\mathrm{diag}(a_1,\cdots,a_n)\\
+\boldsymbol{x}(t)=(x_1(t),\cdots,x_n(t))^T</script><p>则解为：</p>
+<script type="math/tex; mode=display">x_1(t)=\mathrm{e}^{a_1t}x_1(0)\\\vdots\\x_n(t)=\mathrm{e}^{a_nt}x_n(0)</script><h3 id="可对角化情况-1"><a href="#可对角化情况-1" class="headerlink" title="可对角化情况"></a>可对角化情况</h3><p>取可逆的矩阵 $P$，得到新函数 $\boldsymbol{y}(t)$，满足 $\boldsymbol{x}(t)=P\boldsymbol{y}(t)$</p>
+<p>微分方程变成：</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{y}(t)=(P^{-1}AP)\boldsymbol{y}(t)</script><p>需要使得 $P^{-1}AP=\Lambda$ 成为对角矩阵</p>
+<h3 id="失控判断"><a href="#失控判断" class="headerlink" title="失控判断"></a>失控判断</h3><p>在 A 可对角化的情况下：</p>
+<ul>
+<li>实数特征值情况下，在所有 $a_i$ 中，任一为正数，则会失控，反之则不会失控</li>
+<li>复数特征值情况下，$\mathrm{Re}\ a_i$ 任一为正数则失控，反之则不会失控</li>
+</ul>
+<p>但是在不可对角化的情况下，则可能出现 $\mathrm{Re}\ \lambda_i=0$ 情况，这种情况下判断是否失控则很复杂（见后文）</p>
+<h2 id="不可对角化情况"><a href="#不可对角化情况" class="headerlink" title="不可对角化情况"></a>不可对角化情况</h2><p>离散时间系统 $\boldsymbol{x}(t)=A\boldsymbol{x}(t-1)$</p>
+<ul>
+<li>在 A 的特征值中，只要有一个 $\lambda$ 满足 $|\lambda|&gt;1$，则会失控</li>
+<li>若所有特征值都满足 $|\lambda|&lt;1$，则不会失控</li>
+<li>若所有特征值都满足 $|\lambda|\le 1$，但存在 $|\lambda|=1$ 情况，则仅凭特征值无法判断</li>
+</ul>
+<p>连续时间系统 $\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{x}(t)=A\boldsymbol{x}(t)$</p>
+<ul>
+<li>在 A 的特征值中，只要有一个 $\lambda$ 满足 $\mathrm{Re}\ \lambda&gt;0$，则会失控</li>
+<li>若所有特征值都满足 $\mathrm{Re}\ \lambda&lt;0$，则不会失控</li>
+<li>若所有特征值都满足 $\mathrm{Re}\ \lambda\le 0$，但存在 $\mathrm{Re}\ \lambda=0$ 情况，则仅凭特征值无法判断</li>
+</ul>
+<h3 id="Jordan标准型"><a href="#Jordan标准型" class="headerlink" title="Jordan标准型"></a>Jordan标准型</h3><script type="math/tex; mode=display">J=\left(\begin{array}{ccc|cc|cc|c}
+3&1\\&3&1\\&&3\\\hline
+&&&3&1\\&&&&3\\\hline
+&&&&&4&1\\&&&&&&4\\\hline
+&&&&&&&5\\
+\end{array}\right)\quad （其他元素都为0）</script><p>Jordan标准型矩阵满足条件：</p>
+<ul>
+<li>分块对角矩阵（分块的矩阵中，除了对角区块外，均为0）</li>
+<li>对角区块位于对角线上的元素相同，并且右上方斜线上的元素全为1 （该块称之为Jordan块）</li>
+</ul>
+<p>在不考虑区块顺序的情况下，Jordan标准型是唯一的</p>
+<h3 id="Jordan标准型性质"><a href="#Jordan标准型性质" class="headerlink" title="Jordan标准型性质"></a>Jordan标准型性质</h3><h4 id="特征值"><a href="#特征值" class="headerlink" title="特征值"></a>特征值</h4><ul>
+<li>对角元素就是特征值</li>
+<li>对角线上有几个相同的特征值λ，对应的特征值λ就是几重根（代数重数）</li>
+<li>对角元素是λ的Jordan块有几个，对应的线性无关的特征向量就有几个（几何重数）</li>
+</ul>
+<p>例如上面 $J$ 中：</p>
+<ul>
+<li>特征值为3（3+2=5重根）、4（2重根）、5</li>
+<li>特征值3对应的特征向量为$(\alpha,0,0,\beta,0,0,0,0)^T$（2个线性无关特征向量）（α、β不能同时为0），</li>
+<li>特征值4对应的特征向量为$(0,0,0,0,0,\gamma,0,0)^T$（γ不为0）</li>
+<li>特征值5对应的特征向量为$(0,0,0,0,0,0,0,\delta)^T$（δ不为0）</li>
+</ul>
+<p>如果不存在重根，则Jordan标准型一定是对角矩阵形式，即可对角化</p>
+<h4 id="乘方"><a href="#乘方" class="headerlink" title="乘方"></a>乘方</h4><p>分解Jordan块：$B=\begin{pmatrix}7&amp;1&amp;0&amp;0\\0&amp;7&amp;1&amp;0\\0&amp;0&amp;7&amp;1\\0&amp;0&amp;0&amp;7\end{pmatrix}$</p>
+<script type="math/tex; mode=display">B=7I+Z, Z=\begin{pmatrix}0&1&0&0\\0&0&1&0\\0&0&0&1\\0&0&0&0\end{pmatrix}</script><p>其中 $Z$ 起到了“对于给定矩阵，左乘则上移一行，右乘则右移一行”作用，则有：</p>
+<script type="math/tex; mode=display">Z^2=\begin{pmatrix}0&0&1&0\\0&0&0&1\\0&0&0&0\\0&0&0&0\end{pmatrix},Z^3=\begin{pmatrix}0&0&0&1\\0&0&0&0\\0&0&0&0\\0&0&0&0\end{pmatrix}, Z^4=Z^5=\cdots=O</script><p>一般而言，可以计算：</p>
+<script type="math/tex; mode=display">B^t=\begin{pmatrix}7^t&t\cdot 7^{t-1}&C^2_n\cdot 7^{t-2}&C^3_n\cdot 7^{t-3}\\0&7^t&t\cdot 7^{t-1}&C^2_n\cdot 7^{t-2}\\0&0&7^t&t\cdot 7^{t-1}\\0&0&0&7^t\end{pmatrix}</script><p>也可以记为另外一种方式，设 $f(\lambda)=\lambda^t$，$f^{(s)}(\lambda)=\frac{\mathrm{d}^s}{\mathrm{d}\lambda^s}f(\lambda)$</p>
+<script type="math/tex; mode=display">B^t=\begin{pmatrix}f(7)&f^{(1)}(7)&\frac{1}{2!}f^{(2)}(7)&\frac{1}{3!}f^{(3)}(7)\\0&f(7)&f^{(1)}(7)&\frac{1}{2!}f^{(2)}(7)\\0&0&f(7)&f^{(1)}(7)\\0&0&0&f(7)\end{pmatrix}</script><p>对于Jordan标准型求乘方，只需要将每个Jordan块分别求乘方即可，例如：</p>
+<script type="math/tex; mode=display">J^t=\begin{pmatrix}B_1^t&O&O&O\\O&B_2^t&O&O\\O&O&B_3^t&O\\O&O&O&B_4^t\end{pmatrix}</script><p>对于方阵A，能转化为Jordan标准型J，则有：</p>
+<script type="math/tex; mode=display">A^t=(PJP^{-1})^t=PJ^tP^{-1}</script><h3 id="Jordan标准型解决初始值问题（判别失控的最终结论）"><a href="#Jordan标准型解决初始值问题（判别失控的最终结论）" class="headerlink" title="Jordan标准型解决初始值问题（判别失控的最终结论）"></a>Jordan标准型解决初始值问题（判别失控的最终结论）</h3><p>根据Jordan块区分成子系统，任一子系统失控，则整体系统失控，反之则整体系统不失控</p>
+<h4 id="离散时间系统"><a href="#离散时间系统" class="headerlink" title="离散时间系统"></a>离散时间系统</h4><p>设Jordan块 B，大小 $m\times m$，对于离散时间系统 $\boldsymbol{y}(t)=B\boldsymbol{y}(t-1)$，可得：</p>
+<script type="math/tex; mode=display">\boldsymbol{y}(t)=B^t \boldsymbol{y}(t-1)</script><ul>
+<li>当 $|\lambda|&gt;1$ 时，失控</li>
+<li>当 $|\lambda|=1$ 时，根据B的大小不同而不同<ul>
+<li>$m\ge 2$时，失控（从上面乘方公式，可以看到一些元素取向无穷大）</li>
+<li>$m=1$ 时，不失控</li>
+</ul>
+</li>
+<li>当 $|\lambda|&lt;1$ 时，不失控</li>
+</ul>
+<p>然后按规则扩展到整个Jordan标准型</p>
+<h4 id="连续时间系统-1"><a href="#连续时间系统-1" class="headerlink" title="连续时间系统"></a>连续时间系统</h4><p>设Jordan块 B，大小 $m\times m$，对于连续时间系统 $\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{y}(t)=B\boldsymbol{y}(t)$，可以拆分为：</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}t}y_1(t)=\lambda y_1(t)+y_2(t)\\\vdots\\
+\frac{\mathrm{d}}{\mathrm{d}t}y_{m-1}(t)=\lambda y_{m-1}(t)+y_m(t)\\
+\frac{\mathrm{d}}{\mathrm{d}t}y_{m}(t)=\lambda y_{m}(t)</script><p>可以从后向前挨个带入计算，最终得到（以m=6为例）：</p>
+<script type="math/tex; mode=display">\begin{pmatrix}y_1(t)\\y_2(t)\\y_3(t)\\y_4(t)\\y_5(t)\\y_6(t)\end{pmatrix}=\mathrm{e}^{tB}
+\begin{pmatrix}y_1(0)\\y_2(0)\\y_3(0)\\y_4(0)\\y_5(0)\\y_6(0)\end{pmatrix},\quad
+\mathrm{e}^{tB}=\mathrm{e}^{\lambda t}
+\begin{pmatrix}
+1&t&\tfrac{1}{2!}t^2&\tfrac{1}{3!}t^3&\tfrac{1}{4!}t^4&\tfrac{1}{5!}t^5\\
+&1&t&\tfrac{1}{2!}t^2&\tfrac{1}{3!}t^3&\tfrac{1}{4!}t^4\\
+&&1&t&\tfrac{1}{2!}t^2&\tfrac{1}{3!}t^3\\
+&&&1&t&\tfrac{1}{2!}t^2\\
+&&&&1&t\\
+&&&&&1\\
+\end{pmatrix}</script><p>（上式中 $\mathrm{e}^{tB}$ 称为<strong>矩阵的指数函数</strong>，是对普通指数函数的一种扩展，基于 $\mathrm{e}^{tb}=1+tb+\frac{t^2b^2}{2!}+\frac{t^3b^3}{3!}+\frac{t^4b^4}{4!}+\cdots$，将其中数字b替换为矩阵B）</p>
+<ul>
+<li>当 $\mathrm{Re}\ \lambda &gt;0$，则失控</li>
+<li>当 $\mathrm{Re}\ \lambda =0$，则与B大小有关<ul>
+<li>$m\ge 2$时，失控</li>
+<li>$m=1$时，不失控</li>
+</ul>
+</li>
+<li>当 $\mathrm{Re}\ \lambda &lt;0$，则不失控</li>
+</ul>
+<p>然后按规则扩展到整个Jordan标准型</p>
+<h3 id="化Jordan标准型的方法"><a href="#化Jordan标准型的方法" class="headerlink" title="化Jordan标准型的方法"></a>化Jordan标准型的方法</h3><p>化Jordan标准型，也就是找到可逆矩阵 P，使得 $P^{-1}AP=J$，针对P的列向量 $\boldsymbol{p}_1,\cdots,\boldsymbol{p}_n$，可以推导出类似以下的关系：</p>
+<script type="math/tex; mode=display">\begin{cases}
+\boldsymbol{o}\xleftarrow{3}\boldsymbol{p}_1\xleftarrow{3}\boldsymbol{p}_2\xleftarrow{3}\boldsymbol{p}_3\xleftarrow{3}\boldsymbol{p}_4\xleftarrow{3}\boldsymbol{p}_5\\
+\boldsymbol{o}\xleftarrow{3}\boldsymbol{p}_6\xleftarrow{3}\boldsymbol{p}_7\\
+\boldsymbol{o}\xleftarrow{4}\boldsymbol{p}_8\\
+\boldsymbol{o}\xleftarrow{5}\boldsymbol{p}_9\xleftarrow{5}\boldsymbol{p}_{10}\xleftarrow{5}\boldsymbol{p}_{11}\\
+\end{cases}</script><p>（其中 $\xleftarrow{\lambda}$ 表示左乘上 $(A-\lambda I)$ 矩阵操作）</p>
+<p>根据定义，以上的 $\boldsymbol{p}_1,\boldsymbol{p}_6,\boldsymbol{p}_8,\boldsymbol{p}_9$ 为A的特征向量，而 $3,4,5$ 为特征值；而所有的 $\boldsymbol{p}_i$ 可以称为<strong>广义特征向量</strong></p>
+<h4 id="求解过程"><a href="#求解过程" class="headerlink" title="求解过程"></a>求解过程</h4><p>根据特征方程 $\phi_A(\lambda)\equiv \det(\lambda I-A)=0$ 求解，例如 $\phi_A(\lambda)=(\lambda-3)^7(\lambda-4)(\lambda-5)^3$，则有特征值：</p>
+<ul>
+<li>$\lambda=3$（7重根），对应了7个广义特征向量（设为 $\boldsymbol{p}_1,\cdots,\boldsymbol{p}_7$）</li>
+<li>$\lambda=4$，对应了1个特征向量（设为 $\boldsymbol{p}_8$）</li>
+<li>$\lambda=5$（3重根），对应了3个广义特征向量（设为 $\boldsymbol{p}_9,\cdots,\boldsymbol{p}_{11}$）</li>
+</ul>
+<p><strong>无重根情况</strong><br>对于无重根的特征值 4，只需要计算满足 $(A-4I)\boldsymbol{p}_8=\boldsymbol{o},\boldsymbol{p}_8\ne\boldsymbol{o}$ 的特征向量 $\boldsymbol{p}_8$ 即可</p>
+<p><strong>有重根情况</strong><br>对于有k重根的特征值，首先看最多可以取多少个特征向量：</p>
+<p>计算 $\mathrm{rank}(A-\lambda I)$，然后通过维数定理，得到 $\dim \mathrm{Ker}(A-\lambda I)=n-\mathrm{rank}(A-\lambda I)$，即为特征向量个数（也就是该特征值的几何重数）</p>
+<p><strong>如果几何重数为1</strong>，例如特征值5，则为一个3大小的Jordan块，可以递推出：</p>
+<script type="math/tex; mode=display">(A-5I)\boldsymbol{p}_9=\boldsymbol{o}\\
+(A-5I)\boldsymbol{p}_{10}=\boldsymbol{p}_9\\
+(A-5I)\boldsymbol{p}_{11}=\boldsymbol{p}_{10}</script><p>为了尽量不需要回溯查找，应当先从远处找起：（如果有多解，可以任选，但也有可能需要回溯）</p>
+<script type="math/tex; mode=display">(A-5I)^3\boldsymbol{p}_{11}=\boldsymbol{o}\\
+\boldsymbol{p}_{10}=(A-5I)\boldsymbol{p}_{11}\\
+\boldsymbol{p}_{9}=(A-5I)\boldsymbol{p}_{10}</script><p><strong>如果几何重数等于重根数</strong>，则意味着是k个1大小的Jordan块，则直接求$(A-\lambda I)\boldsymbol{p}_i=\boldsymbol{o}$ 的k个非零特征向量即可</p>
+<p><strong>如果几何重数大于1、小于重根数</strong>，例如特征值3，假设算出来为7重根，且有2个几何重数</p>
+<p>记 $K_i=\dim\mathrm{Ker}(A-3I)^i$，该值即表示有多少可以在i步以内左乘上 $A-3I$ 而变成零矩阵</p>
+<p>此处有三种情况：</p>
+<ul>
+<li>一个6大小和一个1大小的Jordan块，应当$K_1=2,K_2=3,K_3=4,K_4=5,K_5=6,K_6=7$</li>
+<li>一个5大小和一个2大小的Jordan块，应当$K_1=2,K_2=4,K_3=5,K_4=6,K_5=7,K_6=7$</li>
+<li>一个4大小和一个3大小的Jordan块，应当$K_1=2,K_2=4,K_3=6,K_4=7,K_5=7,K_6=7$</li>
+</ul>
+<p>因此通过计算 $K_i$ 就可以算出属于如何分组，假设此处最终确定是一个5一个2</p>
+<p>然后从最远处出发，先找 $(A-3I)^5\boldsymbol{p}_5=\boldsymbol{o}$，然后反推回 $\boldsymbol{p}_1$，过程中如有多解，可以任选，但如果遇到只有零解，则需要回溯</p>
+<p>最后找 $(A-3I)^2\boldsymbol{p}_7=\boldsymbol{o}$，然后反推到 $\boldsymbol{p}_6$</p>
+<p>过程中时刻注意不要出现零向量，或者重复向量，要保证全部广义特征向量线性不相关，否则拼凑起来的矩阵不可逆</p>
+<h3 id="任何方阵都可以化Jordan标准型的证明"><a href="#任何方阵都可以化Jordan标准型的证明" class="headerlink" title="任何方阵都可以化Jordan标准型的证明"></a>任何方阵都可以化Jordan标准型的证明</h3><p>对于任意 n 阶方阵 A，要证明存在 n 个线性无关的向量 $\boldsymbol{p}_1,\cdots,\boldsymbol{p}_n$，满足某种分组，可以推导出类似以下的关系：</p>
+<script type="math/tex; mode=display">\begin{cases}
+\boldsymbol{o}\xleftarrow{3}\boldsymbol{p}_1\xleftarrow{3}\boldsymbol{p}_2\xleftarrow{3}\boldsymbol{p}_3\xleftarrow{3}\boldsymbol{p}_4\xleftarrow{3}\boldsymbol{p}_5\\
+\boldsymbol{o}\xleftarrow{3}\boldsymbol{p}_6\xleftarrow{3}\boldsymbol{p}_7\\
+\boldsymbol{o}\xleftarrow{4}\boldsymbol{p}_8\\
+\boldsymbol{o}\xleftarrow{5}\boldsymbol{p}_9\xleftarrow{5}\boldsymbol{p}_{10}\xleftarrow{5}\boldsymbol{p}_{11}\\
+\end{cases}</script><p>特征值 $\lambda$ 对应的“左乘 $(A-\lambda I)$ 若干次后变成 $\boldsymbol{o}$”的向量们构成的集合 $W(\lambda)$，称之为 $\lambda$ 对应的广义特征子空间；其中满足 $A\boldsymbol{p}=\lambda\boldsymbol{p}$ 的向量们称之为 $\lambda$ 的特征子空间（这里 $\boldsymbol{o}$虽然属于所有的广义特征子空间和特征子空间，但计数、统计之类均不计入）</p>
+<p><strong>证明</strong>：若 $\lambda$ 是特征方程 $\phi_A(\lambda)=0$ 的k重根，则 $W(\lambda)$ 中保证可以取到 k 个线性无关的向量（过程略，书上有详细过程，主要通过构造法）</p>
+<p><strong>证明</strong>：除了 $\boldsymbol{o}$ 以外，任何向量都不会出现在两个不同 $\lambda$ 对应的 $W(\lambda)$ 内（过程略，书上有详细过程，主要通过反证）</p>
+<p><strong>证明</strong>：不同的特征值对应的 $W(\lambda_i)$ 中分别任取一个非零向量，它们之间是线性无关的（过程略，书上有详细过程，主要通过反证）</p>
+<p><strong>证明</strong>：对于 n 阶方阵 A，特征值为 $\lambda_1,\cdots,\lambda_r$，分别是特征方程的 $k_i,\cdots,k_r$ 重根，通过巧妙选取一个可逆阵 Q，可以使得 $Q^{-1}AQ$ 变成一个特殊的分块对角矩阵：</p>
+<script type="math/tex; mode=display">Q^{-1}AQ=
+\left(\begin{array}{c|c|c|c}D_1\\\hline\\&D_2\\\hline&&\ddots\\\hline\\&&&D_r\end{array}\right)
+\equiv D\quad (空白处为O)\\
+D_i: k_i\ 阶方阵\\
+(D_i-\lambda_i I)^h\ 随\ h\ 增大会总会变成\ O</script><p>例如上面例子，可以从各 $W(\lambda_i)$ 中挑选出n个线性无关的向量，整体构成一组基底，并且每一部分也构成基底：</p>
+<ul>
+<li>$\boldsymbol{p}_1,\cdots,\boldsymbol{p}_7$ 构成 $W(3)$ 的基底</li>
+<li>$\boldsymbol{p}_8$ 构成 $W(4)$ 的基底</li>
+<li>$\boldsymbol{p}_9,\cdots,\boldsymbol{p}_{11}$ 构成 $W(5)$ 的基底</li>
+</ul>
+<p>将这些向量组合起来，即可构成需要的矩阵 Q:</p>
+<script type="math/tex; mode=display">Q\equiv \Bigg(\begin{array}{ccc|c|ccc}\boldsymbol{p}_1&\cdots&\boldsymbol{p}_7&\boldsymbol{p}_8&\boldsymbol{p}_9&\boldsymbol{p}_{10}&\boldsymbol{p}_{11}\end{array}\Bigg)</script><p>可得 $AQ=QD$ 的 $D$ 满足上述要求（完整证明略）</p>
+<p><strong>证明</strong>：对于指定区块 $D_i$，可以找到合适的可逆矩阵 $R_i$，使得 $R_i^{-1}D_iR_i\equiv J_i$ ，最终可以汇总起来变成Jordan标准型（每一个 $J_i$ 中可能有多个Jordan块）：</p>
+<script type="math/tex; mode=display">R^{-1}DR=
+\left(\begin{array}{c|c|c}R_1^{-1}\\\hline &\ddots\\\hline && R_r^{-1}\end{array}\right)
+\left(\begin{array}{c|c|c}D_1\\\hline &\ddots\\\hline && D_r\end{array}\right)
+\left(\begin{array}{c|c|c}R_1\\\hline &\ddots\\\hline && R_r\end{array}\right)\\=
+\left(\begin{array}{c|c|c}J_1\\\hline &\ddots\\\hline && J_r\end{array}\right)\equiv J</script><p>满足“若干次方后等于O”的矩阵，称之为<strong>幂零矩阵</strong>；可以通过类似于推算广义特征向量的思路，严格证明幂零矩阵 $Z$ 可以找到合适的可逆矩阵 $P$，从而满足（证明略）：</p>
+<script type="math/tex; mode=display">P^{-1}ZP\equiv F</script><p>其中 $F$ 是“特征值为0的Jordan标准型”</p>
+<p>由于 $D_i-\lambda_i I$ 为幂零矩阵，从而可得 $R_i^{-1}D_iR_i=F_i+\lambda_i I$，为Jordan标准型</p>
+<p>最终完整证明全套（详细证明略）</p>
 <hr>
 <ul>
 <li><a href="/2019/05/04/linear-algebra-note-1/" title="《程序员的数学3：线性代数》笔记1">《程序员的数学3：线性代数》笔记1</a></li>
@@ -766,7 +992,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第3章-计算机上的计算（1）——LU分解"><span class="nav-text">第3章 计算机上的计算（1）——LU分解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LU分解"><span class="nav-text">LU分解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LU分解定义"><span class="nav-text">LU分解定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LU分解步骤1：一般情况"><span class="nav-text">LU分解步骤1：一般情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LU分解求行列式值"><span class="nav-text">LU分解求行列式值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LU分解求线性方程组"><span class="nav-text">LU分解求线性方程组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LU分解求逆矩阵"><span class="nav-text">LU分解求逆矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LU分解步骤2：意外情况"><span class="nav-text">LU分解步骤2：意外情况</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第3章-计算机上的计算（1）——LU分解"><span class="nav-text">第3章 计算机上的计算（1）——LU分解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LU分解"><span class="nav-text">LU分解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LU分解定义"><span class="nav-text">LU分解定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LU分解步骤1：一般情况"><span class="nav-text">LU分解步骤1：一般情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LU分解求行列式值"><span class="nav-text">LU分解求行列式值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LU分解求线性方程组"><span class="nav-text">LU分解求线性方程组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LU分解求逆矩阵"><span class="nav-text">LU分解求逆矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LU分解步骤2：意外情况"><span class="nav-text">LU分解步骤2：意外情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第4章-特征值、对角化、Jordan标准型——判断失控风险"><span class="nav-text">第4章 特征值、对角化、Jordan标准型——判断失控风险</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#稳定性"><span class="nav-text">稳定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一维情况"><span class="nav-text">一维情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对角矩阵情况"><span class="nav-text">对角矩阵情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可对角化情况"><span class="nav-text">可对角化情况</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对角化"><span class="nav-text">对角化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对角化算法"><span class="nav-text">对角化算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标变换角度理解"><span class="nav-text">坐标变换角度理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#乘方角度理解"><span class="nav-text">乘方角度理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征值、特征向量"><span class="nav-text">特征值、特征向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#几何学意义"><span class="nav-text">几何学意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征值、特征向量的性质"><span class="nav-text">特征值、特征向量的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征值的计算：特征方程"><span class="nav-text">特征值的计算：特征方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#附带：凯莱-哈密顿（Cayley-Hamilton）定理"><span class="nav-text">附带：凯莱-哈密顿（Cayley-Hamilton）定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征向量的计算"><span class="nav-text">特征向量的计算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连续时间系统"><span class="nav-text">连续时间系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#微分方程"><span class="nav-text">微分方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一阶情况"><span class="nav-text">一阶情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对角矩阵情况-1"><span class="nav-text">对角矩阵情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可对角化情况-1"><span class="nav-text">可对角化情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#失控判断"><span class="nav-text">失控判断</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不可对角化情况"><span class="nav-text">不可对角化情况</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Jordan标准型"><span class="nav-text">Jordan标准型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jordan标准型性质"><span class="nav-text">Jordan标准型性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特征值"><span class="nav-text">特征值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#乘方"><span class="nav-text">乘方</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jordan标准型解决初始值问题（判别失控的最终结论）"><span class="nav-text">Jordan标准型解决初始值问题（判别失控的最终结论）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#离散时间系统"><span class="nav-text">离散时间系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连续时间系统-1"><span class="nav-text">连续时间系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#化Jordan标准型的方法"><span class="nav-text">化Jordan标准型的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#求解过程"><span class="nav-text">求解过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任何方阵都可以化Jordan标准型的证明"><span class="nav-text">任何方阵都可以化Jordan标准型的证明</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -799,7 +1025,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">79k</span>
+    <span title="站点总字数">93k</span>
   
 
   
@@ -808,7 +1034,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:12</span>
+    <span title="站点阅读时长">1:25</span>
   
 </div>
 
