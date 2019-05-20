@@ -521,7 +521,7 @@ C\equiv\left(\begin{array}{cc}x_1&1\\\vdots&\vdots\\x_n&1\end{array}\right),
 <script type="math/tex; mode=display">C^TC\boldsymbol{a}=C^T \boldsymbol{\check{y}}</script><p>以上推导过程基于认为误差遵从正态分布，实际应用中通常会不在意是否遵从正态分布，直接采用均方误差来最小化。</p>
 <p>进一步从几何角度理解，由所有可能的 $C\boldsymbol{a}$ 构成的集合形成平面：</p>
 <script type="math/tex; mode=display">
-\mathrm{lm}C=span(\boldsymbol{x},\boldsymbol{u}),\qquad
+\mathrm{lm}C=\mathrm{span}(\boldsymbol{x},\boldsymbol{u}),\qquad
 \boldsymbol{x}\equiv\left(\begin{array}{c}x_1\\\vdots\\x_n\end{array}\right),\quad
 \boldsymbol{u}\equiv\left(\begin{array}{c}1\\\vdots\\1\end{array}\right)</script><p>那么求 $|\boldsymbol{\check{y}}-C\boldsymbol{a}|^2$ 最小值就相当于寻找 $\mathrm{lm}C$ 上与 $\boldsymbol{\check{y}}$ 最近的点，也就是垂足</p>
 <h3 id="吉洪诺夫正则化"><a href="#吉洪诺夫正则化" class="headerlink" title="吉洪诺夫正则化"></a>吉洪诺夫正则化</h3><p>为避免线性方程组病态问题，通常可以加入正则化，例如上文问题中，最小化值如下，即吉洪诺夫正则化：</p>
@@ -953,7 +953,7 @@ P(X_{t+k}=3|X_t=2)\\
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:36</span>
+    <span title="站点阅读时长">1:37</span>
   
 </div>
 

@@ -416,7 +416,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">9.6k</span>
+                <span title="本文字数">9.7k</span>
               
 
               
@@ -512,7 +512,7 @@ a_{m1}x_1+\cdots+a_{mn}x_n\\
 <h3 id="矩阵的乘积"><a href="#矩阵的乘积" class="headerlink" title="矩阵的乘积"></a>矩阵的乘积</h3><p>矩阵的乘积，就是映射的合成</p>
 <script type="math/tex; mode=display">(BA)\boldsymbol{x}=B(A\boldsymbol{x})</script><script type="math/tex; mode=display">C((BA)\boldsymbol{x})=(CB)(A\boldsymbol{x})=(CBA)\boldsymbol{x}</script><h3 id="矩阵的乘方"><a href="#矩阵的乘方" class="headerlink" title="矩阵的乘方"></a>矩阵的乘方</h3><p>矩阵的乘方，就是映射的迭代。针对方阵$A$定义：</p>
 <script type="math/tex; mode=display">AA=A^2,\qquad AAA=A^3,\qquad\cdots\qquad A^0=I</script><p>针对相同规模的方阵$A$、$B$：</p>
-<script type="math/tex; mode=display">(A+B)^2=A^2+AB+BA+B^2\\(AB)^2=ABAB</script><h3 id="零矩阵、单位矩阵、对角矩阵"><a href="#零矩阵、单位矩阵、对角矩阵" class="headerlink" title="零矩阵、单位矩阵、对角矩阵"></a>零矩阵、单位矩阵、对角矩阵</h3><p>所有元素为0的矩阵称为<strong>零矩阵</strong>，记为$O$，如果要强调矩阵规模，可以使用$O_{m,n}$或$O_n$（方阵），零矩阵表示的映射是将所有的点都映到原点的映射</p>
+<script type="math/tex; mode=display">(A+B)^2=A^2+AB+BA+B^2</script><script type="math/tex; mode=display">(AB)^2=ABAB</script><h3 id="零矩阵、单位矩阵、对角矩阵"><a href="#零矩阵、单位矩阵、对角矩阵" class="headerlink" title="零矩阵、单位矩阵、对角矩阵"></a>零矩阵、单位矩阵、对角矩阵</h3><p>所有元素为0的矩阵称为<strong>零矩阵</strong>，记为$O$，如果要强调矩阵规模，可以使用$O_{m,n}$或$O_n$（方阵），零矩阵表示的映射是将所有的点都映到原点的映射</p>
 <p>即便 $A\ne O$ 且 $B\ne O$情况下，也有可能 $BA=O$；即便 $A\ne O$情况下，也有可能 $A^2=O$</p>
 <p>方阵中，除了从左上到右下方向的对角元素为1，其余元素都是0，则称为<strong>单位矩阵</strong>，记为 $I$，如果要强调矩阵规模，则可记为 $I_n$。单位矩阵表示“什么也不做”的映射，也叫<strong>恒等映射</strong></p>
 <p>在方针中，从左上到右下的对角线值为<strong>对角元素</strong>，其余为<strong>非对角元素</strong>，那么非对角元素均为0的矩阵称为<strong>对角矩阵</strong>，可以简记为：</p>
@@ -524,9 +524,11 @@ a_1& & \Huge{0}\\
 <h3 id="逆矩阵"><a href="#逆矩阵" class="headerlink" title="逆矩阵"></a>逆矩阵</h3><p>对于方阵 $A$，它的逆映射对应的矩阵称为 $A$ 的逆矩阵，记为$A^{-1}$。对于任意向量 $\boldsymbol{x}$，若有$A\boldsymbol{x}=\boldsymbol{y}$，则有 $A^{-1}\boldsymbol{y}=\boldsymbol{x}$ 成立</p>
 <script type="math/tex; mode=display">\boldsymbol{x}  \underset{A^{-1}}{\overset{A}\Longleftrightarrow} \boldsymbol{y}</script><p>有 $A^{-1}A=AA^{-1}=I$，逆矩阵最多只可能有一个，有可能不存在</p>
 <p>另外，当 $A$ 为方阵时，$XA=I$ 与 $AX=I$ 是等价的（推导略），只要有一个成立，则 $X$ 为 $A$ 的逆矩阵；非方阵的话，不存在逆矩阵</p>
-<script type="math/tex; mode=display">(A^{-1})^{-1}=A\\
-(AB)^{-1} = B^{-1}A^{-1}\\
-(A^k)^{-1} = (A^{-1})^k</script><p>针对对角矩阵情况：（不能有任一对角元素为0）</p>
+<script type="math/tex; mode=display">\begin{aligned}
+(A^{-1})^{-1}&=A\\
+(AB)^{-1} &= B^{-1}A^{-1}\\
+(A^k)^{-1} &= (A^{-1})^k
+\end{aligned}</script><p>针对对角矩阵情况：（不能有任一对角元素为0）</p>
 <script type="math/tex; mode=display">(\mathrm{dia}g(a_1,\cdots,a_n))^{-1}=\mathrm{diag}(1/a_1,\cdots,1/a_n)</script><h3 id="分块矩阵"><a href="#分块矩阵" class="headerlink" title="分块矩阵"></a>分块矩阵</h3><p>可以对矩阵中通过贯穿的水平线和垂直线将矩阵分割成几个小的矩阵，称之为分块矩阵。分块矩阵可以参照普通矩阵一样进行加法、数量乘法以及乘法</p>
 <script type="math/tex; mode=display">A=\left(\begin{array}{cc|c}3&1&1&9\\6&5&8&7\\\hline9&3&3&4\\2&7&5&2\\\end{array}\right)=
 \begin{pmatrix}A_{11}&A_{12}\\A_{21}&A_{22}\\\end{pmatrix}</script><p>将矩阵中每一行或每一列分块，则获得行向量、列向量</p>
@@ -536,8 +538,7 @@ a_{11}&a_{12}&\cdots&a_{1m}\\
 \vdots&\vdots&&\vdots\\
 a_{n1}&a_{n2}&\cdots&a_{nm}\\
 \end{array}\right)
-=(\boldsymbol{a}_1,\boldsymbol{a}_2,\cdots,\boldsymbol{a}_n)\\
-B=\begin{pmatrix}
+=(\boldsymbol{a}_1,\boldsymbol{a}_2,\cdots,\boldsymbol{a}_n)</script><script type="math/tex; mode=display">B=\begin{pmatrix}
 b_{11}&\cdots&b_{1n}\\\hline
 \vdots&&\vdots\\ \hline
 b_{m1}&\cdots&b_{mn}
@@ -557,10 +558,12 @@ b_{m1}&\cdots&b_{mn}
 =A\boldsymbol{y}(t)</script><h3 id="坐标变换"><a href="#坐标变换" class="headerlink" title="坐标变换"></a>坐标变换</h3><p>更换基底，则为坐标变换</p>
 <p>设同一个向量，在两组不同基底$\vec{e}_i$和$\vec{e}’_i$之下表示为：</p>
 <script type="math/tex; mode=display">\vec{v}=x_1\vec{e}_1+\cdots+x_n\vec{e}_n=x'_1\vec{e}'_1+\cdots+x'_n\vec{e}'_n</script><p>两组基底之间关系为</p>
-<script type="math/tex; mode=display">\vec{e}'_1=a_{11}\vec{e}_1+\cdots+a_{n1}\vec{e}_n\\\vdots\\
-\vec{e}'_n=a_{1n}\vec{e}_1+\cdots+a_{nn}\vec{e}_n</script><p>可以推导得到坐标$\boldsymbol{v}=(x_1,\cdots,x_n)^T$与$\boldsymbol{v}’=(x’_1,\cdots,x’_n)^T$之间关系：</p>
-<script type="math/tex; mode=display">\boldsymbol{v}=A\boldsymbol{v}',\quad \boldsymbol{v}'=A^{-1}\boldsymbol{v}\\
-A=\begin{pmatrix}a_{11}&\cdots&a_{1n}\\\vdots&&\vdots\\a_{n1}&\cdots&a_{nn}\end{pmatrix}</script><p>当逆矩阵存在的时候，乘以方阵才能对应到坐标变换</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\vec{e}'_1&=a_{11}\vec{e}_1+\cdots+a_{n1}\vec{e}_n\\
+&\vdots\\
+\vec{e}'_n&=a_{1n}\vec{e}_1+\cdots+a_{nn}\vec{e}_n
+\end{aligned}</script><p>可以推导得到坐标$\boldsymbol{v}=(x_1,\cdots,x_n)^T$与$\boldsymbol{v}’=(x’_1,\cdots,x’_n)^T$之间关系：</p>
+<script type="math/tex; mode=display">\boldsymbol{v}=A\boldsymbol{v}',\quad \boldsymbol{v}'=A^{-1}\boldsymbol{v}</script><script type="math/tex; mode=display">A=\begin{pmatrix}a_{11}&\cdots&a_{1n}\\\vdots&&\vdots\\a_{n1}&\cdots&a_{nn}\end{pmatrix}</script><p>当逆矩阵存在的时候，乘以方阵才能对应到坐标变换</p>
 <h3 id="转置矩阵"><a href="#转置矩阵" class="headerlink" title="转置矩阵"></a>转置矩阵</h3><p>记 $A^T$ 为 $A$ 的转置，即行列互换得到的矩阵</p>
 <script type="math/tex; mode=display">(A^T)^T=A,(AB)^T=B^TA^T</script><p>针对方阵，还有 $(A^{-1})^T=(A^T)^{-1}$</p>
 <p>转置在线性空间中没有具体含义，而在定义了内积的线性空间上才有含义（略）</p>
@@ -575,10 +578,12 @@ A=\begin{pmatrix}a_{11}&\cdots&a_{1n}\\\vdots&&\vdots\\a_{n1}&\cdots&a_{nn}\end{
 <li>行列式可以用来检测矩阵是否发生了退化（扁平化）</li>
 </ul>
 <h3 id="行列式性质"><a href="#行列式性质" class="headerlink" title="行列式性质"></a>行列式性质</h3><p>根据“矩阵就是映射，行列式就是体积扩大率”的认知，可以推导：</p>
-<script type="math/tex; mode=display">\det I=1\\
-\det(AB)=(\det A)(\det B)\\
-\det A^{-1}=\frac{1}{\det A}\\
-\det (\mathrm{diag}(a_1,\cdots,a_n))=a_1\times\cdots\times a_n</script><p>当矩阵某一列全0，或者某两列完全相同时，其行列式值为0</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\det I&=1\\
+\det(AB)&=(\det A)(\det B)\\
+\det A^{-1}&=\frac{1}{\det A}\\
+\det (\mathrm{diag}(a_1,\cdots,a_n))&=a_1\times\cdots\times a_n
+\end{aligned}</script><p>当矩阵某一列全0，或者某两列完全相同时，其行列式值为0</p>
 <p>把某一列乘以常数，加到另一列上，行列式值不变</p>
 <ul>
 <li>例如对于3阶方阵 $A=(\boldsymbol{a}_1,\boldsymbol{a}_2,\boldsymbol{a}_3)$，$\det A= \det (\boldsymbol{a}_1,\boldsymbol{a}_2,\boldsymbol{a}_3+c\boldsymbol{a}_2)$（其中 $c$ 为数）</li>
@@ -706,8 +711,8 @@ A=\begin{pmatrix}a_{11}&\cdots&a_{1n}\\\vdots&&\vdots\\a_{n1}&\cdots&a_{nn}\end{
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/05/hello-github-pages-world/" rel="prev" title="Hello 'Github Pages' World!">
-                Hello 'Github Pages' World! <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/05/arts-week-6/" rel="prev" title="ARTS挑战第6周（2019.4.29~5.5）">
+                ARTS挑战第6周（2019.4.29~5.5） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -907,7 +912,7 @@ A=\begin{pmatrix}a_{11}&\cdots&a_{1n}\\\vdots&&\vdots\\a_{n1}&\cdots&a_{nn}\end{
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:36</span>
+    <span title="站点阅读时长">1:37</span>
   
 </div>
 

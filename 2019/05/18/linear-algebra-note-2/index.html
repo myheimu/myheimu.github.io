@@ -502,11 +502,11 @@
 <p>那么求解线性方程组和求逆矩阵，都可以用左乘上一堆初等变换操作来表示</p>
 <p>可以证明，只需要以上三类变形，即可以完成所有可解的线性方程求解和所有可逆矩阵的求逆</p>
 <h2 id="恶性问题"><a href="#恶性问题" class="headerlink" title="恶性问题"></a>恶性问题</h2><h3 id="恶性问题举例"><a href="#恶性问题举例" class="headerlink" title="恶性问题举例"></a>恶性问题举例</h3><h4 id="线索不足情况（矮矩阵、核）"><a href="#线索不足情况（矮矩阵、核）" class="headerlink" title="线索不足情况（矮矩阵、核）"></a>线索不足情况（矮矩阵、核）</h4><p>当结果 $\boldsymbol{y}$ 的维度小于原因 $\boldsymbol{x}$ 的维度时，A为矮矩阵，例如：</p>
-<script type="math/tex; mode=display">\begin{pmatrix}*\\*\end{pmatrix}=\begin{pmatrix}*&*&*\\*&*&*\end{pmatrix}\begin{pmatrix}*\\*\\*\end{pmatrix}\\\boldsymbol{y}=A\boldsymbol{x}</script><p>形象化来说，相当于从高维空间向低维空间的映射，进行了“压缩扁平化”。那么求其逆问题时，则无法完全恢复原因 $\boldsymbol{x}$ 的位置点，只能确定其所属的范围（损失1维，则是直线，损失2维，则是平面）</p>
+<script type="math/tex; mode=display">\begin{pmatrix}*\\*\end{pmatrix}=\begin{pmatrix}*&*&*\\*&*&*\end{pmatrix}\begin{pmatrix}*\\*\\*\end{pmatrix}</script><script type="math/tex; mode=display">\boldsymbol{y}=A\boldsymbol{x}</script><p>形象化来说，相当于从高维空间向低维空间的映射，进行了“压缩扁平化”。那么求其逆问题时，则无法完全恢复原因 $\boldsymbol{x}$ 的位置点，只能确定其所属的范围（损失1维，则是直线，损失2维，则是平面）</p>
 <p>记满足 $A\boldsymbol{x}=\boldsymbol{o}$ 的 $\boldsymbol{x}$ 的集合称为 $A$ 的<strong>核</strong>（Kernel），记为 $\mathrm{Ker}\ A$（也有人称之为零空间 null space）</p>
 <p>A的核，也就对应了可还原的范围，Ker A为0，则是非“压缩扁平化”，Ker A为1，则是直线，Ker A为2，则是平面</p>
 <h4 id="线索过多情况（长矩阵，像）"><a href="#线索过多情况（长矩阵，像）" class="headerlink" title="线索过多情况（长矩阵，像）"></a>线索过多情况（长矩阵，像）</h4><p>当结果 $\boldsymbol{y}$ 的维度大于原因 $\boldsymbol{x}$ 的维度时，A为长矩阵，例如：</p>
-<script type="math/tex; mode=display">\begin{pmatrix}*\\*\\*\end{pmatrix}=\begin{pmatrix}*&*\\*&*\\*&*\end{pmatrix}\begin{pmatrix}*\\*\end{pmatrix}\\\boldsymbol{y}=A\boldsymbol{x}</script><p>对于给定的 $A$，针对各类 $\boldsymbol{x}$ 进行转换，所构成的集合称之为 $A$ 的<strong>像</strong>（Image），记为 $\mathrm{Im}\ A$</p>
+<script type="math/tex; mode=display">\begin{pmatrix}*\\*\\*\end{pmatrix}=\begin{pmatrix}*&*\\*&*\\*&*\end{pmatrix}\begin{pmatrix}*\\*\end{pmatrix}</script><script type="math/tex; mode=display">\boldsymbol{y}=A\boldsymbol{x}</script><p>对于给定的 $A$，针对各类 $\boldsymbol{x}$ 进行转换，所构成的集合称之为 $A$ 的<strong>像</strong>（Image），记为 $\mathrm{Im}\ A$</p>
 <h4 id="奇异矩阵"><a href="#奇异矩阵" class="headerlink" title="奇异矩阵"></a>奇异矩阵</h4><p>虽然 $A$ 是方阵，但进行了“压缩扁平化”，导致无法通过结果 $\boldsymbol{y}$ 找到唯一的原因 $\boldsymbol{x}$，或者压根找不到原因 $\boldsymbol{x}$</p>
 <h3 id="恶劣程度：核与像"><a href="#恶劣程度：核与像" class="headerlink" title="恶劣程度：核与像"></a>恶劣程度：核与像</h3><p>如果对于相同的结果 $\boldsymbol{y}$，它的原因 $\boldsymbol{x}$ 是唯一的，那么叫做<strong>单射</strong>（也叫一对一映射、一一映射）</p>
 <p>如果任何结果 $\boldsymbol{y}$ 都可以找到它的原因 $\boldsymbol{x}$，那么叫做<strong>满射</strong>（也叫映上的映射）</p>
@@ -519,10 +519,13 @@
 <p>$\mathrm{rank}\ A=m$，即秩与目标空间（值域）的维数相等时，等价于A是满射</p>
 <p>对于 $m\times n$ 矩阵 $A$，有以下性质：</p>
 <script type="math/tex; mode=display">\mathrm{rank}\ A\le m,\ \mathrm{rank}\ A\le n</script><p>对于可逆矩阵 $P$ 和 $Q$：</p>
-<script type="math/tex; mode=display">\mathrm{rank}(PA)=\mathrm{rank}\ A\\\mathrm{rank}(AQ)=\mathrm{rank}\ A</script><p>对于一般矩阵 $A$ 和 $B$，有：</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\mathrm{rank}(PA)=\mathrm{rank}\ A\\
+\mathrm{rank}(AQ)=\mathrm{rank}\ A
+\end{aligned}</script><p>对于一般矩阵 $A$ 和 $B$，有：</p>
 <script type="math/tex; mode=display">\mathrm{rank}(BA)\le \mathrm{rank}\ A,\ \mathrm{rank}(BA)\le \mathrm{rank}\ B</script><script type="math/tex; mode=display">\mathrm{rank}(A+B)\le \mathrm{rank}\ A + \mathrm{rank}\ B</script><script type="math/tex; mode=display">\mathrm{rank}(AB)+\mathrm{rank}(BC)\le \mathrm{rank}(ABC) + \mathrm{rank}\ B</script><p><strong>瓶颈型分解</strong><br>对于秩为r的矩阵A，可以分解成两个“瘦矩阵”的乘积，即宽为r的矩阵B和高为r的矩阵C的乘积（一定可以分解，但分解方法有多种）</p>
 <p>转置矩阵的秩不变，复矩阵也同理：</p>
-<script type="math/tex; mode=display">\mathrm{rank}\ A^T=\mathrm{rank}\ A\\\mathrm{rank}\ A^*=\mathrm{rank}\ A</script><h3 id="秩的求解方法1：悉心观察"><a href="#秩的求解方法1：悉心观察" class="headerlink" title="秩的求解方法1：悉心观察"></a>秩的求解方法1：悉心观察</h3><p>对于 $m\times n$ 的矩阵 $A$，对于不同的 $n$ 维向量 $\boldsymbol{x}$ 时 $\boldsymbol{y}=A\boldsymbol{x}$ 的活动范围，即 $\mathrm{Im}\ A$，可以对 $A$ 按列分块变为：</p>
+<script type="math/tex; mode=display">\mathrm{rank}\ A^T=\mathrm{rank}\ A</script><script type="math/tex; mode=display">\mathrm{rank}\ A^*=\mathrm{rank}\ A</script><h3 id="秩的求解方法1：悉心观察"><a href="#秩的求解方法1：悉心观察" class="headerlink" title="秩的求解方法1：悉心观察"></a>秩的求解方法1：悉心观察</h3><p>对于 $m\times n$ 的矩阵 $A$，对于不同的 $n$ 维向量 $\boldsymbol{x}$ 时 $\boldsymbol{y}=A\boldsymbol{x}$ 的活动范围，即 $\mathrm{Im}\ A$，可以对 $A$ 按列分块变为：</p>
 <script type="math/tex; mode=display">\boldsymbol{y}=x_1\boldsymbol{a}_1+\cdots+x_n\boldsymbol{a}_n</script><p>即“由向量 $\boldsymbol{a}_1,\cdots,\boldsymbol{a}_n$ <strong>张成</strong>的线性子空间”，记为：</p>
 <script type="math/tex; mode=display">\mathrm{span} \{ \boldsymbol{a}_1,\cdots,\boldsymbol{a}_n \}</script><p>则有 $\mathrm{Im}\ A=\mathrm{span} \{ \boldsymbol{a}_1,\cdots,\boldsymbol{a}_n \}$，而 $\mathrm{rank}\ A$ 也就是这个线性子空间的维数</p>
 <p>如果能够找到最少的“基础素材” $\boldsymbol{b}_1,\cdots,\boldsymbol{b}_r$ 来表示出上述n个向量，则r就是这个线性子控件的维数，也就是 $\mathrm{rank}\ A$</p>
@@ -703,7 +706,10 @@
 0&钱&吴&陈\\
 0&\boxed{0}&周&冯\\
 \end{array}\right)</script><p>安装初等变换记法，有 $A’=S_{2,4}A$，则 $A=S_{2,4}^{-1}LU=S_{2,4}LU$，由于可以多次变换，所以最终：</p>
-<script type="math/tex; mode=display">A=PLU\\P=S_{*,*}S_{*,*}\cdots S_{*,*}</script><p>（其中矩阵P，每一行中恰好有一个1，每一列中也恰好有一个1，其他元素为0，称之为<strong>置换矩阵</strong>）</p>
+<script type="math/tex; mode=display">\begin{aligned}
+A&=PLU\\
+P&=S_{*,*}S_{*,*}\cdots S_{*,*}
+\end{aligned}</script><p>（其中矩阵P，每一行中恰好有一个1，每一列中也恰好有一个1，其他元素为0，称之为<strong>置换矩阵</strong>）</p>
 <p>对于计算行列式，则需要看 $\det P$，也就是其中S变换的个数为偶数时不变号，为奇数时变号</p>
 <p>对于线性方程组，由于 $P^{-1}=P^T$，则计算 $LU\boldsymbol{x}=\boldsymbol{y}’\quad(\boldsymbol{y}’\equiv P^T \boldsymbol{y})$</p>
 <p>更极端的情况下，其他行对应位置也全部为0，则需要允许列交换：</p>
@@ -990,7 +996,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:36</span>
+    <span title="站点阅读时长">1:37</span>
   
 </div>
 

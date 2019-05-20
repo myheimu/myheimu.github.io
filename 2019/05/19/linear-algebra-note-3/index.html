@@ -463,12 +463,16 @@
 <p>期望新方程的系数矩阵是对角矩阵，从而求解 $\boldsymbol{y}(t)$，然后再反推回  $\boldsymbol{x}(t)$ </p>
 <p>由于矩阵 $C$ 必须可逆，为了方便，记 $P=C^{-1}$</p>
 <script type="math/tex; mode=display">\boldsymbol{x}(t)=P\boldsymbol{y}(t)</script><script type="math/tex; mode=display">\boldsymbol{y}(t)=P^{-1}\boldsymbol{x}(t)=P^{-1}A\boldsymbol{x}(t-1)=(P^{-1}AP)\boldsymbol{y}(t-1)</script><p>可记为：</p>
-<script type="math/tex; mode=display">\boldsymbol{y}(t)=\Lambda\boldsymbol{y}(t-1)\\ \Lambda=P^{-1}AP</script><p>期望 $\Lambda$ 为对角矩阵，则可以求得：</p>
+<script type="math/tex; mode=display">\boldsymbol{y}(t)=\Lambda\boldsymbol{y}(t-1),\quad\Lambda=P^{-1}AP</script><p>期望 $\Lambda$ 为对角矩阵，则可以求得：</p>
 <script type="math/tex; mode=display">\boldsymbol{y}(t)=\Lambda^t\boldsymbol{y}(0)</script><script type="math/tex; mode=display">\boldsymbol{x}(t)=P\boldsymbol{y}(t)=P\Lambda^t\boldsymbol{y}(0)=P\Lambda^tP^{-1}\boldsymbol{x}(0)</script><p>最核心问题变成：找到合适的可逆矩阵 $P$，使得 $P^{-1}AP$ 是对角矩阵，也就是<strong>对角化</strong></p>
 <p>PS：对于方阵A和某个可逆矩阵P，$P^{-1}AP$ 称之为<strong>相似变换</strong></p>
 <h3 id="对角化算法"><a href="#对角化算法" class="headerlink" title="对角化算法"></a>对角化算法</h3><script type="math/tex; mode=display">P^{-1}AP\equiv \Lambda=\mathrm{diag}(\lambda_1,\cdots,\lambda_n)</script><p>将矩阵 $P$ 分解为列向量 $(\boldsymbol{p}_1,\cdots,\boldsymbol{p}_n)$，上式两边左乘 P，可变换为：</p>
 <script type="math/tex; mode=display">A(\boldsymbol{p}_1,\cdots,\boldsymbol{p}_n)=(\boldsymbol{p}_1,\cdots,\boldsymbol{p}_n)\mathrm{diag}(\lambda_1,\cdots,\lambda_n)</script><p>分拆为：</p>
-<script type="math/tex; mode=display">A\boldsymbol{p}_1=\lambda_1\boldsymbol{p}_1\\\vdots\\A\boldsymbol{p}_n=\lambda_n\boldsymbol{p}_n</script><p>即寻找</p>
+<script type="math/tex; mode=display">\begin{aligned}
+A\boldsymbol{p}_1&=\lambda_1\boldsymbol{p}_1\\
+&\vdots\\
+A\boldsymbol{p}_n&=\lambda_n\boldsymbol{p}_n\\
+\end{aligned}</script><p>即寻找</p>
 <script type="math/tex; mode=display">A\boldsymbol{p}=\lambda\boldsymbol{p}\quad(\boldsymbol{p}\ne \boldsymbol{o})</script><p>其中数 $\lambda$ 即<strong>特征值</strong>，向量 $\boldsymbol{p}$ 即<strong>特征向量</strong></p>
 <p>最后问题变为，这些特征值 $|\lambda_1|,\cdots,|\lambda_n|$ 中任一大于1，则失控，反之，则不失控</p>
 <h3 id="坐标变换角度理解"><a href="#坐标变换角度理解" class="headerlink" title="坐标变换角度理解"></a>坐标变换角度理解</h3><p>将n维向量考虑为n维空间内的坐标，将矩阵A考虑为映射 $\mathcal{A}(\vec{v})$，则上述系统可以表示为：</p>
@@ -505,15 +509,20 @@
 <p>无重复特征值情况下通常可以获得类似这样的特征向量：</p>
 <script type="math/tex; mode=display">\boldsymbol{p}=\alpha\begin{pmatrix}*\\\vdots\\*\end{pmatrix}，其中\alpha 为0以外任意数</script><p>有重复特征值情况下，k重的重复特征值可能解出包含k个特征向量的解，将其分解成线性无关的k个部分即可，例如：</p>
 <script type="math/tex; mode=display">\boldsymbol{q}=\beta\begin{pmatrix}*\\\vdots\\*\end{pmatrix}+\gamma\begin{pmatrix}*\\\vdots\\*\end{pmatrix}，其中\beta和\gamma 为0以外任意数</script><p>有重复特征值情况下，k重的重复特征根也可能无法取出足够个数的特征向量，后续处理</p>
-<h2 id="连续时间系统"><a href="#连续时间系统" class="headerlink" title="连续时间系统"></a>连续时间系统</h2><h3 id="微分方程"><a href="#微分方程" class="headerlink" title="微分方程"></a>微分方程</h3><p>高阶微分可以考虑变成针对矩阵的一阶微分方程，例如设 $\boldsymbol{x}(t)=(\frac{\mathrm{d}}{\mathrm{d}t}q(t),q(t))^T$，则可以转换：</p>
-<script type="math/tex; mode=display">\frac{\mathrm{d}^2}{\mathrm{d}t^2}q(t)=-\frac{R}{L}\frac{\mathrm{d}}{\mathrm{d}t}q(t)-\frac{1}{LC}q(t)\\\Downarrow\\
-\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{x}(t)=\begin{pmatrix}-R/L&-1/(LC)\\1&0\end{pmatrix}\boldsymbol{x}(t)</script><p>以下研究判断 $\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{x}(t)=A\boldsymbol{x}(t)$ 的微分方程，对应的系统是否有失控的危险</p>
+<h2 id="连续时间系统"><a href="#连续时间系统" class="headerlink" title="连续时间系统"></a>连续时间系统</h2><h3 id="微分方程"><a href="#微分方程" class="headerlink" title="微分方程"></a>微分方程</h3><script type="math/tex; mode=display">\frac{\mathrm{d}^2}{\mathrm{d}t^2}q(t)=-\frac{R}{L}\frac{\mathrm{d}}{\mathrm{d}t}q(t)-\frac{1}{LC}q(t)</script><p>高阶微分可以考虑变成针对矩阵的一阶微分方程，例如设 $\boldsymbol{x}(t)=(\frac{\mathrm{d}}{\mathrm{d}t}q(t),q(t))^T$，则可以转换为：</p>
+<script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{x}(t)=\begin{pmatrix}-R/L&-1/(LC)\\1&0\end{pmatrix}\boldsymbol{x}(t)</script><p>以下研究判断 $\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{x}(t)=A\boldsymbol{x}(t)$ 的微分方程，对应的系统是否有失控的危险</p>
 <h3 id="一阶情况"><a href="#一阶情况" class="headerlink" title="一阶情况"></a>一阶情况</h3><p>一般而言，对于方程</p>
 <script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}t}x(t)=ax(t)</script><p>解为 $x(t)=\mathrm{e}^{at}x(0)$，如果 $a&gt;0$ 则会失控，否则不会失控</p>
-<h3 id="对角矩阵情况-1"><a href="#对角矩阵情况-1" class="headerlink" title="对角矩阵情况"></a>对角矩阵情况</h3><script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{x}(t)=A\boldsymbol{x}(t)\\
-A=\mathrm{diag}(a_1,\cdots,a_n)\\
-\boldsymbol{x}(t)=(x_1(t),\cdots,x_n(t))^T</script><p>则解为：</p>
-<script type="math/tex; mode=display">x_1(t)=\mathrm{e}^{a_1t}x_1(0)\\\vdots\\x_n(t)=\mathrm{e}^{a_nt}x_n(0)</script><h3 id="可对角化情况-1"><a href="#可对角化情况-1" class="headerlink" title="可对角化情况"></a>可对角化情况</h3><p>取可逆的矩阵 $P$，得到新函数 $\boldsymbol{y}(t)$，满足 $\boldsymbol{x}(t)=P\boldsymbol{y}(t)$</p>
+<h3 id="对角矩阵情况-1"><a href="#对角矩阵情况-1" class="headerlink" title="对角矩阵情况"></a>对角矩阵情况</h3><script type="math/tex; mode=display">\begin{aligned}
+\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{x}(t)&=A\boldsymbol{x}(t)\\
+A&=\mathrm{diag}(a_1,\cdots,a_n)\\
+\boldsymbol{x}(t)&=(x_1(t),\cdots,x_n(t))^T
+\end{aligned}</script><p>则解为：</p>
+<script type="math/tex; mode=display">\begin{aligned}
+x_1(t)&=\mathrm{e}^{a_1t}x_1(0)\\
+&\vdots\\
+x_n(t)&=\mathrm{e}^{a_nt}x_n(0)\\
+\end{aligned}</script><h3 id="可对角化情况-1"><a href="#可对角化情况-1" class="headerlink" title="可对角化情况"></a>可对角化情况</h3><p>取可逆的矩阵 $P$，得到新函数 $\boldsymbol{y}(t)$，满足 $\boldsymbol{x}(t)=P\boldsymbol{y}(t)$</p>
 <p>微分方程变成：</p>
 <script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{y}(t)=(P^{-1}AP)\boldsymbol{y}(t)</script><p>需要使得 $P^{-1}AP=\Lambda$ 成为对角矩阵</p>
 <h3 id="失控判断"><a href="#失控判断" class="headerlink" title="失控判断"></a>失控判断</h3><p>在 A 可对角化的情况下：</p>
@@ -558,7 +567,7 @@ A=\mathrm{diag}(a_1,\cdots,a_n)\\
 <li>特征值5对应的特征向量为$(0,0,0,0,0,0,0,\delta)^T$（δ不为0）</li>
 </ul>
 <p>如果不存在重根，则Jordan标准型一定是对角矩阵形式，即可对角化</p>
-<h4 id="乘方"><a href="#乘方" class="headerlink" title="乘方"></a>乘方</h4><p>分解Jordan块：$B=\begin{pmatrix}7&amp;1&amp;0&amp;0\\0&amp;7&amp;1&amp;0\\0&amp;0&amp;7&amp;1\\0&amp;0&amp;0&amp;7\end{pmatrix}$</p>
+<h4 id="乘方"><a href="#乘方" class="headerlink" title="乘方"></a>乘方</h4><p>分解Jordan块：$B=\begin{pmatrix}7&amp;1&amp;0&amp;0\\0&amp;7&amp;1&amp;0\\0&amp;0&amp;7&amp;1\\0&amp;0&amp;0&amp;7\end{pmatrix}$，可得：</p>
 <script type="math/tex; mode=display">B=7I+Z, Z=\begin{pmatrix}0&1&0&0\\0&0&1&0\\0&0&0&1\\0&0&0&0\end{pmatrix}</script><p>其中 $Z$ 起到了“对于给定矩阵，左乘则上移一行，右乘则右移一行”作用，则有：</p>
 <script type="math/tex; mode=display">Z^2=\begin{pmatrix}0&0&1&0\\0&0&0&1\\0&0&0&0\\0&0&0&0\end{pmatrix},Z^3=\begin{pmatrix}0&0&0&1\\0&0&0&0\\0&0&0&0\\0&0&0&0\end{pmatrix}, Z^4=Z^5=\cdots=O</script><p>一般而言，可以计算：</p>
 <script type="math/tex; mode=display">B^t=\begin{pmatrix}7^t&t\cdot 7^{t-1}&C^2_n\cdot 7^{t-2}&C^3_n\cdot 7^{t-3}\\0&7^t&t\cdot 7^{t-1}&C^2_n\cdot 7^{t-2}\\0&0&7^t&t\cdot 7^{t-1}\\0&0&0&7^t\end{pmatrix}</script><p>也可以记为另外一种方式，设 $f(\lambda)=\lambda^t$，$f^{(s)}(\lambda)=\frac{\mathrm{d}^s}{\mathrm{d}\lambda^s}f(\lambda)$</p>
@@ -577,9 +586,13 @@ A=\mathrm{diag}(a_1,\cdots,a_n)\\
 </ul>
 <p>然后按规则扩展到整个Jordan标准型</p>
 <h4 id="连续时间系统-1"><a href="#连续时间系统-1" class="headerlink" title="连续时间系统"></a>连续时间系统</h4><p>设Jordan块 B，大小 $m\times m$，对于连续时间系统 $\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{y}(t)=B\boldsymbol{y}(t)$，可以拆分为：</p>
-<script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}t}y_1(t)=\lambda y_1(t)+y_2(t)\\\vdots\\
-\frac{\mathrm{d}}{\mathrm{d}t}y_{m-1}(t)=\lambda y_{m-1}(t)+y_m(t)\\
-\frac{\mathrm{d}}{\mathrm{d}t}y_{m}(t)=\lambda y_{m}(t)</script><p>可以从后向前挨个带入计算，最终得到（以m=6为例）：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{\mathrm{d}}{\mathrm{d}t}y_1(t)&=\lambda y_1(t)+y_2(t)\\
+&\vdots\\
+\frac{\mathrm{d}}{\mathrm{d}t}y_{m-1}(t)&=\lambda y_{m-1}(t)+y_m(t)\\
+\frac{\mathrm{d}}{\mathrm{d}t}y_{m}(t)&=\lambda y_{m}(t)\\
+\end{aligned}</script><p>可以从后向前挨个带入计算，最终得到（以m=6为例）：</p>
 <script type="math/tex; mode=display">\begin{pmatrix}y_1(t)\\y_2(t)\\y_3(t)\\y_4(t)\\y_5(t)\\y_6(t)\end{pmatrix}=\mathrm{e}^{tB}
 \begin{pmatrix}y_1(0)\\y_2(0)\\y_3(0)\\y_4(0)\\y_5(0)\\y_6(0)\end{pmatrix},\quad
 \mathrm{e}^{tB}=\mathrm{e}^{\lambda t}
@@ -619,12 +632,16 @@ A=\mathrm{diag}(a_1,\cdots,a_n)\\
 <p><strong>有重根情况</strong><br>对于有k重根的特征值，首先看最多可以取多少个特征向量：</p>
 <p>计算 $\mathrm{rank}(A-\lambda I)$，然后通过维数定理，得到 $\dim \mathrm{Ker}(A-\lambda I)=n-\mathrm{rank}(A-\lambda I)$，即为特征向量个数（也就是该特征值的几何重数）</p>
 <p><strong>如果几何重数为1</strong>，例如特征值5，则为一个3大小的Jordan块，可以递推出：</p>
-<script type="math/tex; mode=display">(A-5I)\boldsymbol{p}_9=\boldsymbol{o}\\
-(A-5I)\boldsymbol{p}_{10}=\boldsymbol{p}_9\\
-(A-5I)\boldsymbol{p}_{11}=\boldsymbol{p}_{10}</script><p>为了尽量不需要回溯查找，应当先从远处找起：（如果有多解，可以任选，但也有可能需要回溯）</p>
-<script type="math/tex; mode=display">(A-5I)^3\boldsymbol{p}_{11}=\boldsymbol{o}\\
+<script type="math/tex; mode=display">\begin{aligned}
+(A-5I)\boldsymbol{p}_9&=\boldsymbol{o}\\
+(A-5I)\boldsymbol{p}_{10}&=\boldsymbol{p}_9\\
+(A-5I)\boldsymbol{p}_{11}&=\boldsymbol{p}_{10}\\
+\end{aligned}</script><p>为了尽量不需要回溯查找，应当先从远处找起：（如果有多解，可以任选，但也有可能需要回溯）</p>
+<script type="math/tex; mode=display">\begin{aligned}
+(A-5I)^3\boldsymbol{p}_{11}=\boldsymbol{o}\\
 \boldsymbol{p}_{10}=(A-5I)\boldsymbol{p}_{11}\\
-\boldsymbol{p}_{9}=(A-5I)\boldsymbol{p}_{10}</script><p><strong>如果几何重数等于重根数</strong>，则意味着是k个1大小的Jordan块，则直接求$(A-\lambda I)\boldsymbol{p}_i=\boldsymbol{o}$ 的k个非零特征向量即可</p>
+\boldsymbol{p}_{9}=(A-5I)\boldsymbol{p}_{10}
+\end{aligned}</script><p><strong>如果几何重数等于重根数</strong>，则意味着是k个1大小的Jordan块，则直接求$(A-\lambda I)\boldsymbol{p}_i=\boldsymbol{o}$ 的k个非零特征向量即可</p>
 <p><strong>如果几何重数大于1、小于重根数</strong>，例如特征值3，假设算出来为7重根，且有2个几何重数</p>
 <p>记 $K_i=\dim\mathrm{Ker}(A-3I)^i$，该值即表示有多少可以在i步以内左乘上 $A-3I$ 而变成零矩阵</p>
 <p>此处有三种情况：</p>
@@ -648,11 +665,13 @@ A=\mathrm{diag}(a_1,\cdots,a_n)\\
 <p><strong>证明</strong>：除了 $\boldsymbol{o}$ 以外，任何向量都不会出现在两个不同 $\lambda$ 对应的 $W(\lambda)$ 内（过程略，书上有详细过程，主要通过反证）</p>
 <p><strong>证明</strong>：不同的特征值对应的 $W(\lambda_i)$ 中分别任取一个非零向量，它们之间是线性无关的（过程略，书上有详细过程，主要通过反证）</p>
 <p><strong>证明</strong>：对于 n 阶方阵 A，特征值为 $\lambda_1,\cdots,\lambda_r$，分别是特征方程的 $k_i,\cdots,k_r$ 重根，通过巧妙选取一个可逆阵 Q，可以使得 $Q^{-1}AQ$ 变成一个特殊的分块对角矩阵：</p>
-<script type="math/tex; mode=display">Q^{-1}AQ=
+<script type="math/tex; mode=display">\begin{aligned}
+&Q^{-1}AQ=
 \left(\begin{array}{c|c|c|c}D_1\\\hline\\&D_2\\\hline&&\ddots\\\hline\\&&&D_r\end{array}\right)
 \equiv D\quad (空白处为O)\\
-D_i: k_i\ 阶方阵\\
-(D_i-\lambda_i I)^h\ 随\ h\ 增大会总会变成\ O</script><p>例如上面例子，可以从各 $W(\lambda_i)$ 中挑选出n个线性无关的向量，整体构成一组基底，并且每一部分也构成基底：</p>
+&D_i: k_i\ 阶方阵\\
+&(D_i-\lambda_i I)^h\ 随\ h\ 增大会总会变成\ O
+\end{aligned}</script><p>例如上面例子，可以从各 $W(\lambda_i)$ 中挑选出n个线性无关的向量，整体构成一组基底，并且每一部分也构成基底：</p>
 <ul>
 <li>$\boldsymbol{p}_1,\cdots,\boldsymbol{p}_7$ 构成 $W(3)$ 的基底</li>
 <li>$\boldsymbol{p}_8$ 构成 $W(4)$ 的基底</li>
@@ -661,11 +680,13 @@ D_i: k_i\ 阶方阵\\
 <p>将这些向量组合起来，即可构成需要的矩阵 Q:</p>
 <script type="math/tex; mode=display">Q\equiv \left(\begin{array}{ccc|c|ccc}\vphantom{\begin{matrix}a\\\\\\\\\\\\b\end{matrix}}\boldsymbol{p}_1&\cdots&\boldsymbol{p}_7&\boldsymbol{p}_8&\boldsymbol{p}_9&\boldsymbol{p}_{10}&\boldsymbol{p}_{11}\end{array}\right)</script><p>可得 $AQ=QD$ 的 $D$ 满足上述要求（完整证明略）</p>
 <p><strong>证明</strong>：对于指定区块 $D_i$，可以找到合适的可逆矩阵 $R_i$，使得 $R_i^{-1}D_iR_i\equiv J_i$ ，最终可以汇总起来变成Jordan标准型（每一个 $J_i$ 中可能有多个Jordan块）：</p>
-<script type="math/tex; mode=display">R^{-1}DR=
+<script type="math/tex; mode=display">\begin{aligned}
+R^{-1}DR&=
 \left(\begin{array}{c|c|c}R_1^{-1}\\\hline &\ddots\\\hline && R_r^{-1}\end{array}\right)
 \left(\begin{array}{c|c|c}D_1\\\hline &\ddots\\\hline && D_r\end{array}\right)
-\left(\begin{array}{c|c|c}R_1\\\hline &\ddots\\\hline && R_r\end{array}\right)\\=
-\left(\begin{array}{c|c|c}J_1\\\hline &\ddots\\\hline && J_r\end{array}\right)\equiv J</script><p>满足“若干次方后等于O”的矩阵，称之为<strong>幂零矩阵</strong>；可以通过类似于推算广义特征向量的思路，严格证明幂零矩阵 $Z$ 可以找到合适的可逆矩阵 $P$，从而满足（证明略）：</p>
+\left(\begin{array}{c|c|c}R_1\\\hline &\ddots\\\hline && R_r\end{array}\right)\\
+&=\left(\begin{array}{c|c|c}J_1\\\hline &\ddots\\\hline && J_r\end{array}\right)\equiv J
+\end{aligned}</script><p>满足“若干次方后等于O”的矩阵，称之为<strong>幂零矩阵</strong>；可以通过类似于推算广义特征向量的思路，严格证明幂零矩阵 $Z$ 可以找到合适的可逆矩阵 $P$，从而满足（证明略）：</p>
 <script type="math/tex; mode=display">P^{-1}ZP\equiv F</script><p>其中 $F$ 是“特征值为0的Jordan标准型”</p>
 <p>由于 $D_i-\lambda_i I$ 为幂零矩阵，从而可得 $R_i^{-1}D_iR_i=F_i+\lambda_i I$，为Jordan标准型</p>
 <p>最终完整证明全套（详细证明略）</p>
@@ -950,7 +971,7 @@ D_i: k_i\ 阶方阵\\
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:36</span>
+    <span title="站点阅读时长">1:37</span>
   
 </div>
 
