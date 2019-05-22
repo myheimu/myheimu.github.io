@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2">
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（理解为输出）  Algorithm: LeetCode #17 Letter Combinations of a Phone Number问题：对于九宫格输入法，通过输入的数字，推算出所">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARTS挑战第7周（2019.5.6~5.12）">
+<meta property="og:url" content="https://zhong.blog/2019/05/06/arts-week-7/index.html">
+<meta property="og:site_name" content="ZhongChen的技术博客">
+<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（理解为输出）  Algorithm: LeetCode #17 Letter Combinations of a Phone Number问题：对于九宫格输入法，通过输入的数字，推算出所">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-21T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ARTS挑战第7周（2019.5.6~5.12）">
+<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（理解为输出）  Algorithm: LeetCode #17 Letter Combinations of a Phone Number问题：对于九宫格输入法，通过输入的数字，推算出所">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://zhong.blog/2019/05/06/arts-week-7/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>ARTS挑战第7周（2019.5.6~5.12） | ZhongChen的技术博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZhongChen的技术博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">技术是条无尽的道路</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhong.blog/2019/05/06/arts-week-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhongChen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhongChen的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">ARTS挑战第7周（2019.5.6~5.12）
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-06T00:00:00+08:00">2019-05-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-22 00:00:00" itemprop="dateModified" datetime="2019-05-22T00:00:00+08:00">2019-05-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ARTS/" itemprop="url" rel="index"><span itemprop="name">ARTS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">6.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">6 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.zhihu.com/question/301150832" target="_blank" rel="noopener">ARTS挑战</a> 指每周完成：</p>
+<ul>
+<li>Algorithm：每周至少做一个 leetcode 的算法题</li>
+<li>Review：阅读并点评至少一篇英文技术文章</li>
+<li>Tip：学习至少一个技术技巧</li>
+<li>Share：分享一篇有观点和思考的技术文章（理解为输出）</li>
+</ul>
+<h1 id="Algorithm-LeetCode-17-Letter-Combinations-of-a-Phone-Number"><a href="#Algorithm-LeetCode-17-Letter-Combinations-of-a-Phone-Number" class="headerlink" title="Algorithm: LeetCode #17 Letter Combinations of a Phone Number"></a>Algorithm: LeetCode #17 Letter Combinations of a Phone Number</h1><p>问题：对于九宫格输入法，通过输入的数字，推算出所有可能的字母组合</p>
+<p>解答：其实就是一个变种的全排列问题，可以按照数字进位的方式来说，即：先从每个位置都是最小值开始，每一轮循环相当于“+1”，过程就是从后往前找到第一个非最大值的位置，对其“+1”，并把后面的值都设为最小值。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; letterCombinations(<span class="built_in">string</span> digits) &#123;</span><br><span class="line">        <span class="keyword">char</span> int_first_char[<span class="number">10</span>] = &#123;<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'a'</span>,<span class="string">'d'</span>,<span class="string">'g'</span>,<span class="string">'j'</span>,<span class="string">'m'</span>,<span class="string">'p'</span>,<span class="string">'t'</span>,<span class="string">'w'</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> is_first_char[<span class="number">26</span>] = &#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">char</span> next_char[<span class="number">26</span>] = &#123;<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'-'</span>,<span class="string">'e'</span>,<span class="string">'f'</span>,<span class="string">'-'</span>,<span class="string">'h'</span>,<span class="string">'i'</span>,<span class="string">'-'</span>,<span class="string">'k'</span>,<span class="string">'l'</span>,<span class="string">'-'</span>,<span class="string">'n'</span>,<span class="string">'o'</span>,<span class="string">'-'</span>,<span class="string">'q'</span>,<span class="string">'r'</span>,<span class="string">'s'</span>,<span class="string">'-'</span>,<span class="string">'u'</span>,<span class="string">'v'</span>,<span class="string">'-'</span>,<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'z'</span>,<span class="string">'-'</span>&#125;;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; result;</span><br><span class="line">        <span class="keyword">int</span> length = digits.size();</span><br><span class="line">        <span class="keyword">char</span> buffer[length+<span class="number">1</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">if</span> (length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">string</span>::size_type i = <span class="number">0</span>; i &lt; length; ++i) &#123;</span><br><span class="line">            buffer[i] = int_first_char[digits[i] - <span class="string">'0'</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="built_in">string</span> <span class="title">str</span><span class="params">(buffer)</span></span>;</span><br><span class="line">        result.push_back(str);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> i = length - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; next_char[buffer[i]-<span class="string">'a'</span>]==<span class="string">'-'</span>)</span><br><span class="line">                --i;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            buffer[i] = next_char[buffer[i]-<span class="string">'a'</span>];</span><br><span class="line">            ++i;</span><br><span class="line">            <span class="keyword">for</span> (;i&lt;length;++i) &#123;</span><br><span class="line">                buffer[i] = int_first_char[digits[i]-<span class="string">'0'</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="function"><span class="built_in">string</span> <span class="title">str</span><span class="params">(buffer)</span></span>;</span><br><span class="line">            result.push_back(str);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> move(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Runtime: 4ms, 超过 95.71% 的提交<br>Memory Usage: 8.4 MB，超过 96.00% 的提交</p>
+</blockquote>
+<h1 id="Review-《The-Hitchhiker’s-Guide-to-Feature-Extraction》"><a href="#Review-《The-Hitchhiker’s-Guide-to-Feature-Extraction》" class="headerlink" title="Review: 《The Hitchhiker’s Guide to Feature Extraction》"></a>Review: 《The Hitchhiker’s Guide to Feature Extraction》</h1><p><a href="https://towardsdatascience.com/the-hitchhikers-guide-to-feature-extraction-b4c157e96631" target="_blank" rel="noopener">https://towardsdatascience.com/the-hitchhikers-guide-to-feature-extraction-b4c157e96631</a></p>
+<p>这篇文章主要讲了特征提取的一些技巧，主要是怎么把现实中的特征编码成供机器学习使用的特征，提到了很多在Kaggle比赛中的技巧。</p>
+<p>首先介绍了一个叫Featuretools的框架，它可以进行一些自动特征工程，特别适合把一些时态数据和关系型数据集转换为机器学习使用的特征矩阵。</p>
+<p>然后举了一个关系型数据集的例子，用代码表示出来一个关系型数据集的几个表和之间的关系，而且标明其中一些字段的类型（时间、Email、地址、标记等等），然后就能自动生成出一批特征，包括数值的最大值、平均值、标准差，包括时间的年、月、日，还有各种通过关系联合的特征。</p>
+<p>当然现实之中并没有那么简单，像类型特征就有很多种不同的特征提取方式：</p>
+<ul>
+<li>One-Hot编码，也就是一个n维长度的向量，属于哪一类，就把对应位置置为1</li>
+<li>序号编码，有些特征是有顺序的，则自然按照顺序从0开始编号</li>
+<li>标签编码，虽然特征本身没有顺序，但仍然按照不同的标签顺序给出编号，这在树模型之中表现良好</li>
+<li>二进制编码，对不同标签顺序给出编号，将编号的二进制表示，分拆成一批0/1取值的特征</li>
+<li>Hash编码，即采用Hash函数对原始特征进行处理，得到结果然后One-Hot编码</li>
+<li>均值编码（Target Encoding, Mean Encoding, Likelihood Encoding），针对数量非常大的类别特征，主要思想是采用变量对应的标签label的均值来作为编码，计算过程比较复杂</li>
+</ul>
+<p>对数损失裁剪技术，建议将对数损失裁剪在0.05到0.95范围内。</p>
+<p>对于经纬度特征，可以采用半正矢公式来确定在两点之间大圆上的距离，也可以采用曼哈顿距离，或者采用一点相对另外一点的方向。</p>
+<p>自动编码机，可以挖掘一些特征的表征向量，从而作为训练特征。</p>
+<p>针对特征还会做一些常见处理：</p>
+<ul>
+<li>根据最大最小值归一化</li>
+<li>使用标准差正规化</li>
+<li>使用log对数函数处理</li>
+</ul>
+<p>对于日期时间特征，可以增加一些常识信息，比如“晚上”“上周”“上个月”。</p>
+<p>对于一些领域特征，可以根据对这个领域的了解，设置一些具有现实含义的特征。</p>
+<p>特征可以做交叉，比如加法、减法、除法、乘法等等。</p>
+<p>所有这些经验，都需要发挥想象力，在实践中尝试。针对不同的模型，可能需要的特征抽取方式也有所不同。</p>
+<h1 id="Tip-Linux-C-计时方式对比"><a href="#Tip-Linux-C-计时方式对比" class="headerlink" title="Tip: Linux C++ 计时方式对比"></a>Tip: Linux C++ 计时方式对比</h1><h3 id="time-函数"><a href="#time-函数" class="headerlink" title="time() 函数"></a><code>time()</code> 函数</h3><p>提供 UNIX 时间戳，实际精度1秒<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">time_t</span> time_start = time(<span class="literal">nullptr</span>);</span><br><span class="line">  run(<span class="number">1000000000</span>);</span><br><span class="line">  <span class="keyword">time_t</span> time_end = time(<span class="literal">nullptr</span>);</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"time_start "</span> &lt;&lt; time_start &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"time_end "</span> &lt;&lt; time_end &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"time_duration "</span> &lt;&lt; time_end - time_start &lt;&lt; <span class="string">"s"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">time_start 1558498932</span><br><span class="line">time_end 1558498933</span><br><span class="line">time_duration 1s</span><br></pre></td></tr></table></figure>
+<h3 id="clock-函数"><a href="#clock-函数" class="headerlink" title="clock() 函数"></a><code>clock()</code> 函数</h3><p>提供 CPU 时钟计时单元（clock tick）数，需要除以 <code>CLOCKS_PER_SEC</code> 当前系统内每秒时钟计时单位总次数</p>
+<p>受到 CPU sleep 或者多线程影响，可能会非常有问题，所以尽量不用</p>
+<p>网上资料通常说其精度在 10ms左右，但在本机测试中，能达到亚微秒级别，可能是由于glibc 2.18后底层换为了<code>clock_gettime</code></p>
+<p>在64位的较新Ubuntu环境中测试，<code>CLOCKS_PER_SEC</code> 为 1000000（符合POSIX标准），<code>clock_t</code> 为long长整形</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">clock_t</span> start = clock();</span><br><span class="line">  run(<span class="number">100</span>);</span><br><span class="line">  <span class="keyword">clock_t</span> end = clock();</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"sizeof(clock_t) "</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="keyword">clock_t</span>) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"CLOCKS_PER_SEC "</span> &lt;&lt; CLOCKS_PER_SEC &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"start "</span> &lt;&lt; start &lt;&lt; <span class="string">", end "</span> &lt;&lt; end &lt;&lt; <span class="string">", diff "</span> &lt;&lt; (<span class="keyword">double</span>)(end-start) / CLOCKS_PER_SEC &lt;&lt; <span class="string">"s"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sizeof(clock_t) 8</span><br><span class="line">CLOCKS_PER_SEC 1000000</span><br><span class="line">start 444036, end 444038, diff 2e-06s</span><br></pre></td></tr></table></figure>
+<h3 id="gettimeofday-函数"><a href="#gettimeofday-函数" class="headerlink" title="gettimeofday() 函数"></a><code>gettimeofday()</code> 函数</h3><p>获取当前精确时间的UNIX秒数和微秒数</p>
+<p>本机测试精度可以达到亚微秒级，相关资料表示为毫秒级</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/time.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">timeval</span> <span class="title">tv</span>;</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">timeval</span> <span class="title">tv_end</span>;</span></span><br><span class="line">  gettimeofday(&amp;tv, <span class="literal">nullptr</span>);</span><br><span class="line">  run(<span class="number">1000</span>);</span><br><span class="line">  gettimeofday(&amp;tv_end, <span class="literal">nullptr</span>);</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"tv_sec: "</span> &lt;&lt; tv.tv_sec &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"tv_usec: "</span> &lt;&lt; tv.tv_usec &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">long</span> duration = (tv_end.tv_sec - tv.tv_sec) *<span class="number">1000</span>*<span class="number">1000</span> + (tv_end.tv_usec - tv.tv_usec);</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"duration: "</span> &lt;&lt; duration&lt;&lt; <span class="string">"us"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tv_sec: 1558500953</span><br><span class="line">tv_usec: 809459</span><br><span class="line">duration: 2us</span><br></pre></td></tr></table></figure>
+<h3 id="clock-gettime-函数"><a href="#clock-gettime-函数" class="headerlink" title="clock_gettime() 函数"></a><code>clock_gettime()</code> 函数</h3><p>推荐取代 <code>gettimeofday()</code>，数值上精确到ns，从本机测试来说，精度在100ns级别没问题</p>
+<p>其中参数 <figure class="highlight plain"><figcaption><span>为本机时间，而 ```CLOCK_MONOTONIC``` 不受本机时间矫正影响，可以计算绝对用时</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">```C++</span><br><span class="line">#include &lt;ctime&gt;</span><br><span class="line">int main() &#123;</span><br><span class="line">  struct timespec t1=&#123;0,0&#125;;</span><br><span class="line">  struct timespec t2=&#123;0,0&#125;;</span><br><span class="line">  clock_gettime(CLOCK_MONOTONIC,&amp;t1);</span><br><span class="line">  run(100);</span><br><span class="line">  clock_gettime(CLOCK_MONOTONIC,&amp;t2);</span><br><span class="line"></span><br><span class="line">  long long duration = (t2.tv_sec - t1.tv_sec) * 1000*1000*1000+ (t2.tv_nsec-t1.tv_nsec);</span><br><span class="line">  std::cout &lt;&lt; &quot;duration: &quot; &lt;&lt; duration &lt;&lt; &quot;ns&quot; &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">duration: 389ns</span><br></pre></td></tr></table></figure>
+<h3 id><a href="#" class="headerlink" title></a><figure class="highlight plain"><figcaption><span>和 ```std::chrono::steady_clock```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">这是C++11引入的时间工具，具有更好的使用体验</span><br><span class="line">其中 `std::chrono::system_clock` 使用的是本机时间，而 `std::chrono::steady_clock` 不受本机时间矫正影响，可以计算绝对用时</span><br><span class="line"></span><br><span class="line">精度方面，本机测试与 `clock_gettime()` 一致</span><br><span class="line"></span><br><span class="line">```C++</span><br><span class="line">#include &lt;chrono&gt;</span><br><span class="line">int main() &#123;</span><br><span class="line">  auto ct = std::chrono::steady_clock::now();</span><br><span class="line">  run(100);</span><br><span class="line">  auto ce = std::chrono::steady_clock::now();</span><br><span class="line">  auto chrono_duration = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(ce - ct);</span><br><span class="line"></span><br><span class="line">  std::cout &lt;&lt; &quot;chrono: duration &quot;  &lt;&lt; chrono_duration.count() &lt;&lt; &quot;ns&quot; &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; &quot;chrono: duration &quot;  &lt;&lt; double(chrono_duration.count()) * std::chrono::nanoseconds::period::num / std::chrono::nanoseconds::period::den &lt;&lt; &quot;s&quot; &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chrono: duration 349ns</span><br><span class="line">chrono: duration 3.49e-07s</span><br></pre></td></tr></table></figure>
+<h1 id="Share-《程序员的数学3：线性代数》前3章"><a href="#Share-《程序员的数学3：线性代数》前3章" class="headerlink" title="Share: 《程序员的数学3：线性代数》前3章"></a>Share: 《程序员的数学3：线性代数》前3章</h1><p>《程序员的数学3：线性代数》</p>
+<p>第1章：矩阵、行列式与映射；第2章：秩、逆矩阵、线性方程组笔算法；第3章：计算机中采用LU分解来解决以上问题</p>
+<ul>
+<li><a href="/2019/05/04/linear-algebra-note-1/" title="《程序员的数学3：线性代数》笔记1">《程序员的数学3：线性代数》笔记1</a></li>
+<li><a href="/2019/05/18/linear-algebra-note-2/" title="《程序员的数学3：线性代数》笔记2">《程序员的数学3：线性代数》笔记2</a></li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ZhongChen</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://zhong.blog/2019/05/06/arts-week-7/" title="ARTS挑战第7周（2019.5.6~5.12）">https://zhong.blog/2019/05/06/arts-week-7/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/05/arts-week-6/" rel="next" title="ARTS挑战第6周（2019.4.29~5.5）">
+                <i class="fa fa-chevron-left"></i> ARTS挑战第6周（2019.4.29~5.5）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/06/latex-math-example/" rel="prev" title="LaTeX数学公式入门">
+                LaTeX数学公式入门 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ZhongChen</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-17-Letter-Combinations-of-a-Phone-Number"><span class="nav-text">Algorithm: LeetCode #17 Letter Combinations of a Phone Number</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《The-Hitchhiker’s-Guide-to-Feature-Extraction》"><span class="nav-text">Review: 《The Hitchhiker’s Guide to Feature Extraction》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip-Linux-C-计时方式对比"><span class="nav-text">Tip: Linux C++ 计时方式对比</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#time-函数"><span class="nav-text">time() 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clock-函数"><span class="nav-text">clock() 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gettimeofday-函数"><span class="nav-text">gettimeofday() 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clock-gettime-函数"><span class="nav-text">clock_gettime() 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-text">和 ```std::chrono::steady_clock```12345678910111213141516这是C++11引入的时间工具，具有更好的使用体验其中 `std::chrono::system_clock` 使用的是本机时间，而 `std::chrono::steady_clock` 不受本机时间矫正影响，可以计算绝对用时精度方面，本机测试与 `clock_gettime()` 一致```C++#include &lt;chrono&gt;int main() {  auto ct = std::chrono::steady_clock::now();  run(100);  auto ce = std::chrono::steady_clock::now();  auto chrono_duration = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(ce - ct);  std::cout &lt;&lt; &quot;chrono: duration &quot;  &lt;&lt; chrono_duration.count() &lt;&lt; &quot;ns&quot; &lt;&lt; std::endl;  std::cout &lt;&lt; &quot;chrono: duration &quot;  &lt;&lt; double(chrono_duration.count()) * std::chrono::nanoseconds::period::num / std::chrono::nanoseconds::period::den &lt;&lt; &quot;s&quot; &lt;&lt; std::endl;}</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-《程序员的数学3：线性代数》前3章"><span class="nav-text">Share: 《程序员的数学3：线性代数》前3章</span></a></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhongChen</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">116k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">1:45</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
