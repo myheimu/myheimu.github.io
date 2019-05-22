@@ -14,9 +14,6 @@ mathjax: true
 * Tip：学习至少一个技术技巧
 * Share：分享一篇有观点和思考的技术文章（我理解为自己写一篇）
 
-本周完成内容为：
-<!-- toc -->
-
 # Algorithm: LeetCode #15 3Sum
 https://leetcode.com/problems/3sum/
 
