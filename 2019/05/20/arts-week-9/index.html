@@ -110,17 +110,17 @@
 
 
 
-  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（理解为输出）  Algorithm:Review: 《The fine art of fast development》https://hackernoon.com/the-fine-a">
+  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章  Algorithm: LeetCode #22 Generate Parentheses问题：构造由n对括弧构成的合理的括弧情况，例如n=3时：1234567[  &amp;quot;((()">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARTS挑战第9周（2019.5.20~5.26）">
 <meta property="og:url" content="https://zhong.blog/2019/05/20/arts-week-9/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（理解为输出）  Algorithm:Review: 《The fine art of fast development》https://hackernoon.com/the-fine-a">
+<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章  Algorithm: LeetCode #22 Generate Parentheses问题：构造由n对括弧构成的合理的括弧情况，例如n=3时：1234567[  &amp;quot;((()">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-19T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARTS挑战第9周（2019.5.20~5.26）">
-<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（理解为输出）  Algorithm:Review: 《The fine art of fast development》https://hackernoon.com/the-fine-a">
+<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章  Algorithm: LeetCode #22 Generate Parentheses问题：构造由n对括弧构成的合理的括弧情况，例如n=3时：1234567[  &amp;quot;((()">
 
 
 
@@ -399,7 +399,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">246</span>
+                <span title="本文字数">1.5k</span>
               
 
               
@@ -438,10 +438,17 @@
 <li>Algorithm：每周至少做一个 leetcode 的算法题</li>
 <li>Review：阅读并点评至少一篇英文技术文章</li>
 <li>Tip：学习至少一个技术技巧</li>
-<li>Share：分享一篇有观点和思考的技术文章（理解为输出）</li>
+<li>Share：分享一篇有观点和思考的技术文章</li>
 </ul>
-<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm:"></a>Algorithm:</h1><h1 id="Review-《The-fine-art-of-fast-development》"><a href="#Review-《The-fine-art-of-fast-development》" class="headerlink" title="Review: 《The fine art of fast development》"></a>Review: 《The fine art of fast development》</h1><p><a href="https://hackernoon.com/the-fine-art-of-fast-development-f3b1abb509da" target="_blank" rel="noopener">https://hackernoon.com/the-fine-art-of-fast-development-f3b1abb509da</a></p>
-<h1 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h1><h1 id="Share"><a href="#Share" class="headerlink" title="Share:"></a>Share:</h1>
+<h1 id="Algorithm-LeetCode-22-Generate-Parentheses"><a href="#Algorithm-LeetCode-22-Generate-Parentheses" class="headerlink" title="Algorithm: LeetCode #22 Generate Parentheses"></a>Algorithm: LeetCode #22 Generate Parentheses</h1><p>问题：构造由n对括弧构成的合理的括弧情况，例如n=3时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &quot;((()))&quot;,</span><br><span class="line">  &quot;(()())&quot;,</span><br><span class="line">  &quot;(())()&quot;,</span><br><span class="line">  &quot;()(())&quot;,</span><br><span class="line">  &quot;()()()&quot;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>解答：总个数符合卡特兰数，但考虑了卡特兰数的几种对应含义，却没有想到太巧妙的方法来构造。因此还是用比较传统的方式，即采用递推：n个括弧构成的情况，可以切分为两部分，前面一部分为第一段“合理”的括弧对情况（那么最外面是一对对应的括弧），后面一部分则任意。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（任意情况） | (任意情况)(任意情况)(任意情况)...</span><br></pre></td></tr></table></figure>
+<p>代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; generateParenthesis(<span class="keyword">int</span> n) &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">std</span>::<span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt;&gt; results;</span><br><span class="line">        results[<span class="number">0</span>].insert(<span class="string">""</span>);</span><br><span class="line">        results[<span class="number">1</span>].insert(<span class="string">"()"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; ++j) &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">auto</span> first: results[j]) &#123;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">auto</span> second: results[i-j<span class="number">-1</span>]) &#123;</span><br><span class="line">                        results[i].insert(<span class="string">"("</span> + first + <span class="string">")"</span> + second);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; result(results[n].size());</span><br><span class="line">        <span class="built_in">std</span>::copy(results[n].begin(),results[n].end(),result.begin());</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Runtime: 8 ms, faster than 76.35% of C++ online submissions for Generate Parentheses.<br>Memory Usage: 10.2 MB, less than 93.23% of C++ online submissions for Generate Parentheses.</p>
+</blockquote>
+<h1 id="Review-《The-fine-art-of-fast-development》"><a href="#Review-《The-fine-art-of-fast-development》" class="headerlink" title="Review: 《The fine art of fast development》"></a>Review: 《The fine art of fast development》</h1><p><a href="https://hackernoon.com/the-fine-art-of-fast-development-f3b1abb509da" target="_blank" rel="noopener">https://hackernoon.com/the-fine-art-of-fast-development-f3b1abb509da</a></p>
+<h1 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h1><h1 id="Share-PPT《程序员的数学——线性代数与概率统计》第1部分"><a href="#Share-PPT《程序员的数学——线性代数与概率统计》第1部分" class="headerlink" title="Share: PPT《程序员的数学——线性代数与概率统计》第1部分"></a>Share: PPT《程序员的数学——线性代数与概率统计》第1部分</h1>
       
     </div>
 
@@ -495,8 +502,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/20/linear-algebra-note-4/" rel="next" title="《程序员的数学3：线性代数》笔记4">
-                <i class="fa fa-chevron-left"></i> 《程序员的数学3：线性代数》笔记4
+              <a href="/2019/05/19/linear-algebra-note-3/" rel="next" title="《程序员的数学3：线性代数》笔记3">
+                <i class="fa fa-chevron-left"></i> 《程序员的数学3：线性代数》笔记3
               </a>
             
           </div>
@@ -504,6 +511,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/20/linear-algebra-note-4/" rel="prev" title="《程序员的数学3：线性代数》笔记4">
+                《程序员的数学3：线性代数》笔记4 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -572,7 +583,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -660,7 +671,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-text">Algorithm:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《The-fine-art-of-fast-development》"><span class="nav-text">Review: 《The fine art of fast development》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip"><span class="nav-text">Tip:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share"><span class="nav-text">Share:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-22-Generate-Parentheses"><span class="nav-text">Algorithm: LeetCode #22 Generate Parentheses</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《The-fine-art-of-fast-development》"><span class="nav-text">Review: 《The fine art of fast development》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip"><span class="nav-text">Tip:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-PPT《程序员的数学——线性代数与概率统计》第1部分"><span class="nav-text">Share: PPT《程序员的数学——线性代数与概率统计》第1部分</span></a></li></ol></div>
             
 
           </div>
@@ -693,7 +704,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">115k</span>
+    <span title="站点总字数">126k</span>
   
 
   
@@ -702,7 +713,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:45</span>
+    <span title="站点阅读时长">1:55</span>
   
 </div>
 
