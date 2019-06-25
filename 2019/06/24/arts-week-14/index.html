@@ -445,8 +445,10 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt; </span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">nextPermutation</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> pos = nums.size() <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> lastNum = INT_MIN;</span><br><span class="line">        <span class="keyword">for</span>(;pos&gt;=<span class="number">0</span>;--pos) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[pos]&lt;lastNum)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            lastNum = nums[pos];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (pos &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            sort(nums.begin(),nums.end());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> replacePos = pos+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(replacePos+<span class="number">1</span>&lt;nums.size()&amp;&amp;nums[replacePos+<span class="number">1</span>]&gt;nums[pos]) &#123;</span><br><span class="line">                replacePos++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> tmp = nums[pos];</span><br><span class="line">            nums[pos] = nums[replacePos];</span><br><span class="line">            nums[replacePos] = tmp;</span><br><span class="line">            sort(nums.begin()+pos+<span class="number">1</span>,nums.end());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Runtime: 8 ms, faster than 88.27% of C++ online submissions for Next Permutation.<br>Memory Usage: 8.7 MB, less than 44.52% of C++ online submissions for Next Permutation.</p>
-<h1 id="Review-《Interviewing-for-Google-AI-Residency-A-Kaggle-Gold-Finish-DSNet-Launch-Finishing-my-Undergraduate-Degree》"><a href="#Review-《Interviewing-for-Google-AI-Residency-A-Kaggle-Gold-Finish-DSNet-Launch-Finishing-my-Undergraduate-Degree》" class="headerlink" title="Review: 《Interviewing for Google AI Residency, A Kaggle Gold Finish, DSNet Launch, Finishing my Undergraduate Degree》"></a>Review: 《Interviewing for Google AI Residency, A Kaggle Gold Finish, DSNet Launch, Finishing my Undergraduate Degree》</h1></blockquote>
-<h1 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h1><h1 id="Share"><a href="#Share" class="headerlink" title="Share:"></a>Share:</h1>
+</blockquote>
+<h1 id="Review-高斯过程的可视化（A-Visual-Exploration-of-Gaussian-Processes）"><a href="#Review-高斯过程的可视化（A-Visual-Exploration-of-Gaussian-Processes）" class="headerlink" title="Review: 高斯过程的可视化（A Visual Exploration of Gaussian Processes）"></a>Review: 高斯过程的可视化（A Visual Exploration of Gaussian Processes）</h1><p><a href="https://distill.pub/2019/visual-exploration-gaussian-processes/" target="_blank" rel="noopener">https://distill.pub/2019/visual-exploration-gaussian-processes/</a></p>
+<h1 id="Tip-Mathpix软件自动识别数学公式"><a href="#Tip-Mathpix软件自动识别数学公式" class="headerlink" title="Tip: Mathpix软件自动识别数学公式"></a>Tip: Mathpix软件自动识别数学公式</h1><p><a href="https://mathpix.com/" target="_blank" rel="noopener">https://mathpix.com/</a></p>
+<h1 id="Share"><a href="#Share" class="headerlink" title="Share:"></a>Share:</h1>
       
     </div>
 
@@ -577,7 +579,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -617,7 +619,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
@@ -665,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-31-Next-Permutation"><span class="nav-text">Algorithm: LeetCode #31. Next Permutation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《Interviewing-for-Google-AI-Residency-A-Kaggle-Gold-Finish-DSNet-Launch-Finishing-my-Undergraduate-Degree》"><span class="nav-text">Review: 《Interviewing for Google AI Residency, A Kaggle Gold Finish, DSNet Launch, Finishing my Undergraduate Degree》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip"><span class="nav-text">Tip:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share"><span class="nav-text">Share:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-31-Next-Permutation"><span class="nav-text">Algorithm: LeetCode #31. Next Permutation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-高斯过程的可视化（A-Visual-Exploration-of-Gaussian-Processes）"><span class="nav-text">Review: 高斯过程的可视化（A Visual Exploration of Gaussian Processes）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip-Mathpix软件自动识别数学公式"><span class="nav-text">Tip: Mathpix软件自动识别数学公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share"><span class="nav-text">Share:</span></a></li></ol></div>
             
 
           </div>
@@ -698,7 +702,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">126k</span>
+    <span title="站点总字数">128k</span>
   
 
   
@@ -707,7 +711,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:55</span>
+    <span title="站点阅读时长">1:56</span>
   
 </div>
 
