@@ -110,17 +110,17 @@
 
 
 
-  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章  Algorithm: LeetCode #34. Find First and Last Position of Element in Sorted Array问题：从一个非严格递增数">
+  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #34. Find First and Last Position of Element in Sorted Arrayhttps:/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARTS挑战第13周（2019.6.17~6.23）">
 <meta property="og:url" content="https://zhong.blog/2019/06/17/arts-week-13/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章  Algorithm: LeetCode #34. Find First and Last Position of Element in Sorted Array问题：从一个非严格递增数">
+<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #34. Find First and Last Position of Element in Sorted Arrayhttps:/">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-06-16T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARTS挑战第13周（2019.6.17~6.23）">
-<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章  Algorithm: LeetCode #34. Find First and Last Position of Element in Sorted Array问题：从一个非严格递增数">
+<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #34. Find First and Last Position of Element in Sorted Arrayhttps:/">
 
 
 
@@ -399,7 +399,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.4k</span>
+                <span title="本文字数">3.5k</span>
               
 
               
@@ -438,9 +438,10 @@
 <li>Algorithm：每周至少做一个 leetcode 的算法题</li>
 <li>Review：阅读并点评至少一篇英文技术文章</li>
 <li>Tip：学习至少一个技术技巧</li>
-<li>Share：分享一篇有观点和思考的技术文章</li>
+<li>Share：分享一篇有观点和思考的技术文章（自己写）</li>
 </ul>
-<h1 id="Algorithm-LeetCode-34-Find-First-and-Last-Position-of-Element-in-Sorted-Array"><a href="#Algorithm-LeetCode-34-Find-First-and-Last-Position-of-Element-in-Sorted-Array" class="headerlink" title="Algorithm: LeetCode #34. Find First and Last Position of Element in Sorted Array"></a>Algorithm: LeetCode #34. Find First and Last Position of Element in Sorted Array</h1><p>问题：从一个非严格递增数组中找到target目标值最先和最后出现位置</p>
+<h1 id="Algorithm-LeetCode-34-Find-First-and-Last-Position-of-Element-in-Sorted-Array"><a href="#Algorithm-LeetCode-34-Find-First-and-Last-Position-of-Element-in-Sorted-Array" class="headerlink" title="Algorithm: LeetCode #34. Find First and Last Position of Element in Sorted Array"></a>Algorithm: LeetCode #34. Find First and Last Position of Element in Sorted Array</h1><p><a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/" target="_blank" rel="noopener">https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/</a></p>
+<p>问题：从一个非严格递增数组中找到target目标值最先和最后出现位置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [5,7,7,8,8,10], target = 8</span><br><span class="line">Output: [3,4]</span><br></pre></td></tr></table></figure>
 <p>解答：分两次进行二分查找，分别寻找最先出现位置和最后出现位置，注意在可能重复的情况下的二分判断条件。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; searchRange(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> first = search_inner(nums, <span class="number">0</span>, nums.size()<span class="number">-1</span>, target, <span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">int</span> second = search_inner(nums, <span class="number">0</span>, nums.size()<span class="number">-1</span>, target, <span class="literal">false</span>);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">        result.push_back(first);</span><br><span class="line">        result.push_back(second);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">std</span>::move(result);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">search_inner</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;nums, <span class="keyword">int</span> start, <span class="keyword">int</span> end, <span class="keyword">int</span> target, <span class="keyword">bool</span> priority_first)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start &gt; end)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">if</span> (start == end) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[start] == target)</span><br><span class="line">                <span class="keyword">return</span> start;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (start+<span class="number">1</span>==end) &#123;</span><br><span class="line">            <span class="keyword">if</span> (priority_first) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[start] == target)</span><br><span class="line">                <span class="keyword">return</span> start;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (nums[end] == target)</span><br><span class="line">                <span class="keyword">return</span> end;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[end] == target)</span><br><span class="line">                <span class="keyword">return</span> end;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (nums[start] == target)</span><br><span class="line">                <span class="keyword">return</span> start;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = (start + end) / <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (target &lt; nums[mid]) &#123;</span><br><span class="line">            <span class="keyword">return</span> search_inner(nums, start, mid<span class="number">-1</span>,target,priority_first);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &gt; nums[mid]) &#123;</span><br><span class="line">            <span class="keyword">return</span> search_inner(nums, mid+<span class="number">1</span>, end ,target,priority_first);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (priority_first) &#123;</span><br><span class="line">                <span class="keyword">return</span> search_inner(nums, start, mid,target,priority_first);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> search_inner(nums, mid, end ,target,priority_first);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -463,7 +464,8 @@
 <p>随后作者在面试过程中见到了很多让人惊喜的场景和人，但并没有通过面试。</p>
 <p>fastai团队给予了作者非常多的帮助，包括AI知识、写博客的指导、学术交流组织的建设、Kaggle竞赛的指导。</p>
 <p>最后作者列了未来的计划，包括重启博客计划、为学术交流组织继续贡献、拿到Kaggle Master、每周分享一篇论文摘要、每周总结Kaggle竞赛情况等等。</p>
-<h1 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h1><h1 id="Share"><a href="#Share" class="headerlink" title="Share:"></a>Share:</h1>
+<h1 id="Tip-Mathpix软件自动识别数学公式"><a href="#Tip-Mathpix软件自动识别数学公式" class="headerlink" title="Tip: Mathpix软件自动识别数学公式"></a>Tip: Mathpix软件自动识别数学公式</h1><p><a href="https://mathpix.com/" target="_blank" rel="noopener">https://mathpix.com/</a></p>
+<h1 id="Share"><a href="#Share" class="headerlink" title="Share:"></a>Share:</h1>
       
     </div>
 
@@ -598,7 +600,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -619,7 +621,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -688,7 +692,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-34-Find-First-and-Last-Position-of-Element-in-Sorted-Array"><span class="nav-text">Algorithm: LeetCode #34. Find First and Last Position of Element in Sorted Array</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《Interviewing-for-Google-AI-Residency-A-Kaggle-Gold-Finish-DSNet-Launch-Finishing-my-Undergraduate-Degree》"><span class="nav-text">Review: 《Interviewing for Google AI Residency, A Kaggle Gold Finish, DSNet Launch, Finishing my Undergraduate Degree》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip"><span class="nav-text">Tip:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share"><span class="nav-text">Share:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-34-Find-First-and-Last-Position-of-Element-in-Sorted-Array"><span class="nav-text">Algorithm: LeetCode #34. Find First and Last Position of Element in Sorted Array</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《Interviewing-for-Google-AI-Residency-A-Kaggle-Gold-Finish-DSNet-Launch-Finishing-my-Undergraduate-Degree》"><span class="nav-text">Review: 《Interviewing for Google AI Residency, A Kaggle Gold Finish, DSNet Launch, Finishing my Undergraduate Degree》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip-Mathpix软件自动识别数学公式"><span class="nav-text">Tip: Mathpix软件自动识别数学公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share"><span class="nav-text">Share:</span></a></li></ol></div>
             
 
           </div>
@@ -721,7 +725,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">128k</span>
+    <span title="站点总字数">145k</span>
   
 
   
@@ -730,7 +734,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:56</span>
+    <span title="站点阅读时长">2:12</span>
   
 </div>
 

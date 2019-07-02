@@ -110,17 +110,17 @@
 
 
 
-  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（理解为输出）  Algorithm: LeetCode #19 Remove Nth Node From End of List问题：将一个链表的倒数第n个节点删除 解答：简单的快慢指针">
+  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #19 Remove Nth Node From End of Listhttps://leetcode.com/problems/r">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARTS挑战第8周（2019.5.13~5.19）">
 <meta property="og:url" content="https://zhong.blog/2019/05/13/arts-week-8/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（理解为输出）  Algorithm: LeetCode #19 Remove Nth Node From End of List问题：将一个链表的倒数第n个节点删除 解答：简单的快慢指针">
+<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #19 Remove Nth Node From End of Listhttps://leetcode.com/problems/r">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-21T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARTS挑战第8周（2019.5.13~5.19）">
-<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（理解为输出）  Algorithm: LeetCode #19 Remove Nth Node From End of List问题：将一个链表的倒数第n个节点删除 解答：简单的快慢指针">
+<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #19 Remove Nth Node From End of Listhttps://leetcode.com/problems/r">
 
 
 
@@ -415,7 +415,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.9k</span>
+                <span title="本文字数">3k</span>
               
 
               
@@ -454,9 +454,10 @@
 <li>Algorithm：每周至少做一个 leetcode 的算法题</li>
 <li>Review：阅读并点评至少一篇英文技术文章</li>
 <li>Tip：学习至少一个技术技巧</li>
-<li>Share：分享一篇有观点和思考的技术文章（理解为输出）</li>
+<li>Share：分享一篇有观点和思考的技术文章（自己写）</li>
 </ul>
-<h1 id="Algorithm-LeetCode-19-Remove-Nth-Node-From-End-of-List"><a href="#Algorithm-LeetCode-19-Remove-Nth-Node-From-End-of-List" class="headerlink" title="Algorithm: LeetCode #19 Remove Nth Node From End of List"></a>Algorithm: LeetCode #19 Remove Nth Node From End of List</h1><p>问题：将一个链表的倒数第n个节点删除</p>
+<h1 id="Algorithm-LeetCode-19-Remove-Nth-Node-From-End-of-List"><a href="#Algorithm-LeetCode-19-Remove-Nth-Node-From-End-of-List" class="headerlink" title="Algorithm: LeetCode #19 Remove Nth Node From End of List"></a>Algorithm: LeetCode #19 Remove Nth Node From End of List</h1><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="noopener">https://leetcode.com/problems/remove-nth-node-from-end-of-list/</a></p>
+<p>问题：将一个链表的倒数第n个节点删除</p>
 <p>解答：简单的快慢指针方法，让慢指针始终落后快指针n个位置，最后删除慢指针的下一个元素</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeNthFromEnd</span><span class="params">(ListNode* head, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        ListNode* slow = head;</span><br><span class="line">        ListNode* fast = head;</span><br><span class="line">        <span class="keyword">while</span>(fast-&gt;next != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            fast = fast-&gt;next;</span><br><span class="line">            ++count;</span><br><span class="line">            <span class="keyword">if</span> (count &gt; n) &#123;</span><br><span class="line">                slow = slow-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (count &lt; n<span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> move(head);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (count == n<span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> move(head-&gt;next);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            slow-&gt;next = slow-&gt;next-&gt;next;</span><br><span class="line">            <span class="keyword">return</span> move(head);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -543,8 +544,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/06/latex-math-example/" rel="next" title="LaTeX数学公式入门">
-                <i class="fa fa-chevron-left"></i> LaTeX数学公式入门
+              <a href="/2019/05/06/arts-week-7/" rel="next" title="ARTS挑战第7周（2019.5.6~5.12）">
+                <i class="fa fa-chevron-left"></i> ARTS挑战第7周（2019.5.6~5.12）
               </a>
             
           </div>
@@ -624,7 +625,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -645,7 +646,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -747,7 +750,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">128k</span>
+    <span title="站点总字数">145k</span>
   
 
   
@@ -756,7 +759,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:56</span>
+    <span title="站点阅读时长">2:12</span>
   
 </div>
 

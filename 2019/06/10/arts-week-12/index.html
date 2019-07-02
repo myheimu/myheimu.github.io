@@ -110,17 +110,17 @@
 
 
 
-  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章  Algorithm: LeetCode #33. Search in Rotated Sorted Array问题：严格递增数组进行循环变换，然后寻找target值的位置12Input">
+  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #33. Search in Rotated Sorted Arrayhttps://leetcode.com/problems/se">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARTS挑战第12周（2019.6.10~6.16）">
 <meta property="og:url" content="https://zhong.blog/2019/06/10/arts-week-12/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章  Algorithm: LeetCode #33. Search in Rotated Sorted Array问题：严格递增数组进行循环变换，然后寻找target值的位置12Input">
+<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #33. Search in Rotated Sorted Arrayhttps://leetcode.com/problems/se">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-06-09T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARTS挑战第12周（2019.6.10~6.16）">
-<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章  Algorithm: LeetCode #33. Search in Rotated Sorted Array问题：严格递增数组进行循环变换，然后寻找target值的位置12Input">
+<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #33. Search in Rotated Sorted Arrayhttps://leetcode.com/problems/se">
 
 
 
@@ -438,9 +438,10 @@
 <li>Algorithm：每周至少做一个 leetcode 的算法题</li>
 <li>Review：阅读并点评至少一篇英文技术文章</li>
 <li>Tip：学习至少一个技术技巧</li>
-<li>Share：分享一篇有观点和思考的技术文章</li>
+<li>Share：分享一篇有观点和思考的技术文章（自己写）</li>
 </ul>
-<h1 id="Algorithm-LeetCode-33-Search-in-Rotated-Sorted-Array"><a href="#Algorithm-LeetCode-33-Search-in-Rotated-Sorted-Array" class="headerlink" title="Algorithm: LeetCode #33. Search in Rotated Sorted Array"></a>Algorithm: LeetCode #33. Search in Rotated Sorted Array</h1><p>问题：严格递增数组进行循环变换，然后寻找target值的位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [4,5,6,7,0,1,2], target = 0</span><br><span class="line">Output: 4</span><br></pre></td></tr></table></figure></p>
+<h1 id="Algorithm-LeetCode-33-Search-in-Rotated-Sorted-Array"><a href="#Algorithm-LeetCode-33-Search-in-Rotated-Sorted-Array" class="headerlink" title="Algorithm: LeetCode #33. Search in Rotated Sorted Array"></a>Algorithm: LeetCode #33. Search in Rotated Sorted Array</h1><p><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/" target="_blank" rel="noopener">https://leetcode.com/problems/search-in-rotated-sorted-array/</a></p>
+<p>问题：严格递增数组进行循环变换，然后寻找target值的位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [4,5,6,7,0,1,2], target = 0</span><br><span class="line">Output: 4</span><br></pre></td></tr></table></figure></p>
 <p>解答：二分法，时间复杂度 $O(\log n)$ ，关键是要注意二分的判断条件。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> search_inner(nums, <span class="number">0</span>, nums.size()<span class="number">-1</span>, target);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">search_inner</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;nums, <span class="keyword">int</span> start, <span class="keyword">int</span> end, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start &gt; end)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">if</span> (start == end) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[start] == target)</span><br><span class="line">                <span class="keyword">return</span> start;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (start+<span class="number">1</span>==end) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[start] == target)</span><br><span class="line">                <span class="keyword">return</span> start;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[end] == target)</span><br><span class="line">                <span class="keyword">return</span> end;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = (start + end) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[start] &lt;= nums[mid]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[start] &lt;= target &amp;&amp; target &lt;= nums[mid])</span><br><span class="line">                <span class="keyword">return</span> search_inner(nums, start, mid, target);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> search_inner(nums, mid, end, target);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[start] &lt;= target || target &lt;= nums[mid])</span><br><span class="line">                <span class="keyword">return</span> search_inner(nums, start, mid, target);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> search_inner(nums, mid, end, target);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -582,7 +583,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -603,7 +604,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -705,7 +708,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">128k</span>
+    <span title="站点总字数">145k</span>
   
 
   
@@ -714,7 +717,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:56</span>
+    <span title="站点阅读时长">2:12</span>
   
 </div>
 

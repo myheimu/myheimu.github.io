@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2">
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #5 寻找最长回文字符串https://leetcode.com/problems/longest-palindromic-subst">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARTS挑战第1周（2019.3.24~3.31）">
+<meta property="og:url" content="https://zhong.blog/2019/03/24/arts-week-1/index.html">
+<meta property="og:site_name" content="ZhongChen的技术博客">
+<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #5 寻找最长回文字符串https://leetcode.com/problems/longest-palindromic-subst">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-30T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ARTS挑战第1周（2019.3.24~3.31）">
+<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #5 寻找最长回文字符串https://leetcode.com/problems/longest-palindromic-subst">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://zhong.blog/2019/03/24/arts-week-1/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>ARTS挑战第1周（2019.3.24~3.31） | ZhongChen的技术博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZhongChen的技术博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">技术是条无尽的道路</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhong.blog/2019/03/24/arts-week-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhongChen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhongChen的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">ARTS挑战第1周（2019.3.24~3.31）
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-24 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-24T00:00:00+08:00">2019-03-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-31 00:00:00" itemprop="dateModified" datetime="2019-03-31T00:00:00+08:00">2019-03-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ARTS/" itemprop="url" rel="index"><span itemprop="name">ARTS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">4.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.zhihu.com/question/301150832" target="_blank" rel="noopener">ARTS挑战</a> 指每周完成：</p>
+<ul>
+<li>Algorithm：每周至少做一个 leetcode 的算法题</li>
+<li>Review：阅读并点评至少一篇英文技术文章</li>
+<li>Tip：学习至少一个技术技巧</li>
+<li>Share：分享一篇有观点和思考的技术文章（自己写）</li>
+</ul>
+<h1 id="Algorithm-LeetCode-5-寻找最长回文字符串"><a href="#Algorithm-LeetCode-5-寻找最长回文字符串" class="headerlink" title="Algorithm: LeetCode #5 寻找最长回文字符串"></a>Algorithm: LeetCode #5 寻找最长回文字符串</h1><p><a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank" rel="noopener">https://leetcode.com/problems/longest-palindromic-substring/</a></p>
+<p>问题：寻找最长回文字符串。</p>
+<p>思路：</p>
+<p>动态规划问题。</p>
+<p>当[i+1, j-1]范围字符串是回文，并且s[i]==s[j]的话，那么[i,j]范围字符串也是回文。</p>
+<p>开始用了[1000,1000]数组存储，后来发现可以用三行循环[1000]数组存储，节省存储空间。</p>
+<p>最终结果：</p>
+<p>Runtime: 56 ms, Your runtime beats 58.13 % of cpp submissions.</p>
+<p>Memory Usage: 8.7 MB, Your memory usage beats 99.83 % of cpp submissions.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;memory.h&gt;;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">bool</span> dp[<span class="number">3</span>][<span class="number">1000</span>];</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> longest_start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> longest_length = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> last_start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> use_row = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> size = s.length();</span><br><span class="line">        <span class="built_in">std</span>::fill(<span class="built_in">std</span>::begin(dp[<span class="number">2</span>]), <span class="built_in">std</span>::begin(dp[<span class="number">2</span>])+size, <span class="literal">true</span>);</span><br><span class="line">        <span class="built_in">std</span>::fill(<span class="built_in">std</span>::begin(dp[<span class="number">0</span>]), <span class="built_in">std</span>::begin(dp[<span class="number">0</span>])+size, <span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> length = <span class="number">2</span>; length &lt;= s.length(); ++length) &#123;</span><br><span class="line">            <span class="keyword">int</span> start=<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i+length<span class="number">-1</span> &lt; s.length(); ++i) &#123;</span><br><span class="line">                <span class="keyword">bool</span> ok = <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">if</span> (dp[(use_row<span class="number">-2</span>+<span class="number">3</span>)%<span class="number">3</span>][i+<span class="number">1</span>] &amp;&amp; (s.at(i) == s.at(i+length<span class="number">-1</span>))) &#123;</span><br><span class="line">                    start = i;</span><br><span class="line">                    dp[use_row][i]=<span class="literal">true</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    dp[use_row][i]=<span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (start &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                longest_start = start;</span><br><span class="line">                longest_length = length;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (last_start &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                </span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            last_start = start;</span><br><span class="line">            use_row = (use_row+<span class="number">1</span>) % <span class="number">3</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substr(longest_start, longest_length);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="Review-《An-Overview-of-Deep-Learning-for-Curious-People》"><a href="#Review-《An-Overview-of-Deep-Learning-for-Curious-People》" class="headerlink" title="Review: 《An Overview of Deep Learning for Curious People》"></a>Review: 《An Overview of Deep Learning for Curious People》</h1><p><a href="https://lilianweng.github.io/lil-log/2017/06/21/an-overview-of-deep-learning.html" target="_blank" rel="noopener">https://lilianweng.github.io/lil-log/2017/06/21/an-overview-of-deep-learning.html</a></p>
+<p>2016年AlphaGo打败李世乭，引发了世界对AI更多的关注。这篇文章想给不太熟悉机器学习的人讲解一下深度学习领域的整体概况。</p>
+<h2 id="为什么深度学习能行？"><a href="#为什么深度学习能行？" class="headerlink" title="为什么深度学习能行？"></a>为什么深度学习能行？</h2><p>深度学习模型，说白了就是大型、深度的人工神经网络（ANN）。</p>
+<p>人工神经网络一般由有向无环图来表示：输入层输入一些信号向量，输出层产生结果，而中间有一层或更多层的隐藏层。神经网络的思想起源自半个世纪之前，但为什么现在突然大家就开始大量谈论它了呢？</p>
+<p>原因很简单：</p>
+<ul>
+<li>更多数据</li>
+<li>更多算力</li>
+</ul>
+<p>一个又大又深的神经网络，会包含很多层，而每一层又有很多节点，所以将有指数量级多的参数需要调整。如果没有更多数据，我们无法更有效学习这些参数。如果没有更大的算力，学习讲非常慢非常差。</p>
+<p>有一个有趣的对比，在小数据集上，传统算法（回归、随机森林、SVM、GBM等）或者统计学习算法会非常好，但当数据量大大增加，那么大型神经网络将胜过其他算法。一方面，深度神经网络具备更多参数，具有足够容量能够学习复杂的非线性模式。另外一方面，深度神经网络能够在没有人工参与的情况下发现更多有用特征。</p>
+<h2 id="深度学习有哪些模型？"><a href="#深度学习有哪些模型？" class="headerlink" title="深度学习有哪些模型？"></a>深度学习有哪些模型？</h2><p><strong>卷积神经网络（Convolutional Neural Network）</strong></p>
+<p>卷积神经网络，是一种带有卷积模式的前馈神经网络，它是由大脑视觉皮层研究而获得的灵感。（大脑皮层部分内容略）</p>
+<p>“卷积”在数学上指的是两个矩阵的一种计算。“卷积核”是一个固定的小矩阵，它在输入矩阵上滑动、卷积，计算出卷积数值。有一些特别设置的卷积核可以将图片进行一些常见操作，比如模糊、锐化、边缘识别等等。</p>
+<p><strong>循环神经网络（Recurrent Neural Network）</strong></p>
+<p>循环神经网络是一种序列模型，能够将不同领域的一个输入序列转换为一个输出序列。它通常用于手写识别、语言识别、机器翻译等领域。</p>
+<p>RNN的诞生，是为了处理长序列数据，通过时间传播，根据上下文处理任务。该模型每次输入序列中的一个元素，在进行计算之后，会更新状态到下一时间步骤，用于下一元素的计算。例如用RNN对维基百科所有文章进行阅读，那么它可能能够对一个句子预测下一个词。</p>
+<p>当然，简单的感知机神经元只会简单合并当前输入元素和先前状态，容易损失长距离的依赖关系。例如我们有一个句子以“Alice is working at…”开头，然后接了一大段文本，问题是我们想在下一个句子开头正确使用“She”或者“He”。如果模型忘记了“Alice”，那么将无法解决这个问题。为了解决这类问题，研究人员创建了一种特殊的神经元，它具备更复杂的内部结构用于记住长距离的上下文，它叫做“LSTM”。它足够聪明，能够学习到它需要记住多长的旧信息，什么时候忘记，什么时候使用新信息，以及如何将记忆和新输入合并。</p>
+<p><strong>RNN：Seq2Seq模型</strong></p>
+<p>Seq2Seq模式是一种特殊的RNN，但它的使用场景足够不同，所以单独来讲。和RNN一样，Seq2Seq模型也是操作序列数据，但它特别用于构造聊天机器人或者个人助理，为了生成有意义的回答。一个Seq2Seq模型由编码器和解码器两个RNN足够，编码器要从输入中学习到上下文信息，然后把知识通过一个“上下文向量”传递给解码器，然后解码器消费这个向量，产生适当的回答结果。</p>
+<p><strong>自编码器（Autoencoder）</strong></p>
+<p>自编码器是一种无监督学习模型，它用于学习低维度表示和高维度数据集，有点像PCA做的。自编码器模型尝试学习近似函数f(x)≈x去重新产生输入数据。然而，它受到中间层非常少的节点层瓶颈限制，于是强制学习到了原始数据的高效编码。</p>
+<p><strong>增强学习（Reinforcement Learning）</strong></p>
+<p>AlphaGo就是一种增强学习，增强学习是机器学习的一个子领域，它能够让程序为了最大化长距离性能而根据上下文自动决定最优行为。</p>
+<p>AlphaGo系统开始是通过有监督学习来训练一个快速行走策略和一个策略网络，依赖一个人工指导的训练集。它学习到当前游戏状态里面最优的策略，然后通过增强学习进行自我游戏。 增强学习策略通过不断赢得与先前策略网络的胜利来获得提高，在一轮又一轮的自我对抗之后，AlphaGo在没有额外训练数据的情况下越来越强。</p>
+<p><strong>生成式对抗网络（Generative Adversarial Network）</strong></p>
+<p>生成式对抗网络是一种深度生成模型，它能够通过学习真实数据来创造新的例子。它由两部分模型组成，在一个零和游戏框架中相互对抗。Yann LeCun给了它很高的评价：生成式对抗网络是过去十年机器学习领域最有意思的想法。</p>
+<p>在原始的GAN论文中，GAN通过学习真实的图片，来生成有意义的图片。它由生成器和分辨器两部分组成：生成器用于产生假图，并把输出推送给分辨器，分辨器要作为法官，用于分辨出那些真实图片。</p>
+<h1 id="Tip-交叉熵的数学推导"><a href="#Tip-交叉熵的数学推导" class="headerlink" title="Tip: 交叉熵的数学推导"></a>Tip: 交叉熵的数学推导</h1><p>之前经常遇到交叉熵公式，但没有仔细研究过，所以从头开始推导一下。</p>
+<p><strong>自信息量，当一个事件 $X=x$ 发生，所带来的信息量。</strong></p>
+<script type="math/tex; mode=display">I(x)=-\log(P(x))</script><p>当发生 $X=x$ 发生概率 $P(x)$ 越小，则带来的信息量越大，当 $X=x$ 是必发生的，则带来的信息量为0。</p>
+<p><strong>香农熵：遵循P分布的事件所产生的信息量期望。</strong></p>
+<script type="math/tex; mode=display">H(x) = E_{X{\sim}P}[I(x)]=-E_{X{\sim}P}[log(P(x))]</script><p><strong>KL散度：基于随机变量X的两个单独概率分布P与Q的差异。</strong></p>
+<script type="math/tex; mode=display">D_{KL}(P||D)=E_{X{\sim}P}[log\frac{P(x)}{Q(x)}]=E_{X{\sim}P}[Log(P(x))-Log(Q(x))]</script><p><strong>交叉熵</strong></p>
+<script type="math/tex; mode=display">H(P,Q)=H(P)+D_{KL}(P||D)=-E_{X{\sim}P}[log(Q(x))]</script><p>针对离散分布的情况，可以推导为：</p>
+<script type="math/tex; mode=display">H(P,Q)=-E_{X{\sim}P}[log(Q(x))]=-\sum_{x}^{}{P(x)log(Q(x))}</script><p>由于 $P$ 通常表示实际分布，所以 $H(P)$ 是固定的，那么交叉熵和KL散度在梯度下降优化时是等价的。由于交叉熵算法更简单，所以通常用于损失函数。</p>
+<h1 id="Share-《人工智能发展简史-amp-Tensorflow入门1010》分享"><a href="#Share-《人工智能发展简史-amp-Tensorflow入门1010》分享" class="headerlink" title="Share: 《人工智能发展简史 &amp; Tensorflow入门1010》分享"></a>Share: 《人工智能发展简史 &amp; Tensorflow入门1010》分享</h1>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ZhongChen</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://zhong.blog/2019/03/24/arts-week-1/" title="ARTS挑战第1周（2019.3.24~3.31）">https://zhong.blog/2019/03/24/arts-week-1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/18/dev-stack-share/" rel="next" title="《软件开发技术栈（后端开发）》分享">
+                <i class="fa fa-chevron-left"></i> 《软件开发技术栈（后端开发）》分享
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/01/arts-week-2/" rel="prev" title="ARTS挑战第2周（2019.4.1~4.7）">
+                ARTS挑战第2周（2019.4.1~4.7） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ZhongChen</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-5-寻找最长回文字符串"><span class="nav-text">Algorithm: LeetCode #5 寻找最长回文字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《An-Overview-of-Deep-Learning-for-Curious-People》"><span class="nav-text">Review: 《An Overview of Deep Learning for Curious People》</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么深度学习能行？"><span class="nav-text">为什么深度学习能行？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习有哪些模型？"><span class="nav-text">深度学习有哪些模型？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip-交叉熵的数学推导"><span class="nav-text">Tip: 交叉熵的数学推导</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-《人工智能发展简史-amp-Tensorflow入门1010》分享"><span class="nav-text">Share: 《人工智能发展简史 &amp; Tensorflow入门1010》分享</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhongChen</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">145k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">2:12</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

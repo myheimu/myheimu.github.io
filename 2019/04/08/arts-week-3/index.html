@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2">
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #8 String to Integer (atoi)https://leetcode.com/problems/string-to-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARTS挑战第3周（2019.4.8~4.14）">
+<meta property="og:url" content="https://zhong.blog/2019/04/08/arts-week-3/index.html">
+<meta property="og:site_name" content="ZhongChen的技术博客">
+<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #8 String to Integer (atoi)https://leetcode.com/problems/string-to-">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-13T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ARTS挑战第3周（2019.4.8~4.14）">
+<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #8 String to Integer (atoi)https://leetcode.com/problems/string-to-">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://zhong.blog/2019/04/08/arts-week-3/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>ARTS挑战第3周（2019.4.8~4.14） | ZhongChen的技术博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZhongChen的技术博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">技术是条无尽的道路</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhong.blog/2019/04/08/arts-week-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhongChen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhongChen的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">ARTS挑战第3周（2019.4.8~4.14）
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-08 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-08T00:00:00+08:00">2019-04-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-14 00:00:00" itemprop="dateModified" datetime="2019-04-14T00:00:00+08:00">2019-04-14</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ARTS/" itemprop="url" rel="index"><span itemprop="name">ARTS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">4.2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.zhihu.com/question/301150832" target="_blank" rel="noopener">ARTS挑战</a> 指每周完成：</p>
+<ul>
+<li>Algorithm：每周至少做一个 leetcode 的算法题</li>
+<li>Review：阅读并点评至少一篇英文技术文章</li>
+<li>Tip：学习至少一个技术技巧</li>
+<li>Share：分享一篇有观点和思考的技术文章（自己写）</li>
+</ul>
+<h1 id="Algorithm-LeetCode-8-String-to-Integer-atoi"><a href="#Algorithm-LeetCode-8-String-to-Integer-atoi" class="headerlink" title="Algorithm: LeetCode #8 String to Integer (atoi)"></a>Algorithm: LeetCode #8 String to Integer (atoi)</h1><p><a href="https://leetcode.com/problems/string-to-integer-atoi/" target="_blank" rel="noopener">https://leetcode.com/problems/string-to-integer-atoi/</a></p>
+<p>问题：字符串转整数。【难度Medium】【通过率14.6%】</p>
+<p>解法：模拟识别即可，主要应对空白、负号、溢出等情况。</p>
+<p>第一次提交报错，因为测试数据里有“+1”这样情况没有考虑到，增加处理之后AC。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">bool</span> neg = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(str[i] == <span class="string">' '</span> &amp;&amp; i &lt; str.size()) &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (str[i] == <span class="string">'-'</span>) &#123;</span><br><span class="line">            i++;</span><br><span class="line">            neg = <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (str[i] == <span class="string">'+'</span>) &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (; i&lt; str.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> digit = str[i] - <span class="string">'0'</span>;</span><br><span class="line">            <span class="keyword">if</span> (digit &lt; <span class="number">0</span> || digit &gt; <span class="number">9</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            num = num * <span class="number">10</span> + digit;</span><br><span class="line">            <span class="keyword">if</span> (num &gt; <span class="number">2147483648</span>*<span class="number">100L</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (neg) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num &gt;= <span class="number">2147483648L</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">-2147483648</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> -(<span class="keyword">int</span>)num;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (num &gt;= <span class="number">2147483647L</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">2147483647</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> (<span class="keyword">int</span>)num;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="Review-《TensorFlow-is-dead-long-live-TensorFlow-》"><a href="#Review-《TensorFlow-is-dead-long-live-TensorFlow-》" class="headerlink" title="Review: 《TensorFlow is dead, long live TensorFlow!》"></a>Review: 《TensorFlow is dead, long live TensorFlow!》</h1><p><a href="https://hackernoon.com/tensorflow-is-dead-long-live-tensorflow-49d3e975cf04" target="_blank" rel="noopener">https://hackernoon.com/tensorflow-is-dead-long-live-tensorflow-49d3e975cf04</a></p>
+<p>如果你是一个AI狂热者而没有看这个月的大新闻，你你可能刚刚睡过了一场史无前例的大地震，所有事情都在变化！</p>
+<p>你需要了解一件重要的事情：TensorFlow 2.0要发布了！</p>
+<p>TensorFlow2.0是一场激进的更新，它会逐渐影响各个产业。如果你在2019年中刚了解TF，那么你将获得进入AI的一个最好机会。</p>
+<p>简单来说（In a Nutshell），TensorFlow现在将全面采用Keras。对于了解这几个词汇的人来说你应该已经从椅子上摔下来了。Boom！</p>
+<p>使用TensorFlow 1.x版本是一场刺痛的经历，虽然它能够帮助你在很大规模上完成AI任务，但不够用户友好。它有着陡峭的学习曲线，让它很难被临时使用者使用。这并不让人开心。</p>
+<p>TensorFlow的核心力量是性能，它能够让研究者构建庞大的架构并运行起来，但TF 1.x需要你为此付出很大代价。</p>
+<p>Keras是非常有意思的，它让人沉迷。Keras专门设计用来一层一层地构建模型，它可以基于多种机器学习框架，不过这里介绍的是TensorFlow里携带的tf.keras。</p>
+<p>Keras从头开始就是构造得足够Pythonic、以人为先，它非常诱人、灵活和容易学习。</p>
+<p>过去我们可能需要选择掌握好用的Keras还是性能更好的传统TensorFlow，然而现在我们可以同时拥有他们，即——TensorFlow 2.0！</p>
+<p>在这个新版本里面，所有TF 1.x中你痛恨的东西都被抛弃。为了相加两个数而写的特殊逻辑？没了。TensorFlow会话？没了。为了做同一件事而有各种各样方法？没了。为了硬件或者规模而重写代码？没了。无数的样板代码需要写？没了。可怕的错误信息？没了。陡峭的学习曲线？没了。同时，性能也并没有更差。</p>
+<blockquote>
+<p>TensorFlow 已死，TensorFlow 2.0 万岁！</p>
+</blockquote>
+<p>TensorFlow作为我们最有效的工具，突然扔掉了各类壁垒，让所有人都可以轻松进入这个领域。</p>
+<p>在TensorFlow 2.0中，eager执行成为默认选择。在eager环境中你可以利用数据流图，这让你测试和创建起来更容易。而TensorFlow的运行时会去操心背后的性能和数据规模。</p>
+<p>TensorFlow 1.x中的声明式编程范式让很多人迷失方向，而TensorFlow 2.0的命令式编程范式将没有这些问题。</p>
+<p>在Keras内，TensorFlow的很多API被整合起来，让你非常容易明白你怎么使用。现在只有一个优化器集合，一个测量集合，也只有一个原生的、Keras风格的层集合。</p>
+<p>TensorFlow 2.0并没有性能陷阱，但可能还有一个陷阱就是你需要痛苦忍受一些。TensorFlow仍然在酝酿一个友好的版本，这需要用户有足够耐心去等待。为深度学习创造工具是一个新领域，我们仍然一直在做规划，不可避免还有弯路。</p>
+<p>TensorFlow社区投入大量精力用于创造了最初的奇迹，之后要再次付出更多的努力去打磨一个最好的版本，去除掉不好设计。这个计划并不会强迫你使用一个草稿版本，但你可能需要习惯这种不舒服。TensorFlow1.x的那些重复的复杂功能将会被清理干净，错误也会被清理到简洁明了。同时仍然保持高性能。</p>
+<p>当然，反对者会说只要努力搜索，可以用1.x版本拼凑起来2.0的大部分内容。不过这也没什么大惊小怪的，因为不是每个人都想那么费劲挖掘。不过这还不是最大的问题。</p>
+<blockquote>
+<p>重要的一点是：TensorFlow刚宣布了对可用性强烈关注，绝不妥协。</p>
+</blockquote>
+<p>AI能够让你自动完成那些你无法写指令完成的任务，能够让你自动完成那些无法描述的任务。我们要让AI不再成为少数技术精英的领地。</p>
+<p>我们希望将来，“我能用Python做东西”和“我能用AI做东西”是同样的司空见惯的事情。这是颠覆性的！</p>
+<p>我们知道，升级版本是很困难的，特别是当变化如此巨大的时候。如果你准备着手升级代码库到TensorFlow2.0，那么你并不孤独，因为我们在Google也在做同样的事情，我们可以分享一些经验给你。</p>
+<p>如果你依赖于某些特定功能，你并不会陷入困境，因为除了contrib模块，所有的TF 1.x函数都可以在compat.v1兼容性模块中找到。我们也提供了一个脚本用于自动升级。</p>
+<blockquote>
+<p>TF 2.0是初学者的天堂</p>
+</blockquote>
+<p>如果你就是一个TF的初学者，虽然你在AI的派对上迟到了，但你可以得到一次恰到好处的进入时机。</p>
+<p>截止2019年3月，TensorFlow已经提供了2.0的内测Alpha版本，而下一个季度将能够提供正式版本。</p>
+<p>请采用以下命令，开始TensorFlow 2.0之旅吧！</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow==2.0.0-alpha0</span><br></pre></td></tr></table></figure>
+<h1 id="Tip-HDFS的ACL权限设置"><a href="#Tip-HDFS的ACL权限设置" class="headerlink" title="Tip: HDFS的ACL权限设置"></a>Tip: HDFS的ACL权限设置</h1><p>本周整理HDFS数据，由于涉及到多个krb账号相互操作，遇到了权限问题。</p>
+<p>默认情况下HDFS是按照POSIX权限模型的，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">user::rwx</span><br><span class="line">group::r-x</span><br><span class="line">other::r--</span><br></pre></td></tr></table></figure></p>
+<p>同时HDFS还支持了更复杂的ACL权限，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">user::rwx</span><br><span class="line">user:user_a:rwx</span><br><span class="line">group::r-x</span><br><span class="line">mask::r-x</span><br><span class="line">other::r--</span><br><span class="line">default:user::rwx</span><br><span class="line">default:user:user_a:rwx</span><br><span class="line">default:group::r-x</span><br><span class="line">default:mask::rwx</span><br><span class="line">default:other::r--</span><br></pre></td></tr></table></figure></p>
+<p>ACL权限控制的模型，兼容POSIX权限模型，即其中和POSIX相同的部分。</p>
+<p>表示在原有POSIX基础之上，对特定的user、group设置不同的权限。</p>
+<p>其中mask要对个体权限进行的and操作，才获得该用户最终权限。</p>
+<p>default是用于继承使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 添加acl配置</span><br><span class="line">hdfs dfs -setfacl -m user:user_a:rwx hdfs:://path</span><br><span class="line"># 删除acl设置</span><br><span class="line">hdfs dfs -setfacl -x user:user_a:rwx hdfs:://path</span><br><span class="line"># 查看acl设置</span><br><span class="line">hdfs dfs -getfacl ser:user_a:rwx hdfs:://path</span><br></pre></td></tr></table></figure></p>
+<h1 id="Share-《MIT-6-S191-深度学习入门》笔记"><a href="#Share-《MIT-6-S191-深度学习入门》笔记" class="headerlink" title="Share: 《MIT 6.S191 深度学习入门》笔记"></a>Share: 《MIT 6.S191 深度学习入门》笔记</h1><p><a href="https://zhuanlan.zhihu.com/p/61902350" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/61902350</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/61903134" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/61903134</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/61903324" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/61903324</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/61903508" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/61903508</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ZhongChen</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://zhong.blog/2019/04/08/arts-week-3/" title="ARTS挑战第3周（2019.4.8~4.14）">https://zhong.blog/2019/04/08/arts-week-3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/01/arts-week-2/" rel="next" title="ARTS挑战第2周（2019.4.1~4.7）">
+                <i class="fa fa-chevron-left"></i> ARTS挑战第2周（2019.4.1~4.7）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/15/arts-week-4/" rel="prev" title="ARTS挑战第4周（2019.4.15~4.21）">
+                ARTS挑战第4周（2019.4.15~4.21） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ZhongChen</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-8-String-to-Integer-atoi"><span class="nav-text">Algorithm: LeetCode #8 String to Integer (atoi)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《TensorFlow-is-dead-long-live-TensorFlow-》"><span class="nav-text">Review: 《TensorFlow is dead, long live TensorFlow!》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip-HDFS的ACL权限设置"><span class="nav-text">Tip: HDFS的ACL权限设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-《MIT-6-S191-深度学习入门》笔记"><span class="nav-text">Share: 《MIT 6.S191 深度学习入门》笔记</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhongChen</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">145k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">2:12</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

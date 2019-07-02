@@ -110,17 +110,17 @@
 
 
 
-  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章  Algorithm: LeetCode #23. Merge k Sorted Lists问题：将k个有序的链表归并为一个有序的链表 1234567Input:[  1-&amp;gt;4-&amp;">
+  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #23. Merge k Sorted Listshttps://leetcode.com/problems/merge-k-sort">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARTS挑战第11周（2019.6.3~6.9）">
 <meta property="og:url" content="https://zhong.blog/2019/06/03/arts-week-11/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章  Algorithm: LeetCode #23. Merge k Sorted Lists问题：将k个有序的链表归并为一个有序的链表 1234567Input:[  1-&amp;gt;4-&amp;">
+<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #23. Merge k Sorted Listshttps://leetcode.com/problems/merge-k-sort">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-06-09T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARTS挑战第11周（2019.6.3~6.9）">
-<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章  Algorithm: LeetCode #23. Merge k Sorted Lists问题：将k个有序的链表归并为一个有序的链表 1234567Input:[  1-&amp;gt;4-&amp;">
+<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #23. Merge k Sorted Listshttps://leetcode.com/problems/merge-k-sort">
 
 
 
@@ -415,7 +415,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2k</span>
+                <span title="本文字数">2.2k</span>
               
 
               
@@ -454,16 +454,18 @@
 <li>Algorithm：每周至少做一个 leetcode 的算法题</li>
 <li>Review：阅读并点评至少一篇英文技术文章</li>
 <li>Tip：学习至少一个技术技巧</li>
-<li>Share：分享一篇有观点和思考的技术文章</li>
+<li>Share：分享一篇有观点和思考的技术文章（自己写）</li>
 </ul>
-<h1 id="Algorithm-LeetCode-23-Merge-k-Sorted-Lists"><a href="#Algorithm-LeetCode-23-Merge-k-Sorted-Lists" class="headerlink" title="Algorithm: LeetCode #23. Merge k Sorted Lists"></a>Algorithm: LeetCode #23. Merge k Sorted Lists</h1><p>问题：将k个有序的链表归并为一个有序的链表</p>
+<h1 id="Algorithm-LeetCode-23-Merge-k-Sorted-Lists"><a href="#Algorithm-LeetCode-23-Merge-k-Sorted-Lists" class="headerlink" title="Algorithm: LeetCode #23. Merge k Sorted Lists"></a>Algorithm: LeetCode #23. Merge k Sorted Lists</h1><p><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank" rel="noopener">https://leetcode.com/problems/merge-k-sorted-lists/</a></p>
+<p>问题：将k个有序的链表归并为一个有序的链表</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">[</span><br><span class="line">  1-&gt;4-&gt;5,</span><br><span class="line">  1-&gt;3-&gt;4,</span><br><span class="line">  2-&gt;6</span><br><span class="line">]</span><br><span class="line">Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;5-&gt;6</span><br></pre></td></tr></table></figure>
 <p>解答：采用最小堆(priority_queue)持有每个链表的head，然后依次挑选当前最小的head进行归并。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">        <span class="keyword">int</span> value;</span><br><span class="line">        <span class="keyword">int</span> index;</span><br><span class="line">        Node(<span class="keyword">int</span> value, <span class="keyword">int</span> index):value(value), index(index) &#123;&#125;;</span><br><span class="line">        <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Node &amp;a, <span class="keyword">const</span> Node &amp;b);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Node &amp;a, <span class="keyword">const</span> Node &amp;b) &#123;</span><br><span class="line">    <span class="keyword">return</span> a.value &gt; b.value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:    </span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeKLists</span><span class="params">(<span class="built_in">vector</span>&lt;ListNode*&gt;&amp; lists)</span> </span>&#123;</span><br><span class="line">        priority_queue&lt;Node&gt; q;</span><br><span class="line">        ListNode* head = <span class="literal">NULL</span>;</span><br><span class="line">        ListNode* now = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i &lt; lists.size();++i) &#123;</span><br><span class="line">            <span class="keyword">auto</span> one_head = lists[i];</span><br><span class="line">            <span class="keyword">if</span> (one_head == <span class="literal">NULL</span>)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            q.push(Node(one_head-&gt;val, i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!q.empty()) &#123;</span><br><span class="line">            <span class="keyword">auto</span>* next = <span class="keyword">new</span> ListNode(q.top().value);</span><br><span class="line">            <span class="keyword">if</span> (head == <span class="literal">NULL</span>) &#123;</span><br><span class="line">                head = next;</span><br><span class="line">                now = next;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                now-&gt;next = next;</span><br><span class="line">                now = next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">auto</span> index = q.top().index;</span><br><span class="line">            q.pop();</span><br><span class="line">            lists[index] = lists[index]-&gt;next;</span><br><span class="line">            <span class="keyword">if</span> (lists[index] != <span class="literal">NULL</span>) &#123;</span><br><span class="line">                q.push(Node(lists[index]-&gt;val, index));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Runtime: 24 ms, faster than 95.65% of C++ online submissions for Merge k Sorted Lists.<br>Memory Usage: 11.7 MB, less than 32.66% of C++ online submissions for Merge k Sorted Lists.</p>
 </blockquote>
-<h1 id="Review"><a href="#Review" class="headerlink" title="Review:"></a>Review:</h1><h1 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h1><h1 id="Share-PPT《程序员的数学——线性代数与概率统计》第3部分"><a href="#Share-PPT《程序员的数学——线性代数与概率统计》第3部分" class="headerlink" title="Share: PPT《程序员的数学——线性代数与概率统计》第3部分"></a>Share: PPT《程序员的数学——线性代数与概率统计》第3部分</h1><a href="/2019/05/30/programmers-math-ppt/" title="《程序员的数学——线性代数与概率统计应用》分享">《程序员的数学——线性代数与概率统计应用》分享</a>
+<h1 id="Review-高斯过程的可视化（A-Visual-Exploration-of-Gaussian-Processes）"><a href="#Review-高斯过程的可视化（A-Visual-Exploration-of-Gaussian-Processes）" class="headerlink" title="Review: 高斯过程的可视化（A Visual Exploration of Gaussian Processes）"></a>Review: 高斯过程的可视化（A Visual Exploration of Gaussian Processes）</h1><p><a href="https://distill.pub/2019/visual-exploration-gaussian-processes/" target="_blank" rel="noopener">https://distill.pub/2019/visual-exploration-gaussian-processes/</a></p>
+<h1 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h1><h1 id="Share-PPT《程序员的数学——线性代数与概率统计》第3部分"><a href="#Share-PPT《程序员的数学——线性代数与概率统计》第3部分" class="headerlink" title="Share: PPT《程序员的数学——线性代数与概率统计》第3部分"></a>Share: PPT《程序员的数学——线性代数与概率统计》第3部分</h1><a href="/2019/05/30/programmers-math-ppt/" title="《程序员的数学——线性代数与概率统计应用》分享">《程序员的数学——线性代数与概率统计应用》分享</a>
       
     </div>
 
@@ -598,7 +600,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -619,7 +621,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -688,7 +692,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-23-Merge-k-Sorted-Lists"><span class="nav-text">Algorithm: LeetCode #23. Merge k Sorted Lists</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review"><span class="nav-text">Review:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip"><span class="nav-text">Tip:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-PPT《程序员的数学——线性代数与概率统计》第3部分"><span class="nav-text">Share: PPT《程序员的数学——线性代数与概率统计》第3部分</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-23-Merge-k-Sorted-Lists"><span class="nav-text">Algorithm: LeetCode #23. Merge k Sorted Lists</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-高斯过程的可视化（A-Visual-Exploration-of-Gaussian-Processes）"><span class="nav-text">Review: 高斯过程的可视化（A Visual Exploration of Gaussian Processes）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip"><span class="nav-text">Tip:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-PPT《程序员的数学——线性代数与概率统计》第3部分"><span class="nav-text">Share: PPT《程序员的数学——线性代数与概率统计》第3部分</span></a></li></ol></div>
             
 
           </div>
@@ -721,7 +725,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">128k</span>
+    <span title="站点总字数">145k</span>
   
 
   
@@ -730,7 +734,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:56</span>
+    <span title="站点阅读时长">2:12</span>
   
 </div>
 

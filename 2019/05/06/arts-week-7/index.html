@@ -110,17 +110,17 @@
 
 
 
-  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（理解为输出）  Algorithm: LeetCode #17 Letter Combinations of a Phone Number问题：对于九宫格输入法，通过输入的数字，推算出所">
+  <meta name="description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #17 Letter Combinations of a Phone Numberhttps://leetcode.com/probl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARTS挑战第7周（2019.5.6~5.12）">
 <meta property="og:url" content="https://zhong.blog/2019/05/06/arts-week-7/index.html">
 <meta property="og:site_name" content="ZhongChen的技术博客">
-<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（理解为输出）  Algorithm: LeetCode #17 Letter Combinations of a Phone Number问题：对于九宫格输入法，通过输入的数字，推算出所">
+<meta property="og:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #17 Letter Combinations of a Phone Numberhttps://leetcode.com/probl">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-21T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARTS挑战第7周（2019.5.6~5.12）">
-<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（理解为输出）  Algorithm: LeetCode #17 Letter Combinations of a Phone Number问题：对于九宫格输入法，通过输入的数字，推算出所">
+<meta name="twitter:description" content="ARTS挑战 指每周完成：  Algorithm：每周至少做一个 leetcode 的算法题 Review：阅读并点评至少一篇英文技术文章 Tip：学习至少一个技术技巧 Share：分享一篇有观点和思考的技术文章（自己写）  Algorithm: LeetCode #17 Letter Combinations of a Phone Numberhttps://leetcode.com/probl">
 
 
 
@@ -454,9 +454,10 @@
 <li>Algorithm：每周至少做一个 leetcode 的算法题</li>
 <li>Review：阅读并点评至少一篇英文技术文章</li>
 <li>Tip：学习至少一个技术技巧</li>
-<li>Share：分享一篇有观点和思考的技术文章（理解为输出）</li>
+<li>Share：分享一篇有观点和思考的技术文章（自己写）</li>
 </ul>
-<h1 id="Algorithm-LeetCode-17-Letter-Combinations-of-a-Phone-Number"><a href="#Algorithm-LeetCode-17-Letter-Combinations-of-a-Phone-Number" class="headerlink" title="Algorithm: LeetCode #17 Letter Combinations of a Phone Number"></a>Algorithm: LeetCode #17 Letter Combinations of a Phone Number</h1><p>问题：对于九宫格输入法，通过输入的数字，推算出所有可能的字母组合</p>
+<h1 id="Algorithm-LeetCode-17-Letter-Combinations-of-a-Phone-Number"><a href="#Algorithm-LeetCode-17-Letter-Combinations-of-a-Phone-Number" class="headerlink" title="Algorithm: LeetCode #17 Letter Combinations of a Phone Number"></a>Algorithm: LeetCode #17 Letter Combinations of a Phone Number</h1><p><a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/" target="_blank" rel="noopener">https://leetcode.com/problems/letter-combinations-of-a-phone-number/</a></p>
+<p>问题：对于九宫格输入法，通过输入的数字，推算出所有可能的字母组合</p>
 <p>解答：其实就是一个变种的全排列问题，可以按照数字进位的方式来说，即：先从每个位置都是最小值开始，每一轮循环相当于“+1”，过程就是从后往前找到第一个非最大值的位置，对其“+1”，并把后面的值都设为最小值。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; letterCombinations(<span class="built_in">string</span> digits) &#123;</span><br><span class="line">        <span class="keyword">char</span> int_first_char[<span class="number">10</span>] = &#123;<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'a'</span>,<span class="string">'d'</span>,<span class="string">'g'</span>,<span class="string">'j'</span>,<span class="string">'m'</span>,<span class="string">'p'</span>,<span class="string">'t'</span>,<span class="string">'w'</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> is_first_char[<span class="number">26</span>] = &#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">char</span> next_char[<span class="number">26</span>] = &#123;<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'-'</span>,<span class="string">'e'</span>,<span class="string">'f'</span>,<span class="string">'-'</span>,<span class="string">'h'</span>,<span class="string">'i'</span>,<span class="string">'-'</span>,<span class="string">'k'</span>,<span class="string">'l'</span>,<span class="string">'-'</span>,<span class="string">'n'</span>,<span class="string">'o'</span>,<span class="string">'-'</span>,<span class="string">'q'</span>,<span class="string">'r'</span>,<span class="string">'s'</span>,<span class="string">'-'</span>,<span class="string">'u'</span>,<span class="string">'v'</span>,<span class="string">'-'</span>,<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'z'</span>,<span class="string">'-'</span>&#125;;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; result;</span><br><span class="line">        <span class="keyword">int</span> length = digits.size();</span><br><span class="line">        <span class="keyword">char</span> buffer[length+<span class="number">1</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">if</span> (length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">string</span>::size_type i = <span class="number">0</span>; i &lt; length; ++i) &#123;</span><br><span class="line">            buffer[i] = int_first_char[digits[i] - <span class="string">'0'</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="built_in">string</span> <span class="title">str</span><span class="params">(buffer)</span></span>;</span><br><span class="line">        result.push_back(str);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> i = length - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; next_char[buffer[i]-<span class="string">'a'</span>]==<span class="string">'-'</span>)</span><br><span class="line">                --i;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            buffer[i] = next_char[buffer[i]-<span class="string">'a'</span>];</span><br><span class="line">            ++i;</span><br><span class="line">            <span class="keyword">for</span> (;i&lt;length;++i) &#123;</span><br><span class="line">                buffer[i] = int_first_char[digits[i]-<span class="string">'0'</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="function"><span class="built_in">string</span> <span class="title">str</span><span class="params">(buffer)</span></span>;</span><br><span class="line">            result.push_back(str);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> move(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -567,8 +568,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/05/hello-github-pages-world/" rel="next" title="Hello 'Github Pages' World!">
-                <i class="fa fa-chevron-left"></i> Hello 'Github Pages' World!
+              <a href="/2019/05/06/latex-math-example/" rel="next" title="LaTeX数学公式入门">
+                <i class="fa fa-chevron-left"></i> LaTeX数学公式入门
               </a>
             
           </div>
@@ -577,8 +578,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/06/latex-math-example/" rel="prev" title="LaTeX数学公式入门">
-                LaTeX数学公式入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/13/arts-week-8/" rel="prev" title="ARTS挑战第8周（2019.5.13~5.19）">
+                ARTS挑战第8周（2019.5.13~5.19） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -648,7 +649,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -669,7 +670,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -771,7 +774,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">128k</span>
+    <span title="站点总字数">145k</span>
   
 
   
@@ -780,7 +783,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:56</span>
+    <span title="站点阅读时长">2:12</span>
   
 </div>
 
