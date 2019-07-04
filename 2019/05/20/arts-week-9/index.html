@@ -399,7 +399,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.6k</span>
+                <span title="本文字数">2.6k</span>
               
 
               
@@ -413,7 +413,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -449,7 +449,33 @@
 <p>Runtime: 8 ms, faster than 76.35% of C++ online submissions for Generate Parentheses.<br>Memory Usage: 10.2 MB, less than 93.23% of C++ online submissions for Generate Parentheses.</p>
 </blockquote>
 <h1 id="Review-《The-fine-art-of-fast-development》"><a href="#Review-《The-fine-art-of-fast-development》" class="headerlink" title="Review: 《The fine art of fast development》"></a>Review: 《The fine art of fast development》</h1><p><a href="https://hackernoon.com/the-fine-art-of-fast-development-f3b1abb509da" target="_blank" rel="noopener">https://hackernoon.com/the-fine-art-of-fast-development-f3b1abb509da</a></p>
-<h1 id="Tip-正交矩阵与酉矩阵"><a href="#Tip-正交矩阵与酉矩阵" class="headerlink" title="Tip: 正交矩阵与酉矩阵"></a>Tip: 正交矩阵与酉矩阵</h1><h1 id="Share-PPT《程序员的数学——线性代数与概率统计》第1部分"><a href="#Share-PPT《程序员的数学——线性代数与概率统计》第1部分" class="headerlink" title="Share: PPT《程序员的数学——线性代数与概率统计》第1部分"></a>Share: PPT《程序员的数学——线性代数与概率统计》第1部分</h1><a href="/2019/05/30/programmers-math-ppt/" title="《程序员的数学——线性代数与概率统计应用》分享">《程序员的数学——线性代数与概率统计应用》分享</a>
+<p>这篇文章主要讨论如何进行快速开发，开头说了一堆客套话，还举了龟兔赛跑及其变种的例子来说明慢慢开发和快速开发的区别，随后进入正题：</p>
+<h2 id="记录自己的工作时间"><a href="#记录自己的工作时间" class="headerlink" title="记录自己的工作时间"></a>记录自己的工作时间</h2><p>安装软件来监控自己在一天内各个时间做的，让你自己有动力去学减掉只有短期诱惑的事情。</p>
+<p>软件例如RescueTime，可以记录打开应用程序窗口和各类url的累积用时。</p>
+<p>只需要监控几周，就可以停止，因为已经可以看到自己在各种事情上面的耗时情况了。</p>
+<h2 id="避免多任务并行"><a href="#避免多任务并行" class="headerlink" title="避免多任务并行"></a>避免多任务并行</h2><p>把编程工作缩减为至少30分钟的无干扰时间段，最好是2个小时。</p>
+<p>大多数人平时是多任务并行的，随时被电话、同事打断，所以要尽量保持一长段时间的无干扰时间段。</p>
+<p>这和代码运行是一样的，一旦被其他事情打断，就需要更换上下文信息，清理上一轮的垃圾信息，涌入这一轮的大量新信息，造成低效。</p>
+<p>（这就是番茄工作法）</p>
+<h2 id="任务链"><a href="#任务链" class="headerlink" title="任务链"></a>任务链</h2><p>你能否从一个任务无缝移动到下一个任务？</p>
+<p>整体在讨论git主干开发与敏捷开发的区别，以及应用在工作之中的情况。</p>
+<p>主干开发，会把每一件事情都从主干开始开发，并且快速合并回主干，降低冲突处理成本。</p>
+<h2 id="事情只做一次"><a href="#事情只做一次" class="headerlink" title="事情只做一次"></a>事情只做一次</h2><p>不要写bug</p>
+<p>尤其要守住code review环节，一次性把事情做完，而不是等到后面发现遗留bug而耽误时间。</p>
+<h2 id="识别并修复自己较慢的点"><a href="#识别并修复自己较慢的点" class="headerlink" title="识别并修复自己较慢的点"></a>识别并修复自己较慢的点</h2><p>如果有些代码环节总是反复写的很慢，那么需要花一些事情在这个领域进行研究。</p>
+<h2 id="先搭框架，再打磨"><a href="#先搭框架，再打磨" class="headerlink" title="先搭框架，再打磨"></a>先搭框架，再打磨</h2><p>对于任何任务，先要解决大框架、大问题，想清楚代码结构，尝试一些不同的东西，最后才详细编码，处理小问题。</p>
+<h2 id="密切关注未来"><a href="#密切关注未来" class="headerlink" title="密切关注未来"></a>密切关注未来</h2><p>编写易于重构的代码，考虑未来可扩展性。</p>
+<h2 id="勇敢发声"><a href="#勇敢发声" class="headerlink" title="勇敢发声"></a>勇敢发声</h2><p>如果在团队中发现一些不好的代码设计，应当尽早跟leader说明，避免今后酿成大祸。</p>
+<h1 id="Tip-正交矩阵的性质"><a href="#Tip-正交矩阵的性质" class="headerlink" title="Tip: 正交矩阵的性质"></a>Tip: 正交矩阵的性质</h1><p>正交矩阵为实数方阵，满足条件是行向量和列向量皆为正交的单位向量</p>
+<p>从性质上来说，满足：</p>
+<p>矩阵的转置等于矩阵的逆：$Q^T=Q^{-1}$</p>
+<p>矩阵乘上矩阵的转置，等于单位矩阵：$QQ^T=Q^TQ=I$</p>
+<p>行列式为1或-1：$\det(Q)=\pm 1$</p>
+<p>从几何含义来说，正交矩阵对应的映射关系，是对向量的旋转或镜面映射或两者的结合（瑕旋转），例如：</p>
+<p>$\begin{bmatrix}1&amp;0\\0&amp;1\end{bmatrix}$ 为恒等变换</p>
+<p>$\begin{bmatrix}0.96&amp;-0.28\\0.28&amp;0.96\end{bmatrix}$ 为旋转16.26°变换</p>
+<p>$\begin{bmatrix}1&amp;0\\0&amp;-1\end{bmatrix}$ 为针对x轴进行镜面映射</p>
+<h1 id="Share-PPT《程序员的数学——线性代数与概率统计》第1部分"><a href="#Share-PPT《程序员的数学——线性代数与概率统计》第1部分" class="headerlink" title="Share: PPT《程序员的数学——线性代数与概率统计》第1部分"></a>Share: PPT《程序员的数学——线性代数与概率统计》第1部分</h1><a href="/2019/05/30/programmers-math-ppt/" title="《程序员的数学——线性代数与概率统计应用》分享">《程序员的数学——线性代数与概率统计应用》分享</a>
       
     </div>
 
@@ -503,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/19/linear-algebra-note-3/" rel="next" title="《程序员的数学3：线性代数》笔记3">
-                <i class="fa fa-chevron-left"></i> 《程序员的数学3：线性代数》笔记3
+              <a href="/2019/05/20/linear-algebra-note-4/" rel="next" title="《程序员的数学3：线性代数》笔记4">
+                <i class="fa fa-chevron-left"></i> 《程序员的数学3：线性代数》笔记4
               </a>
             
           </div>
@@ -513,8 +539,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/20/linear-algebra-note-4/" rel="prev" title="《程序员的数学3：线性代数》笔记4">
-                《程序员的数学3：线性代数》笔记4 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/27/arts-week-10/" rel="prev" title="ARTS挑战第10周（2019.5.27~6.2）">
+                ARTS挑战第10周（2019.5.27~6.2） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -676,7 +702,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-22-Generate-Parentheses"><span class="nav-text">Algorithm: LeetCode #22 Generate Parentheses</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《The-fine-art-of-fast-development》"><span class="nav-text">Review: 《The fine art of fast development》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip-正交矩阵与酉矩阵"><span class="nav-text">Tip: 正交矩阵与酉矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-PPT《程序员的数学——线性代数与概率统计》第1部分"><span class="nav-text">Share: PPT《程序员的数学——线性代数与概率统计》第1部分</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-22-Generate-Parentheses"><span class="nav-text">Algorithm: LeetCode #22 Generate Parentheses</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《The-fine-art-of-fast-development》"><span class="nav-text">Review: 《The fine art of fast development》</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#记录自己的工作时间"><span class="nav-text">记录自己的工作时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免多任务并行"><span class="nav-text">避免多任务并行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任务链"><span class="nav-text">任务链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事情只做一次"><span class="nav-text">事情只做一次</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#识别并修复自己较慢的点"><span class="nav-text">识别并修复自己较慢的点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#先搭框架，再打磨"><span class="nav-text">先搭框架，再打磨</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#密切关注未来"><span class="nav-text">密切关注未来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#勇敢发声"><span class="nav-text">勇敢发声</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip-正交矩阵的性质"><span class="nav-text">Tip: 正交矩阵的性质</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-PPT《程序员的数学——线性代数与概率统计》第1部分"><span class="nav-text">Share: PPT《程序员的数学——线性代数与概率统计》第1部分</span></a></li></ol></div>
             
 
           </div>
@@ -709,7 +735,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">145k</span>
+    <span title="站点总字数">146k</span>
   
 
   
@@ -718,7 +744,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:12</span>
+    <span title="站点阅读时长">2:13</span>
   
 </div>
 
