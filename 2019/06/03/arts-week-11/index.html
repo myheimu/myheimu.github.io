@@ -415,7 +415,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.2k</span>
+                <span title="本文字数">3.9k</span>
               
 
               
@@ -429,7 +429,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -465,7 +465,43 @@
 <p>Runtime: 24 ms, faster than 95.65% of C++ online submissions for Merge k Sorted Lists.<br>Memory Usage: 11.7 MB, less than 32.66% of C++ online submissions for Merge k Sorted Lists.</p>
 </blockquote>
 <h1 id="Review-高斯过程的可视化（A-Visual-Exploration-of-Gaussian-Processes）"><a href="#Review-高斯过程的可视化（A-Visual-Exploration-of-Gaussian-Processes）" class="headerlink" title="Review: 高斯过程的可视化（A Visual Exploration of Gaussian Processes）"></a>Review: 高斯过程的可视化（A Visual Exploration of Gaussian Processes）</h1><p><a href="https://distill.pub/2019/visual-exploration-gaussian-processes/" target="_blank" rel="noopener">https://distill.pub/2019/visual-exploration-gaussian-processes/</a></p>
-<h1 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h1><h1 id="Share-PPT《程序员的数学——线性代数与概率统计》第2部分"><a href="#Share-PPT《程序员的数学——线性代数与概率统计》第2部分" class="headerlink" title="Share: PPT《程序员的数学——线性代数与概率统计》第2部分"></a>Share: PPT《程序员的数学——线性代数与概率统计》第2部分</h1><a href="/2019/05/30/programmers-math-ppt/" title="《程序员的数学——线性代数与概率统计应用》分享">《程序员的数学——线性代数与概率统计应用》分享</a>
+<p>这篇文章非常好地形象化讲解了高斯过程，原文有很多动态、互动展示功能，此处无法引用，建议到原文查看。</p>
+<p><strong>多元高斯分布</strong>，例如一个n元高斯分布，写为：</p>
+<script type="math/tex; mode=display">X=\begin{bmatrix}
+X_1\\X_2\\\vdots\\X_n
+\end{bmatrix}
+\sim\mathcal{N}(\mu,\Sigma)</script><p>其中的协方差矩阵定义即为：</p>
+<script type="math/tex; mode=display">\Sigma=\mathrm{Cov}(X_i,X_j)=\mathrm{E}[(X_i-\mu_i)(X_j-\mu_j)^T]</script><p><strong>多元高斯分布的边缘分布和条件分布，仍然是高斯分布</strong></p>
+<script type="math/tex; mode=display">P_{X_Y}=\begin{bmatrix}X\\Y\end{bmatrix}
+\sim\mathcal{N}(
+    \begin{bmatrix}
+    \mu_X\\\mu_Y
+    \end{bmatrix},
+    \begin{bmatrix}
+    \Sigma_{XX}&\Sigma_{XY}\\
+    \Sigma_{YX}&\Sigma_{YY}
+    \end{bmatrix}
+)</script><p>则其边缘分布为：</p>
+<script type="math/tex; mode=display">X\sim\mathcal{N}(\mu_X,\Sigma_{XX})</script><script type="math/tex; mode=display">Y\sim\mathcal{N}(\mu_Y,\Sigma_{YY})</script><p>其条件分布为：</p>
+<script type="math/tex; mode=display">X | Y \sim \mathcal{N}\left(\mu_{X}+\Sigma_{X Y} \Sigma_{Y Y}^{-1}\left(Y-\mu_{Y}\right), \Sigma_{X X}-\Sigma_{X Y} \Sigma_{Y Y}^{-1} \Sigma_{Y X}\right)</script><script type="math/tex; mode=display">Y | X \sim \mathcal{N}\left(\mu_{Y}+\Sigma_{Y X} \Sigma_{X X}^{-1}\left(X-\mu_{X}\right), \Sigma_{Y Y}-\Sigma_{Y X} \Sigma_{X X}^{-1} \Sigma_{X Y}\right)</script><p><strong>高斯过程</strong>就是将多元高斯分布推广到无穷维，可以连接起来，形成类似一个函数的样子</p>
+<p>高斯过程和多维高斯分布一样，由两样东西来定义，一个是均值$\mu$，一个是协方差矩阵$\Sigma$。</p>
+<p>无穷维无法遍历，但我们可以采用<strong>核函数</strong>来定义协方差矩阵，例如采用高斯核（RBF Kernel）：</p>
+<script type="math/tex; mode=display">\sigma^{2} \exp \left(-\frac{\left\|t-t^{\prime}\right\|^{2}}{2 l^{2}}\right)</script><p>或者是周期核（Periodic）或者线性核（Linear）：</p>
+<script type="math/tex; mode=display">\sigma^{2} \exp \left(-\frac{2 \sin ^{2}\left(\pi\left|t-t^{\prime}\right| / p\right)}{l^{2}}\right)</script><script type="math/tex; mode=display">\sigma_{b}^{2}+\sigma^{2}(t-c)\left(t^{\prime}-c\right)</script><p>采用核函数的主要用途，是为了<strong>平滑函数</strong></p>
+<p>最终的计算即为：（X为测试数据，Y为训练数据）</p>
+<p>先验信息：$P_X$</p>
+<p>当有了训练数据 $Y$ 后，可以计算后验条件概率：</p>
+<script type="math/tex; mode=display">
+P_{X|Y} \sim \mathcal{N}\left(\mu^{\prime}, \Sigma^{\prime}\right)</script><h1 id="Tip-特征分解的几何含义"><a href="#Tip-特征分解的几何含义" class="headerlink" title="Tip: 特征分解的几何含义"></a>Tip: 特征分解的几何含义</h1><p>特征分解，指将一个可对角化的方阵，分解为一个单位特征向量的正交阵和一个包含特征值的对角阵：</p>
+<script type="math/tex; mode=display">A=Q\Lambda Q^{-1}</script><p>由于矩阵就是映射，那么我们来看一下分解之后的映射是什么样的：</p>
+<p>例如对矩阵 $X$ 进行映射 $A$，即为： $AX=Q\Lambda Q^{-1}X=Q(\Lambda(Q^{-1}X))$</p>
+<p>相当于包括了三个步骤：</p>
+<ol>
+<li>左乘单位正交阵的逆 $Q^{-1}$，相当于做（瑕）旋转，将特征向量方向旋转为标准基</li>
+<li>左乘对角阵 $\Lambda$，相当于在标准基上做拉伸</li>
+<li>左乘单位正交阵 $Q$，相当于重新（瑕）旋转回去</li>
+</ol>
+<h1 id="Share-PPT《程序员的数学——线性代数与概率统计》第2部分"><a href="#Share-PPT《程序员的数学——线性代数与概率统计》第2部分" class="headerlink" title="Share: PPT《程序员的数学——线性代数与概率统计》第2部分"></a>Share: PPT《程序员的数学——线性代数与概率统计》第2部分</h1><a href="/2019/05/30/programmers-math-ppt/" title="《程序员的数学——线性代数与概率统计应用》分享">《程序员的数学——线性代数与概率统计应用》分享</a>
       
     </div>
 
@@ -692,7 +728,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-23-Merge-k-Sorted-Lists"><span class="nav-text">Algorithm: LeetCode #23. Merge k Sorted Lists</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-高斯过程的可视化（A-Visual-Exploration-of-Gaussian-Processes）"><span class="nav-text">Review: 高斯过程的可视化（A Visual Exploration of Gaussian Processes）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip"><span class="nav-text">Tip:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-PPT《程序员的数学——线性代数与概率统计》第2部分"><span class="nav-text">Share: PPT《程序员的数学——线性代数与概率统计》第2部分</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-23-Merge-k-Sorted-Lists"><span class="nav-text">Algorithm: LeetCode #23. Merge k Sorted Lists</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-高斯过程的可视化（A-Visual-Exploration-of-Gaussian-Processes）"><span class="nav-text">Review: 高斯过程的可视化（A Visual Exploration of Gaussian Processes）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip-特征分解的几何含义"><span class="nav-text">Tip: 特征分解的几何含义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-PPT《程序员的数学——线性代数与概率统计》第2部分"><span class="nav-text">Share: PPT《程序员的数学——线性代数与概率统计》第2部分</span></a></li></ol></div>
             
 
           </div>
@@ -725,7 +761,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">149k</span>
+    <span title="站点总字数">152k</span>
   
 
   
@@ -734,7 +770,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:15</span>
+    <span title="站点阅读时长">2:18</span>
   
 </div>
 
