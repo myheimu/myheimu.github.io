@@ -399,7 +399,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3k</span>
+                <span title="本文字数">3.8k</span>
               
 
               
@@ -448,13 +448,33 @@
 <p>Runtime: 0 ms, faster than 100.00% of C++ online submissions for Search in Rotated Sorted Array.<br>Memory Usage: 8.8 MB, less than 47.65% of C++ online submissions for Search in Rotated Sorted Array.</p>
 </blockquote>
 <h1 id="Review-《“Sequence-to-Sequence-Learning-with-Neural-Networks”-Paper-Discussion》"><a href="#Review-《“Sequence-to-Sequence-Learning-with-Neural-Networks”-Paper-Discussion》" class="headerlink" title="Review: 《“Sequence to Sequence Learning with Neural Networks”: Paper Discussion》"></a>Review: 《“Sequence to Sequence Learning with Neural Networks”: Paper Discussion》</h1><p><a href="https://hackernoon.com/sequence-to-sequence-learning-with-neural-networks-paper-discussion-6be16f19ecae" target="_blank" rel="noopener">https://hackernoon.com/sequence-to-sequence-learning-with-neural-networks-paper-discussion-6be16f19ecae</a></p>
+<p>Seq2Seq模型是非常经典的端到端深度学习模型，最初用于展现神经网络机器翻译远超统计机器翻译的强大能力。</p>
+<p>需要注意的是，在2014年这篇论文发表的时候，还没有Tensorflow、PyTorch这些工具，而DNN也才仅仅刚开始使用。</p>
+<p>论文中的架构分为两个深度LSTM网络：</p>
+<ul>
+<li>一个作为Encoder，负责将输入序列转换到一个固定维度的向量上</li>
+<li>一个作为Decoder，负责将固定维度的向量转换到一个输出序列上</li>
+</ul>
+<p>LSTM网络用于从输入序列预测输出序列的可能性：</p>
+<script type="math/tex; mode=display">
+p\left(y_{1}, \ldots, y_{T^{\prime}} | x_{1}, \ldots, x_{T}\right)=\prod_{t=1}^{T^{\prime}} p\left(y_{t} | v, y_{1}, \ldots, y_{t-1}\right)</script><p>两个LSTM网络的存在，是为了能够同步处理多种语言翻译对；论文中采用四层LSTM，充分展现了深度神经网络的能力；论文甚至尝试将输入序列进行逆序输入</p>
+<p>训练细节：</p>
+<ul>
+<li>源语言采用16万的高频词，目标语言采用8万的高频词，其余未录入词采用特殊的<code>UNK</code>标记</li>
+<li>训练目标是最大化对数概率：1$/|\mathcal{S}| \sum_{(T, S) \in \mathcal{S}} \log p(T | S)$</li>
+<li>翻译结果的生成，采用最大可能的结果：$\hat{T}=\arg \max _{T} p(T | S)$</li>
+<li>采用获得输出特殊标记<code>&lt;EOS&gt;</code>作为结尾，进行贪心搜索</li>
+<li>所有LSTM参数采用-0.08到0.08之间的均匀分布初始化</li>
+<li>对梯度进行约束，避免梯度爆炸</li>
+</ul>
+<p>最终在机器翻译的结果上，获得了长足的进步，首次体现了深度学习在机器翻译上的能力</p>
 <h1 id="Tip-对高斯分布的有偏估计和无偏估计"><a href="#Tip-对高斯分布的有偏估计和无偏估计" class="headerlink" title="Tip: 对高斯分布的有偏估计和无偏估计"></a>Tip: 对高斯分布的有偏估计和无偏估计</h1><p>针对高斯分布，概率密度函数为：</p>
 <script type="math/tex; mode=display">
 f\left(x^{(i)} ; \mu, \sigma^{2}\right)=\frac{1}{\sqrt{2 \pi \sigma^{2}}} \exp \left(-\frac{1}{2} \frac{\left(x^{(i)}-\mu\right)^{2}}{\sigma^{2}}\right)</script><p>用其样本均值来做均值估计，为无偏估计：</p>
 <script type="math/tex; mode=display">
 \hat{\mu}_{m}=\frac{1}{m} \sum_{i=1}^{m} x^{(i)}</script><p>用其样本方差来做方差估计：</p>
 <script type="math/tex; mode=display">
-\hat{\sigma}_{m}^{2}=\frac{1}{m} \sum_{i=1}^{m}\left(x^{(i)}-\hat{\mu}_{m}\right)^{2}</script><p>为有偏估计：</p>
+\hat{\sigma}_{m}^{2}=\frac{1}{m} \sum_{i=1}^{m}\left(x^{(i)}-\hat{\mu}_{m}\right)^{2}</script><p>不过它是有偏估计，因为：</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \mathrm{E}\left[\hat{\sigma}_{m}^{2}\right]&=\mathrm{E}\left[\frac{1}{m} \sum_{i=1}^{m}\left(x^{(i)}-\hat{\mu}_{m}\right)^{2}\right] \\
@@ -724,7 +744,7 @@ f\left(x^{(i)} ; \mu, \sigma^{2}\right)=\frac{1}{\sqrt{2 \pi \sigma^{2}}} \exp \
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">152k</span>
+    <span title="站点总字数">153k</span>
   
 
   
@@ -733,7 +753,7 @@ f\left(x^{(i)} ; \mu, \sigma^{2}\right)=\frac{1}{\sqrt{2 \pi \sigma^{2}}} \exp \
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:18</span>
+    <span title="站点阅读时长">2:19</span>
   
 </div>
 
