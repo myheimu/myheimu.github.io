@@ -484,11 +484,11 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cat /dev/urandom | od -x</span><br><span class="line">0000000 d05a b86f 580a 1bc9 124f 5844 1274 4613</span><br><span class="line">0000020 3f78 9ccb 53ba e9a7 5620 f92e c063 816e</span><br><span class="line">0000040 571d b624 4b23 e6c7 e95d 1fa7 8602 2be4</span><br><span class="line">0000060 1065 1ea9 b3f9 103e 37ac 26f8 4a26 a290</span><br><span class="line">0000100 e73d e745 6cf7 655d aa07 87c3 b86a 295f</span><br><span class="line">0000120 a44f a746 32ff 4132 3fc2 7eaa 2bd1 8819</span><br></pre></td></tr></table></figure>
 <p>在上述运行过程中可以发现，<code>/dev/random</code> 产生随机数的速度比较慢，速度也不均衡，经常出现大幅度的停顿，而 <code>/dev/urandom</code> 则一直可以快速产生随机数。</p>
 <p>原理上来说，它们都是采用密码学安全伪随机数生成器（CSPRNG）来生成随机数，但有所不同的是， <code>/dev/random</code> 完全依赖系统收到的各类中断等作为熵，来生成随机数，在没有更多熵到来的时候，则被阻塞住了，而 <code>/dev/urandom</code> 在熵池被耗尽的时候，仍然通过相应算法来继续生成后续随机数，虽然说从密码学安全性上有所缺陷，但对于绝大部分情况来说，安全性足够，性能好很多。</p>
-<h1 id="Share-《程序员的数学3：线性代数》后2章"><a href="#Share-《程序员的数学3：线性代数》后2章" class="headerlink" title="Share: 《程序员的数学3：线性代数》后2章"></a>Share: 《程序员的数学3：线性代数》后2章</h1><p>《程序员的数学3：线性代数》</p>
-<p>第4章：从判断失控的角度来介绍特征值、对角化，以及无法对角化时的Jordan标准型；第5章：计算机中如何计算特征值</p>
+<h1 id="Share-《程序员的数学3：线性代数》前3章"><a href="#Share-《程序员的数学3：线性代数》前3章" class="headerlink" title="Share: 《程序员的数学3：线性代数》前3章"></a>Share: 《程序员的数学3：线性代数》前3章</h1><p>《程序员的数学3：线性代数》</p>
+<p>第1章：矩阵、行列式与映射；第2章：秩、逆矩阵、线性方程组笔算法；第3章：计算机中采用LU分解来解决以上问题</p>
 <ul>
-<li><a href="/2019/05/19/linear-algebra-note-3/" title="《程序员的数学3：线性代数》笔记3">《程序员的数学3：线性代数》笔记3</a></li>
-<li><a href="/2019/05/20/linear-algebra-note-4/" title="《程序员的数学3：线性代数》笔记4">《程序员的数学3：线性代数》笔记4</a></li>
+<li><a href="/2019/05/04/linear-algebra-note-1/" title="《程序员的数学3：线性代数》笔记1">《程序员的数学3：线性代数》笔记1</a></li>
+<li><a href="/2019/05/18/linear-algebra-note-2/" title="《程序员的数学3：线性代数》笔记2">《程序员的数学3：线性代数》笔记2</a></li>
 </ul>
 
       
@@ -544,8 +544,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/06/arts-week-7/" rel="next" title="ARTS挑战第7周（2019.5.6~5.12）">
-                <i class="fa fa-chevron-left"></i> ARTS挑战第7周（2019.5.6~5.12）
+              <a href="/2019/05/06/latex-math-example/" rel="next" title="LaTeX数学公式入门">
+                <i class="fa fa-chevron-left"></i> LaTeX数学公式入门
               </a>
             
           </div>
@@ -625,7 +625,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -717,7 +717,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-19-Remove-Nth-Node-From-End-of-List"><span class="nav-text">Algorithm: LeetCode #19 Remove Nth Node From End of List</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《The-most-important-skill-a-programmer-can-learn》"><span class="nav-text">Review: 《The most important skill a programmer can learn》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip-Linux中-dev-random-和-dev-urandom-的区别"><span class="nav-text">Tip: Linux中 /dev/random 和 /dev/urandom 的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-《程序员的数学3：线性代数》后2章"><span class="nav-text">Share: 《程序员的数学3：线性代数》后2章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-LeetCode-19-Remove-Nth-Node-From-End-of-List"><span class="nav-text">Algorithm: LeetCode #19 Remove Nth Node From End of List</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《The-most-important-skill-a-programmer-can-learn》"><span class="nav-text">Review: 《The most important skill a programmer can learn》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip-Linux中-dev-random-和-dev-urandom-的区别"><span class="nav-text">Tip: Linux中 /dev/random 和 /dev/urandom 的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-《程序员的数学3：线性代数》前3章"><span class="nav-text">Share: 《程序员的数学3：线性代数》前3章</span></a></li></ol></div>
             
 
           </div>
@@ -750,7 +750,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">149k</span>
   
 
   
@@ -759,7 +759,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:15</span>
   
 </div>
 

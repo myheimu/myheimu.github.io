@@ -415,7 +415,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.3k</span>
+                <span title="本文字数">4.6k</span>
               
 
               
@@ -429,7 +429,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -466,7 +466,29 @@
 <blockquote>
 <p>Runtime: 12 ms, faster than 99.96% of C++ online submissions for Reverse Nodes in k-Group.<br>Memory Usage: 9.8 MB, less than 63.02% of C++ online submissions for Reverse Nodes in k-Group.</p>
 </blockquote>
-<h1 id="Review"><a href="#Review" class="headerlink" title="Review:"></a>Review:</h1><h1 id="Tip-PCA两种算法的一致性"><a href="#Tip-PCA两种算法的一致性" class="headerlink" title="Tip: PCA两种算法的一致性"></a>Tip: PCA两种算法的一致性</h1><h1 id="Share-PPT《程序员的数学——线性代数与概率统计》第2部分"><a href="#Share-PPT《程序员的数学——线性代数与概率统计》第2部分" class="headerlink" title="Share: PPT《程序员的数学——线性代数与概率统计》第2部分"></a>Share: PPT《程序员的数学——线性代数与概率统计》第2部分</h1><a href="/2019/05/30/programmers-math-ppt/" title="《程序员的数学——线性代数与概率统计应用》分享">《程序员的数学——线性代数与概率统计应用》分享</a>
+<h1 id="Review-《How-does-a-HashMap-work-in-JAVA》"><a href="#Review-《How-does-a-HashMap-work-in-JAVA》" class="headerlink" title="Review: 《How does a HashMap work in JAVA》"></a>Review: 《How does a HashMap work in JAVA》</h1><p><a href="http://coding-geek.com/how-does-a-hashmap-work-in-java/" target="_blank" rel="noopener">http://coding-geek.com/how-does-a-hashmap-work-in-java/</a></p>
+<p>这篇文章详细讲解了Java中的HashMap。</p>
+<p>HashMap是采用开链法处理冲突，因此<code>Entry</code>里面除了<code>key</code>和<code>value</code>之外，还有<code>next</code>指向链表的下一元素。另外为了防止重复计算hash值，还增加了<code>hash</code>字段。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// HashMap Entry in Java 7</span></span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Entry</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">implements</span> <span class="title">Map</span>.<span class="title">Entry</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> K key;</span><br><span class="line">        V value;</span><br><span class="line">        Entry&lt;K,V&gt; next;</span><br><span class="line">        <span class="keyword">int</span> hash;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于hash值，并没有直接采用<code>Object</code>的<code>hashCode</code>，而是以此为基础，再进行hash，以避免原有<code>hashCode</code>的不均匀性。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the "rehash" function in JAVA 7 that takes the hashcode of the key</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(<span class="keyword">int</span> h)</span> </span>&#123;</span><br><span class="line">    h ^= (h &gt;&gt;&gt; <span class="number">20</span>) ^ (h &gt;&gt;&gt; <span class="number">12</span>);</span><br><span class="line">    <span class="keyword">return</span> h ^ (h &gt;&gt;&gt; <span class="number">7</span>) ^ (h &gt;&gt;&gt; <span class="number">4</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// the "rehash" function in JAVA 8 that directly takes the key</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h;</span><br><span class="line">    <span class="keyword">return</span> (key == <span class="keyword">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">// the function that returns the index from the rehashed hash</span></span><br><span class="line"><span class="comment">// 这里也是为什么长度必须选择2的倍数</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">indexFor</span><span class="params">(<span class="keyword">int</span> h, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> h &amp; (length-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>HashMap默认设定容量因子<code>loadFactor=0.75</code>，如果达到，则会自动扩容，如果过小并不会自动缩容。</p>
+<p>HashMap并不是线程安全的，原因是在自动扩容过程中会有很多中间状态，使得读写不一致。HashTable是线程安全版本，但锁粒度太大，所以在Java5之后新增了ConcurrentHashMap，作为线程安全的HashMap。</p>
+<p>通常比较适合作为key的类型是<code>String</code>和<code>Integer</code>，因为他们不可变。如果采用可变的类型作为key，则很可能会丢失数据。</p>
+<p>Java8中对HashMap做了较大优化，代码量上就从1k增加到了2k，其中结构上的最大变化是引进了红黑树，即：如果单个hash槽对应的key-value低于8个，则仍然采用链表形式存储，否则采用红黑树形式存储。</p>
+<p>额外内存使用方面，Java7对于一个<code>Entry</code>会使用一个对next的引用、一个对key的引用、一个对value的引用、一个预计算hash值，总共为（N为存储个数，C为容量）：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sizeOf(integer)*N + sizeOf(reference)*(<span class="number">3</span>*N+C) = <span class="number">16</span>*N+<span class="number">4</span>*C</span><br></pre></td></tr></table></figure></p>
+<p>而对于Java8来说，如果hash槽中没有超过8个节点的，则使用量与Java7相同，如果hash槽全部为红黑树，则总共为：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">N*sizeOf(integer)+N*sizeOf(<span class="keyword">boolean</span>)+sizeOf(reference)*(<span class="number">9</span>*N+C) = <span class="number">44</span>*N+<span class="number">4</span>*C</span><br></pre></td></tr></table></figure></p>
+<p>性能问题方面，主要是hash不均衡的问题，大量key涌入相同的hash槽，造成查找性能大幅度下降。另外扩容也是非常消耗时间并且浪费内存的，所以非常建议一开始就给定初始化大小。</p>
+<h1 id="Tip-PCA两种算法的一致性"><a href="#Tip-PCA两种算法的一致性" class="headerlink" title="Tip: PCA两种算法的一致性"></a>Tip: PCA两种算法的一致性</h1><p>PCA 主成分分析，通常有SVD分解和协方差矩阵两种算法，这两种算法殊途同归，最终计算公式是相同的。</p>
+<h2 id="SVD分解解法"><a href="#SVD分解解法" class="headerlink" title="SVD分解解法"></a>SVD分解解法</h2><p>针对m个n维向量，采用行向量拼接，对每一行减去所有向量平均值（中心化预处理），构成矩阵 $A_{m×n}$</p>
+<p>通过SVD分解：$A_{m×n}=U_{m×m}\Sigma_{m×n}V_{n×n}^T$</p>
+<p>取前 r 大的奇异值：$A_{m×n}\approx U_{m×r}\Sigma_{r×r}V_{n×r}^T$</p>
+<p>转换为 $A_{m×n}V_{n×r}\approx  U_{m×r}\Sigma_{r×r}$，其中 $V_{n×r}$ 即为所求的可以进行特征压缩的转换矩阵</p>
+<p>具体转变为求 $A^TA$ 的特征值，取前r大的特征值，他们所对应的特征向量即为所保留的主轴方向</p>
+<h2 id="协方差矩阵解法"><a href="#协方差矩阵解法" class="headerlink" title="协方差矩阵解法"></a>协方差矩阵解法</h2><p>视为采样了m次的n维向量，减去均值（中心化预处理），计算其协方差矩阵：</p>
+<script type="math/tex; mode=display">\mathrm{Cov}[X,X]</script><p>由于 $X_i^TX_j=m×\mathrm{Cov}[X_i,X_j]$，则整个协方差矩阵可以记为：</p>
+<script type="math/tex; mode=display">\mathrm{Cov}[X,X]=X^TX×m</script><p>对此进行计算特征值和特征向量，取前r大的特征值，他们所对应的特征向量即为所保留的主轴方向</p>
+<h1 id="Share-PPT《程序员的数学——线性代数与概率统计》第1部分"><a href="#Share-PPT《程序员的数学——线性代数与概率统计》第1部分" class="headerlink" title="Share: PPT《程序员的数学——线性代数与概率统计》第1部分"></a>Share: PPT《程序员的数学——线性代数与概率统计》第1部分</h1><a href="/2019/05/30/programmers-math-ppt/" title="《程序员的数学——线性代数与概率统计应用》分享">《程序员的数学——线性代数与概率统计应用》分享</a>
       
     </div>
 
@@ -601,7 +623,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -693,7 +715,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-25-Reverse-Nodes-in-k-Group"><span class="nav-text">Algorithm: #25. Reverse Nodes in k-Group</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review"><span class="nav-text">Review:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip-PCA两种算法的一致性"><span class="nav-text">Tip: PCA两种算法的一致性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-PPT《程序员的数学——线性代数与概率统计》第2部分"><span class="nav-text">Share: PPT《程序员的数学——线性代数与概率统计》第2部分</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-25-Reverse-Nodes-in-k-Group"><span class="nav-text">Algorithm: #25. Reverse Nodes in k-Group</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review-《How-does-a-HashMap-work-in-JAVA》"><span class="nav-text">Review: 《How does a HashMap work in JAVA》</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tip-PCA两种算法的一致性"><span class="nav-text">Tip: PCA两种算法的一致性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SVD分解解法"><span class="nav-text">SVD分解解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协方差矩阵解法"><span class="nav-text">协方差矩阵解法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-PPT《程序员的数学——线性代数与概率统计》第1部分"><span class="nav-text">Share: PPT《程序员的数学——线性代数与概率统计》第1部分</span></a></li></ol></div>
             
 
           </div>
@@ -726,7 +748,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">146k</span>
+    <span title="站点总字数">149k</span>
   
 
   
@@ -735,7 +757,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:13</span>
+    <span title="站点阅读时长">2:15</span>
   
 </div>
 
